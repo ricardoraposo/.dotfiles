@@ -74,7 +74,7 @@ ls.add_snippets("lua", {
   ))
 })
 
-ls.add_snippets("javascriptreact", {
+ls.add_snippets({"javascriptreact", "typescriptreact"}, {
   s("afb", fmt(
     [[
     const {1} = ({2}) => {{
