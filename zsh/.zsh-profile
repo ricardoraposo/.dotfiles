@@ -1,0 +1,13 @@
+fd(){
+  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
+    
+}
+
+bindkey -s ^V "nvim .^M"
+bindkey -s ^A "tmux attach^M"
+bindkey -s ^B "cd ~/.config/nvim^M"
+bindkey -s ^N "nvim ~/.config/nvim/init.lua^M"
+bindkey -s ^T "fd^M"
+bindkey -s ^F "~/.config/tmux/tmux.sessionizer.sh^M"
+bindkey -s ^Q "btm^M"
+bindkey -s ^W "ranger^M"
