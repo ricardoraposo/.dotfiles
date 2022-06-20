@@ -101,6 +101,7 @@ return packer.startup(function(use)
 
 
   -- Git stuff
+  use 'TimUntersberger/neogit'
   use "lewis6991/gitsigns.nvim"
   use 'tpope/vim-fugitive'
 
