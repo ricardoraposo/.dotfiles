@@ -85,5 +85,7 @@ ls.add_snippets({"javascriptreact", "typescriptreact"}, {
   ))
 })
 
-
+ls.add_snippets("javascript", {
+  s("req", fmt("const {} = require('{}')", { i(1, "default"), rep(1) })),
+})
 

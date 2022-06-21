@@ -18,9 +18,7 @@ null_ls.setup({
 		formatting.prettier.with({
 			extra_args = { "--no-semi" },
 		}),
-		formatting.stylua.with({
-      silent = true,
-    }),
+		formatting.stylua,
     formatting.gofmt
 	},
 })
