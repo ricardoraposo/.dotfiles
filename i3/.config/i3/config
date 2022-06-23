@@ -201,5 +201,5 @@ for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/background-image.jpeg
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/anime-master/background-image.jpeg_
 exec --no-startup-id picom --experimental-backends -b
