@@ -2,7 +2,7 @@ local ls = require "luasnip"
 local types = require("luasnip.util.types")
 local map = vim.keymap.set
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
 -- Basic Config
 ls.config.set_config {
   -- This tells LuaSnip to remember to keep around the last snippet.

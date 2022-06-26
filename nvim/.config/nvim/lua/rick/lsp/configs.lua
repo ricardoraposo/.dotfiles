@@ -8,7 +8,7 @@ local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "html", "bashls", "gopls", "prismals", "ccls"}
+local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "html", "bashls", "gopls", "prismals" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
@@ -31,7 +31,7 @@ for _, server in pairs(servers) do
 	lspconfig.tailwindcss.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
+		filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 	})
 
 	if has_custom_opts then
