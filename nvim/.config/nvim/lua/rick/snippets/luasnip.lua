@@ -44,48 +44,4 @@ vim.keymap.set({ "i", "s" }, "<C-j>", function()
   end
 end, { silent = true })
 
-map("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/luasnip.lua<CR>")
-
--- Snippet creator
--- s(<trigger>, <nodes>)
-local s = ls.s
-
--- Format node
--- It takes a format string and a list of nodes
--- fmt(<fmt_string>, {...nodes})
-local fmt = require("luasnip.extras.fmt").fmt
-
--- Insert node
--- It takes a position (like $1) and optionally some default text
--- i(<position>, [defaut_text])
-local i = ls.insert_node
-
-local rep = require("luasnip.extras").rep
-
-ls.add_snippets("lua", {
-  s("req", fmt("local {} = require('{}')", { i(1, "default"), rep(1) })),
-  s("afb", fmt(
-    [[
-    const {1} = ({2}) => {{
-      {3}
-    }}
-    ]],
-    { i(1), i(2), i(3) }
-  ))
-})
-
-ls.add_snippets({"javascriptreact", "typescriptreact"}, {
-  s("afb", fmt(
-    [[
-    const {1} = ({2}) => {{
-      {3}
-    }}
-    ]],
-    { i(1), i(2), i(3) }
-  ))
-})
-
-ls.add_snippets("javascript", {
-  s("req", fmt("const {} = require('{}')", { i(1, "default"), rep(1) })),
-})
-
+map("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/snippetsn/luasnip.lua<CR>")
