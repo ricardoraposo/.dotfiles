@@ -12,5 +12,6 @@ ls.add_snippets({"javascriptreact"}, {
     }}
     ]],
     { i(1), i(2), i(3) }
-  ))
+  )),
+	s("cl", fmt("consoole.log({})", { i(1) })),
 })
