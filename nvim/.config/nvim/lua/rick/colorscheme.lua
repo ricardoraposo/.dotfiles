@@ -1,16 +1,11 @@
--- As things should be in darkplus
--- vim.cmd "colorscheme darkplus"
--- vim.cmd "highlight LineNr guifg=#ffffff"
--- vim.cmd "highlight Normal guibg=none"
-
--- As things should be in gruvbox
 vim.opt.background = "dark"
-vim.cmd "colorscheme gruvbox"
--- vim.cmd "highlight LineNr guifg=#ffffff"
--- vim.cmd "highlight Normal guibg=none"
+vim.cmd("colorscheme gruvbox")
 
--- As things should be in tokyonight
--- vim.g.tokyonight_style = "night"
--- vim.cmd "colorscheme tokyonight"
--- vim.cmd "highlight LineNr guifg=#ffffff"
--- vim.cmd "highlight Normal guibg=none"
+vim.api.nvim_set_hl(0, "netrwDir", {
+	fg = "#5eacd3",
+})
+
+vim.api.nvim_set_hl(0, "lineNr", {
+	fg = "#5eacd3",
+})
+
