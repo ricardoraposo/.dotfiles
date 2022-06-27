@@ -17,5 +17,5 @@ ls.add_snippets("javascript", {
 			{ i(1), i(2), i(3) }
 		)
 	),
-	s("cl", fmt("consoole.log({})", { i(1) })),
+	s("cl", fmt("console.log({})", { i(1) })),
 })
