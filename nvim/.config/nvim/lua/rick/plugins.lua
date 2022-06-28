@@ -53,9 +53,9 @@ return packer.startup(function(use)
   }
 
 	-- Colorschemes
-	-- use 'gruvbox-community/gruvbox'
+	use 'gruvbox-community/gruvbox'
   use 'martinsione/darkplus.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  -- use 'ellisonleao/gruvbox.nvim'
   use 'folke/tokyonight.nvim'
 
 	-- cmp plugins
@@ -98,7 +98,6 @@ return packer.startup(function(use)
         require('Comment').setup()
     end
 }
-
 
   -- Git stuff
   use 'TimUntersberger/neogit'
