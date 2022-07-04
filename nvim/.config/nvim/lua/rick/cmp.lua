@@ -18,6 +18,7 @@ local source_mapping = {
   path = "[path]",
 }
 
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -40,7 +41,7 @@ cmp.setup({
     ),
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false,
     },
     ["<tab>"] = cmp.config.disable,
 
@@ -64,7 +65,7 @@ cmp.setup({
     { name = "cmp_tabnine", max_item_count = 3 },
     { name = "nvim_lua" },
     { name = "luasnip"},
-    { name = "buffer", keyword_length = 8 },
+    { name = "buffer", keyword_length = 6 },
     { name = "path" },
   },
   confirm_opts = {

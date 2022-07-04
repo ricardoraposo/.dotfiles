@@ -1,5 +1,5 @@
 fd(){
-  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
+  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/Project/Study/notes ~/Project/Study/udemy ~/Project/Study/frontend-masters ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
     
 }
 

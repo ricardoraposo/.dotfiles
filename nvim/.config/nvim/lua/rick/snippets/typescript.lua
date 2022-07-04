@@ -8,6 +8,7 @@ local rep = require("luasnip.extras").rep
 
 ls.add_snippets("typescript", {
 	s("req", fmt("const {} = require('{}')", { i(1, "default"), rep(1) })),
+	s("ibr", fmt([[import {{{2}}} from "{1}"]], { i(1), i(2) })),
 	s(
 		"afb",
 		fmt(
@@ -27,7 +28,7 @@ ls.add_snippets("typescript", {
       {2}
     }}
     ]],
-      { c(1, { t{""}, t{"req, res"}, }), i(2)}
+      { c(1, { t{""}, t{"req, res"}, t{"req, res, next"}}), i(2)}
 		)
 	),
 	s("cl", fmt("console.log({})", { i(1) })),

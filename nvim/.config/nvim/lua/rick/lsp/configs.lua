@@ -24,7 +24,7 @@ for _, server in pairs(servers) do
 	lspconfig.emmet_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "html", "css", "sass", "scss", "less" },
+		filetypes = { "html", "css", "ejs", "sass", "scss", "less" },
 		-- filetypes = { "html", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
 	})
 

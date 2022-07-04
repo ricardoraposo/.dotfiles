@@ -1,12 +1,17 @@
-vim.g.tokyonight_style = "night"
-vim.opt.background = "dark"
-vim.cmd("colorscheme gruvbox")
-
-vim.api.nvim_set_hl(0, "netrwDir", {
-	fg = "#5eacd3",
+require("onedark").setup({
+	style = "deep",
+  transparent=true,
 })
+
+require("onedark").load()
 
 vim.api.nvim_set_hl(0, "lineNr", {
-	fg = "#5eacd3",
+	fg = "#41a7fc",
 })
 
+vim.api.nvim_set_hl(0, "netrwDir", {
+	fg = "#41a7fc",
+})
+
+-- vim.opt.background = ""
+-- vim.cmd("colorscheme srcery")

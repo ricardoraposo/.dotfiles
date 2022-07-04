@@ -2,15 +2,15 @@ local M = {}
 
 -- TODO: backfill this to template
 M.setup = function()
-  local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
-  }
+   local signs = {
+     { name = "DiagnosticSignError", text = "x" },
+     { name = "DiagnosticSignWarn", text = "!" },
+     { name = "DiagnosticSignHint", text = "i" },
+     { name = "DiagnosticSignInfo", text = "?" },
+   }
 
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" }) end
+   for _, sign in ipairs(signs) do
+     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" }) end
 
   local config = {
     -- enables virtual text

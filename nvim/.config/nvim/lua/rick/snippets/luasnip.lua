@@ -52,4 +52,4 @@ vim.keymap.set({ "i"}, "<C-l>", function()
   end
 end, { silent = true })
 
-map("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/snippetsn/luasnip.lua<CR>")
+map("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/snippets/init.lua<CR>")

@@ -53,10 +53,9 @@ return packer.startup(function(use)
   }
 
 	-- Colorschemes
+  use 'srcery-colors/srcery-vim'
+  use 'navarasu/onedark.nvim'
 	use 'gruvbox-community/gruvbox'
-  use 'martinsione/darkplus.nvim'
-  -- use 'ellisonleao/gruvbox.nvim'
-  use 'folke/tokyonight.nvim'
 
 	-- cmp plugins
 	use 'hrsh7th/nvim-cmp'
