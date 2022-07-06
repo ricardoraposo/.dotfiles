@@ -53,7 +53,7 @@ return packer.startup(function(use)
   }
 
 	-- Colorschemes
-  use 'srcery-colors/srcery-vim'
+  use 'luisiacc/gruvbox-baby'
   use 'navarasu/onedark.nvim'
 	use 'gruvbox-community/gruvbox'
 
