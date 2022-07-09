@@ -28,9 +28,8 @@ keymap("i", "<Down>", "<nop>", opts)
 keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
 
-
 -- Normal
--- Nvim Tree
+-- netrw
 keymap("n", "<leader>n", ":Ex<CR>", opts)
 
 -- Resize with arrows
@@ -48,6 +47,7 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
+keymap("i", "<C-s>", "<C-c>:w<cr>i", opts)
 
 -- Visual --
 -- Stay in indent mode

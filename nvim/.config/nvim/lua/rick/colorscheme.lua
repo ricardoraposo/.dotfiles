@@ -14,4 +14,4 @@ vim.api.nvim_set_hl(0, "netrwDir", {
 })
 
 -- vim.opt.background = ""
--- vim.cmd("colorscheme srcery")
+-- vim.cmd("colorscheme gruvbox")

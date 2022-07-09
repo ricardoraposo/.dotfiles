@@ -111,3 +111,14 @@ source ~/.zsh-profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/ricardo/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Bun
+export BUN_INSTALL="/Users/ricardo/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
