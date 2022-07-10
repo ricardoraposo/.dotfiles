@@ -76,19 +76,19 @@ keymap(
 )
 keymap(
 	"n",
+	"<leader>dp",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
+)
+keymap(
+	"n",
 	"<leader>db",
 	"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
 	opts
 )
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
-keymap("n", "<leader>dm", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
-keymap(
-	"n",
-	"<leader>ds",
-	"<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets<cr>",
-	opts
-)
+keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
 
 -- Better navigation
 

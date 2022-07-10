@@ -5,6 +5,7 @@ require("onedark").setup({
 
 require("onedark").load()
 
+
 vim.api.nvim_set_hl(0, "lineNr", {
 	fg = "#41a7fc",
 })
@@ -14,4 +15,4 @@ vim.api.nvim_set_hl(0, "netrwDir", {
 })
 
 -- vim.opt.background = ""
--- vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme synthwave84")

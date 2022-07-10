@@ -3,7 +3,7 @@ local keymap = vim.keymap.set
 
 vim.api.nvim_set_hl(0, "FloatermBorder", {
 	bg = "#1d2021",
-	fg = "#ebdbb2",
+	fg = "#41a7fc",
 })
 
 vim.api.nvim_set_hl(0, "Floaterm", {

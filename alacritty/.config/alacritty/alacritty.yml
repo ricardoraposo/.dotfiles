@@ -1,31 +1,32 @@
 window:
   padding:
-    x: 5
-    y: 5
+    x: 10
+    y: 10
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.85
+  opacity: 0.75
+  decorations: none
 
 scrolling:
-  history: 10000
+  history: 2000
   multiplier: 3
-
 
 font:
   normal:
-    family: Monospace
-    style:  Medium
+    family: JetBrainsMono Nerd Font Mono
+    style:  Regular
   bold:
-    family: Monospace
+    family: JetBrainsMono Nerd Font Mono
     style:  Bold
   italic:
-    family: Monospace
-    style:  MediumItalic
+    family: JetBrainsMono Nerd Font Mono
+    style:  RegularItalic
   bold_italic:
-    family: Monospace
+    family: JetBrainsMono Nerd Font Mono
     style: BoldItalic
-  size: 14
+  size: 16
+  use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 
 colors:
@@ -52,10 +53,7 @@ colors:
     white: "#f1f1ef"
 
 selection:
-  save_to_clipboard: false
-
-shell:
-  program: /usr/bin/zsh
+  save_to_clipboard: true
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
