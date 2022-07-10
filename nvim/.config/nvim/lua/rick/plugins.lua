@@ -70,7 +70,6 @@ return packer.startup(function(use)
 
 	-- snippets
 	use 'L3MON4D3/LuaSnip'
-	-- use 'rafamadriz/friendly-snippets'
 
   -- LSP
   use "neovim/nvim-lspconfig"
@@ -80,6 +79,15 @@ return packer.startup(function(use)
   -- Telescope & Harpoon
   use "nvim-telescope/telescope.nvim"
   use "ThePrimeagen/harpoon"
+
+  -- Nvim Tree
+  use {
+  'kyazdani42/nvim-tree.lua',
+  requires = {
+    'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
 
   -- Treesitter
   use {

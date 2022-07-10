@@ -30,7 +30,7 @@ keymap("i", "<Right>", "<nop>", opts)
 
 -- Normal
 -- netrw
-keymap("n", "<leader>n", ":Ex<CR>", opts)
+keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", ":resize +2<CR>", opts)

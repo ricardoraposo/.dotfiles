@@ -28,7 +28,6 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
 			custom_only = false,
 			list = {
 				{ key = "<S-k>", action = "toggle_file_info" },
-				{ key = "<C-k>", action = "" },
 			},
 		},
 	},
