@@ -58,7 +58,7 @@ selection:
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
-  - { key: C, mods: Command, chars: "\x01c" }
+  - { key: T, mods: Command, chars: "\x01c" }
   - { key: W, mods: Command, chars: "\x01x" }
   - { key: K, mods: Command, chars: "\x01\x0c" }
   - { key: J, mods: Command, chars: "\x01\x08" }
