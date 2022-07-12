@@ -99,10 +99,17 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
 
   -- Comments Plugin
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+        require('Comment').setup(
+        {
+          hook = function ()
+            require("ts_context_commentstring.internal").update_commentstring()
+          end
+        }
+      )
     end
 }
 

@@ -1,10 +1,9 @@
 require("onedark").setup({
 	style = "deep",
-  transparent=true,
+	transparent = true,
 })
 
 require("onedark").load()
-
 
 vim.api.nvim_set_hl(0, "lineNr", {
 	fg = "#41a7fc",
