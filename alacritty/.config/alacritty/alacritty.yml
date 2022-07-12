@@ -1,12 +1,13 @@
 window:
   padding:
-    x: 10
-    y: 10
+    x: 18
+    y: 16
   class:
     instance: Alacritty
     general: Alacritty
   opacity: 0.75
-  decorations: none
+  decorations: Buttonless
+  startup_mode: Windowed
 
 scrolling:
   history: 2000
@@ -57,3 +58,15 @@ selection:
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+  - { key: T, mods: Command, chars: "\x01c" }
+  - { key: W, mods: Command, chars: "\x01x" }
+  - { key: Key1, mods: Command, chars: "\x011" }
+  - { key: Key2, mods: Command, chars: "\x012" }
+  - { key: Key3, mods: Command, chars: "\x013" }
+  - { key: Key4, mods: Command, chars: "\x014" }
+  - { key: Key5, mods: Command, chars: "\x015" }
+  - { key: Key6, mods: Command, chars: "\x016" }
+  - { key: Key7, mods: Command, chars: "\x017" }
+  - { key: Key8, mods: Command, chars: "\x018" }
+  - { key: Key9, mods: Command, chars: "\x019" }
+

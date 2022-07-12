@@ -27,7 +27,7 @@ ls.add_snippets("javascript", {
       {2}
     }}
     ]],
-      { c(1, { t{""}, t{"req, res"}, t{"req, res, next"}}), i(2)}
+			{ c(1, { t({ "" }), t({ "req, res" }), t({ "req, res, next" }) }), i(2) }
 		)
 	),
 	s("cl", fmt("console.log({})", { i(1) })),
