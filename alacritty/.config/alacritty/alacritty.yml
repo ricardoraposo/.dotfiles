@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.75
+  opacity: 0.8
   decorations: Buttonless
   startup_mode: Windowed
 
