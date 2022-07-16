@@ -72,6 +72,9 @@ key_bindings:
   - { key: J, mods: Command, chars: "\x01\x08" }
   # Split screen vertically in tmux
   - { key: E, mods: Command|Shift, chars: "\x01%" }
+  # Navigate through split screens in tmux
+  - { key: L, mods: Command|Shift, chars: "\x01l" }
+  - { key: H, mods: Command|Shift, chars: "\x01h" }
   # Navigate to next session in tmux
   - { key: Key0, mods: Command, chars: "\x01)" }
   # Navigate to previous session in tmux
