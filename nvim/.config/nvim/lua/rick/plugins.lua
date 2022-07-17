@@ -53,7 +53,6 @@ return packer.startup(function(use)
   }
 
 	-- Colorschemes
-  use 'luisiacc/gruvbox-baby'
   use 'navarasu/onedark.nvim'
 	use 'gruvbox-community/gruvbox'
 
