@@ -6,6 +6,7 @@ window:
     instance: Alacritty
     general: Alacritty
   opacity: 0.8
+  decorations: none
 
 scrolling:
   history: 2000
@@ -13,19 +14,18 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
-    style:  Regular
-  bold:
-    family: JetBrainsMono Nerd Font Mono
-    style:  Bold
+    family: JetBrainsMono Nerd Font
+    style: Normal
   italic:
-    family: JetBrainsMono Nerd Font Mono
-    style:  Italic
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold:
+    family: JetBrainsMono Nerd Font
+    style:  Bold
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 16
-  use_thin_strokes: true
+  size: 12
 draw_bold_text_with_bright_colors: true
 
 mouse:
@@ -53,6 +53,9 @@ colors:
     magenta: "#bb9af7"
     cyan: "#0db9d7"
     white: "#acb0d0"
+
+shell:
+  program: /usr/bin/zsh
 
 selection:
   save_to_clipboard: true

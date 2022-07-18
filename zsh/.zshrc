@@ -8,6 +8,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh-profile
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
+# golang
+export PATH=$PATH:/usr/local/go/bin
 # Bun
 export BUN_INSTALL="/Users/ricardo/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
