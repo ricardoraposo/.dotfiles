@@ -62,27 +62,27 @@ selection:
 
 key_bindings:
   # Create new window in tmux
-  - { key: T, mods: Alt, chars: "\x01c" }
+  - { key: T, mods: Alt, chars: "\x02c" }
   # Close window in tmux
-  - { key: W, mods: Alt, chars: "\x01x" }
+  - { key: W, mods: Alt, chars: "\x02x" }
   # Opens window list in tmux
-  - { key: S, mods: Alt, chars: "\x01s" }
+  - { key: S, mods: Alt, chars: "\x02s" }
   # Navigate to next window in tmux
-  - { key: K, mods: Alt, chars: "\x01\x0c" }
+  - { key: K, mods: Alt, chars: "\x02\x0c" }
   # Navigate to previous window in tmux
-  - { key: J, mods: Alt, chars: "\x01\x08" }
+  - { key: J, mods: Alt, chars: "\x02\x08" }
   # Split screen vertically in tmux
-  - { key: E, mods: Alt|Shift, chars: "\x01%" }
+  - { key: E, mods: Alt|Shift, chars: "\x02%" }
   # Navigate to next session in tmux
-  - { key: Key0, mods: Alt, chars: "\x01)" }
+  - { key: Key0, mods: Alt, chars: "\x02)" }
   # Navigate to previous session in tmux
-  - { key: Key9, mods: Alt, chars: "\x01(" }
+  - { key: Key9, mods: Alt, chars: "\x02(" }
   # Navigate between tmux windows according to specific position
-  - { key: Key1, mods: Alt, chars: "\x011" }
-  - { key: Key2, mods: Alt, chars: "\x012" }
-  - { key: Key3, mods: Alt, chars: "\x013" }
-  - { key: Key4, mods: Alt, chars: "\x014" }
-  - { key: Key5, mods: Alt, chars: "\x015" }
-  - { key: Key6, mods: Alt, chars: "\x016" }
-  - { key: Key7, mods: Alt, chars: "\x017" }
-  - { key: Key8, mods: Alt, chars: "\x018" }
+  - { key: Key1, mods: Alt, chars: "\x021" }
+  - { key: Key2, mods: Alt, chars: "\x022" }
+  - { key: Key3, mods: Alt, chars: "\x023" }
+  - { key: Key4, mods: Alt, chars: "\x024" }
+  - { key: Key5, mods: Alt, chars: "\x025" }
+  - { key: Key6, mods: Alt, chars: "\x026" }
+  - { key: Key7, mods: Alt, chars: "\x027" }
+  - { key: Key8, mods: Alt, chars: "\x028" }
