@@ -8,6 +8,8 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh-profile
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
+# node 
+export PATH=/usr/local/lib/nodejs/node-v18.6.0-linux-x64/bin:$PATH
 # golang
 export PATH=$PATH:/usr/local/go/bin
 # Bun
