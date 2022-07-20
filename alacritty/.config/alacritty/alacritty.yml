@@ -61,30 +61,30 @@ selection:
 
 key_bindings:
   # Create new window in tmux
-  - { key: T, mods: Command, chars: "\x01c" }
+  - { key: T, mods: Command, chars: "\x02c" }
   # Close window in tmux
-  - { key: W, mods: Command, chars: "\x01x" }
+  - { key: W, mods: Command, chars: "\x02x" }
   # Opens window list in tmux
-  - { key: S, mods: Command, chars: "\x01s" }
+  - { key: S, mods: Command, chars: "\x02s" }
   # Navigate to next window in tmux
-  - { key: K, mods: Command, chars: "\x01\x0c" }
+  - { key: K, mods: Command, chars: "\x02\x0c" }
   # Navigate to previous window in tmux
-  - { key: J, mods: Command, chars: "\x01\x08" }
+  - { key: J, mods: Command, chars: "\x02\x08" }
   # Split screen vertically in tmux
-  - { key: E, mods: Command|Shift, chars: "\x01%" }
+  - { key: E, mods: Command|Shift, chars: "\x02%" }
   # Navigate through split screens in tmux
-  - { key: L, mods: Command|Shift, chars: "\x01l" }
-  - { key: H, mods: Command|Shift, chars: "\x01h" }
+  - { key: L, mods: Command|Shift, chars: "\x02l" }
+  - { key: H, mods: Command|Shift, chars: "\x02h" }
   # Navigate to next session in tmux
-  - { key: Key0, mods: Command, chars: "\x01)" }
+  - { key: Key0, mods: Command, chars: "\x02)" }
   # Navigate to previous session in tmux
-  - { key: Key9, mods: Command, chars: "\x01(" }
+  - { key: Key9, mods: Command, chars: "\x02(" }
   # Navigate between tmux windows according to specific position
-  - { key: Key1, mods: Command, chars: "\x011" }
-  - { key: Key2, mods: Command, chars: "\x012" }
-  - { key: Key3, mods: Command, chars: "\x013" }
-  - { key: Key4, mods: Command, chars: "\x014" }
-  - { key: Key5, mods: Command, chars: "\x015" }
-  - { key: Key6, mods: Command, chars: "\x016" }
-  - { key: Key7, mods: Command, chars: "\x017" }
-  - { key: Key8, mods: Command, chars: "\x018" }
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
