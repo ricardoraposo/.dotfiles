@@ -8,9 +8,10 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh-profile
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
+# node 
+export PATH=/usr/local/lib/nodejs/node-v16.16.0-linux-x64/bin:$PATH
 # golang
-export GOPATH="/Users/ricardo/go"
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH=$PATH:/usr/local/go/bin
 # Bun
 export BUN_INSTALL="/Users/ricardo/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
