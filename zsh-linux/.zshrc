@@ -11,7 +11,8 @@ source ~/.zsh-profile
 # node 
 export PATH=/usr/local/lib/nodejs/node-v16.16.0-linux-x64/bin:$PATH
 # golang
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH="/home/rick/go"
+export PATH=$PATH:$(go env GOPATH)/bin
 # Bun
 export BUN_INSTALL="/Users/ricardo/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
