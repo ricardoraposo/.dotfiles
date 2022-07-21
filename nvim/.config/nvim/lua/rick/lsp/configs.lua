@@ -8,7 +8,7 @@ local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "html", "bashls", "gopls", "prismals", "jdtls" }
+local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "html", "bashls", "gopls", "prismals" }
 
 lsp_installer.setup({
 	ensure_installed = servers,
