@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.75
+  opacity: 0.80
   decorations: none
 
 scrolling:
@@ -61,6 +61,10 @@ selection:
   save_to_clipboard: true
 
 key_bindings:
+  # Remaps copy shortcut
+  - { key: C, mods: Alt, action: Copy}
+  # Remaps paste shortcut
+  - { key: V, mods: Alt, action: Paste}
   # Create new window in tmux
   - { key: T, mods: Alt, chars: "\x02c" }
   # Close window in tmux
