@@ -33,28 +33,64 @@ draw_bold_text_with_bright_colors: true
 mouse:
   hide_when_typing: true
 
-colors:
-  primary:
-    background: "#011024"
-    foreground: "#a9b1d6"
-  normal:
-    black: "#32344a"
-    red: "#f7768e"
-    green: "#9ece6a"
-    yellow: "#e0af68"
-    blue: "#7aa2f7"
-    magenta: "#ad8ee6"
-    cyan: "#449dab"
-    white: "#787c99"
-  bright:
-    black: "#444b6a"
-    red: "#ff7a93"
-    green: "#b9f27c"
-    yellow: "#ff9e64"
-    blue: "#7da6ff"
-    magenta: "#bb9af7"
-    cyan: "#0db9d7"
-    white: "#acb0d0"
+color_schemes:
+
+  my_own: &my_own
+
+    primary:
+      background: "#011024"
+      foreground: "#a9b1d6"
+    normal:
+      black: "#32344a"
+      red: "#f7768e"
+      green: "#9ece6a"
+      yellow: "#e0af68"
+      blue: "#7aa2f7"
+      magenta: "#ad8ee6"
+      cyan: "#449dab"
+      white: "#787c99"
+    bright:
+      black: "#444b6a"
+      red: "#ff7a93"
+      green: "#b9f27c"
+      yellow: "#ff9e64"
+      blue: "#7da6ff"
+      magenta: "#bb9af7"
+      cyan: "#0db9d7"
+      white: "#acb0d0"
+
+
+  cat_dev: &cat_dev    
+
+    primary:
+      background: '0x1E1D2F'
+      foreground: '0xD9E0EE'
+    cursor:
+      text: '0x1E1D2F'
+      cursor: '0xF5E0DC'
+    normal:
+      black:   '0x6E6C7E'
+      red:     '0xF28FAD'
+      green:   '0xABE9B3'
+      yellow:  '0xFAE3B0'
+      blue:    '0x96CDFB'
+      magenta: '0xF5C2E7'
+      cyan:    '0x89DCEB'
+      white:   '0xD9E0EE'
+    bright:
+      black:   '0x988BA2'
+      red:     '0xF28FAD'
+      green:   '0xABE9B3'
+      yellow:  '0xFAE3B0'
+      blue:    '0x96CDFB'
+      magenta: '0xF5C2E7'
+      cyan:    '0x89DCEB'
+      white:   '0xD9E0EE'
+    indexed_colors:
+      - { index: 16, color: '0xF8BD96' }
+      - { index: 17, color: '0xF5E0DC' }
+
+colors: *cat_dev
 
 selection:
   save_to_clipboard: true
