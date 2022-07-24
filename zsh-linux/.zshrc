@@ -5,12 +5,9 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh-profile
+source ~/.zsh_profile
 # node 
 export PATH=/usr/local/lib/nodejs/node-v16.16.0-linux-x64/bin:$PATH
-# golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
 # Bun

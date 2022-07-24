@@ -11,7 +11,16 @@ ls.add_snippets("go", {
       {4}
     }}
     ]],
-    { i(1), i(2), i(3),i(4) }
-  ))
-})
+    { i(1), i(2), i(3), i(4) }
+  )),
+  s("pmain", fmt(
+    [[
+    package main
 
+    func main() {{
+      {1}
+    }}
+    ]],
+    { i(1) }
+  )),
+})

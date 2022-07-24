@@ -77,6 +77,10 @@ key_bindings:
   - { key: J, mods: Alt, chars: "\x02\x08" }
   # Split screen vertically in tmux
   - { key: E, mods: Alt|Shift, chars: "\x02%" }
+  # Split screen vertically in tmux
+  - { key: H, mods: Alt|Shift, chars: "\x02h" }
+  # Split screen vertically in tmux
+  - { key: L, mods: Alt|Shift, chars: "\x02l" }
   # Navigate to next session in tmux
   - { key: Key0, mods: Alt, chars: "\x02)" }
   # Navigate to previous session in tmux
