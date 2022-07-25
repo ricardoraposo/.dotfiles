@@ -3,6 +3,9 @@ fd(){
     
 }
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 bindkey -s ^V "nvim .^M"
 bindkey -s ^A "tmux attach^M"
 bindkey -s ^B "cd ~/.config/nvim^M"

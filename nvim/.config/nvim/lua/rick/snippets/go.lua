@@ -1,5 +1,7 @@
 local ls = require('luasnip')
 local fmt = require("luasnip.extras.fmt").fmt
+local t = ls.text_node
+local c = ls.choice_node
 local i = ls.insert_node
 local s = ls.s
 -- local rep = require("luasnip.extras").rep
@@ -22,5 +24,13 @@ ls.add_snippets("go", {
     }}
     ]],
     { i(1) }
+  )),
+  s("err", fmt(
+    [[
+    if err != nil {{
+      {1}
+    }}
+    ]],
+    { c(1, { t({ "" }), t({ "log.Fatal(err)" }) }) }
   )),
 })
