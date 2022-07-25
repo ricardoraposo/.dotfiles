@@ -90,7 +90,7 @@ color_schemes:
       - { index: 16, color: '0xF8BD96' }
       - { index: 17, color: '0xF5E0DC' }
 
-colors: *cat_dev
+colors: *my_own
 
 selection:
   save_to_clipboard: true
