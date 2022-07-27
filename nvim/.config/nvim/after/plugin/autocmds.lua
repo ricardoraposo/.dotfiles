@@ -1,5 +1,6 @@
 vim.api.nvim_create_autocmd("BufWritePost", {
-  callback = function ()
-    vim.lsp.buf.format()
-  end
+	group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
+	callback = function()
+		vim.lsp.buf.format()
+	end,
 })
