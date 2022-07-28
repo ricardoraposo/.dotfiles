@@ -14,18 +14,22 @@ scrolling:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Normal
+    # family: JetBrainsMono Nerd Font
+    family: Iosevka
+    style: Semibold
   italic:
-    family: JetBrainsMono Nerd Font
+    # family: JetBrainsMono Nerd Font
+    family: iosevka
     style: Italic
   bold:
-    family: JetBrainsMono Nerd Font
+    # family: JetBrainsMono Nerd Font
+    family: iosevka
     style:  Bold
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    # family: JetBrainsMono Nerd Font
+    family: iosevka
     style: Bold Italic
-  size: 12
+  size: 13
 draw_bold_text_with_bright_colors: true
 
 mouse:
