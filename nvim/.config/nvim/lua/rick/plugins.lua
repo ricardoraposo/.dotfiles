@@ -18,12 +18,18 @@ end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
+vim.api.nvim_create_autocmd("BufWritePost", {
+	group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
+	pattern = "plugins.lua",
+	command = "PackerSync",
+})
+
+-- vim.cmd([[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua PackerSync
+--   augroup end
+-- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -113,17 +119,6 @@ return packer.startup(function(use)
 	-- Git stuff
 	use("TimUntersberger/neogit")
 	use("lewis6991/gitsigns.nvim")
-	use("tpope/vim-fugitive")
-
-	-- Faster navigation
-	use({
-		"phaazon/hop.nvim",
-		branch = "v1", -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-		end,
-	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -1,6 +1,9 @@
 require("onedark").setup({
 	style = "deep",
 	transparent = true,
+	code_style = {
+		comments = "none",
+	},
 })
 
 require("onedark").load()
