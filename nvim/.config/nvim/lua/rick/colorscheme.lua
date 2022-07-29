@@ -12,4 +12,3 @@ vim.api.nvim_set_hl(0, "lineNr", {
 vim.api.nvim_set_hl(0, "netrwDir", {
 	fg = "#41a7fc",
 })
-

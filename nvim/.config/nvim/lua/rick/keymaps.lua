@@ -10,8 +10,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
-
 -- Modes
 --	 normal mode = "n"
 --	 insert mode = "i"
@@ -94,8 +92,18 @@ keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
 
 keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<cr>", opts)
 keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<cr>", opts)
-keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opts)
-keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opts)
+keymap(
+	"n",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
+	opts
+)
+keymap(
+	"n",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
+	opts
+)
 keymap("n", "<leader>hc", "<cmd>:HopChar2 <cr>", opts)
 
 -- Greatest remaps
@@ -104,6 +112,7 @@ keymap("n", "G", "Gzz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>y", '"+ym', opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
+keymap("n", "<leader>sc", "<cmd>:so %<cr>", opts)
 
 vim.cmd("inoremap , ,<c-g>u")
 vim.cmd("inoremap . .<c-g>u")
