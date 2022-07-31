@@ -3,6 +3,9 @@ fd(){
     
 }
 
+alias t="tmux"
+alias v="nvim"
+
 bindkey -s ^V "nvim .^M"
 bindkey -s ^A "tmux attach^M"
 bindkey -s ^B "cd ~/.config/nvim^M"
