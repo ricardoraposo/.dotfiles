@@ -31,10 +31,11 @@ keymap("i", "<Right>", "<nop>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<M-Up>", ":resize +2<CR>", opts)
-keymap("n", "<M-Down>", ":resize -2<CR>", opts)
-keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
+keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
+keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)
+keymap("n", "<M-Left>", "<cmd>vertical resize +2<CR>", opts)
+keymap("n", "<M-Right>", "<cmd>vertical resize -2<CR>", opts)
+keymap("n", "<leader>vs", "<cmd>50vnew<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -67,17 +68,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 
 keymap(
-	"n",
-	"<C-f>",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+  "n",
+  "<C-f>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
 )
 
 keymap(
-	"n",
-	"<leader>db",
-	"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+  "n",
+  "<leader>db",
+  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
 )
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
