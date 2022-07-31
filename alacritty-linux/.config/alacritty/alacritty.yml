@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.7
+  opacity: 0.9
   decorations: none
 
 scrolling:
@@ -37,7 +37,7 @@ mouse:
 
 colors:
   primary:
-    background: "#000000"
+    background: "#1a212e"
     foreground: "#a9b1d6"
   normal:
     black: "#32344a"
