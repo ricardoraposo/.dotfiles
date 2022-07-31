@@ -21,15 +21,8 @@ end
 vim.api.nvim_create_autocmd("BufWritePost", {
 	group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
 	pattern = "plugins.lua",
-	command = "PackerSync",
+	command = "so % | PackerSync",
 })
-
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua PackerSync
---   augroup end
--- ]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -60,7 +53,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("navarasu/onedark.nvim")
-	use("gruvbox-community/gruvbox")
+	use("NTBBloodbath/doom-one.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -68,10 +61,9 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-nvim-lua")
+	use("saadparwaiz1/cmp_luasnip")
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use("onsails/lspkind-nvim")
-	use("nvim-lua/lsp_extensions.nvim")
-	use("saadparwaiz1/cmp_luasnip")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip")

@@ -45,7 +45,7 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
-keymap("i", "<C-s>", "<C-c>:w<cr>i", opts)
+keymap("i", "<C-s>", "<ESC>:w<cr>a", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -72,12 +72,7 @@ keymap(
 	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
 	opts
 )
-keymap(
-	"n",
-	"<leader>dp",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
+
 keymap(
 	"n",
 	"<leader>db",
@@ -92,19 +87,8 @@ keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
 
 keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<cr>", opts)
 keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<cr>", opts)
-keymap(
-	"n",
-	"f",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-	opts
-)
-keymap(
-	"n",
-	"F",
-	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-	opts
-)
-keymap("n", "<leader>hc", "<cmd>:HopChar2 <cr>", opts)
+keymap({ "n", "v", "x" }, "{", "}", opts)
+keymap({ "n", "v", "x" }, "}", "{", opts)
 
 -- Greatest remaps
 

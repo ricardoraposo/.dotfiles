@@ -1,4 +1,5 @@
 local options = {
+	guicursor = "i:block",
 	backup = false, -- creates a backup file
 	backupcopy = "yes",
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -48,4 +49,3 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
-vim.cmd("set guicursor=i:block")
