@@ -14,19 +14,15 @@ scrolling:
 
 font:
   normal:
-    # family: JetBrainsMono Nerd Font
     family: Iosevka
     style: Semibold
   italic:
-    # family: JetBrainsMono Nerd Font
     family: Iosevka
     style: Italic
   bold:
-    # family: JetBrainsMono Nerd Font
     family: Iosevka
     style:  Bold
   bold_italic:
-    # family: JetBrainsMono Nerd Font
     family: Iosevka
     style: Bold Italic
   size: 12
