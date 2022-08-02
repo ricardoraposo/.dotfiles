@@ -47,8 +47,14 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("voldikss/vim-floaterm")
 	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		"vimwiki/vimwiki",
+		config = function()
+			vim.g.vimwiki_list = {
+				{
+					path = "~/Wiki",
+				},
+			}
+		end,
 	})
 
 	-- Colorschemes
@@ -110,7 +116,6 @@ return packer.startup(function(use)
 
 	-- Git stuff
 	use("TimUntersberger/neogit")
-	use("lewis6991/gitsigns.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
