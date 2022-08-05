@@ -16,3 +16,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Bun
 export BUN_INSTALL="/Users/ricardo/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+# DENO
+export DENO_INSTALL="/home/rick/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
