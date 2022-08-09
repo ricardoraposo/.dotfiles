@@ -34,7 +34,7 @@ mouse:
 colors:
   primary:
     background: "#131821"
-    foreground: "#a9b1d6"
+    foreground: "#bbc2cf"
   normal:
     black: "#32344a"
     red: "#f7768e"

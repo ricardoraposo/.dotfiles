@@ -1,9 +1,7 @@
 local options = {
   guicursor = "i:block",
   backup = false,
-  backupcopy = "yes",
-  clipboard = "unnamedplus",
-  cmdheight = 1,
+  backupcopy = "yes", cmdheight = 1,
   conceallevel = 0,
   fileencoding = "utf-8",
   hlsearch = false,
@@ -42,6 +40,7 @@ local options = {
 
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.shortmess:append("c")
+vim.opt.clipboard:append { "unnamedplus" }
 
 for k, v in pairs(options) do
   vim.opt[k] = v

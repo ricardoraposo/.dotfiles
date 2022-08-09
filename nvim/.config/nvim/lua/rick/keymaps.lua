@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
--- local term_opts = { silent = true }
+local term_opts = { silent = true }
 
 --Shorten function name
 local keymap = vim.keymap.set
@@ -46,7 +46,6 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
-keymap("i", "<C-s>", "<ESC>:w<cr>a", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -83,6 +82,13 @@ keymap(
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
 keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
+
+-- Floaterm
+
+keymap({ "n", "t" }, [[<c-\>]], "<cmd>FloatermToggle<CR>", term_opts)
+keymap("t", "<c-k>", "<cmd>FloatermNew<CR>", term_opts)
+keymap("t", "<c-h>", "<cmd>FloatermNext<CR>", term_opts)
+keymap("t", "<c-l>", "<cmd>FloatermPrev<CR>", term_opts)
 
 -- Better navigation
 
