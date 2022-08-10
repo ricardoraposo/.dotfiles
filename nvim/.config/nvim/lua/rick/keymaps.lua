@@ -67,17 +67,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 
 keymap(
-	"n",
-	"<C-f>",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+  "n",
+  "<C-f>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
 )
 
 keymap(
-	"n",
-	"<leader>db",
-	"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
+  "n",
+  "<leader>db",
+  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
 )
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
@@ -86,7 +86,6 @@ keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
 -- Floaterm
 
 keymap({ "n", "t" }, [[<c-\>]], "<cmd>FloatermToggle<CR>", term_opts)
-keymap({ "n", "t" }, "<leader>np", "<cmd>NnnPicker<CR>", term_opts)
 keymap("t", "<c-k>", "<cmd>FloatermNew<CR>", term_opts)
 keymap("t", "<c-h>", "<cmd>FloatermNext<CR>", term_opts)
 keymap("t", "<c-l>", "<cmd>FloatermPrev<CR>", term_opts)
