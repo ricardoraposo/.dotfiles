@@ -5,7 +5,7 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.91
+  opacity: 1
   decorations: none
 
 scrolling:
@@ -18,7 +18,7 @@ font:
     style: Semibold
   italic:
     family: Iosevka
-    style: Italic
+    style: Semibold Italic
   bold:
     family: Iosevka
     style:  Bold
@@ -33,8 +33,8 @@ mouse:
 
 colors:
   primary:
-    background: "#131821"
-    foreground: "#bbc2cf"
+    foreground: '#C6D5CF'
+    background: '#0F191F'
   normal:
     black: "#32344a"
     red: "#f7768e"

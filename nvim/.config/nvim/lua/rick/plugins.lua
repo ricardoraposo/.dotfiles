@@ -48,8 +48,9 @@ return packer.startup(function(use)
 	use("voldikss/vim-floaterm")
 
 	-- Colorschemes
-	use("navarasu/onedark.nvim")
 	use("NTBBloodbath/doom-one.nvim")
+	use("mcchrish/zenbones.nvim")
+	use("rktjmp/lush.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -107,7 +108,7 @@ return packer.startup(function(use)
 	-- Git stuff
 	use("TimUntersberger/neogit")
 
-	-- Org mode suck
+	-- Org mode sucks
 	use({
 		"vimwiki/vimwiki",
 		config = function()

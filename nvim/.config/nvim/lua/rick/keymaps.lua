@@ -86,6 +86,7 @@ keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
 -- Floaterm
 
 keymap({ "n", "t" }, [[<c-\>]], "<cmd>FloatermToggle<CR>", term_opts)
+keymap({ "n", "t" }, "<leader>np", "<cmd>NnnPicker<CR>", term_opts)
 keymap("t", "<c-k>", "<cmd>FloatermNew<CR>", term_opts)
 keymap("t", "<c-h>", "<cmd>FloatermNext<CR>", term_opts)
 keymap("t", "<c-l>", "<cmd>FloatermPrev<CR>", term_opts)
