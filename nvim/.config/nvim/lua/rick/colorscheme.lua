@@ -21,6 +21,10 @@ vim.g.doom_one_plugin_nvim_tree = true
 vim.g.neobones_transparent_background = true
 vim.cmd("colorscheme neobones")
 
+vim.api.nvim_set_hl(0, "NonText", {
+	fg = "#0f191f",
+})
+
 vim.api.nvim_set_hl(0, "lineNr", {
 	fg = "#41a7fc",
 })
