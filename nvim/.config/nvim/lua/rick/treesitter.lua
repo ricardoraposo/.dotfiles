@@ -22,9 +22,6 @@ configs.setup({
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     colors = {
       "#fafafa",
-      "#a3a3a3",
-      "#404040",
-      "#facc15",
     }, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   },
