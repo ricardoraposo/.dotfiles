@@ -1,7 +1,6 @@
 require("rick.plugins")
 require("rick.options")
 require("rick.keymaps")
-require("rick.colorscheme")
 require("rick.lsp")
 require("rick.cmp")
 require("rick.harpoon")

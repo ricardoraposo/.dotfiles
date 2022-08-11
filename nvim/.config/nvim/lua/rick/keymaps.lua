@@ -67,17 +67,17 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 
 keymap(
-  "n",
-  "<C-f>",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
+	"n",
+	"<C-f>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
 )
 
 keymap(
-  "n",
-  "<leader>db",
-  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-  opts
+	"n",
+	"<leader>db",
+	"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	opts
 )
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
@@ -112,6 +112,6 @@ vim.cmd("inoremap ? ?<c-g>u")
 
 -- I'm dumb and I type stuff wrong too much
 
-vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
 vim.cmd(":command W w")
+vim.cmd(":command Q q")

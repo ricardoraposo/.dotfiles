@@ -47,11 +47,6 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("voldikss/vim-floaterm")
 
-	-- Colorschemes
-	use("NTBBloodbath/doom-one.nvim")
-	use("mcchrish/zenbones.nvim")
-	use("rktjmp/lush.nvim")
-
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
@@ -77,6 +72,7 @@ return packer.startup(function(use)
 	-- Nvim Tree
 	use({
 		"kyazdani42/nvim-tree.lua",
+		branch = "master",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
