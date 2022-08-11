@@ -83,3 +83,10 @@ vim.cmd("hi StatusLineNC gui=NONE guibg=#181818 guifg=#e4e4ef")
 vim.cmd("hi Search guibg=#b89140 guifg=#e4e4ef")
 vim.cmd("hi VertSplit gui=NONE guifg=#454545 guibg=NONE")
 vim.cmd("hi Visual gui=NONE guibg=#454545")
+
+-- Vimwiki
+
+vim.cmd("hi VimwikiHeader1 guifg=#ffdd33")
+vim.cmd("hi VimwikiHeader2 guifg=#fff953")
+vim.cmd("hi VimwikiHeader3 guifg=#ffff70")
+vim.cmd("hi VimwikiHeader4 guifg=#ffff8d")
