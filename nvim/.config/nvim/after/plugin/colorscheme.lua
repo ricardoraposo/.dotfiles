@@ -1,6 +1,5 @@
 vim.cmd("colorscheme benjamin")
 
---
 -- vim.api.nvim_set_hl(0, "NonText", {
 -- 	fg = "#0f191f",
 -- })
