@@ -80,10 +80,10 @@ _G.packer_plugins = {
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["benjamin.vim"] = {
+  ["benjamin.nvim"] = {
     loaded = true,
-    path = "/home/rick/.local/share/nvim/site/pack/packer/start/benjamin.vim",
-    url = "https://github.com/ricardoraposo/benjamin.vim"
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/benjamin.nvim",
+    url = "https://github.com/ricardoraposo/benjamin.nvim"
   },
   ["calendar.vim"] = {
     loaded = true,
