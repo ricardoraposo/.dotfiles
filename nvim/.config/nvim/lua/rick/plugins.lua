@@ -65,7 +65,10 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
-	use("williamboman/nvim-lsp-installer")
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	})
 	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Telescope & Harpoon
@@ -94,9 +97,9 @@ return packer.startup(function(use)
 	-- Comments Plugin
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
-		"numToStr/Comment.nvim",
+		"terrortylor/nvim-comment",
 		config = function()
-			require("Comment").setup({
+			require("nvim_comment").setup({
 				hook = function()
 					require("ts_context_commentstring.internal").update_commentstring()
 				end,

@@ -1,10 +1,15 @@
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
 	return
 end
 
-local status_ok_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok_ok then
+local status2, lspconfig = pcall(require, "lspconfig")
+if not status2 then
+	return
+end
+
+local status3, mason_lsp = pcall(require, "mason-lspconfig")
+if not status3 then
 	return
 end
 
@@ -12,9 +17,15 @@ local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "sumneko_lua", "tsserver", "cssls", "emmet_ls", "tailwindcss", "prismals", "gopls", "clangd" }
+local servers = { "sumneko_lua", "tsserver", "html", "cssls", "emmet_ls", "tailwindcss", "prismals", "gopls" }
 
-lsp_installer.setup({
+mason.setup({
+	ui = {
+		border = "rounded",
+	},
+})
+
+mason_lsp.setup({
 	ensure_installed = servers,
 })
 
