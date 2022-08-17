@@ -70,10 +70,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
+keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
 keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
-keymap("n", "/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", opts)
+keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", opts)
 
 -- Better navigation
 
