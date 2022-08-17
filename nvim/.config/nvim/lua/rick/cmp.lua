@@ -10,15 +10,25 @@ end
 
 local lspkind = require("lspkind")
 local source_mapping = {
-  buffer = "[buf]",
+  buffer = "[BUF]",
   nvim_lsp = "[LSP]",
-  nvim_lua = "[lua]",
+  nvim_lua = "[LUA]",
   cmp_tabnine = "[TN]",
-  luasnip = "[snip]",
-  path = "[path]",
+  luasnip = "[SNIP]",
+  path = "[PATH]",
 }
 
 cmp.setup({
+  window = {
+    completion = {
+      border = "rounded",
+      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = "rounded",
+      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+    },
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -39,7 +49,7 @@ cmp.setup({
       { "i", "c" }
     ),
     ["<CR>"] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
+      behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     }),
     ["<tab>"] = cmp.config.disable,

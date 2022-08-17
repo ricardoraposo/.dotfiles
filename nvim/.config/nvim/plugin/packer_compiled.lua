@@ -215,10 +215,10 @@ _G.packer_plugins = {
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-floaterm"] = {
+  ["toggleterm.nvim"] = {
     loaded = true,
-    path = "/home/rick/.local/share/nvim/site/pack/packer/start/vim-floaterm",
-    url = "https://github.com/voldikss/vim-floaterm"
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   vimwiki = {
     config = { "\27LJ\2\nE\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\1\tpath\v~/Wiki\17vimwiki_list\6g\bvim\0" },

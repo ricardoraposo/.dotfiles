@@ -27,8 +27,9 @@ keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
 
 -- Normal
--- netrw
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<S-h>", "<C-w>h", opts)
+keymap("n", "<S-l>", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -46,6 +47,7 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -66,29 +68,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 
-keymap(
-	"n",
-	"<C-f>",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
-
-keymap(
-	"n",
-	"<leader>db",
-	"<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
-	opts
-)
+keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
+keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
 keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/Project/<cr>", opts)
-
--- Floaterm
-
-keymap({ "n", "t" }, [[<c-\>]], "<cmd>FloatermToggle<CR>", term_opts)
-keymap("t", "<c-k>", "<cmd>FloatermNew<CR>", term_opts)
-keymap("t", "<c-h>", "<cmd>FloatermNext<CR>", term_opts)
-keymap("t", "<c-l>", "<cmd>FloatermPrev<CR>", term_opts)
+keymap("n", "/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", opts)
 
 -- Better navigation
 

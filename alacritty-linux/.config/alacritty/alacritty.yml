@@ -21,7 +21,7 @@ font:
     style: Semibold Italic
   bold:
     family: Iosevka
-    style:  Bold
+    style: Bold
   bold_italic:
     family: Iosevka
     style: Bold Italic
@@ -33,8 +33,8 @@ mouse:
 
 colors:
   primary:
-    foreground: '#C6D5CF'
-    background: '#181818'
+    foreground: "#C6D5CF"
+    background: "#181818"
   normal:
     black: "#32344a"
     red: "#f7768e"
@@ -62,9 +62,9 @@ selection:
 
 key_bindings:
   # Remaps copy shortcut
-  - { key: C, mods: Alt, action: Copy}
+  - { key: C, mods: Alt, action: Copy }
   # Remaps paste shortcut
-  - { key: V, mods: Alt, action: Paste}
+  - { key: V, mods: Alt, action: Paste }
   # Create new window in tmux
   - { key: T, mods: Alt, chars: "\x02c" }
   # Close window in tmux
