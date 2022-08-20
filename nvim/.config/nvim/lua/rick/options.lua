@@ -37,7 +37,7 @@ o.sidescrolloff = 8
 o.hidden = true
 o.laststatus = 0
 o.ruler = false
-o.winbar = "%=%m %t - %n"
+-- o.winbar = "%=%m %t - %n"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })

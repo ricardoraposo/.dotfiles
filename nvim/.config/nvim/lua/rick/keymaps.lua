@@ -1,12 +1,10 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 --Shorten function name
 local keymap = vim.keymap.set
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -36,7 +34,7 @@ keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)
 keymap("n", "<M-Left>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<M-Right>", "<cmd>vertical resize -2<CR>", opts)
-keymap("n", "<leader>vs", "<cmd>50vnew<CR><cmd>AutoRun<cr>", opts)
+keymap("n", "<leader>vs", "<cmd>50vnew<CR><cmd>AutoRun<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -48,6 +46,7 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
 keymap("i", "jk", "<ESC>", opts)
+keymap({ "i", "n" }, "<C-s>", "<cmd>w<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -68,18 +67,18 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 
-keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<cr>", opts)
-keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
-keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
-keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
-keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/<cr>", opts)
-keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", opts)
+keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<CR>", opts)
+keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
+keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
+keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", opts)
+keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
+keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/<CR>", opts)
+keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
 -- Better navigation
 
-keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<cr>", opts)
-keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<cr>", opts)
+keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
+keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<CR>", opts)
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
 
