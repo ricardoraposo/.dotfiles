@@ -16,18 +16,18 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka Nerd Font
+    family: Iosevka
     style: Regular
   bold:
-    family: Iosevka Nerd Font
+    family: Iosevka
     style: Bold
   italic:
-    family: Iosevka Nerd Font
+    family: Iosevka
     style: Italic
   bold_italic:
-    family: Iosevka Nerd Font
+    family: Iosevka
     style: Medium Italic
-  size: 15
+  size: 16
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
 
