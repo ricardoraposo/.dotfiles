@@ -25,6 +25,24 @@ configs.setup({
     }, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   },
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = "o",
+      toggle_hl_groups = "i",
+      toggle_injected_languages = "t",
+      toggle_anonymous_nodes = "a",
+      toggle_language_display = "I",
+      focus_language = "f",
+      unfocus_language = "F",
+      update = "R",
+      goto_node = "<cr>",
+      show_help = "?",
+    },
+  },
 })
 
 local status_ok, npairs = pcall(require, "nvim-autopairs")
@@ -78,38 +96,3 @@ require("nvim_comment").setup({
   -- Hook function to call before commenting takes place
   hook = nil,
 })
-
--- require("Comment").setup({
---   padding = true,
---   sticky = true,
---   ignore = nil,
---   toggler = {
---     ---Line-comment toggle keymap
---     line = "gcc",
---     ---Block-comment toggle keymap
---     block = "gbc",
---   },
---   opleader = {
---     ---Line-comment keymap
---     line = "gc",
---     ---Block-comment keymap
---     block = "gb",
---   },
---   extra = {
---     ---Add comment on the line above
---     above = "gcO",
---     ---Add comment on the line below
---     below = "gco",
---     ---Add comment at the end of line
---     eol = "gcA",
---   },
---
---   mappings = {
---     basic = true,
---     extra = true,
---     extended = false,
---   },
---
---   pre_hook = nil,
---   post_hook = nil,
--- })

@@ -47,3 +47,7 @@ vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 vim.cmd("colorscheme benjamin")
+
+vim.api.nvim_set_hl(0, "LINENR", {
+	fg = "#41a7fc",
+})

@@ -13,7 +13,7 @@ scrolling:
 font:
   normal:
     family: Iosevka
-    style: Medium
+    style: Semibold
   italic:
     family: Iosevka
     style: Italic
@@ -32,7 +32,7 @@ mouse:
 colors:
   primary:
     foreground: "#C6D5CF"
-    background: "#000000"
+    background: "#181818"
   normal:
     black: "#000000"
     red: "#f7768e"
