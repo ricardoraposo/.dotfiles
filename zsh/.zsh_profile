@@ -3,7 +3,7 @@ fd(){
     
 }
 
-alias t="tmux"
+alias t="env TERM=screen-256color tmux"
 alias v="nvim"
 
 bindkey -s ^V "v .^M"

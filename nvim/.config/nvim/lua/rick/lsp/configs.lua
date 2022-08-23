@@ -17,7 +17,7 @@ local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "sumneko_lua", "tsserver", "html", "cssls", "emmet_ls", "tailwindcss", "prismals", "gopls" }
+local servers = { "sumneko_lua", "tsserver", "html", "cssls", "emmet_ls", "tailwindcss", "prismals", "gopls", "volar" }
 
 mason.setup({
 	ui = {
