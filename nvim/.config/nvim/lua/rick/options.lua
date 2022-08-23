@@ -42,6 +42,8 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
 
+vim.cmd("set t_ZH=^[[3m")
+vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
