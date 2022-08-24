@@ -16,17 +16,17 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: PragmataPro
     style: Regular
   bold:
-    family: Iosevka
+    family: PragmataPro
     style: Bold
   italic:
-    family: Iosevka
+    family: PragmataPro
     style: Italic
   bold_italic:
-    family: Iosevka
-    style: Medium Italic
+    family: PragmataPro
+    style: Bold Italic
   size: 16
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
