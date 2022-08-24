@@ -48,8 +48,6 @@ return packer.startup(function(use)
   use("akinsho/toggleterm.nvim")
 
   -- Greatest colorscheme ever created
-  use("gruvbox-community/gruvbox")
-  use("gavinok/spaceway.vim")
   use("ricardoraposo/benjamin.nvim")
 
   -- cmp plugins
