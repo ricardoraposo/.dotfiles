@@ -109,7 +109,7 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
       padding = " ",
       symlink_arrow = " ➛ ",
       show = {
-        file = false,
+        file = true,
         folder = true,
         folder_arrow = true,
         git = true,
