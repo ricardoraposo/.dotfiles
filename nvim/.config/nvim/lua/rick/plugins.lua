@@ -4,129 +4,130 @@ local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-  print("Installing packer close and reopen Neovim...")
-  vim.cmd([[packadd packer.nvim]])
+	PACKER_BOOTSTRAP = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	print("Installing packer close and reopen Neovim...")
+	vim.cmd([[packadd packer.nvim]])
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
-  pattern = "plugins.lua",
-  command = "so % | PackerSync",
+	group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
+	pattern = "plugins.lua",
+	command = "so % | PackerSync",
 })
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+	return
 end
 
 -- Have packer use a popup window
 packer.init({
-  display = {
-    open_fn = function()
-      return require("packer.util").float({ border = "rounded" })
-    end,
-  },
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
 })
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use("wbthomason/packer.nvim") -- Have packer manage itself
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-  use("akinsho/toggleterm.nvim")
+	-- My plugins here
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("akinsho/toggleterm.nvim")
 
-  -- Greatest colorscheme ever created
-  use("ricardoraposo/benjamin.nvim")
+	-- Greatest colorscheme ever created
+	use("ricardoraposo/benjamin.nvim")
+	use("morhetz/gruvbox")
 
-  -- cmp plugins
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-nvim-lua")
-  use("saadparwaiz1/cmp_luasnip")
-  use({ "tzachar/cmp-tabnine", run = "./install.sh" })
-  use("onsails/lspkind-nvim")
+	-- cmp plugins
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-nvim-lua")
+	use("saadparwaiz1/cmp_luasnip")
+	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
+	use("onsails/lspkind-nvim")
 
-  -- snippets
-  use("L3MON4D3/LuaSnip")
+	-- snippets
+	use("L3MON4D3/LuaSnip")
 
-  -- LSP
-  use("neovim/nvim-lspconfig")
-  use({
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  })
-  use("jose-elias-alvarez/null-ls.nvim")
+	-- LSP
+	use("neovim/nvim-lspconfig")
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	})
+	use("jose-elias-alvarez/null-ls.nvim")
 
-  -- Telescope & Harpoon
-  use("nvim-telescope/telescope.nvim")
-  use("ThePrimeagen/harpoon")
+	-- Telescope & Harpoon
+	use("nvim-telescope/telescope.nvim")
+	use("ThePrimeagen/harpoon")
 
-  -- Nvim Tree
-  use({
-    "kyazdani42/nvim-tree.lua",
-    branch = "master",
-    requires = {
-      "kyazdani42/nvim-web-devicons", -- optional, for file icons
-    },
-    tag = "nightly", -- optional, updated every week. (see issue #1193)
-  })
+	-- Nvim Tree
+	use({
+		"kyazdani42/nvim-tree.lua",
+		branch = "master",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icons
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
 
-  -- Treesitter
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
-  use("p00f/nvim-ts-rainbow")
-  use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-  use("windwp/nvim-ts-autotag")
-  use("nvim-treesitter/playground")
+	-- Treesitter
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
+	use("p00f/nvim-ts-rainbow")
+	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("windwp/nvim-ts-autotag")
+	use("nvim-treesitter/playground")
 
-  -- Comments Plugin
-  use("JoosepAlviste/nvim-ts-context-commentstring")
-  use({
-    "terrortylor/nvim-comment",
-    config = function()
-      require("nvim_comment").setup({
-        hook = function()
-          require("ts_context_commentstring.internal").update_commentstring()
-        end,
-      })
-    end,
-  })
+	-- Comments Plugin
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({
+		"terrortylor/nvim-comment",
+		config = function()
+			require("nvim_comment").setup({
+				hook = function()
+					require("ts_context_commentstring.internal").update_commentstring()
+				end,
+			})
+		end,
+	})
 
-  -- Git stuff
-  use("TimUntersberger/neogit")
+	-- Git stuff
+	use("TimUntersberger/neogit")
 
-  -- Org mode sucks
-  use({
-    "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = "~/Wiki",
-        },
-      }
-    end,
-  })
-  use("itchyny/calendar.vim")
+	-- Org mode sucks
+	use({
+		"vimwiki/vimwiki",
+		config = function()
+			vim.g.vimwiki_list = {
+				{
+					path = "~/Wiki",
+				},
+			}
+		end,
+	})
+	use("itchyny/calendar.vim")
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
