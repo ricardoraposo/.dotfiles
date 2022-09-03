@@ -20,6 +20,17 @@ ls.add_snippets("javascript", {
 		)
 	),
 	s(
+		"mod",
+		fmt(
+			[[
+    module.exports = {{
+      {1}
+    }}
+    ]],
+			{ i(1) }
+		)
+	),
+	s(
 		"afc",
 		fmt(
 			[[

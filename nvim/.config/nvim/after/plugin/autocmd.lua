@@ -40,3 +40,10 @@ vim.api.nvim_create_autocmd("BufRead", {
 	group = vim.api.nvim_create_augroup("set_formatoptions", { clear = true }),
 	command = "set formatoptions-=cro",
 })
+
+-- Adds colorcoumns to c/cpp files
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+-- 	group = vim.api.nvim_create_augroup("add_color_column", { clear = true }),
+-- 	pattern = { "*.c", "*.h", "*.cpp", "*.hpp" },
+-- 	command = "set colorcolumn=80",
+-- })

@@ -17,44 +17,21 @@ scrolling:
 font:
   normal:
     family: Iosevka
-    style: Regular
+    style: Light
   bold:
     family: Iosevka
-    style: Bold
+    style: Medium
   italic:
     family: Iosevka
     style: Italic
   bold_italic:
     family: Iosevka
-    style: Bold Italic
-  size: 15.5
+    style: Medium Italic
+  size: 13.5
 draw_bold_text_with_bright_colors: true
 
 mouse:
   hide_when_typing: true
-
-colors:
-  primary:
-    foreground: "#C6D5CF"
-    background: "#181818"
-  normal:
-    black: "#000000"
-    red: "#f7768e"
-    green: "#9ece6a"
-    yellow: "#e0af68"
-    blue: "#f0eded"
-    magenta: "#ad8ee6"
-    cyan: "#449dab"
-    white: "#787c99"
-  bright:
-    black: "#444b6a"
-    red: "#ff7a93"
-    green: "#f0eded"
-    yellow: "#ff9e64"
-    blue: "#f0eded"
-    magenta: "#ffffff"
-    cyan: "#ffffff"
-    white: "#acb0d0"
 
 selection:
   save_to_clipboard: true

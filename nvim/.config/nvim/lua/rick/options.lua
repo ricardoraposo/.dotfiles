@@ -24,23 +24,34 @@ o.undofile = true
 o.updatetime = 50
 o.writebackup = false
 o.expandtab = true
-o.shiftwidth = 2
-o.tabstop = 2
+o.shiftwidth = 4
+o.tabstop = 4
+o.softtabstop = 4
 o.cursorline = true
 o.number = true
 o.relativenumber = true
 o.numberwidth = 2
 o.signcolumn = "no"
+o.laststatus = 2
+o.statusline = "%#LineNr#%f %m"
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.hidden = true
-o.laststatus = 0
 o.ruler = false
--- o.winbar = "%=%m %t - %n"
+o.colorcolumn = "80"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
+
+-- Colorscheme config
+vim.g.gruvbox_italic = 1
+vim.g.gruvbox_contrast_dark = "medium"
+vim.cmd("colorscheme base16-tomorrow-night")
+vim.cmd("syntax on")
+vim.api.nvim_set_hl(0, "CursorLine", { fg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNR", { bg = "none", fg = "#fabd2f" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 
 vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
@@ -48,4 +59,3 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
-vim.cmd("colorscheme benjamin")

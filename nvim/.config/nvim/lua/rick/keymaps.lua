@@ -28,6 +28,7 @@ keymap("i", "<Right>", "<nop>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<S-h>", "<C-w>h", opts)
 keymap("n", "<S-l>", "<C-w>l", opts)
+keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -69,6 +70,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
@@ -85,6 +87,8 @@ keymap({ "n", "v", "x" }, "}", "{", opts)
 -- Greatest remaps
 
 keymap("n", "G", "Gzz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>y", '"+ym', opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
@@ -97,6 +101,7 @@ vim.cmd("inoremap ? ?<c-g>u")
 
 -- I'm dumb and I type stuff wrong too much
 
+vim.cmd(":command WQ wq")
 vim.cmd(":command Wq wq")
 vim.cmd(":command W w")
 vim.cmd(":command Q q")

@@ -1,10 +1,10 @@
 # TODO: https://github.com/koekeishiya/yabai/issues/725
 
 # focus window
-alt - h : yabai -m window --focus west
+alt - h :yabai -m window --focus west || yabai -m display --focus west 
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+alt - l :yabai -m window --focus east || yabai -m display --focus east 
 
 # swap managed window
 shift + alt - h : yabai -m window --swap west
@@ -58,14 +58,14 @@ shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
 
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-shift + alt - n : yabai -m space --create && \
-                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
-                   yabai -m window --space "${index}" && \
-                   yabai -m space --focus "${index}"
+# shift + alt - n : yabai -m space --create && \
+#                    index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+#                    yabai -m window --space "${index}" && \
+#                    yabai -m space --focus "${index}"
 
 # fast focus desktop
 alt - tab : yabai -m space --focus recent
 
 # send window to monitor and follow focus
-shift + alt - n : yabai -m window --display next; yabai -m display --focus next
+# shift + alt - n : yabai -m window --display next; yabai -m display --focus next
 shift + alt - p : yabai -m window --display previous; yabai -m display --focus previous# TODO: https://github.com/koekeishiya/yabai/issues/725
