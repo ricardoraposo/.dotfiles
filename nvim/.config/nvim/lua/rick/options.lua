@@ -33,12 +33,12 @@ o.relativenumber = true
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
-o.statusline = "%#LineNr#%f %m"
+-- o.statusline = "%#LineNr#%f %m %=%r"
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.hidden = true
-o.ruler = false
+o.ruler = true
 o.colorcolumn = "80"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
