@@ -27,8 +27,7 @@ font:
   bold_italic:
     family: Iosevka
     style: Medium Italic
-  size: 13.5
-draw_bold_text_with_bright_colors: true
+  size: 14.5
 
 mouse:
   hide_when_typing: true

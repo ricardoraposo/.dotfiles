@@ -51,7 +51,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+b exec brave
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu
@@ -186,6 +186,10 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bar {
+status_command i3status
+}
+
 bindsym $mod+r mode "resize"
 
 # bindsym Print exec scrot -s $HOME/Pictures/prints/`date +%Y-%m-%d_%H:%M:%S`.png
@@ -194,12 +198,8 @@ bindsym Print exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboar
 gaps inner 10
 gaps outer 5
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# client.focused #555555 #555555 #ffffff #2e9ef4     #CC0000
+client.focused #555555 #555555 #ffffff #2e9ef4     #CC0000
 
 for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
-
-exec --no-startup-id feh --bg-fill --randomize ~/.dotfiles/wallpapers/Pictures/
-exec --no-startup-id picom --experimental-backends -b
