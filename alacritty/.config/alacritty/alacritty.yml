@@ -7,7 +7,7 @@ window:
     instance: Alacritty
     general: Alacritty
   opacity: 1
-  decorations: Buttonless
+  decorations: Full
   startup_mode: Windowed
 
 scrolling:
@@ -16,18 +16,12 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
-    style: Light
-  bold:
-    family: Iosevka
-    style: Medium
+    family: Pragmata Pro Mono
+    style: Regular
   italic:
-    family: Iosevka
+    family: Pragmata Pro Mono
     style: Italic
-  bold_italic:
-    family: Iosevka
-    style: Medium Italic
-  size: 14.5
+  size: 15
 
 mouse:
   hide_when_typing: true
