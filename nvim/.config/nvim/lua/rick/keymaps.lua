@@ -77,6 +77,11 @@ keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", o
 keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/<CR>", opts)
 keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
+-- Compile commands
+
+keymap("n", "<leader>cc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
+keymap("n", "<leader>cr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and runke
+
 -- Better navigation
 
 keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
