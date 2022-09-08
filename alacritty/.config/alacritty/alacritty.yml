@@ -7,7 +7,7 @@ window:
     instance: Alacritty
     general: Alacritty
   opacity: 1
-  decorations: Full
+  decorations: buttonless
   startup_mode: Windowed
 
 scrolling:
@@ -16,10 +16,10 @@ scrolling:
 
 font:
   normal:
-    family: Pragmata Pro Mono
+    family: PragmataPro
     style: Regular
   italic:
-    family: Pragmata Pro Mono
+    family: PragmataPro
     style: Italic
   size: 15
 

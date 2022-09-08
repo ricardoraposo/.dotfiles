@@ -1,7 +1,0 @@
-require("rick.snippets.luasnip")
-require("rick.snippets.lua")
-require("rick.snippets.javascript")
-require("rick.snippets.typescript")
-require("rick.snippets.javascriptreact")
-require("rick.snippets.typescriptreact")
-require("rick.snippets.go")

@@ -1,6 +1,5 @@
 fd(){
-  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/Project/Study/notes ~/Project/Study/udemy ~/Project/Study/frontend-masters ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
-    
+  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
 }
 
 alias t="env TERM=screen-256color tmux"
@@ -10,5 +9,5 @@ bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
 bindkey -s ^B "cd ~/.config/nvim^M"
 bindkey -s ^N "v ~/.config/nvim/init.lua^M"
-bindkey -s ^T "fd^M"
-bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
+bindkey -s ^F "fd^M"
+# bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"

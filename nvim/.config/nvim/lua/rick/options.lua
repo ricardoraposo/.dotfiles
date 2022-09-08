@@ -46,6 +46,7 @@ o.clipboard:append({ "unnamedplus" })
 
 -- Colorscheme config
 vim.g.gruvbox_italic = 1
+vim.g.gruvbox_bold = 0
 vim.g.gruvbox_contrast_dark = "medium"
 vim.cmd("colorscheme base16-tomorrow-night")
 vim.cmd("syntax on")
