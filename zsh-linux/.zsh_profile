@@ -3,10 +3,15 @@ fd(){
 }
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+
     export PATH=/usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin:$PATH
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 elif [[  "$OSTYPE" == "darwin"* ]]; then
+
+    export GOPATH="/Users/ricardo/go"
+    export PATH="$PATH:$(go env GOPATH)/bin"
+
     alias love="/Applications/love.app/Contents/MacOS/love"
 fi
 
