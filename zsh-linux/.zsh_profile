@@ -1,17 +1,25 @@
 fd(){
-  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/Project/Study/notes ~/Project/Study/udemy ~/Project/Study/frontend-masters ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
-    
+  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
 }
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export PATH=/usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin:$PATH
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+elif [[  "$OSTYPE" == "darwin"* ]]; then
+    alias love="/Applications/love.app/Contents/MacOS/love"
+fi
+
+
 alias t="env TERM=screen-256color tmux"
 alias v="nvim"
 
+bindkey ^E forward-word
+bindkey ^B backward-word
+bindkey ^K kill-word
+
 bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
-bindkey -s ^B "cd ~/.config/nvim^M"
-bindkey -s ^N "v ~/.config/nvim/init.lua^M"
-bindkey -s ^T "fd^M"
-bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
-bindkey -s ^Q "btm^M"
+bindkey -s ^N "cd ~/.config/nvim^M"
+bindkey -s ^F "fd^M"
+# bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
