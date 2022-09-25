@@ -47,9 +47,9 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("akinsho/toggleterm.nvim")
 
-	-- Greatest colorscheme ever created
+	-- Greatest colorschemes ever created
 	use("ricardoraposo/benjamin.nvim")
-	use("chriskempson/base16-vim")
+	use("rebelot/kanagawa.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")

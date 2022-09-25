@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["base16-vim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/base16-vim",
-    url = "https://github.com/chriskempson/base16-vim"
-  },
   ["benjamin.nvim"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/benjamin.nvim",
@@ -128,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
