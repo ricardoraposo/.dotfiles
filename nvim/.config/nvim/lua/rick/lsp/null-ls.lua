@@ -44,8 +44,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.stylua,
-		formatting.prettier,
+		formatting.prettierd,
 		formatting.goimports,
+		formatting.swiftformat,
 		-- diagnostics.eslint_d,
 	},
 	on_attach = function(client, bufnr)

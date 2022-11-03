@@ -35,7 +35,8 @@ keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)
 keymap("n", "<M-Left>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<M-Right>", "<cmd>vertical resize -2<CR>", opts)
-keymap("n", "<leader>vs", "<cmd>50vnew<CR><cmd>AutoRun<CR>", opts)
+keymap("n", "<leader>vv", "<cmd>vnew<CR>", opts)
+keymap("n", "<leader>vh", "<cmd>new<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -74,8 +75,13 @@ keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
-keymap("n", "<leader>dp", "<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/<CR>", opts)
 keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
+
+-- Rest Nvim
+
+keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
+keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
+keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
 
 -- Compile
 
@@ -88,6 +94,10 @@ keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
 keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<CR>", opts)
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
+
+-- Custom commands that I copied from the internet but I pretend I made them
+
+keymap("n", "<leader>tw", "<cmd>lua require'rick.custom'.add_or_insert_class_attribute()<CR>", opts)
 
 -- Greatest remaps
 

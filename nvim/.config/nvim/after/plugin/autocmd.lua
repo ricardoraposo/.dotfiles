@@ -8,7 +8,7 @@
 -- 					vim.api.nvim_buf_set_lines(output_bufnr, -1, -1, false, data)
 -- 				end
 -- 			end
--- 
+--
 -- 			vim.api.nvim_buf_set_lines(output_bufnr, 0, -1, false, { "Code output: " })
 -- 			vim.fn.jobstart(command, {
 -- 				stdout_buffered = true,
@@ -20,25 +20,32 @@
 -- end
 
 vim.api.nvim_create_user_command("AutoRun", function()
-	print("AutoRun starts now")
-	-- local bufnr = vim.fn.input("Bufnr: ")
-	local bufnr = vim.api.nvim_get_current_buf()
-	local pattern = vim.fn.input("Pattern: ")
-	local command = vim.split(vim.fn.input("Command: "), " ")
-	attach_to_buffer(tonumber(bufnr), pattern, command)
+    print("AutoRun starts now")
+    -- local bufnr = vim.fn.input("Bufnr: ")
+    local bufnr = vim.api.nvim_get_current_buf()
+    local pattern = vim.fn.input("Pattern: ")
+    local command = vim.split(vim.fn.input("Command: "), " ")
+    attach_to_buffer(tonumber(bufnr), pattern, command)
 end, {})
 
 -- remove number column on wiki files
 vim.api.nvim_create_autocmd("BufAdd", {
-	group = vim.api.nvim_create_augroup("remove_nu", { clear = true }),
-	pattern = "*.wiki",
-	command = "set nonu | set nornu",
+    group = vim.api.nvim_create_augroup("remove_nu", { clear = true }),
+    pattern = "*.wiki",
+    command = "set nonu | set nornu",
+})
+
+-- set tabstop for 4 spaces in swift files
+vim.api.nvim_create_autocmd("BufAdd", {
+    group = vim.api.nvim_create_augroup("remove_nu", { clear = true }),
+    pattern = "*.swift",
+    command = "set nonu | set nornu",
 })
 
 -- Attach format options on buffer creation
 vim.api.nvim_create_autocmd("BufRead", {
-	group = vim.api.nvim_create_augroup("set_formatoptions", { clear = true }),
-	command = "set formatoptions-=cro",
+    group = vim.api.nvim_create_augroup("set_formatoptions", { clear = true }),
+    command = "set formatoptions-=cro",
 })
 
 -- Adds colorcoumns to c/cpp files

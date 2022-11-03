@@ -153,3 +153,9 @@ require("treesitter-context").setup({
     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
     separator = nil,
 })
+
+require("nvim_comment").setup({
+    hook = function()
+        require("ts_context_commentstring.internal").update_commentstring()
+    end,
+})

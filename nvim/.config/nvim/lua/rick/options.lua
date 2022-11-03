@@ -33,12 +33,13 @@ o.relativenumber = true
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
--- o.statusline = "%#LineNr#%f %m %=%r"
+-- o.statusline = "%#Normal#%f %m %=%r "
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.hidden = true
 o.ruler = true
+o.rulerformat = "%28(%{strftime('%H:%M %p')}%5l,%-6(%c%V%) %P%)"
 -- o.colorcolumn = "80"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
@@ -51,10 +52,10 @@ vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 
--- Colorscheme config
+--- Default options:
+require("kanagawa").setup({
+    transparent = true,
+})
 
 vim.cmd.colorscheme("kanagawa")
 vim.cmd("syntax on")
-vim.api.nvim_set_hl(0, "CursorLine", { fg = "none" })
-vim.api.nvim_set_hl(0, "CursorLineNR", { bg = "none", fg = "#fabd2f" })
-vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })

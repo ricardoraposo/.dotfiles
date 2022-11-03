@@ -79,16 +79,6 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["benjamin.nvim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/benjamin.nvim",
-    url = "https://github.com/ricardoraposo/benjamin.nvim"
-  },
-  ["calendar.vim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/calendar.vim",
-    url = "https://github.com/itchyny/calendar.vim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -160,7 +150,6 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-comment"] = {
-    config = { "\27LJ\2\n^\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\25update_commentstring&ts_context_commentstring.internal\frequireO\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\thook\1\0\0\0\nsetup\17nvim_comment\frequire\0" },
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
@@ -195,6 +184,11 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -214,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/NTBBloodbath/rest.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -238,10 +237,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for vimwiki]], true)
 try_loadstring("\27LJ\2\nE\0\0\3\0\4\0\a6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0K\0\1\0\1\0\1\tpath\v~/Wiki\17vimwiki_list\6g\bvim\0", "config", "vimwiki")
 time([[Config for vimwiki]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-try_loadstring("\27LJ\2\n^\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\25update_commentstring&ts_context_commentstring.internal\frequireO\1\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0003\3\3\0=\3\5\2B\0\2\1K\0\1\0\thook\1\0\0\0\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
-time([[Config for nvim-comment]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

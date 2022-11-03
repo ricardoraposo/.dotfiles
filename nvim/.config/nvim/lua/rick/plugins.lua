@@ -45,10 +45,9 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	use("akinsho/toggleterm.nvim")
+	use("akinsho/toggleterm.nvim") -- Terminal inside vim
 
-	-- Greatest colorschemes ever created
-	use("ricardoraposo/benjamin.nvim")
+	-- Greatest colorscheme
 	use("rebelot/kanagawa.nvim")
 
 	-- cmp plugins
@@ -79,6 +78,9 @@ return packer.startup(function(use)
 	-- Nvim Tree
 	use({
 		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
 		branch = "master",
 	})
 
@@ -94,16 +96,11 @@ return packer.startup(function(use)
 
 	-- Comments Plugin
 	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use({
-		"terrortylor/nvim-comment",
-		config = function()
-			require("nvim_comment").setup({
-				hook = function()
-					require("ts_context_commentstring.internal").update_commentstring()
-				end,
-			})
-		end,
-	})
+	use("terrortylor/nvim-comment")
+
+	-- Api stuff
+
+	use("NTBBloodbath/rest.nvim")
 
 	-- Git stuff
 	use("TimUntersberger/neogit")
@@ -119,7 +116,6 @@ return packer.startup(function(use)
 			}
 		end,
 	})
-	use("itchyny/calendar.vim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
