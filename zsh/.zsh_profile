@@ -18,6 +18,7 @@ fi
 
 alias t="env TERM=screen-256color tmux"
 alias v="nvim"
+alias k="v ~/.config/kitty/kitty.conf"
 
 bindkey ^E forward-word
 bindkey ^B backward-word
@@ -25,6 +26,16 @@ bindkey ^K kill-word
 
 bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
-bindkey -s ^N "cd ~/.config/nvim^M"
+bindkey -s ^U "cd ~/.config/nvim^M"
 bindkey -s ^F "fd^M"
 # bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
+
+alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
+        
+alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -appIcon '~/Pictures/pumpkin.png'\
+        -sound Crystal"
