@@ -1,5 +1,5 @@
 fd(){
-  DIR= `find ~/.config ~/Project ~/Project/Repos ~/Project/Study ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
+  DIR= `find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe ~/notes ~/ -mindepth 1 -maxdepth 1 -type d | fzf` && cd "$DIR"
 }
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -28,6 +28,7 @@ bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
 bindkey -s ^U "cd ~/.config/nvim^M"
 bindkey -s ^F "fd^M"
+bindkey -s ^G "fodase"
 # bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
 
 alias work="timer 60m && terminal-notifier -message 'Pomodoro'\

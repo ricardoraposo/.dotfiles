@@ -78,6 +78,7 @@ cmp.setup({
         { name = "luasnip" },
         { name = "buffer", keyword_length = 6 },
         { name = "path" },
+        { name = "neorg" },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

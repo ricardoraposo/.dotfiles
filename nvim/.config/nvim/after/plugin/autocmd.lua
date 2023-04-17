@@ -35,12 +35,11 @@ vim.api.nvim_create_autocmd("BufAdd", {
     command = "set nonu | set nornu",
 })
 
--- set tabstop for 4 spaces in swift files
-vim.api.nvim_create_autocmd("BufAdd", {
-    group = vim.api.nvim_create_augroup("remove_nu", { clear = true }),
-    pattern = "*.swift",
-    command = "set nonu | set nornu",
-})
+-- vim.api.nvim_create_autocmd("BufAdd", {
+--     group = vim.api.nvim_create_augroup("remove_nu", { clear = true }),
+--     pattern = "*.rs",
+--     command = "colorscheme kanagawa",
+-- })
 
 -- Attach format options on buffer creation
 vim.api.nvim_create_autocmd("BufRead", {
@@ -48,9 +47,4 @@ vim.api.nvim_create_autocmd("BufRead", {
     command = "set formatoptions-=cro",
 })
 
--- Adds colorcoumns to c/cpp files
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
--- 	group = vim.api.nvim_create_augroup("add_color_column", { clear = true }),
--- 	pattern = { "*.c", "*.h", "*.cpp", "*.hpp" },
--- 	command = "set colorcolumn=80",
--- })
+vim.cmd("autocmd BufReadPost,FileReadPost * normal zR")

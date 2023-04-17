@@ -13,12 +13,13 @@ if not status3 then
     return
 end
 
+require("fidget").setup {}
 local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     "html",
     "cssls",
@@ -29,7 +30,7 @@ local servers = {
     "prismals",
     "gopls",
     "rust_analyzer",
-    "sourcekit",
+    "clangd",
 }
 
 mason.setup({
@@ -57,7 +58,7 @@ for _, server in pairs(servers) do
     lspconfig[server].setup(opts)
 end
 
-require("lspconfig").clangd.setup({
+lspconfig.clangd.setup({
     on_attach = on_attach,
     cmd = {
         "clangd",
