@@ -48,6 +48,9 @@ return packer.startup(function(use)
     use("akinsho/toggleterm.nvim") -- Terminal inside vim
     use("lambdalisue/battery.vim") -- Adds battery percentage of laptop to statusline
 
+    -- Colorschemes
+    use("Mofiqul/vscode.nvim")
+
     -- cmp plugins
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-nvim-lsp")
