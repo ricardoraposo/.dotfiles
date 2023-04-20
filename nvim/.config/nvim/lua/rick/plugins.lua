@@ -72,9 +72,11 @@ return packer.startup(function(use)
     })
     use("j-hui/fidget.nvim")
     use("jose-elias-alvarez/null-ls.nvim")
+    use("mfussenegger/nvim-jdtls")
 
     -- TJ & Prime
     use("nvim-telescope/telescope.nvim")
+    use("nvim-telescope/telescope-ui-select.nvim")
     use("ThePrimeagen/harpoon")
 
     -- Nvim Tree
@@ -102,15 +104,6 @@ return packer.startup(function(use)
 
     -- Api stuff
     use("NTBBloodbath/rest.nvim")
-
-    -- Easier movements
-    use({
-        "phaazon/hop.nvim",
-        branch = "v2", -- optional but strongly recommended
-        config = function()
-            require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-        end,
-    })
 
     -- Git stuff
     use("TimUntersberger/neogit")

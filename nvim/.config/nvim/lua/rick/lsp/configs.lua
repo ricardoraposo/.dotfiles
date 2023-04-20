@@ -31,7 +31,6 @@ local servers = {
     "gopls",
     "rust_analyzer",
     "clangd",
-    "jdtls",
 }
 
 mason.setup({
