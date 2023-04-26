@@ -80,9 +80,7 @@ keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false c
 
 -- Rest Nvim
 
-keymap("n", "<leader>rr", "<Plug>RestNvim", opts)
-keymap("n", "<leader>rp", "<Plug>RestNvimPreview", opts)
-keymap("n", "<leader>rl", "<Plug>RestNvimLast", opts)
+keymap("n", "<leader>rr", "<Plug>HurlRun", opts)
 
 -- Org mode
 
@@ -92,8 +90,9 @@ keymap("n", "<leader>dl", "<cmd>Telescope neorg insert_file_link<CR>", opts)
 
 -- Compile
 
-keymap("n", "<leader>cc", "<cmd>!g++ -g % -o %:r<CR>", opts)           -- Compile cpp
-keymap("n", "<leader>cp", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run
+keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
+keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
+keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts) -- Compile Java
 
 -- Better navigation
 

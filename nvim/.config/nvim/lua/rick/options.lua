@@ -34,7 +34,7 @@ o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
 o.statusline =
-"%#Normal#%f %m %=%r %= %{battery#sign()} %{battery#value()}%%   %28(%{strftime('%H:%M:%S %p')} %5l,%-6(%c%V%) %P%)"
+	"%#Normal#%f %m %=%r %= %{battery#sign()} %{battery#value()}%%   %28(%{strftime('%H:%M:%S %p')} %5l,%-6(%c%V%) %P%)"
 o.ruler = false
 o.wrap = false
 o.scrolloff = 8
@@ -52,5 +52,5 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
-vim.cmd.colorscheme("vscode")
+vim.cmd.colorscheme("melange")
 vim.cmd("syntax on")

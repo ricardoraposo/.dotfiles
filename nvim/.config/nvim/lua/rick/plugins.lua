@@ -47,9 +47,10 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim")   -- Useful lua functions used ny lots of plugins
     use("akinsho/toggleterm.nvim") -- Terminal inside vim
     use("lambdalisue/battery.vim") -- Adds battery percentage of laptop to statusline
+    use("gelguy/wilder.nvim")
 
     -- Colorschemes
-    use("Mofiqul/vscode.nvim")
+    use("savq/melange-nvim")
 
     -- cmp plugins
     use("hrsh7th/nvim-cmp")
@@ -57,6 +58,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-nvim-lua")
+    use("github/copilot.vim")
     -- use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 
     -- snippets
@@ -102,11 +104,11 @@ return packer.startup(function(use)
     use("JoosepAlviste/nvim-ts-context-commentstring")
     use("terrortylor/nvim-comment")
 
-    -- Api stuff
-    use("NTBBloodbath/rest.nvim")
-
     -- Git stuff
     use("TimUntersberger/neogit")
+
+    -- API stuff
+    use("ray-x/web-tools.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

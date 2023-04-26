@@ -43,6 +43,7 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
     debug = false,
     sources = {
+        formatting.jq,
         formatting.stylua,
         formatting.prettier,
         formatting.goimports,

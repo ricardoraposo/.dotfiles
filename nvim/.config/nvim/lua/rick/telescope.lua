@@ -94,3 +94,11 @@ telescope.setup({
 })
 
 require("telescope").load_extension("ui-select")
+
+local wilder = require("wilder")
+
+wilder.setup({
+    modes = { ":", "/", "?" },
+    next_key = "<C-n>",
+    previous_key = "<C-p>",
+})
