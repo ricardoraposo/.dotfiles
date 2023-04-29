@@ -67,7 +67,7 @@ map alt+backspace       restore_font_size
 hide_window_decorations yes
 confirm_os_window_close 0
 macos_option_as_alt no
-# macos_titlebar_color background
+macos_titlebar_color background
 allow_remote_control yes
 
 # color shit
