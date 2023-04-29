@@ -76,9 +76,10 @@ return packer.startup(function(use)
   use("jose-elias-alvarez/null-ls.nvim")
   use("mfussenegger/nvim-jdtls")
 
-  -- TJ & Prime
+  -- Telescope & Harpoon
   use("nvim-telescope/telescope.nvim")
   use("nvim-telescope/telescope-ui-select.nvim")
+  use("debugloop/telescope-undo.nvim")
   use("ThePrimeagen/harpoon")
 
   -- Nvim Tree
@@ -105,7 +106,7 @@ return packer.startup(function(use)
   use("terrortylor/nvim-comment")
 
   -- Git stuff
-  use("TimUntersberger/neogit")
+  use("tpope/vim-fugitive")
 
   -- API stuff
   use("ray-x/web-tools.nvim")

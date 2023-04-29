@@ -75,6 +75,7 @@ keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", o
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
+keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
 keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
