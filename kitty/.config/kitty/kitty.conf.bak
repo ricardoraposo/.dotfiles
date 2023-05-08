@@ -1,8 +1,6 @@
 # font shit
-font_family        Fira Code Light
-bold_font          FiraCode Nerd Font Retina 
-font_size          14
-disable_ligatures always
+font_family        Monaco
+font_size          14.5
 
 # Cursor shit and stuff I have no idea of what it does 
 cursor_shape     block
@@ -25,7 +23,7 @@ enable_audio_bell no
 
 # Url shit
 open_url_modifiers cmd
-open_url_with brave
+open_url_with google-chrome
 
 # no idea of what this does
 term xterm-kitty
@@ -67,12 +65,11 @@ map alt+backspace       restore_font_size
 hide_window_decorations yes
 confirm_os_window_close 0
 macos_option_as_alt no
-macos_titlebar_color background
+# macos_titlebar_color background
 allow_remote_control yes
 
 # color shit
-# background #1e1e1e
-background #292522
+background #1d2021
 foreground #d9d7ce
 cursor #ffcc66
 selection_background #343f4c

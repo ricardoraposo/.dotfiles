@@ -42,45 +42,44 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use("wbthomason/packer.nvim")  -- Have packer manage itself
-  use("nvim-lua/popup.nvim")     -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim")   -- Useful lua functions used ny lots of plugins
-  use("akinsho/toggleterm.nvim") -- Terminal inside vim
-  use("lambdalisue/battery.vim") -- Adds battery percentage of laptop to statusline
-  use("gelguy/wilder.nvim")
+  use "wbthomason/packer.nvim"   -- Have packer manage itself
+  use "nvim-lua/popup.nvim"      -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"    -- Useful lua functions used ny lots of plugins
+  use "akinsho/toggleterm.nvim"  -- Terminal inside vim
+  use "lambdalisue/battery.vim"  -- Adds battery percentage of laptop to statusline
+  use "ggandor/leap.nvim"        -- Make nav faster when I remember to use it
+  use "gelguy/wilder.nvim"       -- For when I forget wtf I want to type
 
-  -- Colorschemes
-  use("savq/melange-nvim")
+  -- Colorscheme
+  use "ellisonleao/gruvbox.nvim" -- Gruvyyy
 
   -- cmp plugins
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-nvim-lua")
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-nvim-lua"
   -- use("github/copilot.vim")
-  -- use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 
   -- snippets
-  use("L3MON4D3/LuaSnip")
-  use("saadparwaiz1/cmp_luasnip")
-  use("rafamadriz/friendly-snippets")
+  use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
+  use "rafamadriz/friendly-snippets"
 
   -- LSP
-  use("neovim/nvim-lspconfig")
+  use "neovim/nvim-lspconfig"
   use({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   })
-  use("j-hui/fidget.nvim")
-  use("jose-elias-alvarez/null-ls.nvim")
-  use("mfussenegger/nvim-jdtls")
+  use "j-hui/fidget.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "mfussenegger/nvim-jdtls" -- Java bullshit
 
   -- Telescope & Harpoon
-  use("nvim-telescope/telescope.nvim")
-  use("nvim-telescope/telescope-ui-select.nvim")
-  use("debugloop/telescope-undo.nvim")
-  use("ThePrimeagen/harpoon")
+  use "nvim-telescope/telescope.nvim"
+  use "debugloop/telescope-undo.nvim"
+  use "ThePrimeagen/harpoon"
 
   -- Nvim Tree
   use({
@@ -96,20 +95,22 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
-  use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-  use("windwp/nvim-ts-autotag")
-  use("nvim-treesitter/playground")
-  use("nvim-treesitter/nvim-treesitter-context")
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-ts-autotag"
+  use "nvim-treesitter/playground"
+  use "nvim-treesitter/nvim-treesitter-context"
 
   -- Comments Plugin
-  use("JoosepAlviste/nvim-ts-context-commentstring")
-  use("terrortylor/nvim-comment")
+  use "terrortylor/nvim-comment"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git stuff
-  use("tpope/vim-fugitive")
+  use "tpope/vim-fugitive"
 
-  -- API stuff
-  use("ray-x/web-tools.nvim")
+  -- I also want org mode
+  use "nvim-orgmode/orgmode"
+  use "akinsho/org-bullets.nvim"
+  use "ranjithshegde/orgWiki.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

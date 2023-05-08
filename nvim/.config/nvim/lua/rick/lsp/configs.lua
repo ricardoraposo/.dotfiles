@@ -26,7 +26,6 @@ local servers = {
     "jsonls",
     "emmet_ls",
     "tailwindcss",
-    "volar",
     "prismals",
     "gopls",
     "rust_analyzer",

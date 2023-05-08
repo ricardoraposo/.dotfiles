@@ -1,10 +1,6 @@
 local lib = require("nvim-tree.lib")
 local view = require("nvim-tree.view")
 
--- local function collapse_all()
--- 	require("nvim-tree.actions.tree-modifiers.collapse-all").fn()
--- end
-
 -- local function edit_or_open()
 -- 	-- open as vsplit on current node
 -- 	local action = "edit"
@@ -106,13 +102,13 @@ require("nvim-tree").setup({
 	on_attach = on_attach,
 	auto_reload_on_write = true,
 	create_in_closed_folder = false,
-	disable_netrw = false,
+	disable_netrw = true,
 	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
-	open_on_tab = false,
+	open_on_tab = true,
 	sort_by = "type",
-	update_cwd = true,
+	update_cwd = false,
 	reload_on_bufenter = false,
 	respect_buf_cwd = false,
 	view = {
@@ -137,15 +133,6 @@ require("nvim-tree").setup({
 				col = 1,
 			},
 		},
-		-- mappings = {
-		-- 	custom_only = false,
-		-- 	list = {
-		-- 		{ key = "l", action = "edit", action_cb = edit_or_open },
-		-- 		{ key = "v", action = "vsplit_preview", action_cb = vsplit_preview },
-		-- 		{ key = "h", action = "close_node" },
-		-- 		{ key = "H", action = "collapse_all", action_cb = collapse_all },
-		-- 	},
-		-- },
 	},
 	renderer = {
 		add_trailing = false,
@@ -228,10 +215,6 @@ require("nvim-tree").setup({
 		custom = {},
 		exclude = {},
 	},
-	-- filesystem_watchers = {
-	-- 	enable = false,
-	-- 	interval = 100,
-	-- },
 	git = {
 		enable = true,
 		ignore = true,

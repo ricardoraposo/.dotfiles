@@ -4,7 +4,8 @@ o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
 o.cmdheight = 1
-o.conceallevel = 0
+o.conceallevel = 1
+o.concealcursor = "nc"
 o.fileencoding = "utf-8"
 o.hlsearch = false
 o.incsearch = true
@@ -24,17 +25,16 @@ o.undofile = true
 o.updatetime = 50
 o.writebackup = false
 o.expandtab = true
-o.shiftwidth = 2
-o.tabstop = 2
-o.softtabstop = 2
+o.shiftwidth = 4
+o.tabstop = 4
+o.softtabstop = 4
 o.cursorline = true
-o.number = true
-o.relativenumber = true
+-- o.number = true
+-- o.relativenumber = true
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
-o.statusline =
-	"%#Normal#%f %m %=%r %= %{battery#sign()} %{battery#value()}%%   %28(%{strftime('%H:%M:%S %p')} %5l,%-6(%c%V%) %P%)"
+o.statusline = "%#Normal#%f %m %=%r %= %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
 o.ruler = false
 o.wrap = false
 o.scrolloff = 8
@@ -46,11 +46,17 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
 
+vim.cmd("language en_US.UTF-8")
 vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
-vim.cmd.colorscheme("melange")
 vim.cmd("syntax on")
+
+require("gruvbox").setup({
+    contrast = "hard",
+})
+
+vim.cmd.colorscheme("gruvbox")

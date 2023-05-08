@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 
 --Shorten function name
 local keymap = vim.keymap.set
+local keydel = vim.keymap.del
 
 --Remap space as leader key
 keymap("", "<Space>", "<nop>", opts)
@@ -16,13 +17,15 @@ vim.g.maplocalleader = " "
 --	 term mode = "t"
 --	 command mode = "c"
 
--- Arrows are for pussies
+-- Disabling dumb stuff
 keymap("n", "<Up>", "<nop>", opts)
 keymap("n", "<Down>", "<nop>", opts)
 keymap("i", "<Up>", "<nop>", opts)
 keymap("i", "<Down>", "<nop>", opts)
 keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
+keymap("n", "(", "<nop>", opts)
+keymap("n", ")", "<nop>", opts)
 
 -- Normal
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
@@ -79,15 +82,20 @@ keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
 keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
+-- Harpoon
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+keymap("n", "<leader>m", mark.add_file)
+keymap("n", "<C-e>", ui.toggle_quick_menu)
+keymap("n", "<C-j>", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
+keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
+keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
+keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
+
 -- Rest Nvim
 
 keymap("n", "<leader>rr", "<Plug>HurlRun", opts)
-
--- Org mode
-
-keymap("n", "<leader>ww", "<cmd>Neorg workspace work<CR>", opts)
-keymap("n", "<leader>wh", "<cmd>Neorg workspace home<CR>", opts)
-keymap("n", "<leader>dl", "<cmd>Telescope neorg insert_file_link<CR>", opts)
 
 -- Compile
 
@@ -101,6 +109,8 @@ keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
 keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<CR>", opts)
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
+keydel({ "x", "o" }, "x")
+keydel({ "x", "o" }, "X")
 
 -- Greatest remaps
 

@@ -87,17 +87,9 @@ telescope.setup({
     },
   },
   extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown({}),
-    },
     undo = {
       use_delta = true,
-      use_custom_command = nil,
-      side_by_side = true,
-      layout_strategy = "vertical",
-      layout_config = {
-        preview_height = 0.8,
-      },
+      side_by_side = false,
       diff_context_lines = vim.o.scrolloff,
       entry_format = "state #$ID, $STAT, $TIME",
       mappings = {
@@ -111,13 +103,4 @@ telescope.setup({
   },
 })
 
-require("telescope").load_extension("ui-select")
 require("telescope").load_extension("undo")
-
-local wilder = require("wilder")
-
-wilder.setup({
-  modes = { ":", "/", "?" },
-  next_key = "<C-n>",
-  previous_key = "<C-p>",
-})
