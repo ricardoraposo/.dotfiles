@@ -7,7 +7,7 @@ local keymap = vim.api.nvim_buf_set_keymap
 
 toggleterm.setup({
     size = 15,
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<C-t>]],
     hide_numbers = true,
     shading_factor = 2,
     start_in_insert = true,

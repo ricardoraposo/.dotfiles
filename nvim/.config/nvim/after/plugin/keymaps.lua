@@ -74,6 +74,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 
 keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<CR>", opts)
+keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
@@ -93,15 +94,14 @@ keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
 keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 
--- Rest Nvim
-
-keymap("n", "<leader>rr", "<Plug>HurlRun", opts)
+-- Git Stuff
+keymap("n", "<leader>l", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Compile
 
-keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
+keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts)           -- Compile cpp
 keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
-keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts) -- Compile Java
+keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts)                   -- Compile Java
 
 -- Better navigation
 

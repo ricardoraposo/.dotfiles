@@ -25,9 +25,9 @@ o.undofile = true
 o.updatetime = 50
 o.writebackup = false
 o.expandtab = true
-o.shiftwidth = 4
-o.tabstop = 4
-o.softtabstop = 4
+o.shiftwidth = 2
+o.tabstop = 2
+o.softtabstop = 2
 o.cursorline = true
 -- o.number = true
 -- o.relativenumber = true
@@ -56,7 +56,7 @@ vim.cmd("let g:rainbow_active = 1")
 vim.cmd("syntax on")
 
 require("gruvbox").setup({
-    contrast = "hard",
+  contrast = "hard",
 })
 
 vim.cmd.colorscheme("gruvbox")

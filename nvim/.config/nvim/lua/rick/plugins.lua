@@ -42,13 +42,13 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim"   -- Have packer manage itself
-  use "nvim-lua/popup.nvim"      -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim"    -- Useful lua functions used ny lots of plugins
-  use "akinsho/toggleterm.nvim"  -- Terminal inside vim
-  use "lambdalisue/battery.vim"  -- Adds battery percentage of laptop to statusline
-  use "ggandor/leap.nvim"        -- Make nav faster when I remember to use it
-  use "gelguy/wilder.nvim"       -- For when I forget wtf I want to type
+  use "wbthomason/packer.nvim"  -- Have packer manage itself
+  use "nvim-lua/popup.nvim"     -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"   -- Useful lua functions used ny lots of plugins
+  use "akinsho/toggleterm.nvim" -- Terminal inside vim
+  use "lambdalisue/battery.vim" -- Adds battery percentage of laptop to statusline
+  use "ggandor/leap.nvim"       -- Make nav faster when I remember to use it
+  use "gelguy/wilder.nvim"      -- For when I forget wtf I want to type
 
   -- Colorscheme
   use "ellisonleao/gruvbox.nvim" -- Gruvyyy

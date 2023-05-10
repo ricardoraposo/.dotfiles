@@ -44,7 +44,7 @@ require("org-bullets").setup({
   concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
   symbols = {
     -- list symbol
-    list = "•",
+    list = "⇝",
     -- headlines can be a list
     headlines = { "◉", "○", "✸", "✿" },
     checkboxes = {
