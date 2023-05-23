@@ -30,7 +30,7 @@ local servers = {
   "gopls",
   "rust_analyzer",
   "clangd",
-  "csharp_ls",
+  "omnisharp",
 }
 
 mason.setup({

@@ -3,7 +3,7 @@ local o = vim.opt
 -- o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
-o.cmdheight = 0
+o.cmdheight = 1
 o.conceallevel = 1
 o.concealcursor = "nc"
 o.fileencoding = "utf-8"
@@ -54,6 +54,7 @@ vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword+=-")
+vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 vim.cmd("syntax on")
