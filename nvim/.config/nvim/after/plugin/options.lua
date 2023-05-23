@@ -1,9 +1,9 @@
 local o = vim.opt
 
-o.guicursor = "i:block"
+-- o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
-o.cmdheight = 1
+o.cmdheight = 0
 o.conceallevel = 1
 o.concealcursor = "nc"
 o.fileencoding = "utf-8"
@@ -25,12 +25,10 @@ o.undofile = true
 o.updatetime = 50
 o.writebackup = false
 o.expandtab = true
-o.shiftwidth = 2
-o.tabstop = 2
-o.softtabstop = 2
+o.shiftwidth = 4
+o.tabstop = 4
+o.softtabstop = 4
 o.cursorline = true
--- o.number = true
--- o.relativenumber = true
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
@@ -46,6 +44,11 @@ o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
 
+vim.g.OmniSharp_server_use_net6 = 1
+vim.g.OmniSharp_server_stdio = 1
+-- vim.g.OmniSharp_server_use_mono = 1
+
+
 vim.cmd("language en_US.UTF-8")
 vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
@@ -55,8 +58,24 @@ vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 vim.cmd("syntax on")
 
-require("gruvbox").setup({
-  contrast = "hard",
+require("nightfox").setup({
+    options = {
+        transparent = true
+    },
+    groups = {
+        terafox = {
+            Visual = { bg = "#277282" }
+        }
+    }
 })
 
-vim.cmd.colorscheme("gruvbox")
+require('palenightfall').setup({
+    transparent = true,
+    color_overrides = {
+        foreground = "#ebebeb"
+    },
+})
+
+vim.cmd.colorscheme("palenightfall")
+vim.cmd("highlight CursorLine guibg=none")
+vim.cmd("highlight Visual guibg='#232534'")

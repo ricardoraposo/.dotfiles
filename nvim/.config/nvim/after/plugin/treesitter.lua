@@ -2,10 +2,10 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
   ensure_installed = "all",
   sync_install = false,
-  ignore_install = { "phpdoc" },   -- List of parsers to ignore installing
+  ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   highlight = {
-    enable = true,                 -- false will disable the whole extension
-    disable = { "" },           -- list of language that will be disabled
+    enable = true,               -- false will disable the whole extension
+    disable = { "" },            -- list of language that will be disabled
     additional_vim_regex_highlighting = false,
   },
   autotag = {
@@ -18,8 +18,8 @@ configs.setup({
   playground = {
     enable = true,
     disable = {},
-    updatetime = 25,             -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false,     -- Whether the query persists across vim sessions
+    updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
     keybindings = {
       toggle_query_editor = "o",
       toggle_hl_groups = "i",
@@ -33,6 +33,34 @@ configs.setup({
       show_help = "?",
     },
   },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+        ["al"] = "@loop.outer",
+        ["il"] = "@loop.inner",
+        ["ai"] = "@conditional.outer",
+        ["ii"] = "@conditional.inner",
+        ["a/"] = "@comment.outer",
+        ["i/"] = "@comment.inner",
+        ["ab"] = "@block.outer",
+        ["ib"] = "@block.inner",
+        ["as"] = "@statement.outer",
+        ["is"] = "@scopename.inner",
+        ["aA"] = "@attribute.outer",
+        ["iA"] = "@attribute.inner",
+        ["aF"] = "@frame.outer",
+        ["iF"] = "@frame.inner",
+      },
+    },
+  }
 })
 
 local status_ok, npairs = pcall(require, "nvim-autopairs")
@@ -52,7 +80,7 @@ npairs.setup({
     map = "<M-e>",
     chars = { "{", "[", "(", '"', "'", "<" },
     pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-    offset = 0,     -- Offset from pattern match
+    offset = 0, -- Offset from pattern match
     end_key = "$",
     keys = "qwertyuiopzxcvbnmasdfghjkl",
     check_comma = true,
@@ -88,11 +116,11 @@ require("nvim_comment").setup({
 })
 
 require("treesitter-context").setup({
-  enable = true,          -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0,          -- How many lines the window should span. Values <= 0 mean no limit.
-  trim_scope = "outer",   -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  enable = true,        -- Enable this plugin (Can be enabled/disabled later via commands)
+  max_lines = 0,        -- How many lines the window should span. Values <= 0 mean no limit.
+  trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
   patterns = {
-                          -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+    -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
     -- For all filetypes
     -- Note that setting an entry here replaces all other patterns for this entry.
     -- By setting the 'default' entry below, you can control which nodes you want to
@@ -148,8 +176,8 @@ require("treesitter-context").setup({
       "block_mapping_pair",
     },
   },
-  zindex = 20,       -- The Z-index of the context window
-  mode = "cursor",   -- Line used to calculate context. Choices: 'cursor', 'topline'
+  zindex = 20,     -- The Z-index of the context window
+  mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
   -- Separator between context and content. Should be a single character string, like '-'.
   -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
   separator = nil,

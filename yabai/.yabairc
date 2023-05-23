@@ -11,14 +11,12 @@ yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_shadow                off
 yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.90
-yabai -m config window_border                off
-yabai -m config window_border_width          8
-yabai -m config active_window_border_color   0xfff59322
-yabai -m config normal_window_border_color   0xfff7c78f
-yabai -m config insert_feedback_color        0xffcee3f6
+yabai -m config normal_window_opacity        1.0
+yabai -m config window_border                on
+yabai -m config window_border_width          3
+yabai -m config active_window_border_color   0xff5a93aa
+yabai -m config normal_window_border_color   0xff2d4f56
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
@@ -28,16 +26,17 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config bottom_padding               3
-yabai -m config top_padding                  3
-yabai -m config left_padding                 3
-yabai -m config right_padding                3
+yabai -m config bottom_padding               5
+yabai -m config top_padding                  5
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
 yabai -m config window_gap                   5
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^Discord$" --space 4
-yabai -m rule --add app="^Spotify$" --space 4
-yabai -m rule --add app="^Kitty$" --space 2
+yabai -m rule --add app=kitty space=^2
+yabai -m rule --add app=Discord space=^5
+yabai -m rule --add app=Spotify space=^5
+yabai -m rule --add app=Slack space=^4
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
@@ -46,7 +45,5 @@ yabai -m rule --add app="^WhatsApp$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
-# yabai -m rule --add app="^Finder$" manage=off
-# yabai -m rule --add app="^WhatsApp$" manage=off
 
 echo "yabai configuration loaded.."

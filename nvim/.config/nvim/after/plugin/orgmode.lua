@@ -2,8 +2,8 @@ local org = require("orgmode")
 local treesitter_config = require("nvim-treesitter.configs")
 
 org.setup({
-  org_agenda_files = { "~/notes/org/*" },
-  org_default_notes_file = "~/notes/org/refile.org",
+  org_agenda_files = { "~/Documents/notes/org/*" },
+  org_default_notes_file = "~/Documents/notes/org/refile.org",
   mappings = {
     org = {
       org_open_at_point = "<CR>",
@@ -14,17 +14,17 @@ org.setup({
     t = {
       description = "task",
       template = "* TODO %?\n SCHEDULED: %t\n",
-      target = "~/notes/org/agenda.org",
+      target = "~/Documents/notes/org/agenda.org",
     },
     n = {
       description = "quick note",
       template = "- %?\n",
-      target = "~/notes/org/notes.org",
+      target = "~/Documents/notes/org/notes.org",
     },
     j = {
       description = "journal",
       template = "\n* %<%Y-%m-%d> %<%A>\n%?",
-      target = "~/notes/org/journal.org",
+      target = "~/Documents/notes/org/journal.org",
     },
   },
 })
@@ -44,7 +44,7 @@ require("org-bullets").setup({
   concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
   symbols = {
     -- list symbol
-    list = "⇝",
+    list = "⁍",
     -- headlines can be a list
     headlines = { "◉", "○", "✸", "✿" },
     checkboxes = {
@@ -56,6 +56,6 @@ require("org-bullets").setup({
 })
 
 require("orgWiki").setup({
-  wiki_path = { "~/notes/org/brain/" },
-  diary_path = "~/notes/org/journal/",
+  wiki_path = { "~/Documents/notes/org/brain/" },
+  diary_path = "~/Documents/notes/org/journal/",
 })
