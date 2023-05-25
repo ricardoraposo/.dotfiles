@@ -1,6 +1,6 @@
 local o = vim.opt
 
--- o.guicursor = "i:block"
+o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
 o.backup = false
 o.backupcopy = "yes"
 o.cmdheight = 1
@@ -28,11 +28,11 @@ o.expandtab = true
 o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
-o.cursorline = true
+o.cursorline = false
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
-o.statusline = "%#Normal#%f %m %=%r %= %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
+o.statusline = "%#Normal#%f %m %=%r %=  %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
 o.ruler = false
 o.wrap = false
 o.scrolloff = 8
@@ -46,6 +46,7 @@ o.clipboard:append({ "unnamedplus" })
 
 vim.g.OmniSharp_server_use_net6 = 1
 vim.g.OmniSharp_server_stdio = 1
+vim.g.OmniSharp_highlighting = 0
 -- vim.g.OmniSharp_server_use_mono = 1
 
 
@@ -58,25 +59,3 @@ vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 vim.cmd("syntax on")
-
-require("nightfox").setup({
-    options = {
-        transparent = true
-    },
-    groups = {
-        terafox = {
-            Visual = { bg = "#277282" }
-        }
-    }
-})
-
-require('palenightfall').setup({
-    transparent = true,
-    color_overrides = {
-        foreground = "#ebebeb"
-    },
-})
-
-vim.cmd.colorscheme("palenightfall")
-vim.cmd("highlight CursorLine guibg=none")
-vim.cmd("highlight Visual guibg='#232534'")

@@ -42,17 +42,16 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
     -- My plugins here
-    use "wbthomason/packer.nvim"            -- Have packer manage itself
-    use "nvim-lua/popup.nvim"               -- An implementation of the Popup API from vim in Neovim
-    use "nvim-lua/plenary.nvim"             -- Useful lua functions used ny lots of plugins
-    use "akinsho/toggleterm.nvim"           -- Terminal inside vim
-    use "lambdalisue/battery.vim"           -- Adds battery percentage of laptop to statusline
-    use "gelguy/wilder.nvim"                -- For when I forget wtf I want to type
-    use "is0n/jaq-nvim"                     -- Execute code from within vim
+    use "wbthomason/packer.nvim"              -- Have packer manage itself
+    use "nvim-lua/popup.nvim"                 -- An implementation of the Popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim"               -- Useful lua functions used ny lots of plugins
+    use "akinsho/toggleterm.nvim"             -- Terminal inside vim
+    use "lambdalisue/battery.vim"             -- Adds battery percentage of laptop to statusline
+    use "gelguy/wilder.nvim"                  -- For when I forget wtf I want to type
+    use "is0n/jaq-nvim"                       -- Execute code from within vim
     use "lukas-reineke/indent-blankline.nvim" -- Adds some visual stuff for code indents
 
     -- Colorscheme
-    use "EdenEast/nightfox.nvim"
     use "JoosepAlviste/palenightfall.nvim"
 
     -- cmp plugins
@@ -90,7 +89,7 @@ return packer.startup(function(use)
                     }
                 },
                 symbol_in_winbar = {
-                    enable = false
+                    enable = false,
                 },
                 lightbulb = {
                     enable = false
@@ -105,13 +104,8 @@ return packer.startup(function(use)
     use "ThePrimeagen/harpoon"
 
     -- Nvim Tree
-    use({
-        "kyazdani42/nvim-tree.lua",
-        requires = {
-            "nvim-tree/nvim-web-devicons", -- optional, for file icons
-        },
-        branch = "master",
-    })
+    use({ "kyazdani42/nvim-tree.lua", branch = "master" })
+    use 'nvim-tree/nvim-web-devicons'
 
     -- Treesitter
     use({

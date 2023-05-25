@@ -75,6 +75,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<C-f>", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
+keymap("n", "<leader>do", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/Documents/notes/org/<CR>", opts)
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)

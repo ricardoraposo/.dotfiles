@@ -1,5 +1,5 @@
 fd(){
-  cd $(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe ~/Projects/Study/csharp ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+  DIR=$(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe ~/Projects/Study/csharp ~/ -mindepth 1 -maxdepth 1 -type d | fzf) && cd $DIR
 }
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -15,10 +15,11 @@ elif [[  "$OSTYPE" == "darwin"* ]]; then
 fi
 
 
-alias t="env TERM=screen-256color tmux"
+# alias t="env TERM=screen-256color tmux"
+alias t="tmux attach"
+alias tk="tmux kill-sever"
 alias ls="exa -l"
 alias v="nvim"
-alias k="v ~/.config/kitty/kitty.conf"
 
 bindkey ^E forward-word
 bindkey ^B backward-word
@@ -27,8 +28,8 @@ bindkey ^K kill-word
 bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
 bindkey -s ^U "cd ~/.config/nvim^M"
-bindkey -s ^F "fd^M"
-# bindkey -s ^F "~/.config/tmux/tmux_sessionizer.sh^M"
+bindkey -s ^T "fd^M"
+bindkey -s ^F "~/.local/bin/tmux_sessionizer.sh^M"
 
 alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break 😊'\
