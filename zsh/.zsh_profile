@@ -2,41 +2,16 @@ fd(){
   DIR=$(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe ~/Projects/Study/csharp ~/ -mindepth 1 -maxdepth 1 -type d | fzf) && cd $DIR
 }
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-
-    export PATH=/usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin:$PATH
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-elif [[  "$OSTYPE" == "darwin"* ]]; then
-
-    export GOPATH="/Users/ricardo/go"
-    export PATH="$PATH:$(go env GOPATH)/bin"
-    export DOTNET_ROOT=/usr/local/share/dotnet
-fi
-
-
-# alias t="env TERM=screen-256color tmux"
-alias t="tmux attach"
-alias tk="tmux kill-sever"
+alias t="env TERM=screen-256color tmux"
+alias tk="tmux kill-server"
 alias ls="exa -l"
 alias v="nvim"
 
 bindkey ^E forward-word
 bindkey ^B backward-word
 bindkey ^K kill-word
-
 bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
 bindkey -s ^U "cd ~/.config/nvim^M"
-bindkey -s ^T "fd^M"
-bindkey -s ^F "~/.local/bin/tmux_sessionizer.sh^M"
-
-alias work="timer 60m && terminal-notifier -message 'Pomodoro'\
-        -title 'Work Timer is up! Take a Break 😊'\
-        -appIcon '~/Pictures/pumpkin.png'\
-        -sound Crystal"
-
-alias rest="timer 10m && terminal-notifier -message 'Pomodoro'\
-        -title 'Break is over! Get back to work 😬'\
-        -appIcon '~/Pictures/pumpkin.png'\
-        -sound Crystal"
+bindkey -s ^F "fd^M"
+bindkey -s ^T "~/.local/bin/tmux_sessionizer.sh^M"

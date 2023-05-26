@@ -33,7 +33,7 @@ yabai -m config right_padding                5
 yabai -m config window_gap                   5
 
 # apps to not manage (ignore)
-yabai -m rule --add app=Alacritty space=^2
+yabai -m rule --add app=kitty space=^2
 yabai -m rule --add app=Discord space=^5
 yabai -m rule --add app=Spotify space=^5
 yabai -m rule --add app=Slack space=^4

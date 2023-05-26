@@ -53,6 +53,7 @@ return packer.startup(function(use)
 
     -- Colorscheme
     use "JoosepAlviste/palenightfall.nvim"
+    use "marko-cerovac/material.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp"

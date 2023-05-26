@@ -29,3 +29,10 @@ vim.api.nvim_create_user_command("ApiThing", function()
     attach_to_buffer(file)
 end, {}
 )
+
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

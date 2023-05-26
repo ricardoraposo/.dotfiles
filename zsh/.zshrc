@@ -3,6 +3,17 @@ ZSH_THEME="amuse"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_profile
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    export PATH=/usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin:$PATH
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+elif [[  "$OSTYPE" == "darwin"* ]]; then
+    export GOPATH="/Users/ricardo/go"
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    export DOTNET_ROOT=/usr/local/share/dotnet
+fi
+
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
 # Bun

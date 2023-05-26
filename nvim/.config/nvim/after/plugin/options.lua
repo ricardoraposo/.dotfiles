@@ -32,7 +32,6 @@ o.cursorline = false
 o.numberwidth = 2
 o.signcolumn = "no"
 o.laststatus = 2
-o.statusline = "%#Normal#%f %m %=%r %=  %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
 o.ruler = false
 o.wrap = false
 o.scrolloff = 8
@@ -59,3 +58,21 @@ vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:rainbow_active = 1")
 vim.cmd("syntax on")
+
+function GitBranch()
+  local ok, _ = os.rename(vim.fn.getcwd() .. '/.git', vim.fn.getcwd() .. '/.git')
+  if not ok then
+    return ''
+  end
+
+  local fp = io.popen('git branch --show-current')
+  local branch = fp:read('*a')
+  if not branch then
+    return ''
+  end
+
+  branch = string.gsub(branch, '\n', '')
+  return [[ ]] .. branch
+end
+
+o.statusline = "%#Normal# %-{luaeval('GitBranch()')} %f %m %=%r %=  %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
