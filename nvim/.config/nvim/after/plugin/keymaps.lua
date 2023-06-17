@@ -33,6 +33,7 @@ keymap("n", "<leader>clt", ":set conceallevel=2<CR>", opts)
 keymap("n", "<S-h>", "<C-w>h", opts)
 keymap("n", "<S-l>", "<C-w>l", opts)
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
+keymap("n", "<CR>", "ciw", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -95,8 +96,20 @@ keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
 keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 
+-- Trouble
+-- Lua
+vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
+vim.keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
+vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
+vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
+
 -- Git Stuff
 keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+
+-- Keyamps que me dão orgulho de ser orgulho de ser brasileiro
+keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)
 
 -- Compile
 

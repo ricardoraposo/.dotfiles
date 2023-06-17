@@ -32,7 +32,28 @@ end, {}
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
+
+function AddConsoleLog()
+    local line = vim.api.nvim_win_get_cursor(0)[1]
+    local text = vim.api.nvim_get_current_line()
+
+    local variable = string.match(text, "%s*(%a[%w_]*)%s*=")
+    if not variable then
+        variable = string.match(text, "%s*(%a[%w_]*)%s*$")
+    end
+
+    if variable then
+        local logStatement = string.format("console.log('%s: ', %s)", variable, variable)
+
+        vim.api.nvim_buf_set_lines(0, line, line, false, { logStatement })
+
+        vim.lsp.buf.format()
+    else
+        print("No variable found at the current line.")
+    end
+end
+

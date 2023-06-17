@@ -98,7 +98,7 @@ require("nvim-tree").setup({
                 relative = "editor",
                 border = "rounded",
                 width = 35,
-                height = 30,
+                height = 23,
                 row = 0,
                 col = 0,
             },

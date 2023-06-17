@@ -1,6 +1,6 @@
 local o = vim.opt
 
-o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
+o.guicursor = "n-sm:block,i-ci-ve:ver25-iCursor,r-cr-o:hor20,v-c:block-iCursor"
 o.backup = false
 o.backupcopy = "yes"
 o.cmdheight = 1
@@ -25,9 +25,9 @@ o.undofile = true
 o.updatetime = 50
 o.writebackup = false
 o.expandtab = true
-o.shiftwidth = 4
-o.tabstop = 4
-o.softtabstop = 4
+o.shiftwidth = 2
+o.tabstop = 2
+o.softtabstop = 2
 o.cursorline = false
 o.numberwidth = 2
 o.signcolumn = "no"
@@ -72,7 +72,7 @@ function GitBranch()
   end
 
   branch = string.gsub(branch, '\n', '')
-  return [[ ]] .. branch
+  return [[ ]] .. branch .. [[ > ]]
 end
 
-o.statusline = "%#Normal# %-{luaeval('GitBranch()')} %f %m %=%r %=  %{battery#sign()} %{battery#value()}%%   %10(%{strftime('%H:%M:%S %p')} %)"
+vim.opt.statusline = "%#Normal# %-{luaeval('GitBranch()')}%f %m %=%r %=  %{battery#sign()} %{battery#value()}%%%10( %{strftime('%H:%M')} %)"

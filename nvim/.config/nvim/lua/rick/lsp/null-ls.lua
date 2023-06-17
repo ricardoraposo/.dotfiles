@@ -4,7 +4,7 @@ if not null_ls_status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
     debug = false,
@@ -12,6 +12,12 @@ null_ls.setup({
         formatting.jq,
         -- formatting.stylua,
         formatting.prettier,
+        diagnostics.stylelint,
+        diagnostics.eslint.with({
+            diagnostic_config = {
+                virtual_text = true
+            }
+        }),
         formatting.goimports,
         formatting.jq,
     },

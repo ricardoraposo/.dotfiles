@@ -13,7 +13,6 @@ if not status3 then
     return
 end
 
-require("fidget").setup({})
 local capabilities = require("rick.lsp.handlers").capabilities
 local on_attach = require("rick.lsp.handlers").on_attach
 capabilities.textDocument.completion.completionItem.snippetSupport = true
