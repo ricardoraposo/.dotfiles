@@ -6,20 +6,20 @@ end
 local keymap = vim.api.nvim_buf_set_keymap
 
 toggleterm.setup({
-    size = 15,
+    size = 60,
     open_mapping = [[<C-t>]],
     hide_numbers = true,
     shading_factor = 2,
     start_in_insert = true,
     insert_mappings = true,
     persist_size = true,
-    direction = "float",
+    direction = "vertical",
     close_on_exit = true,
     shell = vim.o.shell,
     float_opts = {
         border = "curved",
-        width = 110,
-        height = 25,
+        width = 130,
+        height = 35,
     },
 })
 

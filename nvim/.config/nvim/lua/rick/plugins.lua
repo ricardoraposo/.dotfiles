@@ -53,8 +53,8 @@ return packer.startup(function(use)
   use "folke/zen-mode.nvim"                 -- For me not to get neck pain
 
   -- Colorscheme
-  use "rose-pine/neovim"
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use "EdenEast/nightfox.nvim"
+  use "morhetz/gruvbox"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -70,17 +70,16 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- LSP itself
+  use "neovim/nvim-lspconfig"  -- LSP itself
   use({
     "williamboman/mason.nvim", -- make easier to get lsp servers
     "williamboman/mason-lspconfig.nvim",
   })
-  -- use "j-hui/fidget.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and diagnostics lsp servers
-  use "OmniSharp/omnisharp-vim"  -- csharp bullshit
-  use "folke/trouble.nvim" -- get diag and function references in an easier way
+  use "OmniSharp/omnisharp-vim"         -- csharp bullshit
+  use "folke/trouble.nvim"              -- get diag and function references in an easier way
   use({
-    "glepnir/lspsaga.nvim", -- better lsp ui
+    "glepnir/lspsaga.nvim",             -- better lsp ui
     opt = true,
     branch = "main",
     event = "LspAttach",
@@ -115,7 +114,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/playground"
   -- use "nvim-treesitter/nvim-treesitter-context"

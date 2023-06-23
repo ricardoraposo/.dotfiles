@@ -28,6 +28,7 @@ keymap("n", ")", "<nop>", opts)
 
 -- Normal
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
 keymap("n", "<leader>clz", ":set conceallevel=0<CR>", opts)
 keymap("n", "<leader>clt", ":set conceallevel=2<CR>", opts)
 keymap("n", "<S-h>", "<C-w>h", opts)
@@ -83,7 +84,7 @@ keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
-keymap("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
+keymap("n", "<leader>bf", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
 -- Harpoon
 
