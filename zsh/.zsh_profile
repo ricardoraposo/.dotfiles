@@ -15,8 +15,9 @@ PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 $(prompt_char) '
 RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
 
-alias t="env TERM=screen-256color tmux"
+alias tm="env TERM=screen-256color tmux"
 alias tk="tmux kill-server"
+alias t="npm run test"
 alias ls="exa -l"
 alias v="nvim"
 

@@ -114,10 +114,10 @@ keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)
 
 -- Compile
 
-keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts)                         -- Run Code
-keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts)           -- Compile cpp
+keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
+keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
 keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
-keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts)                   -- Compile Java
+keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts) -- Compile Java
 
 -- Better navigation
 

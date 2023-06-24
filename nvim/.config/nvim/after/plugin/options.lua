@@ -17,6 +17,7 @@ o.showcmdloc = "statusline"
 o.showtabline = 0
 o.smartcase = true
 o.smartindent = true
+o.smarttab = true
 o.splitbelow = true
 o.splitright = true
 o.swapfile = false
@@ -32,14 +33,14 @@ o.softtabstop = 2
 o.cursorline = false
 o.numberwidth = 2
 o.signcolumn = "no"
-o.laststatus = 2
+o.laststatus = 0
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.hidden = true
 o.foldmethod = "manual"
--- o.foldexpr = "nvim_treesitter#foldexpr()"
--- o.colorcolumn = "80"
+o.ruler = true
+o.rulerformat = "%40(%= %#LineNr#%t %m[%{&filetype}]  %{battery#sign()} %{battery#value()}  %{strftime('%H:%M')}%)"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
@@ -57,6 +58,3 @@ vim.cmd("syntax on")
 vim.g.gruvbox_contrast_dark = "hard"
 vim.cmd.colorscheme("gruvbox")
 vim.cmd("highlight Boolean guifg=#ff5c5c")
-
-o.statusline =
-"%#Normal#%t %m  %= [%{&filetype}]  %{battery#sign()} %{battery#value()}%%%10( %{strftime('%H:%M')}%)"
