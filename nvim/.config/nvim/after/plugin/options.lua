@@ -41,7 +41,7 @@ o.sidescrolloff = 8
 o.hidden = true
 o.foldmethod = "manual"
 o.ruler = true
-o.rulerformat = "%45(%= %#LineNr#%t %m[%{&filetype}]  %{battery#sign()} %{battery#value()}  %{strftime('%H:%M')}%)"
+o.rulerformat = "%45(%= %#LineNr#%f %m[%{&filetype}] ♥ %{battery#value()}  %{strftime('%H:%M')}%)"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
