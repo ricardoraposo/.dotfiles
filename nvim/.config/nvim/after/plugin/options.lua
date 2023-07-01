@@ -3,6 +3,7 @@ local o = vim.opt
 o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
+o.autowrite = true
 o.cmdheight = 1
 o.conceallevel = 1
 o.concealcursor = "nc"
@@ -13,7 +14,7 @@ o.ignorecase = true
 o.mouse = "a"
 o.pumheight = 10
 o.showmode = true
-o.showcmdloc = "statusline"
+o.showcmd = true
 o.showtabline = 0
 o.smartcase = true
 o.smartindent = true
@@ -40,7 +41,7 @@ o.sidescrolloff = 8
 o.hidden = true
 o.foldmethod = "manual"
 o.ruler = true
-o.rulerformat = "%40(%= %#LineNr#%t %m[%{&filetype}]  %{battery#sign()} %{battery#value()}  %{strftime('%H:%M')}%)"
+o.rulerformat = "%45(%= %#LineNr#%t %m[%{&filetype}]  %{battery#sign()} %{battery#value()}  %{strftime('%H:%M')}%)"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
@@ -49,12 +50,11 @@ vim.cmd("language en_US.UTF-8")
 vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
-vim.cmd("set iskeyword+=-")
 vim.cmd("set iskeyword-=_")
-vim.cmd("set shortmess-=S")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("syntax on")
 
 vim.g.gruvbox_contrast_dark = "hard"
 vim.cmd.colorscheme("gruvbox")
 vim.cmd("highlight Boolean guifg=#ff5c5c")
+vim.cmd("highlight NvimTreeNormal guibg=none")

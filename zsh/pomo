@@ -1,0 +1,16 @@
+#!/bin/bash
+# Requires https://github.com/caarlos0/timer to be installed
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  COMMAND="espeak -s 120 2>/dev/null"
+elif [[  "$OSTYPE" == "darwin"* ]]; then
+  COMMAND="say"
+fi
+
+if [[ "$2" == "work" ]]; then
+  timer $1 && $COMMAND "Take a break big dawg"
+elif [[ "$2" == "rest" ]]; then
+  timer $1 && $COMMAND "Back to work you fuck"
+else
+  timer $1 && $COMMAND "You forgot to say if it was a break or a worktime, you stupid little shit. Am I supposed to guess ?"
+fi

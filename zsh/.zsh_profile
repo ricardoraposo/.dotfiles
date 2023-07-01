@@ -15,7 +15,7 @@ PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 $(prompt_char) '
 RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
 
-alias tm="env TERM=screen-256color tmux"
+alias tm="tmux new -s $(pwd)"
 alias tk="tmux kill-server"
 alias t="npm run test"
 alias ls="exa -l"
@@ -28,4 +28,3 @@ bindkey -s ^V "v .^M"
 bindkey -s ^A "t attach^M"
 bindkey -s ^U "cd ~/.config/nvim^M"
 bindkey -s ^F "fd^M"
-# bindkey -s ^T "~/.local/bin/tmux_sessionizer.sh^M"

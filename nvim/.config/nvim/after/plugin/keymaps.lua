@@ -35,6 +35,7 @@ keymap("n", "<S-h>", "<C-w>h", opts)
 keymap("n", "<S-l>", "<C-w>l", opts)
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<CR>", "ciw", opts)
+keymap("v", "<leader>qwe", "y:vnew<CR>p!aphurl<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -117,7 +118,6 @@ keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)
 keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
 keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
 keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
-keymap("n", "<leader>cjj", "<cmd>!javac %<CR>", opts) -- Compile Java
 
 -- Better navigation
 

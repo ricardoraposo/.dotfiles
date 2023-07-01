@@ -1,12 +1,12 @@
 local configs = require("nvim-treesitter.configs")
 
 local disabledExtensions =
-	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "go", "cs", "lua", "c", "cpp" }
+	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "go", "cs", "lua", "c", "cpp", "sh" }
 
 configs.setup({
 	ensure_installed = "all",
 	sync_install = false,
-	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+	ignore_install = { "phpdoc", "bash" }, -- List of parsers to ignore installing
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		disable = disabledExtensions, -- list of language that will be disabled
@@ -81,7 +81,7 @@ npairs.setup({
 	},
 	disable_filetype = { "TelescopePrompt", "spectre_panel" },
 	fast_wrap = {
-		map = "<M-e>",
+		map = "<C-w>",
 		chars = { "{", "[", "(", '"', "'", "<" },
 		pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
 		offset = 0, -- Offset from pattern match

@@ -50,11 +50,10 @@ return packer.startup(function(use)
   use "gelguy/wilder.nvim"                  -- For when I forget wtf I want to type
   use "is0n/jaq-nvim"                       -- Execute code from within vim
   use "lukas-reineke/indent-blankline.nvim" -- Adds some visual stuff for code indents
-  use "folke/zen-mode.nvim"                 -- For me not to get neck pain
 
   -- Colorscheme
-  use "EdenEast/nightfox.nvim"
-  use "morhetz/gruvbox"
+  use "gruvbox-community/gruvbox"
+  use "drewtempelmeyer/palenight.vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -124,10 +123,8 @@ return packer.startup(function(use)
   use "terrortylor/nvim-comment"
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
-  -- I also want org mode
-  use "nvim-orgmode/orgmode"
-  use "akinsho/org-bullets.nvim"
-  use "ranjithshegde/orgWiki.nvim"
+  -- Gut stuff
+  use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
