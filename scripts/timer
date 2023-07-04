@@ -1,0 +1,51 @@
+#!/bin/bash
+
+MINUTE=$(echo $1 | grep -o '[0-9]\+m' | grep -o '[0-9]\+')
+SECOND=$(echo $1 | grep -o '[0-9]\+s' | grep -o '[0-9]\+')
+
+if [ -z "$MINUTE" ]; then
+  MINUTE=0
+fi
+
+if [ -z "$SECOND" ]; then
+  SECOND=0
+fi
+
+if [[ $SECOND -ge 60 ]]; then
+  MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
+  SECOND=$(( $SECOND % 60 ))
+fi
+
+timer() {
+while true
+do
+  if [[ $(( SECOND / 10 )) -lt 1 ]]; then
+    echo -ne "\r$MINUTE:0$SECOND"&
+  else
+    echo -ne "\r$MINUTE:$SECOND"&
+  fi
+  sleep 1
+  SECOND=$(( $SECOND - 1 ))
+  if [[ $MINUTE -gt 0 && $SECOND -lt 0 ]]; then
+    MINUTE=$(( $MINUTE - 1 ))
+    SECOND=59
+  fi
+  if [[ $MINUTE -eq 0 && $SECOND -lt 0 ]]; then
+    break
+  fi
+done
+}
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  COMMAND="espeak -s 120 2>/dev/null"
+elif [[  "$OSTYPE" == "darwin"* ]]; then
+  COMMAND="say"
+fi
+
+if [[ "$2" == "work" ]]; then
+  timer && $COMMAND "Hora de descanso, né pai"
+elif [[ "$2" == "rest" ]]; then
+  timer && $COMMAND "vamo que vamo o descanso acabou"
+else
+  timer && $COMMAND "voce nao disse se é hora de trabalhar ou descanso. Eu tenho que adivinhar por acaso ?"
+fi

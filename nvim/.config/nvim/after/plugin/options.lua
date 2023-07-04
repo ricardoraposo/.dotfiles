@@ -53,6 +53,7 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("syntax on")
+vim.cmd("let g:markdown_fenced_languages = ['javascript']")
 
 vim.g.gruvbox_contrast_dark = "hard"
 vim.cmd.colorscheme("gruvbox")

@@ -107,9 +107,6 @@ vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
 vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
 vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
--- Git Stuff
-keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
 -- Keyamps que me dão orgulho de ser orgulho de ser brasileiro
 keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)
 

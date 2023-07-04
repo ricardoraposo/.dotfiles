@@ -53,7 +53,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use "gruvbox-community/gruvbox"
-  use "drewtempelmeyer/palenight.vim"
+  use "NTBBloodbath/doom-one.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -123,7 +123,7 @@ return packer.startup(function(use)
   use "terrortylor/nvim-comment"
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
-  -- Gut stuff
+  -- Git stuff
   use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim

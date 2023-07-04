@@ -2,6 +2,10 @@ fd(){
   DIR=$(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe  -mindepth 1 -maxdepth 1 -type d | fzf) && cd $DIR
 }
 
+nametmux() {
+  NAME=$(basename $PWD) && tmux new -s $NAME
+}
+
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗"
@@ -11,15 +15,20 @@ function prompt_char {
 }
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
 )
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%1~%{$reset_color%}
+%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%1~%{$reset_color%}
 $(prompt_char) '
-RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
+# RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
+RPROMPT='$(git_prompt_info)'
 
-alias tm="tmux new -s $(pwd)"
+# alias tm="tmux new -s $(basename $PWD)"
+alias tm="nametmux"
 alias tk="tmux kill-server"
+alias ta="tmux attach"
 alias t="npm run test"
+alias d="npm run dev"
 alias ls="exa -l"
 alias v="nvim"
+alias chmox="chmod +x"
 
 bindkey ^E forward-word
 bindkey ^B backward-word

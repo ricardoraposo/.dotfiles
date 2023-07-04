@@ -1,14 +1,14 @@
 local configs = require("nvim-treesitter.configs")
 
 local disabledExtensions =
-	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "go", "cs", "lua", "c", "cpp", "sh" }
+	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "go", "cs", "lua", "c", "cpp", "bash" }
 
 configs.setup({
 	ensure_installed = "all",
 	sync_install = false,
 	ignore_install = { "phpdoc", "bash" }, -- List of parsers to ignore installing
 	highlight = {
-		enable = false, -- false will disable the whole extension
+		enable = true, -- false will disable the whole extension
 		disable = disabledExtensions, -- list of language that will be disabled
 		additional_vim_regex_highlighting = false,
 	},

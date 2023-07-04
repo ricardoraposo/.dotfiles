@@ -6,7 +6,7 @@ end
 local keymap = vim.api.nvim_buf_set_keymap
 
 toggleterm.setup({
-    size = 60,
+    size = 80,
     open_mapping = [[<C-t>]],
     hide_numbers = true,
     shading_factor = 2,
@@ -33,22 +33,3 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
-
-local Terminal = require("toggleterm.terminal").Terminal
-local lazygit = Terminal:new({
-    cmd = "lazygit",
-    dir = "git_dir",
-    hidden = true,
-    direction = "float",
-    float_opts = {
-        border = "double",
-        width = 200,
-        height = 40,
-    },
-})
-
-function _LAZYGIT_TOGGLE()
-    lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", { noremap = true, silent = true })
