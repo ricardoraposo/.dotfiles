@@ -26,6 +26,10 @@ keymap("i", "<Right>", "<nop>", opts)
 keymap("n", "(", "<nop>", opts)
 keymap("n", ")", "<nop>", opts)
 
+-- Using this for good
+keymap("n", "<Right>", "<C-a>", opts)
+keymap("n", "<Left>", "<C-x>", opts)
+
 -- Normal
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
@@ -47,8 +51,6 @@ keymap("n", "<leader>vh", "<cmd>new<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
-keymap("n", "<Right>", ":bn<CR>", opts)
-keymap("n", "<Left>", ":bp<CR>", opts)
 keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 
 -- Insert --
@@ -100,12 +102,12 @@ keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 
 -- Trouble
 -- Lua
-vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
-vim.keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
-vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
-vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
+keymap("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
 -- Keyamps que me dão orgulho de ser orgulho de ser brasileiro
 keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)

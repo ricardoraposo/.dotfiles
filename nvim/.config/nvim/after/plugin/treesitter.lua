@@ -1,7 +1,7 @@
 local configs = require("nvim-treesitter.configs")
 
 local disabledExtensions =
-	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "go", "cs", "lua", "c", "cpp", "bash" }
+	{ "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "go", "cs", "lua", "c", "cpp" }
 
 configs.setup({
 	ensure_installed = "all",

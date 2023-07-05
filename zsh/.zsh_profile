@@ -2,7 +2,7 @@ fd(){
   DIR=$(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe  -mindepth 1 -maxdepth 1 -type d | fzf) && cd $DIR
 }
 
-nametmux() {
+ntmux(){
   NAME=$(basename $PWD) && tmux new -s $NAME
 }
 
@@ -20,15 +20,16 @@ $(prompt_char) '
 # RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
 RPROMPT='$(git_prompt_info)'
 
-# alias tm="tmux new -s $(basename $PWD)"
-alias tm="nametmux"
-alias tk="tmux kill-server"
-alias ta="tmux attach"
-alias t="npm run test"
-alias d="npm run dev"
-alias ls="exa -l"
-alias v="nvim"
-alias chmox="chmod +x"
+alias tm="ntmux"
+alias tk='tmux kill-server'
+alias ta='tmux attach'
+alias t='npm run test'
+alias d='npm run dev'
+alias ls='exa -l'
+alias v='nvim'
+alias zf='cd $HOME/Documents/zet'
+alias chmox='chmod +x'
+alias scripts='cd $HOME/.dotfiles/scripts'
 
 bindkey ^E forward-word
 bindkey ^B backward-word

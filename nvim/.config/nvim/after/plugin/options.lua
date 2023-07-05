@@ -41,7 +41,7 @@ o.sidescrolloff = 8
 o.hidden = true
 o.foldmethod = "manual"
 o.ruler = true
-o.rulerformat = "%45(%= %#LineNr#%f %m[%{&filetype}] ♥ %{battery#value()}  %{strftime('%H:%M')}%)"
+o.rulerformat = "%35(%= %#LineNr#%f %m[%{&filetype}]  %{strftime('%H:%M')}%)"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
@@ -53,7 +53,7 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("syntax on")
-vim.cmd("let g:markdown_fenced_languages = ['javascript']")
+vim.cmd("let g:markdown_fenced_languages = ['javascript', 'sh']")
 
 vim.g.gruvbox_contrast_dark = "hard"
 vim.cmd.colorscheme("gruvbox")

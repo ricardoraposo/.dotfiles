@@ -7,7 +7,7 @@ else
   echo "brew já está instalado"
 fi
 
-brewInstall=("git" "stow" "exa" "tmux" "glow")
+brewInstall=("git" "fzf" "stow" "exa" "tmux" "glow")
 for str in ${brewInstall[@]}
 do
   if ! command -v $str &> /dev/null
@@ -18,7 +18,7 @@ do
   fi
 done
 
-if ! command -v nvm &> /dev/null
+if command -v nvm &> /dev/null
 then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
   nvm install --lts
@@ -44,5 +44,5 @@ fi
 stowFolders=("zsh" "yabai" "nvim" "kitty")
 for folder in ${stowFolders[@]}
 do
-  stow $folder
+    stow $folder
 done

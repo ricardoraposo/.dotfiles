@@ -1,0 +1,45 @@
+#!/bin/bash
+
+ZET_FOLDER="$HOME/Documents/zet"
+MAIN_FOLDER="$ZET_FOLDER/main"
+QUICK_FOLDER="$ZET_FOLDER/quick"
+
+if [ ! -d "$ZET_FOLDER" ]; then
+  mkdir $ZET_FOLDER
+fi
+
+zet() {
+  FILENAME=$(echo $1 | tr " " "_").md
+  FILEPATH=$MAIN_FOLDER/$FILENAME
+
+  if test -f "$FILEPATH" ; then
+    read -p "$FILENAME already exists. Edit? " yes
+    case "$yes" in
+      y|yes|s|sim|ok|dale) vim "$FILEPATH"
+    esac
+    exit 0
+  fi
+
+  touch $FILEPATH
+  echo "### $(date +'%Y - %d. %B')" | cat >> $FILEPATH
+  nvim $FILEPATH
+}
+
+quik() {
+  FILENAME=$(echo $1 | tr " " "_").md
+  FILEPATH=$QUICK_FOLDER/$FILENAME
+
+  if test -f "$FILEPATH" ; then
+    read -p "$FILENAME already exists. Edit? " yes
+    case "$yes" in
+      y|yes|s|sim|ok|dale) vim "$FILEPATH"
+    esac
+    exit 0
+  fi
+
+  touch $FILEPATH
+  echo "### $(date +'%Y - %d. %B')" | cat >> $FILEPATH
+  nvim $FILEPATH
+}
+
+"$@"

@@ -46,14 +46,12 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"                 -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"               -- Useful lua functions used ny lots of plugins
   use "akinsho/toggleterm.nvim"             -- Terminal inside vim
-  use "lambdalisue/battery.vim"             -- Adds battery percentage of laptop to statusline
   use "gelguy/wilder.nvim"                  -- For when I forget wtf I want to type
   use "is0n/jaq-nvim"                       -- Execute code from within vim
   use "lukas-reineke/indent-blankline.nvim" -- Adds some visual stuff for code indents
 
   -- Colorscheme
   use "gruvbox-community/gruvbox"
-  use "NTBBloodbath/doom-one.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -77,27 +75,6 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and diagnostics lsp servers
   use "OmniSharp/omnisharp-vim"         -- csharp bullshit
   use "folke/trouble.nvim"              -- get diag and function references in an easier way
-  use({
-    "glepnir/lspsaga.nvim",             -- better lsp ui
-    opt = true,
-    branch = "main",
-    event = "LspAttach",
-    config = function()
-      require("lspsaga").setup({
-        finder = {
-          keys = {
-            quit = { "q", "<ESC>", "<C-c>" }
-          }
-        },
-        symbol_in_winbar = {
-          enable = false,
-        },
-        lightbulb = {
-          enable = false
-        }
-      })
-    end
-  })
 
   -- Telescope & Harpoon
   use "nvim-telescope/telescope.nvim"
