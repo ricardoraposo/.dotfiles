@@ -20,11 +20,11 @@ timer() {
 while true
 do
   if [[ $(( SECOND / 10 )) -lt 1 ]]; then
-    echo -ne "\r$MINUTE:0$SECOND"&
+    echo -ne "\r$MINUTE:0$SECOND"
   else
-    echo -ne "\r$MINUTE:$SECOND"&
+    echo -ne "\r$MINUTE:$SECOND"
   fi
-  sleep 1
+  sleep 0.99
   SECOND=$(( $SECOND - 1 ))
   if [[ $MINUTE -gt 0 && $SECOND -lt 0 ]]; then
     MINUTE=$(( $MINUTE - 1 ))

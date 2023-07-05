@@ -43,3 +43,9 @@ quik() {
 }
 
 "$@"
+
+# Completion stuff
+if [[ -n $COMP_LINE ]]; then
+  printf "zet\nquik"
+  exit
+fi

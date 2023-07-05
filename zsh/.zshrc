@@ -17,6 +17,8 @@ elif [[  "$OSTYPE" == "darwin"* ]]; then
     export DOTNET_ROOT=/usr/local/share/dotnet
 fi
 
+# my completions
+complete -C z z
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
 # Bun
