@@ -32,15 +32,14 @@ do
   else
     echo -ne "\r$MINUTE:$SECOND"
   fi
-  sleep 0.99
+  sleep 0.9908
   SECOND=$(( $SECOND - 1 ))
   if [[ $MINUTE -gt 0 && $SECOND -lt 0 ]]; then
     MINUTE=$(( $MINUTE - 1 ))
     SECOND=59
   fi
-  if [[ $MINUTE -eq 0 && $SECOND -lt 0 ]]; then
-    break
-  fi
+
+  [[ $MINUTE -eq 0 && $SECOND -lt 0 ]] && break
 done
 }
 
