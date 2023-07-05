@@ -17,6 +17,8 @@ elif [[  "$OSTYPE" == "darwin"* ]]; then
     export DOTNET_ROOT=/usr/local/share/dotnet
 fi
 
+export EDITOR="nvim"
+
 # my completions
 complete -C z z
 # bun completions
