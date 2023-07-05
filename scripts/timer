@@ -1,14 +1,22 @@
 #!/bin/bash
 
-MINUTE=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
-SECOND=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
+SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+MINUTE=0
+SECOND=0
 
-if [ -z "$MINUTE" ]; then
-  MINUTE=0
+if [ ! -z "$MINUTEINPUT" ]; then
+  for min in ${MINUTEINPUT[@]}
+  do
+    MINUTE=$(expr $MINUTE + $min)
+  done
 fi
 
-if [ -z "$SECOND" ]; then
-  SECOND=0
+if [ ! -z "$SECONDINPUT" ]; then
+  for min in ${SECONDINPUT[@]}
+  do
+    SECOND=$(expr $SECOND + $min)
+  done
 fi
 
 if [[ $SECOND -ge 60 ]]; then
