@@ -9,7 +9,7 @@ if [ ! -d "$ZET_FOLDER" ]; then
 fi
 
 zet() {
-  FILENAME=$(echo $1 | tr " " "_").md
+  FILENAME=$(echo $@ | tr " " "_").md
   FILEPATH=$MAIN_FOLDER/$FILENAME
 
   if test -f "$FILEPATH" ; then
@@ -25,7 +25,7 @@ zet() {
 }
 
 quik() {
-  FILENAME=$(echo $1 | tr " " "_").md
+  FILENAME=$(echo $@ | tr " " "_").md
   FILEPATH=$QUICK_FOLDER/$FILENAME
 
   if test -f "$FILEPATH" ; then

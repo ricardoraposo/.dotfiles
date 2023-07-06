@@ -24,7 +24,7 @@ rm $temp
 
 start() {
   if [[ "$1" == "hour" ]]; then
-    MINUTE=$(( 60 - $(date +"%M" | sed 's/^[0]*//')))
+    MINUTE=$(( 59 - $(date +"%M" | sed 's/^[0]*//')))
     SECOND=$(( 60 - $(date +"%S" | sed 's/^[0]*//')))
   else
     MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
@@ -45,20 +45,20 @@ start() {
         SECOND=$(expr $SECOND + $min)
       done
     fi
-
-    if [[ $SECOND -ge 60 ]]; then
-      MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
-      SECOND=$(( $SECOND % 60 ))
-    fi
   fi
 
-  timer & sleep 0.1 ; sed -i='' "1s/^/$!\n/" $temp
+  if [[ $SECOND -ge 60 ]]; then
+    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
+    SECOND=$(( $SECOND % 60 ))
+  fi
+
+  timer & sed -i='' "1s/^/$!\n/" $temp
 }
 
 stop() {
   MYSELF=$(head -n 1 $temp)
   kill $MYSELF
-  sleep 0.2
+  sleep 0.1
   rm $temp
 }
 
