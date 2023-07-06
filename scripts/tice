@@ -1,6 +1,6 @@
 #!/bin/bash
 
-temp="$HOME/.cache/temp"
+temp="/tmp/ticethingy"
 
 timer() {
 sleep 0.1
@@ -20,7 +20,7 @@ do
 
   [[ $MINUTE -eq 0 && $SECOND -lt 0 ]] && break
 done
-echo "" > $temp
+rm $temp
 }
 
 start() {
@@ -55,7 +55,7 @@ stop() {
   MYSELF=$(head -n 2 $temp)
   kill $MYSELF
   sleep 0.1
-  echo '' > $temp
+  rm $temp
 }
 
 show() {
