@@ -1,6 +1,11 @@
 #!/bin/bash
 
 temp="/tmp/ticethingy"
+vars="/tmp/ticevars"
+
+if ! test -f $vars; then 
+  printf "40\n0" > $vars
+fi
 
 timer() {
 while true
@@ -26,6 +31,9 @@ start() {
   if [[ "$1" == "hour" ]]; then
     MINUTE=$(( 59 - $(date +"%M" | sed 's/^[0]*//')))
     SECOND=$(( 60 - $(date +"%S" | sed 's/^[0]*//')))
+  elif [[ -z "$1" ]]; then
+    MINUTE=$(head -1 $vars)
+    SECOND=$(head -2 $vars | tail -1)
   else
     MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
     SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
@@ -55,6 +63,30 @@ start() {
   timer & sed -i='' "1s/^/$!\n/" $temp
 }
 
+set() {
+  MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
+  SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+  MINUTE=0
+  SECOND=0
+  if [ ! -z "$MINUTEINPUT" ]; then
+    for min in ${MINUTEINPUT[@]}
+    do
+      MINUTE=$(expr $MINUTE + $min)
+    done
+  fi
+  if [ ! -z "$SECONDINPUT" ]; then
+    for min in ${SECONDINPUT[@]}
+    do
+      SECOND=$(expr $SECOND + $min)
+    done
+  fi
+  if [[ $SECOND -ge 60 ]]; then
+    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
+    SECOND=$(( $SECOND % 60 ))
+  fi
+  printf "$MINUTE\n$SECOND" > $vars
+}
+
 stop() {
   MYSELF=$(head -n 1 $temp)
   kill $MYSELF
@@ -74,7 +106,7 @@ show() {
 
 # Completion stuff
 if [[ -n $COMP_LINE ]]; then
-  printf "start\nstop\nshow"
+  printf "start\nstop\nshow\nset"
   exit
 fi
 
