@@ -20,7 +20,8 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'vim-pandoc/vim-pandoc-syntax' 
 call plug#end()
 
-let g:markdown_fenced_languages = ['bash']
+let g:markdown_fenced_languages = ['bash', 'js=javascript']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['javascript']
 let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 72
 
