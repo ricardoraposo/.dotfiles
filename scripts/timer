@@ -43,18 +43,16 @@ do
 done
 }
 
-timer
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  COMMAND="espeak -s 120 2>/dev/null"
+elif [[  "$OSTYPE" == "darwin"* ]]; then
+  COMMAND="say"
+fi
 
-# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-#   COMMAND="espeak -s 120 2>/dev/null"
-# elif [[  "$OSTYPE" == "darwin"* ]]; then
-#   COMMAND="say"
-# fi
-# 
-# if [[ "$2" == "work" ]]; then
-#   timer && $COMMAND "Hora de descanso, né pai"
-# elif [[ "$2" == "rest" ]]; then
-#   timer && $COMMAND "vamo que vamo o descanso acabou"
-# else
-#   timer && $COMMAND "voce nao disse se é hora de trabalhar ou descanso. Eu tenho que adivinhar por acaso ?"
-# fi
+if [[ "$2" == "work" ]]; then
+  timer && $COMMAND "Hora de descanso, né pai"
+elif [[ "$2" == "rest" ]]; then
+  timer && $COMMAND "vamo que vamo o descanso acabou"
+else
+  timer && $COMMAND "voce nao disse se é hora de trabalhar ou descanso. Eu tenho que adivinhar por acaso ?"
+fi
