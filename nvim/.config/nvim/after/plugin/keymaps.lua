@@ -109,9 +109,6 @@ keymap("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
 keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
--- Keyamps que me dão orgulho de ser orgulho de ser brasileiro
-keymap("n", "<leader>al", "yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>", opts)
-
 -- Compile
 
 keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
