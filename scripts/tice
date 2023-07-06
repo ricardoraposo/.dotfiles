@@ -7,9 +7,9 @@ sleep 0.1
 while true
 do
   if [[ $(( SECOND / 10 )) -lt 1 ]]; then
-    echo "🍅 $MINUTE:0$SECOND" >> $temp
+    echo "🧿  $MINUTE:0$SECOND" >> $temp
   else
-    echo "🍅 $MINUTE:$SECOND" >> $temp
+    echo "🧿  $MINUTE:$SECOND" >> $temp
   fi
   sleep 0.99078
   SECOND=$(( $SECOND - 1 ))
