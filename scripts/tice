@@ -24,42 +24,51 @@ rm $temp
 }
 
 start() {
-  MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
-  SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
-  MINUTE=0
-  SECOND=0
+  if [[ "$1" == "hour" ]]; then
+    MINUTE=$(( 60 - $(date +"%M")))
+    SECOND=0
+  else
+    MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+    MINUTE=0
+    SECOND=0
 
-  if [ ! -z "$MINUTEINPUT" ]; then
-    for min in ${MINUTEINPUT[@]}
-    do
-      MINUTE=$(expr $MINUTE + $min)
-    done
-  fi
+    if [ ! -z "$MINUTEINPUT" ]; then
+      for min in ${MINUTEINPUT[@]}
+      do
+        MINUTE=$(expr $MINUTE + $min)
+      done
+    fi
 
-  if [ ! -z "$SECONDINPUT" ]; then
-    for min in ${SECONDINPUT[@]}
-    do
-      SECOND=$(expr $SECOND + $min)
-    done
-  fi
+    if [ ! -z "$SECONDINPUT" ]; then
+      for min in ${SECONDINPUT[@]}
+      do
+        SECOND=$(expr $SECOND + $min)
+      done
+    fi
 
-  if [[ $SECOND -ge 60 ]]; then
-    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
-    SECOND=$(( $SECOND % 60 ))
+    if [[ $SECOND -ge 60 ]]; then
+      MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
+      SECOND=$(( $SECOND % 60 ))
+    fi
   fi
 
   timer & echo $! >> $temp
 }
 
 stop() {
-  MYSELF=$(head -n 2 $temp)
+  MYSELF=$(head -n 1 $temp)
   kill $MYSELF
-  sleep 0.1
+  sleep 0.2
   rm $temp
 }
 
 show() {
-  echo $(tail -n 1 $temp)
+  if test -f $temp;then
+    echo $(tail -n 1 $temp)
+  else
+    echo ""
+  fi
 }
 
 "$@"
