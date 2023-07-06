@@ -3,7 +3,6 @@
 temp="/tmp/ticethingy"
 
 timer() {
-sleep 0.1
 while true
 do
   if [[ $(( SECOND / 10 )) -lt 1 ]]; then
@@ -25,8 +24,8 @@ rm $temp
 
 start() {
   if [[ "$1" == "hour" ]]; then
-    MINUTE=$(( 60 - $(date +"%M")))
-    SECOND=0
+    MINUTE=$(( 60 - $(date +"%M" | sed 's/^[0]*//')))
+    SECOND=$(( 60 - $(date +"%S" | sed 's/^[0]*//')))
   else
     MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
     SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
@@ -53,7 +52,7 @@ start() {
     fi
   fi
 
-  timer & echo $! >> $temp
+  timer & sleep 0.1 ; sed -i='' "1s/^/$!\n/" $temp
 }
 
 stop() {
@@ -71,4 +70,11 @@ show() {
   fi
 }
 
-"$@"
+[[ -z "$@" ]] && show || "$@"
+
+# Completion stuff
+if [[ -n $COMP_LINE ]]; then
+  printf "start\nstop\nshow"
+  exit
+fi
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+location=$(echo $* | tr " " "+" )
+curl -s http://wttr.in/$location?format=3
+# echo $*

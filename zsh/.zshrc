@@ -21,6 +21,7 @@ export EDITOR="nvim"
 
 # my completions
 complete -C z z
+complete -C tice tice
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
 # Bun

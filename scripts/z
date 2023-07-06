@@ -20,8 +20,8 @@ zet() {
     exit 0
   fi
 
-  echo "### $(date +'%Y - %d. %B')" | cat >> $FILEPATH
-  nvim $FILEPATH
+  echo "### $(now)" >> $FILEPATH
+  vim $FILEPATH
 }
 
 quik() {
@@ -37,8 +37,8 @@ quik() {
   fi
 
   # touch $FILEPATH
-  echo "### $(date +'%Y - %d. %B')" | cat >> $FILEPATH
-  nvim $FILEPATH
+  echo "### $(now)" >> $FILEPATH
+  vim $FILEPATH
 }
 
 "$@"
