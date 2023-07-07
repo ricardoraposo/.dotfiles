@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'morhetz/gruvbox'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax' 
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let g:markdown_fenced_languages = ['bash', 'js=javascript']

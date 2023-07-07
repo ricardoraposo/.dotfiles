@@ -37,34 +37,6 @@ configs.setup({
 			show_help = "?",
 		},
 	},
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-			keymaps = {
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["at"] = "@class.outer",
-				["it"] = "@class.inner",
-				["aa"] = "@parameter.outer",
-				["ia"] = "@parameter.inner",
-				["al"] = "@loop.outer",
-				["il"] = "@loop.inner",
-				["ai"] = "@conditional.outer",
-				["ii"] = "@conditional.inner",
-				["a/"] = "@comment.outer",
-				["i/"] = "@comment.inner",
-				["ab"] = "@block.outer",
-				["ib"] = "@block.inner",
-				["as"] = "@statement.outer",
-				["is"] = "@scopename.inner",
-				["aA"] = "@attribute.outer",
-				["iA"] = "@attribute.inner",
-				["aF"] = "@frame.outer",
-				["iF"] = "@frame.inner",
-			},
-		},
-	},
 })
 
 local status_ok, npairs = pcall(require, "nvim-autopairs")
@@ -110,65 +82,6 @@ require("nvim_comment").setup({
 	comment_chunk_text_object = "ic",
 	hook = nil,
 })
-
--- require("treesitter-context").setup({
---     enable = true,      -- Enable this plugin (Can be enabled/disabled later via commands)
---     max_lines = 0,      -- How many lines the window should span. Values <= 0 mean no limit.
---     trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
---     patterns = {
---         default = {
---             "class",
---             "function",
---             "method",
---             "for",
---             "while",
---             "if",
---             "switch",
---             "case",
---         },
---         tex = {
---             "chapter",
---             "section",
---             "subsection",
---             "subsubsection",
---         },
---         rust = {
---             "impl_item",
---             "struct",
---             "enum",
---         },
---         scala = {
---             "object_definition",
---         },
---         vhdl = {
---             "process_statement",
---             "architecture_body",
---             "entity_declaration",
---         },
---         markdown = {
---             "section",
---         },
---         elixir = {
---             "anonymous_function",
---             "arguments",
---             "block",
---             "do_block",
---             "list",
---             "map",
---             "tuple",
---             "quoted_content",
---         },
---         json = {
---             "pair",
---         },
---         yaml = {
---             "block_mapping_pair",
---         },
---     },
---     zindex = 20,
---     mode = "cursor",
---     separator = nil,
--- })
 
 require("nvim_comment").setup({
 	hook = function()

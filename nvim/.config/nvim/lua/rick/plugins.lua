@@ -93,8 +93,6 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/playground"
-  -- use "nvim-treesitter/nvim-treesitter-context"
-  use "nvim-treesitter/nvim-treesitter-textobjects"
 
   -- Comments Plugin
   use "terrortylor/nvim-comment"
