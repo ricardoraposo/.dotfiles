@@ -8,23 +8,25 @@ if ! test -f $vars; then
 fi
 
 timer() {
-while true
-do
-  if [[ $(( SECOND / 10 )) -lt 1 ]]; then
-    echo "🧿  $MINUTE:0$SECOND" >> $temp
-  else
-    echo "🧿  $MINUTE:$SECOND" >> $temp
-  fi
-  sleep 0.99078
-  SECOND=$(( $SECOND - 1 ))
-  if [[ $MINUTE -gt 0 && $SECOND -lt 0 ]]; then
-    MINUTE=$(( $MINUTE - 1 ))
-    SECOND=59
-  fi
+  test -f $temp && stop
+  echo "" > $temp
+  while true
+  do
+    if [[ $(( SECOND / 10 )) -lt 1 ]]; then
+      echo "🧿  $MINUTE:0$SECOND" >> $temp
+    else
+      echo "🧿  $MINUTE:$SECOND" >> $temp
+    fi
+    sleep 0.99078
+    SECOND=$(( $SECOND - 1 ))
+    if [[ $MINUTE -gt 0 && $SECOND -lt 0 ]]; then
+      MINUTE=$(( $MINUTE - 1 ))
+      SECOND=59
+    fi
 
-  [[ $MINUTE -eq 0 && $SECOND -lt 0 ]] && break
-done
-rm $temp
+    [[ $MINUTE -eq 0 && $SECOND -lt 0 ]] && break
+  done
+  rm $temp
 }
 
 start() {
@@ -35,8 +37,8 @@ start() {
     MINUTE=$(head -1 $vars)
     SECOND=$(head -2 $vars | tail -1)
   else
-    MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
-    SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+    MINUTEINPUT=$(echo $1 | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo $1 | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
     MINUTE=0
     SECOND=0
 
@@ -60,12 +62,14 @@ start() {
     SECOND=$(( $SECOND % 60 ))
   fi
 
-  timer & sed -i='' "1s/^/$!\n/" $temp
+  timer & 
+  sleep 0.3
+  sed -I='' "1s/^/$!\n/" $temp
 }
 
 set() {
-  MINUTEINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+m' | grep -o '[0-9]*')
-  SECONDINPUT=$(echo $1 | tr '[:upper:]' '[:lower:]'| grep -o '[0-9]\+s' | grep -o '[0-9]*')
+  MINUTEINPUT=$(echo $1 | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+  SECONDINPUT=$(echo $1 | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
   MINUTE=0
   SECOND=0
   if [ ! -z "$MINUTEINPUT" ]; then
@@ -94,6 +98,12 @@ stop() {
   rm $temp
 }
 
+var() {
+  MINUTE=$(head -1 $vars)
+  SECOND=$(tail -1 $vars)
+  echo "${MINUTE}m ${SECOND}s"
+}
+
 show() {
   if test -f $temp;then
     echo $(tail -n 1 $temp)
@@ -106,7 +116,7 @@ show() {
 
 # Completion stuff
 if [[ -n $COMP_LINE ]]; then
-  printf "start\nstop\nshow\nset"
+  printf "start\nstop\nshow\nset\nvar"
   exit
 fi
 

@@ -112,7 +112,7 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
+    url = "https://github.com/morhetz/gruvbox"
   },
   harpoon = {
     loaded = true,
@@ -214,6 +214,11 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/rest-nvim/rest.nvim"
+  },
   ["telescope-undo.nvim"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/telescope-undo.nvim",
@@ -238,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["wilder.nvim"] = {
     loaded = true,

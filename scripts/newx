@@ -1,0 +1,18 @@
+#!/bin/bash
+
+[[ -z "$1" ]] && echo "Usage: nscr <scriptname>" && exit 1;
+
+SCRIPTS="$HOME/.dotfiles/scripts"
+SCRIPTPATH="$SCRIPTS/$1"
+
+if test -f "$SCRIPTPATH"; then
+  read -p "$1 already exists. Edit? " yes
+  case "$yes" in
+    y|yes|s|sim|ok|dale) nvim +3 "$SCRIPTPATH"
+  esac
+  exit 0
+fi
+
+printf "#!/bin/bash\n\n\n" >> $SCRIPTPATH
+chmod +x $SCRIPTPATH
+nvim +3 $SCRIPTPATH

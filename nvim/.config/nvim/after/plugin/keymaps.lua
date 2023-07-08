@@ -23,23 +23,19 @@ keymap("i", "<Up>", "<nop>", opts)
 keymap("i", "<Down>", "<nop>", opts)
 keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
-keymap("n", "(", "<nop>", opts)
-keymap("n", ")", "<nop>", opts)
 
 -- Using this for good
 keymap("n", "<Right>", "<C-a>", opts)
 keymap("n", "<Left>", "<C-x>", opts)
 
 -- Normal
+keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
-keymap("n", "<leader>clz", ":set conceallevel=0<CR>", opts)
-keymap("n", "<leader>clt", ":set conceallevel=2<CR>", opts)
-keymap("n", "<S-h>", "<C-w>h", opts)
-keymap("n", "<S-l>", "<C-w>l", opts)
-keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<CR>", "ciw", opts)
-keymap("v", "<leader>qwe", "y:vnew<CR>p!aphurl<CR>", opts)
+keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
+keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
+keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -56,8 +52,7 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
-keymap("i", "jk", "<ESC>", opts)
-keymap({ "i", "n" }, "<C-s>", "<cmd>w<CR>", opts)
+-- keymap({ "i", "n" }, "<C-s>", "<cmd>w<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -77,7 +72,6 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
-
 keymap("n", "<C-f>", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
 keymap("n", "<leader>do", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/Documents/notes/org/<CR>", opts)
@@ -87,10 +81,8 @@ keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
-keymap("n", "<leader>bf", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<CR>", opts)
 
 -- Harpoon
-
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 keymap("n", "<leader>m", mark.add_file)
@@ -101,7 +93,6 @@ keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
 keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 
 -- Trouble
--- Lua
 keymap("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
 keymap("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
@@ -110,20 +101,21 @@ keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
 -- Compile
-
 keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
 keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
 keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
 
--- Better navigation
+-- Command line uses
+keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)
+keymap("n", "<leader>rt", "<cmd>!npm run test<CR>", opts)
 
+-- Better navigation
 keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
 keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<CR>", opts)
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
 
 -- Greatest remaps
-
 keymap("n", "G", "Gzz", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)

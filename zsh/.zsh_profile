@@ -29,7 +29,8 @@ alias ls='exa -l'
 alias v='nvim'
 alias zf='cd $HOME/Documents/zet'
 alias chmox='chmod +x'
-alias scripts='cd $HOME/.dotfiles/scripts'
+alias sc='cd $HOME/.dotfiles/scripts'
+alias dot='cd $HOME/.dotfiles'
 
 bindkey ^E forward-word
 bindkey ^B backward-word

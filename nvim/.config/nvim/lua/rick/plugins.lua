@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- Adds some visual stuff for code indents
 
   -- Colorscheme
-  use "gruvbox-community/gruvbox"
+  use "morhetz/gruvbox"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -93,10 +93,14 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/playground"
+  use "sheerun/vim-polyglot"
 
   -- Comments Plugin
   use "terrortylor/nvim-comment"
   use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- API stuff
+  use "rest-nvim/rest.nvim"
 
   -- Git stuff
   use "tpope/vim-fugitive"

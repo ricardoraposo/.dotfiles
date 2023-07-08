@@ -1,17 +1,20 @@
 syntax on
 
 set smartindent
+set ruler
 set termguicolors
 set expandtab 
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set scrolloff=8
+set hlsearch
+set incsearch
 set noswapfile
 set clipboard=unnamed
 set foldmethod=manual
 set nofoldenable
-set ruler
+set hidden
 set ruf=%45(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
 call plug#begin('~/.local/share/vim/plugins')

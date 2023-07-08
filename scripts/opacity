@@ -1,0 +1,8 @@
+#!/bin/bash
+
+termconfig="$HOME/.config/kitty/kitty.conf"
+opacity=0.99
+
+(( $(echo "$1 > 0" |bc -l) && $(echo "$1 < 1" |bc -l) )) && opacity=$1
+
+sed -i "" -e "s/^background_opacity.*$/background_opacity $opacity/" $termconfig
