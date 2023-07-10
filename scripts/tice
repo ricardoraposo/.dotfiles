@@ -3,12 +3,12 @@
 temp="/tmp/ticethingy"
 vars="/tmp/ticevars"
 
-if ! test -f $vars; then 
+if [[ ! -f $vars ]]; then 
   printf "40\n0" > $vars
 fi
 
 timer() {
-  test -f $temp && stop
+  [[ -f $temp ]] && stop
   echo "" > $temp
   while true
   do
@@ -45,14 +45,14 @@ start() {
     if [ ! -z "$MINUTEINPUT" ]; then
       for min in ${MINUTEINPUT[@]}
       do
-        MINUTE=$(expr $MINUTE + $min)
+        MINUTE=$(( $MINUTE + $min ))
       done
     fi
 
     if [ ! -z "$SECONDINPUT" ]; then
       for min in ${SECONDINPUT[@]}
       do
-        SECOND=$(expr $SECOND + $min)
+        SECOND=$(( $SECOND + $min ))
       done
     fi
   fi
@@ -64,7 +64,7 @@ start() {
 
   timer & 
   sleep 0.3
-  sed -I='' "1s/^/$!\n/" $temp
+  sed -i '' "1s/^/$!\n/" $temp
 }
 
 set() {
@@ -75,13 +75,13 @@ set() {
   if [ ! -z "$MINUTEINPUT" ]; then
     for min in ${MINUTEINPUT[@]}
     do
-      MINUTE=$(expr $MINUTE + $min)
+      MINUTE=$(( $MINUTE + $min ))
     done
   fi
   if [ ! -z "$SECONDINPUT" ]; then
     for min in ${SECONDINPUT[@]}
     do
-      SECOND=$(expr $SECOND + $min)
+      SECOND=$(( $SECOND + $min ))
     done
   fi
   if [[ $SECOND -ge 60 ]]; then
@@ -105,7 +105,7 @@ var() {
 }
 
 show() {
-  if test -f $temp;then
+  if [[ -f $temp ]];then
     echo $(tail -n 1 $temp)
   else
     echo ""
@@ -119,4 +119,3 @@ if [[ -n $COMP_LINE ]]; then
   printf "start\nstop\nshow\nset\nvar"
   exit
 fi
-

@@ -6,36 +6,32 @@ ntmux(){
   NAME=$(basename $PWD) && tmux new -s $NAME
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-function prompt_char {
-	if [ $UID -eq 0 ]; then echo "%{$fg[red]%}#%{$reset_color%}"; else echo $; fi
-}
-PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%}
-)
-%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%1~%{$reset_color%}
-$(prompt_char) '
-# RPROMPT='$(git_prompt_info) %{$fg[blue]%}[%T]%{$reset_color%}'
-RPROMPT='$(git_prompt_info)'
+alias v='nvim'
+# terminal commands aliases
+alias sc='cd $HOME/.dotfiles/scripts'
+alias dot='cd $HOME/.dotfiles'
+alias zf='cd $HOME/Documents/zet'
+alias ls='exa -l'
+alias chmox='chmod +x'
 
+#tmux aliases
 alias tm="ntmux"
 alias tk='tmux kill-server'
 alias ta='tmux attach'
+
+# npm aliases
 alias t='npm run test'
 alias d='npm run dev'
-alias ls='exa -l'
-alias v='nvim'
-alias zf='cd $HOME/Documents/zet'
-alias chmox='chmod +x'
-alias sc='cd $HOME/.dotfiles/scripts'
-alias dot='cd $HOME/.dotfiles'
+
+# git aliases
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+alias gwl='git worktree list'
 
 bindkey ^E forward-word
 bindkey ^B backward-word
 bindkey ^K kill-word
 bindkey -s ^V "v .^M"
-bindkey -s ^A "t attach^M"
+bindkey -s ^A "tmux attach^M"
 bindkey -s ^U "cd ~/.config/nvim^M"
 bindkey -s ^F "fd^M"

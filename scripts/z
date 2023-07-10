@@ -1,7 +1,6 @@
 #!/bin/bash
 
 ZET_FOLDER="$HOME/Documents/zet"
-MAIN_FOLDER="$ZET_FOLDER/main"
 QUICK_FOLDER="$ZET_FOLDER/quick"
 
 if [ ! -d "$ZET_FOLDER" ]; then
@@ -10,9 +9,9 @@ fi
 
 zet() {
   FILENAME=$(echo $@ | tr " " "_").md
-  FILEPATH=$MAIN_FOLDER/$FILENAME
+  FILEPATH=$ZET_FOLDER/$FILENAME
 
-  if test -f "$FILEPATH" ; then
+  if [[ -f "$FILEPATH" ]] ; then
     read -p "$FILENAME already exists. Edit? " yes
     case "$yes" in
       y|yes|s|sim|ok|dale) vim "$FILEPATH"
@@ -28,7 +27,7 @@ quik() {
   FILENAME=$(echo $@ | tr " " "_").md
   FILEPATH=$QUICK_FOLDER/$FILENAME
 
-  if test -f "$FILEPATH" ; then
+  if [[ -f "$FILEPATH" ]] ; then
     read -p "$FILENAME already exists. Edit? " yes
     case "$yes" in
       y|yes|s|sim|ok|dale) vim "$FILEPATH"

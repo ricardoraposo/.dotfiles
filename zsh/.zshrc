@@ -2,8 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_profile
-SCRIPTS="$HOME/.dotfiles/scripts/"
+source $HOME/.zsh_prompt
 
+SCRIPTS="$HOME/.dotfiles/scripts/"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH=/usr/local/lib/nodejs/node-v16.17.0-linux-x64/bin:$PATH
     export GOPATH=$HOME/go
@@ -18,6 +19,7 @@ elif [[  "$OSTYPE" == "darwin"* ]]; then
 fi
 
 export EDITOR="nvim"
+export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump"
 
 # my completions
 complete -C z z

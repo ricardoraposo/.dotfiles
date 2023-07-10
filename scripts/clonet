@@ -3,14 +3,14 @@
 REPOS="$HOME/Projects/Repos/trybe"
 git=$(echo $1 | grep -o "github.com")
 [[ -z "$1" ]] && echo "Usage: clone <repo>" && exit 1
-[[ $git != "github.com" ]] && echo "Repo needs to be a link from github"  && exit 1
+[[ $git != "github.com" ]] && echo "error: epo needs to be a link from github"  && exit 1
 
 
 # I'm neither proud or ashamed of this
-FOLDER=$(echo "$1" | sed "s/.*\///;s/\..*//")
+FOLDER=$(echo "$1" | sed -E "s/.*034-//;s/\..*//;s/^([^-]+)-//")
 
 [ -d $REPOS/$FOLDER ] && echo "This repo is already in your computer" && exit 0
 
-cd $REPOS && git clone $1
+cd $REPOS && git clone $1 $FOLDER
 cd "$REPOS/$FOLDER" && npm install
 exec $SHELL

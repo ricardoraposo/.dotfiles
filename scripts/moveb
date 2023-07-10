@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# moves everything in the folder to the parent directory
+for dir in *
+do
+  mv -iv "$dir" ../
+done

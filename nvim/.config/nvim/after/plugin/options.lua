@@ -56,6 +56,9 @@ vim.cmd("syntax on")
 vim.cmd("let g:markdown_fenced_languages = ['javascript', 'sh']")
 
 vim.g.gruvbox_contrast_dark = "hard"
+vim.g.gruvbox_bold = 0
 vim.cmd.colorscheme("gruvbox")
-vim.cmd("highlight NvimTreeNormal guibg=none")
--- vim.cmd("highlight Boolean guifg=#ff5c5c")
+vim.cmd("highlight Normal ctermbg=none guibg=none")
+vim.cmd("highlight NvimTreeNormal ctermbg=none guibg=none")
+vim.cmd("highlight NvimTreeNormalFloat ctermbg=none guibg=none")
+

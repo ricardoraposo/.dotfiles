@@ -36,7 +36,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.cmd([[autocmd FileType html nmap <leader>ac 0f<ea class=""<esc>i]])
+-- html
+vim.cmd([[au FileType html nmap <leader>ac 0f<ea class=""<esc>i]])
 
-vim.cmd([[autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ac 0f<ea className=""<esc>i]])
-vim.cmd([[autocmd FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>al yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>]])
+-- js 
+vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ac 0f<ea className=""<esc>i]])
+vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>al yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>]])
+
+-- go
+vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])

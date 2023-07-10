@@ -5,14 +5,14 @@
 SCRIPTS="$HOME/.dotfiles/scripts"
 SCRIPTPATH="$SCRIPTS/$1"
 
-if test -f "$SCRIPTPATH"; then
+if [[ -f "$SCRIPTPATH" ]]; then
   read -p "$1 already exists. Edit? " yes
   case "$yes" in
-    y|yes|s|sim|ok|dale) nvim +3 "$SCRIPTPATH"
+    y|yes|s|sim|ok|dale) vim +3 "$SCRIPTPATH"
   esac
   exit 0
 fi
 
 printf "#!/bin/bash\n\n\n" >> $SCRIPTPATH
 chmod +x $SCRIPTPATH
-nvim +3 $SCRIPTPATH
+vim +3 $SCRIPTPATH

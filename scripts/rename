@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for dir in *
+do
+  renamed=$(echo $dir | sed -E 's/sd-034-//;s/^([^-]+)-//')
+  mv "$dir" "./$renamed"
+  # echo $renamed
+done

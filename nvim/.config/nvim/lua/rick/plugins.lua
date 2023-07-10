@@ -52,6 +52,7 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use "morhetz/gruvbox"
+  use "sickill/vim-monokai"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"

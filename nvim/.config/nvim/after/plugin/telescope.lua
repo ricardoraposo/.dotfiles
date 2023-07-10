@@ -39,7 +39,7 @@ telescope.setup({
       mappings = {
         i = {
           ["<cr>"] = require("telescope-undo.actions").yank_additions,
-          ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+          ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
           ["<C-cr>"] = require("telescope-undo.actions").restore,
         },
       },

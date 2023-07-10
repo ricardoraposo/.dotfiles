@@ -70,7 +70,6 @@ cmp.setup({
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer",  keyword_length = 6 },
-    { name = "orgmode" },
     { name = "path" },
   },
   confirm_opts = {
