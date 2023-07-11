@@ -23,7 +23,7 @@ null_ls.setup({
 		diagnostics.eslint.with({
 			only_local = "node_modules/.bin",
 			diagnostic_config = {
-				virtual_text = false,
+				virtual_text = true,
 			},
 		}),
 		formatting.goimports,

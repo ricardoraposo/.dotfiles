@@ -1,7 +1,4 @@
-
 call plug#begin('~/.local/share/vim/plugins')
-  Plug 'morhetz/gruvbox'
-  Plug 'crusoexia/vim-monokai'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'vim-pandoc/vim-pandoc-syntax' 
   Plug 'sheerun/vim-polyglot'
@@ -11,11 +8,9 @@ call plug#end()
 set autowrite
 set nowritebackup
 set noswapfile
-set nobackup
 set showmode
 set smartindent
 set ruler
-set undofile
 set expandtab 
 set shiftwidth=2
 set tabstop=2
@@ -33,6 +28,8 @@ set hidden
 set splitbelow
 set splitright
 set wildmenu
+set undofile
+set undodir="$HOME/.vim/undodir"
 set nospell
 set spelllang=en,pt_br
 set ruf=%45(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)

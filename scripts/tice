@@ -64,7 +64,7 @@ start() {
 
   timer & 
   sleep 0.3
-  sed -i '' "1s/^/$!\n/" $temp
+  [[ "$OSTYPE" == "linux-gnu"* ]] && sed -i="" "1s/^/$!\n/" $temp || sed -i "" "1s/^/$!\n/" $temp
 }
 
 set() {

@@ -10,6 +10,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export GOPATH=$HOME/go
     export PATH="$PATH:$HOME/.local/bin"
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+    export PATH="$PATH:$HOME/.local/bin"
+    export PATH="$PATH:$SCRIPTS"
 elif [[  "$OSTYPE" == "darwin"* ]]; then
     export GOPATH="$HOME/.local/bin/go"
     export PATH="$PATH:$(go env GOPATH)/bin"
