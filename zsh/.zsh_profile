@@ -28,6 +28,11 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
+# podman aliases
+alias pa='podman start -a'
+alias pr='podman run -it --hostname rickysthing --name rickyc'
+alias prws='podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace'
+
 bindkey ^E forward-word
 bindkey ^B backward-word
 bindkey ^K kill-word

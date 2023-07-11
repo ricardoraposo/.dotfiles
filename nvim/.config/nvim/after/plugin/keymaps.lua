@@ -122,7 +122,10 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>y", '"+ym', opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
-keymap("n", "<leader>sc", "<cmd>:so %<cr>", opts)
+keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
+
+-- God of all keymaps
+keymap("n", "<leader>tu", "<cmd>!npx tururu<cr>", opts)
 
 vim.cmd("inoremap , ,<c-g>u")
 vim.cmd("inoremap . .<c-g>u")
