@@ -1,6 +1,5 @@
 #!/bin/bash
 
-counter=0
 while true; do
   say -v luciana "ja fez o exercicio como projeto do dia ?"
   counter=$(( counter + 1 ))
