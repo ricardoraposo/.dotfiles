@@ -9,6 +9,9 @@ set autowrite
 set nowritebackup
 set noswapfile
 set showmode
+set showcmd
+set cmdheight=1
+set pumheight=10
 set smartindent
 set ruler
 set expandtab 
@@ -28,8 +31,8 @@ set hidden
 set splitbelow
 set splitright
 set wildmenu
+set undodir=$HOME/.vim/undovim
 set undofile
-set undodir="$HOME/.vim/undodir"
 set nospell
 set spc=
 set ruf=%45(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
@@ -39,11 +42,12 @@ syntax on
 colorscheme rwx
 
 let g:markdown_fenced_languages = ['bash', 'js=javascript']
-" let g:pandoc#syntax#codeblocks#embeds#langs = ['javascript', 'sh']
 let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 72
 
 let mapleader=" "
 nnoremap <leader><leader> <C-^>
 nnoremap <C-c> <esc>
+nnoremap <leader>sc <cmd>so %<CR>
+nnoremap <leader>tu <cmd>!npx tururu<CR>
 nnoremap G Gzz

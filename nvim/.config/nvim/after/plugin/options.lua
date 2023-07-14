@@ -1,6 +1,7 @@
 local o = vim.opt
 
 o.guicursor = "i:block"
+o.termguicolors = true
 o.backup = false
 o.backupcopy = "yes"
 o.autowrite = true
@@ -22,7 +23,6 @@ o.smarttab = true
 o.splitbelow = true
 o.splitright = true
 o.swapfile = false
-o.termguicolors = true
 o.timeoutlen = 1000
 o.undofile = true
 o.updatetime = 50

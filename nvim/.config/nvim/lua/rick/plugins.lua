@@ -52,7 +52,6 @@ return packer.startup(function(use)
 
   -- Colorscheme
   use "morhetz/gruvbox"
-  use "sickill/vim-monokai"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -60,7 +59,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-nvim-lua"
-  -- use("github/copilot.vim")
 
   -- snippets
   use "L3MON4D3/LuaSnip"
@@ -68,9 +66,9 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets"
 
   -- LSP
-  use "neovim/nvim-lspconfig"  -- LSP itself
+  use "neovim/nvim-lspconfig"           -- LSP itself
   use({
-    "williamboman/mason.nvim", -- make easier to get lsp servers
+    "williamboman/mason.nvim",          -- Makes easier to get lsp servers
     "williamboman/mason-lspconfig.nvim",
   })
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and diagnostics lsp servers
@@ -94,7 +92,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/playground"
-  use "sheerun/vim-polyglot"
+  use "sheerun/vim-polyglot" -- more minimal highlighting than treesitter highlighting
 
   -- Comments Plugin
   use "terrortylor/nvim-comment"

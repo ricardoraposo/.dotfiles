@@ -9,8 +9,24 @@ git=$(echo $1 | grep -o "github.com")
 # I'm neither proud or ashamed of this
 FOLDER=$(echo "$1" | sed -E "s/.*034-//;s/\..*//;s/^([^-]+)-//")
 
-[ -d $REPOS/$FOLDER ] && echo "This repo is already in your computer" && exit 0
+if [ -d $REPOS/$FOLDER ]; then
+ echo "This repo is already in your computer"
+ echo "Redirecting to directory"
+ cd "$REPOS/$FOLDER"
+ exec $SHELL
+ exit 0
+fi
 
 cd $REPOS && git clone $1 $FOLDER
 cd "$REPOS/$FOLDER" && npm install
+
+USER="ricardo-raposo"
+REPO=$(git branch -a | grep "$USER")
+if [[ -z "$REPO" ]]; then
+  git checkout -b "$USER-$FOLDER"
+else
+  git checkout "$USER-$FOLDER"
+fi
+
 exec $SHELL
+

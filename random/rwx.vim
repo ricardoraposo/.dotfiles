@@ -18,6 +18,7 @@ hi Search ctermbg=236 ctermfg=darkred
 hi vimTodo ctermbg=236 ctermfg=darkred
 hi Todo ctermbg=236 ctermfg=darkred
 hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+hi FoldColumn ctermbg=NONE cterm=NONE ctermfg=NONE
 hi MatchParen ctermbg=236 ctermfg=darkred
 
 " color overrides
