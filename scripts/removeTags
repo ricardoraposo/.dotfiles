@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while IFS= read -r line
+do
+  echo "$line" | sed -E "s/<([^>]*)>//g"
+done
+
+

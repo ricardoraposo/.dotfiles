@@ -3,7 +3,7 @@
 REPOS="$HOME/Projects/Repos/trybe"
 git=$(echo $1 | grep -o "github.com")
 [[ -z "$1" ]] && echo "Usage: clone <repo>" && exit 1
-[[ $git != "github.com" ]] && echo "error: epo needs to be a link from github"  && exit 1
+[[ $git != "github.com" ]] && echo "error: Repo needs to be a link from github"  && exit 1
 
 
 # I'm neither proud or ashamed of this

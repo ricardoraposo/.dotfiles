@@ -1,5 +1,0 @@
-#!/bin/bash
-
-LALAU="Chiclete com banana"
-
-echo "$LALAU eh massa"

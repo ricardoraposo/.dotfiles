@@ -40,10 +40,14 @@ quik() {
   vim $FILEPATH
 }
 
+get() {
+  NOTE=$(ls -F $ZET_FOLDER | grep -v "/$" | fzf) && vim "$ZET_FOLDER/$NOTE"
+}
+
 "$@"
 
 # Completion stuff
 if [[ -n $COMP_LINE ]]; then
-  printf "zet\nquik"
+  printf "zet\nquik\nget\n"
   exit
 fi
