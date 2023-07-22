@@ -1,5 +1,5 @@
 require("rick.plugins")
 require("rick.lsp")
 require("rick.cmp")
-require("rick.toggleterm")
+-- require("rick.toggleterm")
 require("rick.nvim-tree")

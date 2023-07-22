@@ -7,7 +7,7 @@ else
   echo "brew já está instalado"
 fi
 
-brewInstall=("git" "fzf" "stow" "exa" "tmux" "bat" "glow")
+brewInstall=("git" "fzf" "stow" "exa" "tmux" "bat" "glow" "gum" "jsonpp")
 for str in ${brewInstall[@]}
 do
   if ! command -v $str &> /dev/null

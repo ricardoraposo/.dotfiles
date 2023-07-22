@@ -244,10 +244,10 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-polyglot"] = {
+  ["vim-monokai"] = {
     loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-monokai",
+    url = "https://github.com/sickill/vim-monokai"
   },
   ["wilder.nvim"] = {
     loaded = true,

@@ -1,3 +1,4 @@
+hi clear
 hi StatusLine ctermfg=black ctermbg=NONE
 hi StatusLineNC ctermfg=black ctermbg=NONE
 hi Normal ctermbg=NONE

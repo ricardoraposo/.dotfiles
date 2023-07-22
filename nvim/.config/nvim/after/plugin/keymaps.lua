@@ -17,22 +17,19 @@ vim.g.maplocalleader = " "
 --	 command mode = "c"
 
 -- Disabling dumb stuff
-keymap("n", "<Up>", "<nop>", opts)
-keymap("n", "<Down>", "<nop>", opts)
+keymap("n", "<Up>", ":echoerr 'do better and use k, kid!'<CR>", opts)
+keymap("n", "<Down>", ":echoerr 'do better and use j, kid!'<CR>", opts)
+keymap("n", "<Right>", ":echoerr 'do better and use l, kid!'<CR>", opts)
+keymap("n", "<Left>", ":echoerr 'do better and use h, kid!'<CR>", opts)
 keymap("i", "<Up>", "<nop>", opts)
 keymap("i", "<Down>", "<nop>", opts)
 keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
 
--- Using this for good
-keymap("n", "<Right>", "<C-a>", opts)
-keymap("n", "<Left>", "<C-x>", opts)
-
 -- Normal
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
--- keymap("n", "<CR>", "ciw", opts)
 keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
 keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
@@ -52,7 +49,6 @@ keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 -- Insert --
 -- Goes to insert mode
 keymap("i", "<C-c>", "<ESC>", opts)
--- keymap({ "i", "n" }, "<C-s>", "<cmd>w<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -78,7 +74,7 @@ keymap("n", "<leader>do", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
-keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
+keymap("n", "<leader>dg", "<cmd>NvimTreeClose<CR><cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
@@ -92,26 +88,17 @@ keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
 keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 
--- Trouble
-keymap("n", "<leader>tt", "<cmd>TroubleToggle<cr>", opts)
-keymap("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
-keymap("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", opts)
-keymap("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", opts)
+-- Fodase plugins
+keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
-
--- Compile
 keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
-keymap("n", "<leader>ccc", "<cmd>!g++ -g % -o %:r<CR>", opts) -- Compile cpp
-keymap("n", "<leader>ccr", "<cmd>!g++ -g % -o %:r && ./%:r <CR>", opts) -- Compile and run cpp
 
--- Command line uses
+-- Command line integrations
 keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)
 keymap("n", "<leader>rt", "<cmd>!npm run test<CR>", opts)
+keymap("n", "<leader>ta", "!!turnArrow<CR>", opts)
 
 -- Better navigation
-keymap("n", "<leader>co", "<cmd>lua vim.opt.cursorcolumn = true<CR>", opts)
-keymap("n", "<leader>cp", "<cmd>lua vim.opt.cursorcolumn = false<CR>", opts)
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
 
@@ -120,21 +107,25 @@ keymap("n", "G", "Gzz", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
-keymap("v", "<leader>y", '"+ym', opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
 
 -- God of all keymaps
 keymap("n", "<leader>tu", "<cmd>!npx tururu<cr>", opts)
 
+-- Use of function row
+keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)
+keymap("n", "<F2>", "<cmd>set rnu!<CR>", opts)
+keymap("n", "<F3>", "<cmd>set cursorcolumn!<CR>", opts)
+keymap("n", "<F4>", "<cmd>set wrap!<CR>", opts)
+keymap("n", "<F10>", "<cmd>TSCaptureUnderCursor<CR>", opts)
+
 vim.cmd("inoremap , ,<c-g>u")
 vim.cmd("inoremap . .<c-g>u")
 vim.cmd("inoremap ! !<c-g>u")
 vim.cmd("inoremap ? ?<c-g>u")
 
--- I'm dumb and I type stuff wrong too much
-
-keymap("c", "WQ", "wq", opts)
-keymap("c", "Wq", "wq", opts)
-keymap("c", "W", "w", opts)
-keymap("c", "Q", "q", opts)
+-- Human error
+vim.cmd("command! Wq wq")
+vim.cmd("command! W w")
+vim.cmd("command! Q q")

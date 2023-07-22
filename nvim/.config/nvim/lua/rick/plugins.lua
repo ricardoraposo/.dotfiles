@@ -1,7 +1,6 @@
 local fn = vim.fn
 
 --Automatically install packer
-
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system({
@@ -15,14 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print("Installing packer close and reopen Neovim...")
   vim.cmd([[packadd packer.nvim]])
 end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
-  pattern = "plugins.lua",
-  command = "so % | PackerSync",
-})
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -45,13 +36,10 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"              -- Have packer manage itself
   use "nvim-lua/popup.nvim"                 -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"               -- Useful lua functions used ny lots of plugins
-  use "akinsho/toggleterm.nvim"             -- Terminal inside vim
   use "gelguy/wilder.nvim"                  -- For when I forget wtf I want to type
   use "is0n/jaq-nvim"                       -- Execute code from within vim
   use "lukas-reineke/indent-blankline.nvim" -- Adds some visual stuff for code indents
-
-  -- Colorscheme
-  use "morhetz/gruvbox"
+  use "oxfist/night-owl.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"
@@ -92,7 +80,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-treesitter/playground"
-  use "sheerun/vim-polyglot" -- more minimal highlighting than treesitter highlighting
+  use "sheerun/vim-polyglot" -- more minimal highlighting than treesitter
 
   -- Comments Plugin
   use "terrortylor/nvim-comment"

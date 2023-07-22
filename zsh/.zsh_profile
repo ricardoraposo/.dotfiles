@@ -11,8 +11,9 @@ alias v='nvim'
 alias sc='cd $HOME/.dotfiles/scripts'
 alias dot='cd $HOME/.dotfiles'
 alias zf='cd $HOME/Documents/zet'
-alias ls='exa -l'
+alias s='source ~/.zshrc'
 alias chmox='chmod +x'
+alias ls='exa -lh'
 
 #tmux aliases
 alias tm="ntmux"
@@ -22,11 +23,6 @@ alias ta='tmux attach'
 # npm aliases
 alias t='npm run test'
 alias d='npm run dev'
-
-# git aliases
-alias gwa='git worktree add'
-alias gwr='git worktree remove'
-alias gwl='git worktree list'
 
 # podman aliases
 alias pa='podman start -a'

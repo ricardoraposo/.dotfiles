@@ -1,10 +1,12 @@
--- Attach format options on buffer creation
-vim.api.nvim_create_autocmd("BufRead", {
-	group = vim.api.nvim_create_augroup("set_formatoptions", { clear = true }),
-	command = "set formatoptions-=cro",
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("packer_user_config", { clear = true }),
+  pattern = "plugins.lua",
+  -- command = "so % | PackerSync",
+  command = "so % | PackerInstall",
 })
 
-vim.cmd("autocmd BufReadPost,FileReadPost * normal zR")
+-- vim.cmd("autocmd BufReadPost,FileReadPost * normal zR")
 
 local attach_to_buffer = function(file)
 	local created_buffer = vim.api.nvim_create_buf(0, 1)
@@ -36,6 +38,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set wrap"})
+
+
+-- stuff
+vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
+
 -- html
 vim.cmd([[au FileType html nmap <leader>ac 0f<ea class=""<esc>i]])
 
@@ -45,3 +53,5 @@ vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap
 
 -- go
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])
+
+
