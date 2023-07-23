@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOS="$HOME/Projects/Repos/trybe"
-git=$(echo $1 | grep -o "github.com")
+git=$(echo "$1" | grep -o "github.com")
 [[ -z "$1" ]] && echo "Usage: clone <repo>" && exit 1
 [[ $git != "github.com" ]] && echo "error: Repo needs to be a link from github"  && exit 1
 
@@ -9,15 +9,15 @@ git=$(echo $1 | grep -o "github.com")
 # I'm neither proud or ashamed of this
 FOLDER=$(echo "$1" | sed -E "s/.*034-//;s/\..*//;s/^([^-]+)-//")
 
-if [ -d $REPOS/$FOLDER ]; then
+if [ -d "$REPOS/$FOLDER" ]; then
  echo "This repo is already in your computer"
  echo "Redirecting to directory"
- cd "$REPOS/$FOLDER"
+ cd "$REPOS/$FOLDER" || exit 0
  exec $SHELL
  exit 0
 fi
 
-cd $REPOS && git clone $1 $FOLDER
+cd "$REPOS" && git clone "$1" "$FOLDER"
 cd "$REPOS/$FOLDER" && npm install
 
 USER="ricardo-raposo"

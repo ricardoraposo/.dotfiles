@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'tpope/vim-commentary'
 call plug#end()
 
+set termguicolors
 set autowrite
 set nowritebackup
 set noswapfile

@@ -1,9 +1,7 @@
 fd(){
-  DIR=$(find ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe  -mindepth 1 -maxdepth 1 -type d | fzf) && cd $DIR
-}
-
-ntmux(){
-  NAME=$(basename $PWD) && tmux new -s $NAME
+  DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe -mindepth 1 -maxdepth 1 -type d |\
+    fzf --margin 15% --border=bold \
+    --preview 'exa -1 {}' --color bg+:-1) && cd $DIR
 }
 
 alias v='nvim'
@@ -16,9 +14,8 @@ alias chmox='chmod +x'
 alias ls='exa -lh'
 
 #tmux aliases
-alias tm="ntmux"
+alias tm="tmux new -A -s ricardo"
 alias tk='tmux kill-server'
-alias ta='tmux attach'
 
 # npm aliases
 alias t='npm run test'
@@ -29,10 +26,17 @@ alias pa='podman start -a'
 alias pr='podman run -it --hostname rickysthing --name rickyc'
 alias prws='podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace'
 
+# kitty kitten aliases
+alias icat="kitty +kitten icat --align left"
+alias themes="kitty +kitten themes"
+
+# ssh aliases
+alias pbdora="ssh dora 'xclip -selection clipboard -o' | pbcopy"
+
+bindkey ^N history-beginning-search-forward
+bindkey ^P history-beginning-search-backward
 bindkey ^E forward-word
 bindkey ^B backward-word
 bindkey ^K kill-word
 bindkey -s ^V "v .^M"
-bindkey -s ^A "tmux attach^M"
-bindkey -s ^U "cd ~/.config/nvim^M"
 bindkey -s ^F "fd^M"
