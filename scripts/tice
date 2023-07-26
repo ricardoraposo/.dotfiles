@@ -29,7 +29,7 @@ timer() {
   rm $temp
 }
 
-start() {
+parse() {
   if [[ "$1" == "hour" ]]; then
     MINUTE=$(( 59 - $(date +"%M" | sed 's/^[0]*//')))
     SECOND=$(( 60 - $(date +"%S" | sed 's/^[0]*//')))
@@ -61,33 +61,17 @@ start() {
     MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
     SECOND=$(( $SECOND % 60 ))
   fi
+}
 
+start() {
+  parse $1
   timer & 
   sleep 0.3
   [[ "$OSTYPE" == "linux-gnu"* ]] && sed -i="" "1s/^/$!\n/" $temp || sed -i "" "1s/^/$!\n/" $temp
 }
 
 set() {
-  MINUTEINPUT=$(echo $1 | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
-  SECONDINPUT=$(echo $1 | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
-  MINUTE=0
-  SECOND=0
-  if [ ! -z "$MINUTEINPUT" ]; then
-    for min in ${MINUTEINPUT[@]}
-    do
-      MINUTE=$(( $MINUTE + $min ))
-    done
-  fi
-  if [ ! -z "$SECONDINPUT" ]; then
-    for min in ${SECONDINPUT[@]}
-    do
-      SECOND=$(( $SECOND + $min ))
-    done
-  fi
-  if [[ $SECOND -ge 60 ]]; then
-    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
-    SECOND=$(( $SECOND % 60 ))
-  fi
+  parse $1
   printf "$MINUTE\n$SECOND" > $vars
 }
 
@@ -115,6 +99,8 @@ show() {
 [[ -z "$@" ]] && show || "$@"
 
 # Completion stuff
+# Add the snippet below to your bashrc/zshrc to add completion 
+# complete -C tice tice
 if [[ -n $COMP_LINE ]]; then
   printf "start\nstop\nshow\nset\nvar"
   exit

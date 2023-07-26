@@ -6,6 +6,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "so % | PackerInstall",
 })
 
+-- This will open telescope whenever I open vim
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	command = "Telescope find_files"
+-- })
+
 -- vim.cmd("autocmd BufReadPost,FileReadPost * normal zR")
 
 local attach_to_buffer = function(file)

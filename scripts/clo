@@ -1,0 +1,177 @@
+#!/bin/bash
+
+CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/clonex" || echo "$HOME/.cache/clonex" )
+RED="#f14e32"
+PINK="#FF00FF"
+
+prompt() {
+  color=$1
+  text=$2
+  gum style\
+    --border normal --bold\
+    --foreground "$color" "$text"
+}
+
+color_text() {
+  color=$1
+  text=$2
+  gum style --foreground "$color" "$text"
+}
+
+create_var_folder() {
+  prompt "$PINK" "Insira o caminho para o diretório de repositórios, a partir de $HOME"
+  while true; do
+    DIR=$(gum input --placeholder "Caminho para diretório")
+    [[ -z $DIR ]] && break
+    if [[ -d "$HOME/$DIR" ]]
+    then
+      mkdir "$CACHE"
+      echo "$HOME/$DIR" > "$CACHE/vars"
+      color_text "116" "Caminho salvo 😃!!!"
+      break
+    else
+       color_text "$RED" "Diretório inexistente, tente denovo"
+    fi
+  done
+}
+
+add_name_var() {
+  prompt $PINK "Qual seu nome? (Apenas dois nomes plisss)"
+  NAME=$(gum input --placeholder "insira aqui seu nome" | xargs | tr [:upper:] [:lower:] | tr " " "-")
+  color_text 116 "Nome salvo 😃!!!"
+  echo "$NAME" >> "$CACHE/vars"
+}
+
+check_url() {
+  URL=$1
+  [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
+  git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
+  ssh=$( echo "$URL" | grep "git@")
+  if [[ -z $git ]]; then
+    color_text "$RED" "Url inválida. Favor inserir link para repositório git."
+  elif [[ -z $ssh ]]; then
+    color_text "$RED" "É necessário que o link seja SSH"
+  else
+    break
+  fi
+}
+
+format_folder_name() {
+  FORMAT=$(echo "$URL" | sed "s/.*[0-9]-//;s/\..*//")
+  if [[ -z $( echo $FORMAT | grep -E "exercise|project") ]]; then
+    echo $FORMAT
+  else
+    echo $FORMAT | sed -E "s/^([^-]+)-//"
+  fi
+}
+
+clone_project() {
+  if [[ -d "$REPOS/$FOLDERNAME" ]]; then
+    color_text "$RED" "Repositório já existe 🙉"
+    color_text "$RED" "Redirecionando..."
+    cd "$REPOS/$FOLDERNAME"
+    exec $SHELL
+  else
+    color_text $PINK "Aguarde enquanto clonamos seu projeto ⌛️"
+    cd $REPOS && gum spin git clone $URL $FOLDERNAME
+    cd "$REPOS/$FOLDERNAME"
+  fi
+}
+
+checkout_branch() {
+  if gum confirm "Ja possui branch ?"; then
+    if gum confirm "Gostaria de acessá-la ?" ; then
+      color_text "$PINK" "Selecione sua branch"
+      BRANCH=$(git branch -a | grep -vE "HEAD|main" | sed "s/remotes\/origin\///g" | \
+        gum filter --placeholder "Comece a digitar o nome de sua branch..." \
+        --height 20 )
+      git checkout $BRANCH
+    else
+      color_text "$PINK" "Ta bom então"
+    fi
+  else 
+    if gum confirm "Gostaria de criar uma ?"; then
+      NAME="$USER-$FOLDERNAME"
+      if gum confirm "Pode ser $(color_text "$PINK" "$NAME") ?"; then
+        git checkout -b $NAME
+      else
+        color_text "$PINK" "Então vai ser oque ?"
+        NAME=$(gum input --placeholder "Nome da branch")
+        git checkout -b $NAME
+      fi
+    else
+      color_text "$PINK" "Fica sem então"
+    fi
+  fi
+  gum confirm "Posso dar 'npm install ?'" && gum spin npm install
+  exec $SHELL
+}
+
+# git@github.com:tryber/sd-034-project-zoo-functions.git
+## main ##
+
+set_vars() {
+    create_var_folder
+    add_name_var
+}
+
+check_vars() {
+  if [[ -d $CACHE ]]; then
+    FIRST=$(cat "$CACHE/vars" | head -1)
+    SECOND=$(cat "$CACHE/vars" | tail -1)
+    echo "Nome: $SECOND"
+    echo "Repositório: $FIRST"
+  fi
+}
+
+REPOS=$(cat "$CACHE/vars" | head -1)
+USER=$(cat "$CACHE/vars" | tail -1)
+
+main() {
+  clear
+  prompt $PINK "Por favor, insira o link do repositório 🚀"
+  while true; do
+    URL=$(gum input --prompt " " --width 60 --placeholder "Nome do repositório")
+    [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
+    git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
+    ssh=$( echo "$URL" | grep "git@")
+    if [[ -z $git ]]; then
+      color_text "$RED" "Url inválida. Favor inserir link para repositório git."
+    elif [[ -z $ssh ]]; then
+      color_text "$RED" "É necessário que o link seja SSH"
+    else
+      break
+    fi
+  done
+
+  FOLDERNAME=$(format_folder_name)
+  prompt "$PINK" "Qual tipo de repositório ?"
+  TYPE=$(gum choose "Normal" "Bare")
+
+  case $TYPE in
+    Normal)
+      clone_project
+      checkout_branch
+      ;;
+    Bare)
+      color_text "$PINK" "Então faz você pq eu não sei fazer ainda não"
+      ;;
+  esac
+}
+
+if [[ ! -d $CACHE ]]
+then
+  set_vars
+fi
+
+case "$@" in
+  --set-vars | -s)
+    set_vars
+    ;;
+  --check | -c)
+    check_vars
+    ;;
+  *)
+    main
+    ;;
+esac

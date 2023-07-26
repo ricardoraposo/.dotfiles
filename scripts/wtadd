@@ -1,0 +1,3 @@
+#!/bin/bash
+
+BRANCH=$(git branch -a | gum filter ) && git worktree add $BRANCH

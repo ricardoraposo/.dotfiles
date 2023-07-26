@@ -1,30 +1,32 @@
 fd(){
   DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe -mindepth 1 -maxdepth 1 -type d |\
-    fzf --margin 15% --border=bold \
+    fzf --margin 15% --border=rounded \
     --preview 'exa -1 {}' --color bg+:-1) && cd $DIR
 }
 
-alias v='nvim'
+alias v="nvim"
 # terminal commands aliases
-alias sc='cd $HOME/.dotfiles/scripts'
-alias dot='cd $HOME/.dotfiles'
-alias zf='cd $HOME/Documents/zet'
-alias s='source ~/.zshrc'
-alias chmox='chmod +x'
-alias ls='exa -lh'
+alias sc="cd $HOME/.dotfiles/scripts"
+alias dot="cd $HOME/.dotfiles"
+alias zf="cd $HOME/Documents/zet"
+alias so="source ~/.zshrc"
+alias chmox="chmod +x"
+alias ls="exa -lh"
+alias "?"="chatty"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
-alias tk='tmux kill-server'
+alias tk="tmux kill-server"
 
 # npm aliases
-alias t='npm run test'
-alias d='npm run dev'
+alias t="npm run test"
+alias d="npm run dev"
 
 # podman aliases
-alias pa='podman start -a'
-alias pr='podman run -it --hostname rickysthing --name rickyc'
-alias prws='podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace'
+alias docker="podman"
+alias pa="podman start -a"
+alias pr="podman run -it --hostname rickysthing --name rickyc"
+alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace"
 
 # kitty kitten aliases
 alias icat="kitty +kitten icat --align left"

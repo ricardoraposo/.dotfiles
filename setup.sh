@@ -41,6 +41,13 @@ else
   echo "yabai já está instalado"
 fi
 
+if ! command -v mods &> /dev/null
+then
+  brew install charmbracelet/tap/mods
+else
+  echo "mods já está instalado"
+fi
+
 stowFolders=("zsh" "yabai" "nvim" "kitty")
 for folder in ${stowFolders[@]}
 do

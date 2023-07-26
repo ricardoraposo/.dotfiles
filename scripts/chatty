@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export OPENAI_API_KEY=$(tail -1 $HOME/Documents/zet/secret_keys.md)
+
+if ! type mods &>/dev/null
+then 
+  echo "charm mods is necessary to run this application"
+  exit 1
+fi
+
+QUERY=$@
+
+mods --status-text "Ummm" -f "$QUERY" | glow

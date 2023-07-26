@@ -33,15 +33,15 @@ yabai -m config left_padding                 10
 yabai -m config right_padding                10
 yabai -m config window_gap                   10
 
-# apps to not manage (ignore)
+# apps that are set to open in specific space
 yabai -m rule --add app=kitty space=^2
 yabai -m rule --add app=Discord space=^5
 yabai -m rule --add app=Spotify space=^5
 yabai -m rule --add app=Slack space=^4
+# apps to not manage (ignore)
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
-yabai -m rule --add app="^Emacs" manage=on
 yabai -m rule --add app="^WhatsApp$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
 yabai -m rule --add app="^Music$" manage=off

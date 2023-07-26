@@ -3,9 +3,10 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple' 
   Plug 'tpope/vim-commentary'
+  Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-set termguicolors
+set path+=**
 set autowrite
 set nowritebackup
 set noswapfile
@@ -43,13 +44,24 @@ set ruf=%35(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
 set shortmess-=S
 
 syntax on
-colorscheme night-owl
+colorscheme rwx
 highlight Normal guibg=NONE ctermbg=NONE
+highlight EndOfBuffer guibg=NONE ctermbg=NONE
+highlight MatchParen ctermbg=NONE ctermfg=81
 
 let g:markdown_fenced_languages = ['bash', 'js=javascript']
 let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 72
 let g:pandoc#modules#disabled = ["spell"]
+
+if has("syntax")
+  function! <SID>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunc
+endif
 
 let mapleader=" "
 nnoremap <leader><leader> <C-^>
@@ -57,6 +69,7 @@ nnoremap <C-c> <esc>
 nnoremap <leader>sc <cmd>so %<CR>
 nnoremap <leader>tu <cmd>!npx tururu<CR>
 nnoremap G Gzz
+nnoremap <F2> :call <SID>SynStack()<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
