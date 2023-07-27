@@ -25,6 +25,11 @@ then
         gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
         sudo yum install gum
         ;;
+      * )
+        echo "Foi mal, não sei instalar no seu pc não."
+        echo "Você precisa descobrir como instalar sozinho, malzzzz"
+        echo "Esse é o repo da dependência desse script: https://github.com/charmbracelet/gum"
+        ;;
     esac
   fi
 fi

@@ -36,10 +36,11 @@ create_var_folder() {
     cd $HOME
     DIR=$(gum file --directory)
     [[ -z $DIR ]] && break
-    if [[ -d "$HOME/$DIR" ]]
+    DIRPATH=$( [[ $OSTYPE == "darwin"* ]] && echo "$HOME/$DIR" || echo "$DIR" )
+    if [[ -d "$DIRPATH" ]]
     then
       [[ ! -d $CACHE ]] && mkdir "$CACHE"
-      echo "$HOME/$DIR" > "$CACHE/vars"
+      echo "$DIRPATH" > "$CACHE/vars"
       color_text "116" "Caminho salvo 😃!!!"
       break
     else
@@ -151,7 +152,7 @@ main() {
   USER=$(cat "$CACHE/vars" | tail -1)
   prompt $PINK "Por favor, insira o link do repositório 🚀"
   while true; do
-    URL=$(gum input --prompt " " --width 60 --placeholder "Nome do repositório")
+    URL=$(gum input --prompt " " --width 60 --placeholder "Link SSH do repositório")
     [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
     git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
     ssh=$( echo "$URL" | grep "git@")
