@@ -8,8 +8,7 @@ oi() {
   gum style --foreground $PINK \
     --border double \
     --border-foreground 116 \
-    --padding "1 2" \
-    --margin 1 "Oi, eu sou a Clo"
+    --padding "1 2" "Oi, eu sou a Clo"
 }
 
 prompt() {
@@ -147,7 +146,6 @@ check_vars() {
 }
 
 main() {
-  clear
   REPOS=$(cat "$CACHE/vars" | head -1)
   USER=$(cat "$CACHE/vars" | tail -1)
   prompt $PINK "Por favor, insira o link do repositório 🚀"

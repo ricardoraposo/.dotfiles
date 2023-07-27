@@ -1,6 +1,6 @@
+plugins=(git)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
-plugins=(git)
 
 export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
