@@ -96,7 +96,7 @@ keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
 -- Command line integrations
 keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)
 keymap("n", "<leader>rt", "<cmd>!npm run test<CR>", opts)
-keymap("n", "<leader>ta", "!!turnArrow<CR>", opts)
+keymap("n", "<leader>ta", "!!turnArrow<CR>f(a", opts)
 
 -- Better navigation
 keymap({ "n", "v", "x" }, "{", "}", opts)

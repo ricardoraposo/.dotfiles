@@ -4,11 +4,20 @@ CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/clo" || echo 
 RED="#f14e32"
 PINK="#FF00FF"
 
+oi() {
+  gum style --foreground $PINK \
+    --border double \
+    --border-foreground 116 \
+    --padding "1 2" \
+    --margin 1 "Oi, eu sou a Clo"
+}
+
 prompt() {
   color=$1
   text=$2
   gum style\
     --border normal --bold\
+    --border-foreground 116 \
     --foreground "$color" "$text"
 }
 
@@ -19,27 +28,43 @@ color_text() {
 }
 
 create_var_folder() {
-  prompt "$PINK" "Insira o caminho para o diretório de repositórios, a partir de $HOME"
+  prompt "$PINK" "Selecione o diretório de repositórios"
   while true; do
-    DIR=$(gum input --placeholder "Caminho para diretório")
+    color_text "116" "Utilize as setas para navegar entre diretórios e Enter para selecionar"
+    color_text "116" "Use seta para direita para acessar o diretório"
+    color_text "116" "Use seta para esquerda para voltar"
+    cd $HOME
+    DIR=$(gum file --directory)
     [[ -z $DIR ]] && break
     if [[ -d "$HOME/$DIR" ]]
     then
-      mkdir "$CACHE"
+      [[ ! -d $CACHE ]] && mkdir "$CACHE"
       echo "$HOME/$DIR" > "$CACHE/vars"
       color_text "116" "Caminho salvo 😃!!!"
       break
     else
-       color_text "$RED" "Diretório inexistente, tente denovo"
+      clear
+      color_text "$RED" "Diretório inexistente ou nem diretório é🙀 Tente denovo!"
     fi
   done
 }
 
 add_name_var() {
   prompt $PINK "Qual seu nome? (Apenas dois nomes plisss)"
-  NAME=$(gum input --placeholder "insira aqui seu nome" | xargs | tr [:upper:] [:lower:] | tr " " "-")
-  color_text 116 "Nome salvo 😃!!!"
-  echo "$NAME" >> "$CACHE/vars"
+  while true; do
+    NAME=$(gum input --placeholder "Insira aqui seu nome" | xargs)
+    NUM=$( echo "$NAME" | wc -w )
+    if [[ $NUM -gt 2 ]]; then
+      color_text "$RED" "Eu disse pra por só dois nomes...."
+    elif [[ $NUM -eq 0 ]]; then
+      color_text "$RED" "Não vai nem me falar o nome ?"
+    else
+      NAME=$( echo "$NAME" | tr [:upper:] [:lower:] | tr " " "-")
+      color_text 116 "Nome salvo 😃!!!"
+      echo "$NAME" >> "$CACHE/vars"
+      break
+    fi
+  done
 }
 
 check_url() {
@@ -72,8 +97,7 @@ clone_project() {
     cd "$REPOS/$FOLDERNAME"
     exec $SHELL
   else
-    color_text $PINK "Aguarde enquanto clonamos seu projeto ⌛️"
-    cd $REPOS && gum spin git clone $URL $FOLDERNAME
+    cd $REPOS && gum spin --title "Aguarde enquanto clonamos seu projeto ⌛️" git clone $URL $FOLDERNAME
     cd "$REPOS/$FOLDERNAME"
   fi
 }
@@ -103,12 +127,11 @@ checkout_branch() {
       color_text "$PINK" "Fica sem então"
     fi
   fi
-  gum confirm "Posso dar 'npm install ?'" && gum spin npm install
+  gum confirm "Posso dar 'npm install ?'" && gum spin --title "Instalando dependências..." npm install
   exec $SHELL
 }
 
 set_vars() {
-  clear
   create_var_folder
   add_name_var
 }
@@ -116,7 +139,7 @@ set_vars() {
 check_vars() {
   if [[ -d $CACHE ]]; then
     FIRST=$(cat "$CACHE/vars" | head -1)
-    SECOND=$(cat "$CACHE/vars" | tail -1)
+    SECOND=$(cat "$CACHE/vars" | tail -1 | tr "-" " ")
     echo "Nome: $SECOND"
     echo "Repositório: $FIRST"
   fi
@@ -151,24 +174,25 @@ main() {
       checkout_branch
       ;;
     Bare)
-      color_text "$PINK" "Então faz você pq eu não sei fazer ainda não"
+      color_text "$PINK" "Então faz você pq eu não sei fazer ainda não" && exit 0
       ;;
   esac
 }
 
-if [[ ! -d $CACHE ]]
-then
-  set_vars
-fi
-
 case "$@" in
-  --set-vars | -s)
+  -s --set)
+    clear && oi
     set_vars
     ;;
-  --check | -c)
+  --check)
     check_vars
     ;;
   *)
+    clear && oi
+    if [[ ! -d $CACHE ]]
+    then
+      set_vars
+    fi
     main
     ;;
 esac

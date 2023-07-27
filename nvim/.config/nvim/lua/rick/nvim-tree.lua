@@ -112,7 +112,7 @@ require("nvim-tree").setup({
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_markers = {
-      enable = true,
+      enable = false,
       icons = {
         corner = "└ ",
         edge = "│ ",
@@ -173,7 +173,7 @@ require("nvim-tree").setup({
     args = {},
   },
   diagnostics = {
-    enable = true,
+    enable = false,
     show_on_dirs = true,
     icons = {
       hint = "",

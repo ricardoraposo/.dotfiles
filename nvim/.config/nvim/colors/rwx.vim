@@ -1,8 +1,13 @@
-hi clear
-hi StatusLine ctermfg=black ctermbg=NONE
+highlight clear
+syntax on
+set background=dark
+
+hi Normal guibg=NONE ctermbg=NONE
+hi StatusLine ctermfg=cyan ctermbg=NONE
 hi StatusLineNC ctermfg=black ctermbg=NONE
 hi Normal ctermbg=NONE
 hi Special ctermfg=cyan
+hi Function ctermfg=121 ctermbg=NONE cterm=bold
 hi LineNr ctermfg=black ctermbg=NONE
 hi SpecialKey ctermfg=black ctermbg=NONE
 hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
@@ -17,15 +22,20 @@ hi Search ctermbg=236 ctermfg=darkred
 hi vimTodo ctermbg=236 ctermfg=darkred
 hi Todo ctermbg=236 ctermfg=darkred
 hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+hi FoldColumn ctermbg=NONE cterm=NONE ctermfg=NONE
 hi MatchParen ctermbg=236 ctermfg=darkred
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+hi MatchParen ctermbg=NONE ctermfg=81
 
+
+" color overrides
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
 au FileType * hi Normal ctermbg=NONE
 au FileType * hi Special ctermfg=cyan
 au FileType * hi LineNr ctermfg=black ctermbg=NONE
 au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
-au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
+au FileType * hi ModeMsg ctermfg=yellow cterm=NONE ctermbg=NONE
 au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
 au FileType * hi NonText ctermfg=black ctermbg=NONE
 au FileType * hi vimGlobal ctermfg=black ctermbg=NONE
@@ -48,4 +58,3 @@ au FileType bash set sw=2
 au FileType c set sw=8
 au FileType markdown,pandoc noremap j gj
 au FileType markdown,pandoc noremap k gk
-

@@ -1,8 +1,8 @@
 call plug#begin('~/.local/share/vim/plugins')
-  Plug 'haishanh/night-owl.vim'
   Plug 'vim-pandoc/vim-pandoc'
   Plug 'rwxrob/vim-pandoc-syntax-simple' 
   Plug 'tpope/vim-commentary'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -45,14 +45,6 @@ set shortmess-=S
 
 syntax on
 colorscheme rwx
-highlight Normal guibg=NONE ctermbg=NONE
-highlight EndOfBuffer guibg=NONE ctermbg=NONE
-highlight MatchParen ctermbg=NONE ctermfg=81
-
-let g:markdown_fenced_languages = ['bash', 'js=javascript']
-let g:pandoc#formatting#mode = 'h'
-let g:pandoc#formatting#textwidth = 72
-let g:pandoc#modules#disabled = ["spell"]
 
 if has("syntax")
   function! <SID>SynStack()
@@ -63,14 +55,38 @@ if has("syntax")
   endfunc
 endif
 
+" keymaps
 let mapleader=" "
-nnoremap <leader><leader> <C-^>
-nnoremap <C-c> <esc>
-nnoremap <leader>sc <cmd>so %<CR>
-nnoremap <leader>tu <cmd>!npx tururu<CR>
 nnoremap G Gzz
+nnoremap <C-c> <esc>
+nnoremap <leader><leader> <C-^>
+nnoremap <leader>sc <cmd>so %<CR>
 nnoremap <F2> :call <SID>SynStack()<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
+" autocmds
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" golang stuff
+let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 1
+let g:go_fmt_fail_silently = 0
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_diagnostic_errors = 1
+let g:go_highlight_diagnostic_warnings = 1
+
+" markdown stuff
+let g:markdown_fenced_languages = ['bash', 'js=javascript']
+let g:pandoc#formatting#mode = 'h'
+let g:pandoc#formatting#textwidth = 72
+let g:pandoc#modules#disabled = ["spell"]
+
