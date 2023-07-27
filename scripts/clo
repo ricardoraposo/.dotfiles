@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/clonex" || echo "$HOME/.cache/clonex" )
+CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/clo" || echo "$HOME/.cache/clo" )
 RED="#f14e32"
 PINK="#FF00FF"
 
@@ -107,12 +107,10 @@ checkout_branch() {
   exec $SHELL
 }
 
-# git@github.com:tryber/sd-034-project-zoo-functions.git
-## main ##
-
 set_vars() {
-    create_var_folder
-    add_name_var
+  clear
+  create_var_folder
+  add_name_var
 }
 
 check_vars() {
@@ -124,11 +122,10 @@ check_vars() {
   fi
 }
 
-REPOS=$(cat "$CACHE/vars" | head -1)
-USER=$(cat "$CACHE/vars" | tail -1)
-
 main() {
   clear
+  REPOS=$(cat "$CACHE/vars" | head -1)
+  USER=$(cat "$CACHE/vars" | tail -1)
   prompt $PINK "Por favor, insira o link do repositório 🚀"
   while true; do
     URL=$(gum input --prompt " " --width 60 --placeholder "Nome do repositório")
