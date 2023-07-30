@@ -1,6 +1,7 @@
 local o = vim.opt
 
 o.guicursor = "i:block"
+o.termguicolors = true
 o.backup = false
 o.backupcopy = "yes"
 o.autowrite = true
@@ -54,8 +55,20 @@ vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("syntax on")
 vim.g.markdown_fenced_languages = {'javascript', 'sh'}
 
-vim.cmd.colorscheme("rwx")
+local handle = io.popen("pmset -g batt | grep -oE 'attached|charged'")
+local output = handle:read("*a")
+handle:close()
+local hour = os.date("*t").hour
+
+if hour > 6 and hour < 18 and output == "" then
+  o.background = "light"
+else
+  o.background = "dark"
+end
+
+vim.cmd.colorscheme("retrobox")
 vim.cmd("highlight Normal ctermbg=none guibg=none")
 vim.cmd("highlight LineNr ctermbg=none guibg=none")
 vim.cmd("highlight NvimTreeNormal ctermbg=none guibg=none")
 vim.cmd("highlight NvimTreeNormalFloat ctermbg=none guibg=none")
+vim.cmd("highlight htmlBold ctermbg=none guibg=none guifg=red")

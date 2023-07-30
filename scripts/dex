@@ -1,0 +1,8 @@
+#!/bin/bash
+
+NUMBER=$(system_profiler SPDisplaysDataType | grep "Resolution" | wc -l)
+MAIN=$(system_profiler SPDisplaysDataType | grep "Connection Type: Internal" | wc -l)
+
+if [[ $NUMBER -gt 1 || $MAIN -eq 0 ]]; then
+  echo "dex"
+fi

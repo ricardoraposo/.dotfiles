@@ -1,19 +1,20 @@
-plugins=(git)
+plugins=(git vi-mode)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
 
+export EDITOR="nvim"
+export NOTES="$HOME/Documents/zet"
+export SCRIPTS="$HOME/.dotfiles/scripts"
+export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump"
 export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
-export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump"
-export SCRIPTS="$HOME/.dotfiles/scripts"
-export EDITOR="nvim"
-
 export GOPATH="$HOME/.local/bin/go"
+
 export PATH="$PATH:$(go env GOPATH)/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$SCRIPTS"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$SCRIPTS:$PATH"
 
 # completions
 complete -C z z

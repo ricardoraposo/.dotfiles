@@ -60,7 +60,8 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim",
   })
   use "jose-elias-alvarez/null-ls.nvim" -- formatting and diagnostics lsp servers
-  use "OmniSharp/omnisharp-vim"         -- csharp bullshit
+  -- use "OmniSharp/omnisharp-vim"      -- csharp bullshit
+  use "fatih/vim-go"                    -- go bullshit
   use "folke/trouble.nvim"              -- get diag and function references in an easier way
 
   -- Telescope & Harpoon

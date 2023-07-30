@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if git rev-parse --is-inside-work-tree &>/dev/null; then
+  BRANCH=$(git branch -a | sed "s/remotes\/origin\///g" | gum filter)
+  [[ ! -z $BRANCH ]] && git checkout $BRANCH
+else
+  gum style --foreground "#ff0000" "This isn't a git folder you dumbass"
+fi

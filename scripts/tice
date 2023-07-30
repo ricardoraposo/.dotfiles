@@ -2,6 +2,7 @@
 
 temp="/tmp/ticethingy"
 vars="/tmp/ticevars"
+pid="/tmp/ticepid"
 
 if [[ ! -f $vars ]]; then 
   printf "40\n0" > $vars
@@ -66,8 +67,7 @@ parse() {
 start() {
   parse $1
   timer & 
-  sleep 0.3
-  [[ "$OSTYPE" == "linux-gnu"* ]] && sed -i="" "1s/^/$!\n/" $temp || sed -i "" "1s/^/$!\n/" $temp
+  echo $! > $pid
 }
 
 set() {
@@ -76,10 +76,8 @@ set() {
 }
 
 stop() {
-  MYSELF=$(head -n 1 $temp)
-  kill $MYSELF
-  sleep 0.1
-  rm $temp
+  MYSELF=$(head -1 $pid)
+  kill $MYSELF && rm $temp && rm $pid
 }
 
 var() {

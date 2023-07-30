@@ -1,6 +1,8 @@
+set background=dark
+set notermguicolors
+
 highlight clear
 syntax on
-set background=dark
 
 hi Normal guibg=NONE ctermbg=NONE
 hi StatusLine ctermfg=cyan ctermbg=NONE
@@ -26,7 +28,7 @@ hi FoldColumn ctermbg=NONE cterm=NONE ctermfg=NONE
 hi MatchParen ctermbg=236 ctermfg=darkred
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 hi MatchParen ctermbg=NONE ctermfg=81
-
+hi Pmenu ctermbg=NONE ctermfg=white
 
 " color overrides
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE

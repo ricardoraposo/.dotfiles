@@ -67,18 +67,21 @@ add_name_var() {
   done
 }
 
-check_url() {
-  URL=$1
-  [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
-  git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
-  ssh=$( echo "$URL" | grep "git@")
-  if [[ -z $git ]]; then
-    color_text "$RED" "Url inválida. Favor inserir link para repositório git."
-  elif [[ -z $ssh ]]; then
-    color_text "$RED" "É necessário que o link seja SSH"
-  else
-    break
-  fi
+take_url_input() {
+  prompt $PINK "Por favor, insira o link do repositório 🚀"
+  while true; do
+    URL=$(gum input --prompt " " --width 60 --placeholder "Link SSH do repositório")
+    [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
+    git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
+    ssh=$( echo "$URL" | grep "git@")
+    if [[ -z $git ]]; then
+      color_text "$RED" "Url inválida. Favor inserir link para repositório git."
+    elif [[ -z $ssh ]]; then
+      color_text "$RED" "É necessário que o link seja SSH"
+    else
+      break
+    fi
+  done
 }
 
 format_folder_name() {
@@ -95,6 +98,7 @@ clone_project() {
     color_text "$RED" "Repositório já existe 🙉"
     color_text "$RED" "Redirecionando..."
     cd "$REPOS/$FOLDERNAME"
+    echo $!
     exec $SHELL
   else
     cd $REPOS && gum spin --title "Aguarde enquanto clonamos seu projeto ⌛️" git clone $URL $FOLDERNAME
@@ -148,20 +152,8 @@ check_vars() {
 main() {
   REPOS=$(cat "$CACHE/vars" | head -1)
   USER=$(cat "$CACHE/vars" | tail -1)
-  prompt $PINK "Por favor, insira o link do repositório 🚀"
-  while true; do
-    URL=$(gum input --prompt " " --width 60 --placeholder "Link SSH do repositório")
-    [[ -z $URL ]] && color_text "$RED" "Se não for pra passar um link pra que que me chamou ?" && exit 1
-    git=$( echo "$URL" | grep -E "(github|gitlab|bitbucket)")
-    ssh=$( echo "$URL" | grep "git@")
-    if [[ -z $git ]]; then
-      color_text "$RED" "Url inválida. Favor inserir link para repositório git."
-    elif [[ -z $ssh ]]; then
-      color_text "$RED" "É necessário que o link seja SSH"
-    else
-      break
-    fi
-  done
+
+  take_url_input
 
   FOLDERNAME=$(format_folder_name)
   prompt "$PINK" "Qual tipo de repositório ?"

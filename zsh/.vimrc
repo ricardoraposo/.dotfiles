@@ -1,6 +1,4 @@
 call plug#begin('~/.local/share/vim/plugins')
-  Plug 'vim-pandoc/vim-pandoc'
-  Plug 'rwxrob/vim-pandoc-syntax-simple' 
   Plug 'tpope/vim-commentary'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'sheerun/vim-polyglot'
@@ -61,6 +59,7 @@ nnoremap G Gzz
 nnoremap <C-c> <esc>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>sc <cmd>so %<CR>
+nnoremap <C-f> :find 
 nnoremap <F2> :call <SID>SynStack()<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
@@ -83,6 +82,7 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
+let g:go_auto_sameids = 0
 
 " markdown stuff
 let g:markdown_fenced_languages = ['bash', 'js=javascript']

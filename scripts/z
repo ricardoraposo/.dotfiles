@@ -14,13 +14,13 @@ zet() {
   if [[ -f "$FILEPATH" ]] ; then
     read -p "$FILENAME already exists. Edit? " yes
     case "$yes" in
-      y|yes|s|sim|ok|dale) vim "$FILEPATH"
+      y|yes|s|sim|ok|dale) nvim "$FILEPATH"
     esac
     exit 0
   fi
 
   echo "### $(now)" >> $FILEPATH
-  vim $FILEPATH
+  nvim $FILEPATH
 }
 
 quik() {
@@ -30,18 +30,18 @@ quik() {
   if [[ -f "$FILEPATH" ]] ; then
     read -p "$FILENAME already exists. Edit? " yes
     case "$yes" in
-      y|yes|s|sim|ok|dale) vim "$FILEPATH"
+      y|yes|s|sim|ok|dale) nvim "$FILEPATH"
     esac
     exit 0
   fi
 
   # touch $FILEPATH
   echo "### $(now)" >> $FILEPATH
-  vim $FILEPATH
+  nvim $FILEPATH
 }
 
 get() {
-  NOTE=$(ls -F $ZET_FOLDER | grep -v "/$" | fzf) && vim "$ZET_FOLDER/$NOTE"
+  NOTE=$(ls -F $ZET_FOLDER | grep -v "/$" | fzf) && nvim "$ZET_FOLDER/$NOTE"
 }
 
 "$@"

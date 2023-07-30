@@ -1,3 +1,3 @@
 #!/bin/bash
 
-BRANCH=$(git branch -a | gum filter ) && git worktree add $BRANCH
+BRANCH=$(git branch -a | sed 's/remotes\/origin\///g' | gum filter ) && git worktree add $BRANCH
