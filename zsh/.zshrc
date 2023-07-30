@@ -11,7 +11,8 @@ export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
 
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$SCRIPTS:$PATH"

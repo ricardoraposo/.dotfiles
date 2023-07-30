@@ -6,10 +6,10 @@ HOUR=$(date +"%H" | sed 's/^0*//g')
 ONCHARGE=$(pmset -g batt | grep -oE 'attached|charged')
 if [[ $HOUR -gt 6 && $HOUR -lt 18 && -z $ONCHARGE ]]; then
   sed -i "" "\$s/.*/include gruvylight.conf/g" $CONFIG
-  chlight
+  osascript $HOME/.dotfiles/scripts/chlight
 else
   sed -i "" "\$s/.*/include gruvy.conf/g" $CONFIG
-  chdark
+  osascript $HOME/.dotfiles/scripts/chdark
 fi
 
 kill -SIGUSR1 $(pgrep kitty)
