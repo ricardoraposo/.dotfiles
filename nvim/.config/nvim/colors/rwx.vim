@@ -9,7 +9,7 @@ hi StatusLine ctermfg=cyan ctermbg=NONE
 hi StatusLineNC ctermfg=black ctermbg=NONE
 hi Normal ctermbg=NONE
 hi Special ctermfg=cyan
-hi Function ctermfg=121 ctermbg=NONE cterm=bold
+hi Function ctermfg=121 ctermbg=NONE
 hi LineNr ctermfg=black ctermbg=NONE
 hi SpecialKey ctermfg=black ctermbg=NONE
 hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE

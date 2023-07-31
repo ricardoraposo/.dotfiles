@@ -27,7 +27,7 @@ keymap("i", "<Left>", "<nop>", opts)
 keymap("i", "<Right>", "<nop>", opts)
 
 -- Normal
-keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
+keymap("n", "<leader>se", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
 keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
@@ -39,8 +39,8 @@ keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)
 keymap("n", "<M-Left>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<M-Right>", "<cmd>vertical resize -2<CR>", opts)
-keymap("n", "<leader>vv", "<cmd>vnew<CR>", opts)
-keymap("n", "<leader>vh", "<cmd>new<CR>", opts)
+keymap("n", "<leader>vv", "<cmd>silent !tmux split-window -h<CR>", opts)
+keymap("n", "<leader>vh", "<cmd>silent !tmux split-window<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -109,6 +109,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
+keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/options.lua<cr>", opts)
 
 -- God of all keymaps
 keymap("n", "<leader>tu", "<cmd>!npx tururu<cr>", opts)

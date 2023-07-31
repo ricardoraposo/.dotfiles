@@ -1,9 +1,3 @@
-vim.opt.list = true
-
-require("indent_blankline").setup({
-	show_current_context = true,
-})
-
 local wilder = require("wilder")
 wilder.setup({
 	modes = { ":", "/", "?" },

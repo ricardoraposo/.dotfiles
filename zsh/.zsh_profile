@@ -14,9 +14,9 @@ c() {
 alias v="nvim"
 alias vim="nvim"
 # terminal commands aliases
-alias sc="cd $HOME/.dotfiles/scripts"
+alias sc="cd $SCRIPTS"
 alias dot="cd $HOME/.dotfiles"
-alias zf="cd $HOME/Documents/zet"
+alias zf="cd $NOTES"
 alias so="source ~/.zshrc"
 alias chmox="chmod +x"
 alias ls="exa -lh"
@@ -39,9 +39,6 @@ alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardorap
 # kitty kitten aliases
 alias icat="kitty +kitten icat --align left"
 alias themes="kitty +kitten themes"
-
-# ssh aliases
-alias pbdora="ssh dora 'xclip -selection clipboard -o' | pbcopy"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward

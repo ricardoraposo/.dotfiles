@@ -20,10 +20,8 @@ local servers = {
   "emmet_ls",
   "tailwindcss",
   "prismals",
-  "gopls",
-  "rust_analyzer",
   "clangd",
-  "omnisharp",
+  "gopls",
 }
 
 mason.setup({})
@@ -65,8 +63,3 @@ lspconfig.clangd.setup({
   -- root_dir = utils.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
   init_option = { fallbackFlags = { "-std=c++2a" } },
 })
-
-vim.g.OmniSharp_server_use_net6 = 1
-vim.g.OmniSharp_server_stdio = 1
-vim.g.OmniSharp_highlighting = 0
--- vim.g.OmniSharp_server_use_mono = 1

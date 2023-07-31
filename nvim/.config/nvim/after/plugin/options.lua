@@ -52,21 +52,11 @@ vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
+vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("syntax on")
-vim.g.markdown_fenced_languages = {'javascript', 'sh'}
+vim.g.markdown_fenced_languages = { "javascript", "sh" }
 
-local handle = io.popen("pmset -g batt | grep -oE 'attached|charged'")
-local output = handle:read("*a")
-handle:close()
-local hour = os.date("*t").hour
-
-if hour > 6 and hour < 18 and output == "" then
-  o.background = "light"
-else
-  o.background = "dark"
-end
-
-vim.cmd.colorscheme("retrobox")
+vim.cmd.colorscheme("catppuccin")
 vim.cmd("highlight Normal ctermbg=none guibg=none")
 vim.cmd("highlight LineNr ctermbg=none guibg=none")
 vim.cmd("highlight NvimTreeNormal ctermbg=none guibg=none")

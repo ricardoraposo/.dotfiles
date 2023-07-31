@@ -58,5 +58,3 @@ vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap
 
 -- go
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])
-
-

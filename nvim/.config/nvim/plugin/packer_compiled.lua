@@ -109,20 +109,15 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  gruvbox = {
+  ["gopher.nvim"] = {
     loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/gopher.nvim",
+    url = "https://github.com/olexsmir/gopher.nvim"
   },
   harpoon = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
-  },
-  ["indent-blankline.nvim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["jaq-nvim"] = {
     loaded = true,
@@ -143,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["omnisharp-vim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/omnisharp-vim",
-    url = "https://github.com/OmniSharp/omnisharp-vim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -229,11 +224,6 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
-  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/trouble.nvim",
@@ -244,10 +234,10 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-monokai"] = {
+  ["vim-polyglot"] = {
     loaded = true,
-    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-monokai",
-    url = "https://github.com/sickill/vim-monokai"
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   },
   ["wilder.nvim"] = {
     loaded = true,

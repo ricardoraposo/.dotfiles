@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/clo" || echo "$HOME/.cache/clo" )
-RED="#f14e32"
+RED="#F14E32"
 PINK="#FF00FF"
 
 oi() {
