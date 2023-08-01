@@ -66,8 +66,7 @@ parse() {
 
 start() {
   parse $1
-  timer & 
-  echo $! > $pid
+  timer &
 }
 
 set() {
@@ -76,8 +75,8 @@ set() {
 }
 
 stop() {
-  MYSELF=$(head -1 $pid)
-  kill $MYSELF && rm $temp && rm $pid
+  MYSELF=$(pgrep -f 'tice start')
+  kill $MYSELF && rm $temp
 }
 
 var() {

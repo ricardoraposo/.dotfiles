@@ -1,7 +1,8 @@
 local o = vim.opt
 
-o.guicursor = "i:block"
+o.compatible = false
 o.termguicolors = true
+o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
 o.autowrite = true
@@ -56,9 +57,9 @@ vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("syntax on")
 vim.g.markdown_fenced_languages = { "javascript", "sh" }
 
-vim.cmd.colorscheme("catppuccin")
-vim.cmd("highlight Normal ctermbg=none guibg=none")
-vim.cmd("highlight LineNr ctermbg=none guibg=none")
-vim.cmd("highlight NvimTreeNormal ctermbg=none guibg=none")
-vim.cmd("highlight NvimTreeNormalFloat ctermbg=none guibg=none")
-vim.cmd("highlight htmlBold ctermbg=none guibg=none guifg=red")
+vim.g.melange_enable_font_variants = 1
+vim.cmd.colorscheme("melange")
+vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
+vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")
+vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
+vim.cmd("highlight NvimTreeNormalFloat ctermbg=NONE guibg=NONE")
