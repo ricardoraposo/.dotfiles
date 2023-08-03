@@ -1,7 +1,8 @@
 #!/bin/bash
 
 CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/kee" || echo "$HOME/.cache/kee" )
-command=$([[ "$OSTYPE" == "darwin"* ]] && echo "sed -i ''" || echo "sed -i=''" )
+DATECMD=$([[ "$OSTYPE" == "darwin"* ]] && echo "gdate" || echo "date" )
+SEDCMD=$([[ "$OSTYPE" == "darwin"* ]] && echo "sed -i ''" || echo "sed -i=''" )
 [[ ! -d $CACHE ]] && mkdir "$CACHE" && printf "default=47m39s\nemoji=🤯\n" >> "$CACHE/vars"
 
 parse_input() {
@@ -55,9 +56,9 @@ parse_input() {
 }
 
 start() {
-  $command "/target=/d" "$CACHE/vars"
+  $SEDCMD "/target=/d" "$CACHE/vars"
   parse_input $1
-  TARGET=$(gdate --date="+$HOUR hours +$MINUTE minutes +$SECOND seconds" +%s)
+  TARGET=$($DATECMD --date="+$HOUR hours +$MINUTE minutes +$SECOND seconds" +%s)
   echo "target=$TARGET" >> "$CACHE/vars"
 }
 
@@ -108,7 +109,7 @@ show() {
 }
 
 set() {
-  $command "/default=/d" "$CACHE/vars"
+  $SEDCMD "/default=/d" "$CACHE/vars"
   echo "default=$1" >> "$CACHE/vars"
 }
 
@@ -117,7 +118,7 @@ vars() {
 }
 
 stop() {
-  $command "/target=/d" "$CACHE/vars"
+  $SEDCMD "/target=/d" "$CACHE/vars"
 }
 
 [[ -z "$@" ]] && show || "$@"
