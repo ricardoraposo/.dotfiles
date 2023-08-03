@@ -10,7 +10,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.jq,
-		formatting.stylua,
+		-- formatting.stylua,
 		formatting.prettier.with({
 			extra_args = {
 				"--single-quote",

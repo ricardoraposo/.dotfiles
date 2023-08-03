@@ -29,10 +29,6 @@ keymap("i", "<Right>", "<nop>", opts)
 -- Normal
 keymap("n", "<leader>se", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<C-\\>", ":ToggleTerm direction=tab<CR>", opts)
-keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
-keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
-keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -54,6 +50,7 @@ keymap("i", "<C-c>", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap({"v", "x"}, "<leader>y", "<cmd>w !bash kitty +kitten clipboard<CR>", opts)
 
 -- Move text up and down
 keymap("v", "<S-j>", ":m .+1<CR>==", opts)
@@ -92,6 +89,9 @@ keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
+keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
+keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
+keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 
 -- Command line integrations
 keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)

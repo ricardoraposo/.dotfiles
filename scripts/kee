@@ -1,0 +1,132 @@
+#!/bin/bash
+
+CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/kee" || echo "$HOME/.cache/kee" )
+command=$([[ "$OSTYPE" == "darwin"* ]] && echo "sed -i ''" || echo "sed -i=''" )
+[[ ! -d $CACHE ]] && mkdir "$CACHE" && printf "default=47m39s\nemoji=🤯\n" >> "$CACHE/vars"
+
+parse_input() {
+  if [[ "$1" == "hour" ]]; then
+    MINUTEINPUT=$(( 59 - $(date +"%M")))
+    SECONDINPUT=$(( 60 - $(date +"%S")))
+  elif [[ -z "$1" ]]; then
+    DEFAULT=$(sed "s/default=//" "$CACHE/vars")
+    HOURINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
+    MINUTEINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
+  else
+    HOURINPUT=$(echo $1 | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
+    MINUTEINPUT=$(echo $1 | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo $1 | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
+  fi
+  HOUR=0
+  MINUTE=0
+  SECOND=0
+
+  if [ ! -z "$HOURINPUT" ]; then
+    for hour in ${HOURINPUT[@]}
+    do
+      HOUR=$(( $HOUR + $hour ))
+    done
+  fi
+
+  if [ ! -z "$MINUTEINPUT" ]; then
+    for min in ${MINUTEINPUT[@]}
+    do
+      MINUTE=$(( $MINUTE + $min ))
+    done
+  fi
+
+  if [ ! -z "$SECONDINPUT" ]; then
+    for min in ${SECONDINPUT[@]}
+    do
+      SECOND=$(( $SECOND + $min ))
+    done
+  fi
+
+  if [[ $MINUTE -ge 60 ]]; then
+    HOUR=$(( $HOUR + $(( $MINUTE / 60 ))))
+    MINUTE=$(( $MINUTE % 60 ))
+  fi
+
+  if [[ $SECOND -ge 60 ]]; then
+    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
+    SECOND=$(( $SECOND % 60 ))
+  fi
+}
+
+start() {
+  $command "/target=/d" "$CACHE/vars"
+  parse_input $1
+  TARGET=$(gdate --date="+$HOUR hours +$MINUTE minutes +$SECOND seconds" +%s)
+  echo "target=$TARGET" >> "$CACHE/vars"
+}
+
+
+# TODO: Make it blink when below certain time and when negative
+formatted_out() {
+  [[ $second -lt 0 ]] && second=$( expr $second \* -1) && symbol="-"
+  [[ $hour -lt 0 ]] && hour=$( expr $hour \* -1)
+  [[ $minute -lt 0 ]] && minute=$( expr $minute \* -1)
+  if [[ hour -eq 0 ]]; then
+    if [[ $(( second / 10 )) -lt 1 ]]; then
+      echo "🤯 ${symbol}${minute}:0${second}"
+    else
+      echo "🤯 ${symbol}${minute}:${second}"
+    fi
+  else
+    if [[ $(( minute / 10 )) -lt 1 ]]; then
+      if [[ $(( second / 10 )) -lt 1 ]]; then
+        echo "🤯${symbol}${hour}:0${minute}:0${second}"
+      else
+        echo "🤯${symbol}${hour}:0${minute}:${second}"
+      fi
+    else
+      if [[ $(( second / 10 )) -lt 1 ]]; then
+        echo "🤯 ${symbol}${hour}:${minute}:0${second}"
+      else
+        echo "🤯 ${symbol}${hour}:${minute}:${second}"
+      fi
+    fi
+  fi
+}
+
+gen_val() {
+  diff=$(( TARGET_TIME - $(date +%s) ))
+  rest=$(( diff % 3600 ))
+  hour=$(( diff / 3600 ))
+  minute=$(( rest / 60 ))
+  second=$(( rest % 60 ))
+}
+
+show() {
+  TARGET_TIME=$(cat "$CACHE/vars" | grep "target" | sed "s/target=//" )
+  echo $TARGET_TIME
+  if [[ ! -z $TARGET_TIME ]]; then
+    gen_val
+    formatted_out
+  fi
+}
+
+set() {
+  $command "/default=/d" "$CACHE/vars"
+  echo "default=$1" >> "$CACHE/vars"
+}
+
+vars() {
+  cat $CACHE/vars
+}
+
+stop() {
+  $command "/target=/d" "$CACHE/vars"
+}
+
+[[ -z "$@" ]] && show || "$@"
+#
+# Completion stuff
+# Add the snippet below to your bashrc/zshrc to add completion 
+# complete -C kee kee
+if [[ -n $COMP_LINE ]]; then
+  printf "start\nstop\nshow\nset\nvars"
+  exit
+fi
+

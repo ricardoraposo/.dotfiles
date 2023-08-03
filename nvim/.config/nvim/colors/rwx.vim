@@ -65,6 +65,7 @@ au FileType markdown,pandoc noremap j gj
 au FileType markdown,pandoc noremap k gk
 
 " making treesitter stop ruining everything
+hi @include ctermbg=NONE ctermfg=yellow guibg=NONE guifg=yellow cterm=NONE
 hi @variable ctermbg=NONE ctermfg=white guibg=white guifg=white
 hi @field ctermbg=NONE ctermfg=white guibg=white guifg=white cterm=NONE gui=NONE
 hi @property ctermbg=NONE ctermfg=cyan guibg=NONE guifg=cyan cterm=NONE

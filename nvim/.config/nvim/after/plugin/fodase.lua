@@ -76,3 +76,5 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
+
+vim.cmd([[let g:pandoc#folding#fdc = 0]])

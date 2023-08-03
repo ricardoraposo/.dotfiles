@@ -38,6 +38,8 @@ alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardorap
 
 # kitty kitten aliases
 alias icat="kitty +kitten icat --align left"
+alias clip="kitty +kitten clipboard"
+alias kssh="kitty +kitten ssh"
 alias themes="kitty +kitten themes"
 
 bindkey ^N history-beginning-search-forward

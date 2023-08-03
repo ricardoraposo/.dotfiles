@@ -57,7 +57,7 @@ vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("syntax on")
 vim.g.markdown_fenced_languages = { "javascript", "sh" }
 
-vim.g.melange_enable_font_variants = 1
+vim.g.melange_enable_font_variants = 0
 vim.cmd.colorscheme("melange")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")

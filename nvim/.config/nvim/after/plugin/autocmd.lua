@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 -- 	command = "Telescope find_files"
 -- })
 
--- vim.cmd("autocmd BufReadPost,FileReadPost * normal zR")
+vim.cmd("autocmd FileType pandoc normal zR")
 
 local attach_to_buffer = function(file)
 	local created_buffer = vim.api.nvim_create_buf(0, 1)
@@ -44,7 +44,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set wrap"})
-
 
 -- stuff
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])

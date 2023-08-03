@@ -40,6 +40,7 @@ return packer.startup(function(use)
   use("is0n/jaq-nvim")                      -- Execute code from within vim
   use("lukas-reineke/indent-blankline.nvim") -- Adds some visual stuff for code indents
   use("savq/melange-nvim")
+  use "https://github.com/blazkowolf/gruber-darker.nvim"
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")
