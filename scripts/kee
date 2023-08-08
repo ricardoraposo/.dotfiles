@@ -3,89 +3,130 @@
 CACHE=$([[ "$OSTYPE" == "darwin"* ]] && echo "$HOME/Library/Caches/kee" || echo "$HOME/.cache/kee" )
 DATECMD=$([[ "$OSTYPE" == "darwin"* ]] && echo "gdate" || echo "date" )
 SEDCMD=$([[ "$OSTYPE" == "darwin"* ]] && echo "sed -i ''" || echo "sed -i=''" )
-[[ ! -d $CACHE ]] && mkdir "$CACHE" && printf "default=47m39s\nemoji=🤯\n" >> "$CACHE/vars"
+[[ ! -d $CACHE ]] && mkdir "$CACHE" && printf "default=47m39s\nemoji=🤯\nwarnemoji=🦊\nwarn=1m\n" >> "$CACHE/vars"
+
+help() {
+  bold=$(tput bold)
+  italic=$(tput sitm)
+  normal=$(tput sgr0)
+
+  cat << EOF
+  ${bold}NAME${normal}
+      kee - was the sound I made when I created this, this is a timer btw
+  ${bold}USAGE${normal}
+      kee COMMAND <params>
+      e.g.: kee start 10m32s - starts timer with 10 minutes and 32 seconds
+      e.g.: kee start 1h2m   - starts timer with 1 hour and 2 minutes
+      ${italic}It expects this time in the format XhXmXs, I'll do whatever I want if you do not follow it${normal}
+  ${bold}COMMANDS${normal}
+      help  - shows this screen (default)
+      show  - prints the current time to standard output
+      stop  - stops the current timer
+      vars  - prints the cache variables stored in $CACHE/vars
+      focus - makes the timer print to screen the current time. Set custom render interval with -i
+      set   - sets new variables to vars file. It expects extra parameters.
+              default|def|d     - sets new default time
+              warning|warn|w    - sets new warning time
+              emoji|emo|e       - sets new emoji
+              warnemoji|wemo|we - sets new warning emoji
+      start - starts the timer according to the parameters passed. It expects extra parameters or not lol
+              time in XhXmXs format - does what you expect it to
+              hour    - starts timer that will go until the beginning of the next hour
+              <empty> - starts time with the default time set in the variables
+EOF
+}
 
 parse_input() {
   if [[ "$1" == "hour" ]]; then
     MINUTEINPUT=$(( 59 - $(date +"%M")))
     SECONDINPUT=$(( 60 - $(date +"%S")))
   elif [[ -z "$1" ]]; then
-    DEFAULT=$(sed "s/default=//" "$CACHE/vars")
-    HOURINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
-    MINUTEINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
-    SECONDINPUT=$(echo $DEFAULT | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
+    DEFAULT=$(grep "default=" < "$CACHE/vars" | sed "s/default=//")
+    HOURINPUT=$(echo "$DEFAULT" | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
+    MINUTEINPUT=$(echo "$DEFAULT" | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo "$DEFAULT" | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
   else
-    HOURINPUT=$(echo $1 | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
-    MINUTEINPUT=$(echo $1 | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
-    SECONDINPUT=$(echo $1 | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
+    HOURINPUT=$(echo "$1" | grep -o '[0-9]\+[hH]' | grep -o '[0-9]*')
+    MINUTEINPUT=$(echo "$1" | grep -o '[0-9]\+[mM]' | grep -o '[0-9]*')
+    SECONDINPUT=$(echo "$1" | grep -o '[0-9]\+[sS]' | grep -o '[0-9]*')
   fi
   HOUR=0
   MINUTE=0
   SECOND=0
 
-  if [ ! -z "$HOURINPUT" ]; then
+  if [[ -n "$HOURINPUT" ]]; then
     for hour in ${HOURINPUT[@]}
     do
-      HOUR=$(( $HOUR + $hour ))
+      HOUR=$(( HOUR + hour ))
     done
   fi
 
-  if [ ! -z "$MINUTEINPUT" ]; then
+  if [[ -n "$MINUTEINPUT" ]]; then
     for min in ${MINUTEINPUT[@]}
     do
-      MINUTE=$(( $MINUTE + $min ))
+      MINUTE=$(( MINUTE + min ))
     done
   fi
 
-  if [ ! -z "$SECONDINPUT" ]; then
+  if [[ -n "$SECONDINPUT" ]]; then
     for min in ${SECONDINPUT[@]}
     do
-      SECOND=$(( $SECOND + $min ))
+      SECOND=$(( SECOND + min ))
     done
   fi
 
   if [[ $MINUTE -ge 60 ]]; then
-    HOUR=$(( $HOUR + $(( $MINUTE / 60 ))))
-    MINUTE=$(( $MINUTE % 60 ))
+    HOUR=$(( HOUR + $(( MINUTE / 60 ))))
+    MINUTE=$(( MINUTE % 60 ))
   fi
 
   if [[ $SECOND -ge 60 ]]; then
-    MINUTE=$(( $MINUTE + $(( $SECOND / 60 ))))
-    SECOND=$(( $SECOND % 60 ))
+    MINUTE=$(( MINUTE + $(( SECOND / 60 ))))
+    SECOND=$(( SECOND % 60 ))
   fi
 }
 
 start() {
   $SEDCMD "/target=/d" "$CACHE/vars"
-  parse_input $1
+  parse_input "$1"
   TARGET=$($DATECMD --date="+$HOUR hours +$MINUTE minutes +$SECOND seconds" +%s)
   echo "target=$TARGET" >> "$CACHE/vars"
 }
 
-
 # TODO: Make it blink when below certain time and when negative
+get_emoji() {
+  warn=$( grep "warn=" < "$CACHE/vars" | sed "s/warn=//" | grep -o "[0-9]\+")
+  emoji=$(grep "^emoji=" < "$CACHE/vars" | sed "s/emoji=//")
+  warnemoji=$(grep "^warnemoji=" < "$CACHE/vars" | sed "s/warnemoji=//")
+  displayemoji=$emoji
+  if [[ $minute -lt $warn ]]; then
+    [[ $(( second % 2 )) -eq 0 ]] && displayemoji=$warnemoji || displayemoji=$emoji
+  fi
+}
+
 formatted_out() {
-  [[ $second -lt 0 ]] && second=$( expr $second \* -1) && symbol="-"
-  [[ $hour -lt 0 ]] && hour=$( expr $hour \* -1)
-  [[ $minute -lt 0 ]] && minute=$( expr $minute \* -1)
+  get_emoji
+  [[ $second -lt 0 ]] && second=$(( second * -1)) && symbol="-"
+  [[ $hour -lt 0 ]] && hour=$(( hour * -1))
+  [[ $minute -lt 0 ]] && minute=$(( minute * -1 ))
   if [[ hour -eq 0 ]]; then
     if [[ $(( second / 10 )) -lt 1 ]]; then
-      echo "🤯 ${symbol}${minute}:0${second}"
+      printf "\r%s%s%s:0%s" "$displayemoji" "$symbol" "$minute" "$second"
     else
-      echo "🤯 ${symbol}${minute}:${second}"
+      printf "\r%s%s%s:%s" "$displayemoji" "$symbol" "$minute" "$second"
     fi
   else
     if [[ $(( minute / 10 )) -lt 1 ]]; then
       if [[ $(( second / 10 )) -lt 1 ]]; then
-        echo "🤯${symbol}${hour}:0${minute}:0${second}"
+        printf "\r%s%s%s:0%s:0%s" "$displayemoji" "$symbol" "$hour" "$minute" "$second"
       else
-        echo "🤯${symbol}${hour}:0${minute}:${second}"
+        printf "\r%s%s%s:0%s:%s" "$displayemoji" "$symbol" "$hour" "$minute" "$second"
       fi
     else
       if [[ $(( second / 10 )) -lt 1 ]]; then
-        echo "🤯 ${symbol}${hour}:${minute}:0${second}"
+        printf "\r%s%s%s:%s:0%s" "$displayemoji" "$symbol" "$hour" "$minute" "$second"
       else
-        echo "🤯 ${symbol}${hour}:${minute}:${second}"
+        printf "\r%s%s%s:%s:%s" "$displayemoji" "$symbol" "$hour" "$minute" "$second"
       fi
     fi
   fi
@@ -100,34 +141,80 @@ gen_val() {
 }
 
 show() {
-  TARGET_TIME=$(cat "$CACHE/vars" | grep "target" | sed "s/target=//" )
-  echo $TARGET_TIME
-  if [[ ! -z $TARGET_TIME ]]; then
+  TARGET_TIME=$(grep "target" < "$CACHE/vars" | sed "s/target=//" )
+  if [[ -n $TARGET_TIME ]]; then
     gen_val
     formatted_out
   fi
 }
 
+get_focus() {
+  clear
+  start "$1"
+  trap stop EXIT
+  while true; do
+    show
+    $SLEEP
+  done 
+}
+
+focus() {
+  SLEEP="sleep 1"
+  while getopts ':i:' flag; do
+    case "$flag" in
+      i) SLEEP="sleep $OPTARG" ;;
+      *) 
+        ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+  get_focus "$1"
+}
+
 set() {
-  $SEDCMD "/default=/d" "$CACHE/vars"
-  echo "default=$1" >> "$CACHE/vars"
+  case $1 in
+    default|d|def)
+      $SEDCMD "/default=/d" "$CACHE/vars"
+      echo "default=$2" >> "$CACHE/vars"
+      ;;
+    warning|w|warn)
+      $SEDCMD "/warn=/d" "$CACHE/vars"
+      echo "warn=$2" >> "$CACHE/vars"
+      ;;
+    emoji|e|emo)
+      $SEDCMD "/^emoji=/d" "$CACHE/vars"
+      echo "emoji=$2" >> "$CACHE/vars"
+      ;;
+    warnemoji|we|wemo)
+      $SEDCMD "/^warnemoji=/d" "$CACHE/vars"
+      echo "warnemoji=$2" >> "$CACHE/vars"
+      ;;
+  esac
 }
 
 vars() {
-  cat $CACHE/vars
+  cat "$CACHE/vars"
 }
 
 stop() {
   $SEDCMD "/target=/d" "$CACHE/vars"
 }
 
-[[ -z "$@" ]] && show || "$@"
-#
+if [[ -z "$*" ]]; then
+ help
+else
+  if command -v "$@" &>/dev/null ; then
+    "$@"
+  else
+    echo "Not a valid command. Try 'kee help' if you have no clue of what you're doing"
+  fi
+fi
+
 # Completion stuff
-# Add the snippet below to your bashrc/zshrc to add completion 
+# Add the snippet below to your bashrc/zshrc/fishrc/whateverrc to add completion 
 # complete -C kee kee
 if [[ -n $COMP_LINE ]]; then
-  printf "start\nstop\nshow\nset\nvars"
+  printf "start\nstop\nshow\nset\nvars\nhelp\n"
   exit
 fi
 

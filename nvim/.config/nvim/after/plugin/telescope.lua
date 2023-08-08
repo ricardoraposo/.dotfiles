@@ -36,9 +36,9 @@ telescope.setup({
       entry_format = "state #$ID, $STAT, $TIME",
       mappings = {
         i = {
-          ["<cr>"] = require("telescope-undo.actions").yank_additions,
+          ["<CR>"] = require("telescope-undo.actions").yank_additions,
           ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
-          ["<C-cr>"] = require("telescope-undo.actions").restore,
+          ["<C-CR>"] = require("telescope-undo.actions").restore,
         },
       },
     },

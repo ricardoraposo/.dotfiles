@@ -89,4 +89,3 @@ let g:markdown_fenced_languages = ['bash', 'js=javascript']
 let g:pandoc#formatting#mode = 'h'
 let g:pandoc#formatting#textwidth = 72
 let g:pandoc#modules#disabled = ["spell"]
-

@@ -111,14 +111,12 @@ keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
 keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/options.lua<cr>", opts)
 
--- God of all keymaps
-keymap("n", "<leader>tu", "<cmd>!npx tururu<cr>", opts)
-
 -- Use of function row
 keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)
 keymap("n", "<F2>", "<cmd>set rnu!<CR>", opts)
 keymap("n", "<F3>", "<cmd>set cursorcolumn!<CR>", opts)
 keymap("n", "<F4>", "<cmd>set wrap!<CR>", opts)
+keymap("n", "<F5>", "<cmd>set list!<CR>", opts)
 keymap("n", "<F10>", "<cmd>TSCaptureUnderCursor<CR>", opts)
 
 vim.cmd("inoremap , ,<c-g>u")

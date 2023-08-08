@@ -1,9 +1,3 @@
-vim.opt.list = true
-
-require("indent_blankline").setup({
-	show_current_context = true,
-})
-
 local wilder = require("wilder")
 wilder.setup({
   modes = { ":", "/", "?" },
@@ -76,5 +70,3 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
-
-vim.cmd([[let g:pandoc#folding#fdc = 0]])

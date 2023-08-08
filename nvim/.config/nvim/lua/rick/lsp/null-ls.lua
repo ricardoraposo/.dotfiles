@@ -26,6 +26,7 @@ null_ls.setup({
 				virtual_text = false,
 			},
 		}),
+		diagnostics.shellcheck,
 		formatting.goimports,
 		formatting.jq,
 	},

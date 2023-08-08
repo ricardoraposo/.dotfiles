@@ -33,14 +33,13 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use("wbthomason/packer.nvim")             -- Have packer manage itself
-  use("nvim-lua/popup.nvim")                -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim")              -- Useful lua functions used ny lots of plugins
-  use("gelguy/wilder.nvim")                 -- For when I forget wtf I want to type
-  use("is0n/jaq-nvim")                      -- Execute code from within vim
-  use("lukas-reineke/indent-blankline.nvim") -- Adds some visual stuff for code indents
-  use("savq/melange-nvim")
-  use "https://github.com/blazkowolf/gruber-darker.nvim"
+  use("wbthomason/packer.nvim") -- Have packer manage itself
+  use("nvim-lua/popup.nvim")    -- An implementation of the Popup API from vim in Neovim
+  use("nvim-lua/plenary.nvim")  -- Useful lua functions used ny lots of plugins
+  use("gelguy/wilder.nvim")     -- For when I forget wtf I want to type
+  use("is0n/jaq-nvim")          -- Execute code from within vim
+  use "rebelot/kanagawa.nvim"
+  use "YorickPeterse/happy_hacking.vim"
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")
@@ -62,7 +61,7 @@ return packer.startup(function(use)
   })
   use("jose-elias-alvarez/null-ls.nvim") -- formatting and diagnostics lsp servers
   use({ "olexsmir/gopher.nvim", run = ":GoInstallDeps" })
-  use("folke/trouble.nvim")             -- get diag and function references in an easier way
+  use("folke/trouble.nvim")              -- get diag and function references in an easier way
 
   -- Telescope & Harpoon
   use("nvim-telescope/telescope.nvim")

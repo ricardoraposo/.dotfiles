@@ -19,8 +19,8 @@ export PATH="$SCRIPTS:$PATH"
 
 # completions
 complete -C z z
-complete -C tice tice
 complete -C kee kee
+complete -C tice tice
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

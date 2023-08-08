@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 o.compatible = false
 o.termguicolors = true
@@ -43,6 +44,7 @@ o.hidden = true
 o.foldmethod = "manual"
 o.ruler = true
 o.rulerformat = "%40(%= %#LineNr#%.50F %m[%{&ft}] %l:%c%)"
+o.lcs = "tab:• ,trail:-,nbsp:+"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
@@ -54,11 +56,11 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
 vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
 vim.cmd("let g:pandoc#spell#enabled=0")
+vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
-vim.g.markdown_fenced_languages = { "javascript", "sh" }
+g.markdown_fenced_languages = { "javascript", "sh" }
 
-vim.g.melange_enable_font_variants = 0
-vim.cmd.colorscheme("melange")
+vim.cmd.colorscheme("happy_hacking")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")
 vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")

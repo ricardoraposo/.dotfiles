@@ -32,7 +32,7 @@ create_var_folder() {
     color_text "116" "Utilize as setas para navegar entre diretórios e Enter para selecionar"
     color_text "116" "Use seta para direita para acessar o diretório"
     color_text "116" "Use seta para esquerda para voltar"
-    cd $HOME
+    cd "$HOME" || echo "Ocorreu algum problema" && exit 1
     DIR=$(gum file --directory)
     [[ -z $DIR ]] && break
     DIRPATH=$( [[ $OSTYPE == "darwin"* ]] && echo "$HOME/$DIR" || echo "$DIR" )

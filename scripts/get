@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -sS "$1" | jsonpp | bat -l json
