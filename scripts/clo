@@ -87,9 +87,9 @@ take_url_input() {
 format_folder_name() {
   FORMAT=$(echo "$URL" | sed "s/.*[0-9]-//;s/\..*//")
   if [[ -z $( echo $FORMAT | grep -E "exercise|project") ]]; then
-    echo $FORMAT
+    echo "$FORMAT" | tr '[:upper:]' '[:lower:]'
   else
-    echo $FORMAT | sed -E "s/^([^-]+)-//"
+    echo "$FORMAT" | sed -E "s/^([^-]+)-//" | tr '[:upper:]' '[:lower:]'
   fi
 }
 
