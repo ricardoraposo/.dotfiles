@@ -38,6 +38,7 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")  -- Useful lua functions used ny lots of plugins
   use("gelguy/wilder.nvim")     -- For when I forget wtf I want to type
   use("is0n/jaq-nvim")          -- Execute code from within vim
+  use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
   use "rebelot/kanagawa.nvim"
   use "YorickPeterse/happy_hacking.vim"
 

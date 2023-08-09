@@ -32,7 +32,7 @@ create_var_folder() {
     color_text "116" "Utilize as setas para navegar entre diretórios e Enter para selecionar"
     color_text "116" "Use seta para direita para acessar o diretório"
     color_text "116" "Use seta para esquerda para voltar"
-    cd "$HOME" || echo "Ocorreu algum problema" && exit 1
+    cd "$HOME" || exit 1
     DIR=$(gum file --directory)
     [[ -z $DIR ]] && break
     DIRPATH=$( [[ $OSTYPE == "darwin"* ]] && echo "$HOME/$DIR" || echo "$DIR" )
@@ -131,7 +131,8 @@ checkout_branch() {
       color_text "$PINK" "Fica sem então"
     fi
   fi
-  gum confirm "Posso dar 'npm install ?'" && gum spin --title "Instalando dependências..." npm install
+  # gum confirm "Posso dar 'npm install ?'" && gum spin --title "Instalando dependências..." npm install
+  gum confirm "Posso dar 'npm install ?'" && npm install # for debugging
   exec $SHELL
 }
 

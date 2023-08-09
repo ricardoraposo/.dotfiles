@@ -50,7 +50,7 @@ keymap("i", "<C-c>", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap({"v", "x"}, "<leader>y", "<cmd>w !bash kitty +kitten clipboard<CR>", opts)
+keymap('v', 'y', '<Plug>OSCYankVisual', opts)
 
 -- Move text up and down
 keymap("v", "<S-j>", ":m .+1<CR>==", opts)
