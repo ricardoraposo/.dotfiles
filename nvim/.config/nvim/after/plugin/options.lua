@@ -60,7 +60,7 @@ vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
 
-vim.cmd.colorscheme("oxocarbon")
+vim.cmd.colorscheme("kanagawa")
 vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
 vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")
 vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")

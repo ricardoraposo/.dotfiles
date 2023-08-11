@@ -194,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/ricardoraposo/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -238,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-oscyank"] = {
+    loaded = true,
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/vim-oscyank",
+    url = "https://github.com/ojroques/vim-oscyank"
   },
   ["vim-pandoc"] = {
     loaded = true,
