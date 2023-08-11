@@ -77,9 +77,3 @@ macos_option_as_alt no
 allow_remote_control yes
 
 include gruvy.conf
-
-
-# BEGIN_KITTY_THEME
-# Alabaster Dark
-include current-theme.conf
-# END_KITTY_THEME

@@ -41,6 +41,7 @@ return packer.startup(function(use)
   use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
   use "rebelot/kanagawa.nvim"
   use "YorickPeterse/happy_hacking.vim"
+  use "https://github.com/nyoom-engineering/oxocarbon.nvim"
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")
