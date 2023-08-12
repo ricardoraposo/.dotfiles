@@ -40,8 +40,6 @@ return packer.startup(function(use)
   use("is0n/jaq-nvim")          -- Execute code from within vim
   use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
   use("rebelot/kanagawa.nvim")
-  use("savq/melange-nvim")
-  use("ellisonleao/gruvbox.nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")

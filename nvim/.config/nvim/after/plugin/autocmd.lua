@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set wrap"})
+vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set conceallevel=1"})
 
 -- stuff
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
