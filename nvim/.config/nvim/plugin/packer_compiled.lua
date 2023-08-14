@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-dark-mode.nvim"] = {
+    loaded = true,
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/auto-dark-mode.nvim",
+    url = "https://github.com/f-person/auto-dark-mode.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -114,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/gopher.nvim",
     url = "https://github.com/olexsmir/gopher.nvim"
   },
-  ["happy_hacking.vim"] = {
-    loaded = true,
-    path = "/home/rick/.local/share/nvim/site/pack/packer/start/happy_hacking.vim",
-    url = "https://github.com/YorickPeterse/happy_hacking.vim"
-  },
   harpoon = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -128,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/jaq-nvim",
     url = "https://github.com/is0n/jaq-nvim"
-  },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/home/rick/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -153,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/rick/.local/share/nvim/site/pack/packer/start/nvim-base16",
+    url = "https://github.com/RRethy/nvim-base16"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -193,11 +193,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rick/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
-  ["oxocarbon.nvim"] = {
-    loaded = true,
-    path = "/home/rick/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
-    url = "https://github.com/ricardoraposo/oxocarbon.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
