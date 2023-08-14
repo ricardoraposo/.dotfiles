@@ -71,6 +71,7 @@ keymap("n", "<leader>do", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require'telescope.builtin'.registers()<CR>", opts)
 keymap("n", "<leader>dg", "<cmd>NvimTreeClose<CR><cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)

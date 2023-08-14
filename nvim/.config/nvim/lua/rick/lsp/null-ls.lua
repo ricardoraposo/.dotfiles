@@ -9,14 +9,15 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.jq,
 		-- formatting.stylua,
-		formatting.prettier.with({
-			extra_args = {
-				"--single-quote",
-				"--jsx-single-quote",
-			},
-		}),
+		formatting.jq,
+		formatting.eslint_d,
+		-- formatting.prettierd.with({
+		-- 	extra_args = {
+		-- 		"--single-quote",
+		-- 		"--jsx-single-quote",
+		-- 	},
+		-- }),
 		diagnostics.stylelint.with({
 			only_local = "node_modules/.bin",
 		}),

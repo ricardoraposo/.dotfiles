@@ -2,6 +2,7 @@ plugins=(git vi-mode)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
 
+export OS="mac"
 export EDITOR="nvim"
 export NOTES="$HOME/Documents/zet"
 export SCRIPTS="$HOME/.dotfiles/scripts"

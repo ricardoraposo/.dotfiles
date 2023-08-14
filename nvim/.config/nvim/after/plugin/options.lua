@@ -60,8 +60,19 @@ vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
 
-vim.cmd.colorscheme("kanagawa")
-vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
-vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")
-vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
-vim.cmd("highlight NvimTreeNormalFloat ctermbg=NONE guibg=NONE")
+require('auto-dark-mode').setup({
+	update_interval = 1000,
+	set_dark_mode = function()
+		vim.api.nvim_set_option('background', 'dark')
+		vim.cmd('colorscheme base16-gruvbox-dark-hard')
+	end,
+	set_light_mode = function()
+		vim.api.nvim_set_option('background', 'light')
+		vim.cmd('colorscheme base16-solarized-light')
+	end,
+})
+-- vim.cmd.colorscheme("base16-gruvbox-dark-hard")
+-- vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight NvimTreeNormalFloat ctermbg=NONE guibg=NONE")
