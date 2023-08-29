@@ -14,6 +14,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local servers = {
   "lua_ls",
   "tsserver",
+  "eslint",
   "html",
   "cssls",
   "jsonls",

@@ -35,7 +35,21 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 function prompt_char {
 	if [ $UID -eq 0 ]; then echo "%{$fg[red]%}#%{$reset_color%}"; else echo %{$fg[blue]%}$%{$reset_color%}; fi
 }
+
+set_smart_prompt() {
+countme="$USER@$(hostname):$dir\$ $(git_prompt_info)"
+if [[ ${#countme} -lt 35 ]]; then
+PROMPT='%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)$(prompt_char) '
+elif [[ ${#countme} -ge 35 ]]; then
 PROMPT='%{$reset_color%}╔ %{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)
 %{$reset_color%}╚ $(prompt_char) '
-
+fi
 RPROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%})'
+}
+set_smart_prompt
+precmd() {
+    set_smart_prompt
+}
+
+# Necessário para auto-complete do comando trybe-publisher
+source /etc/bash_completion.d/trybe-publisher

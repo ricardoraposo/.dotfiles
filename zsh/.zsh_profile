@@ -18,15 +18,19 @@ alias sc="cd $SCRIPTS"
 alias dot="cd $HOME/.dotfiles"
 alias zf="cd $NOTES"
 alias so="source ~/.zshrc"
+alias cat="bat"
 alias chmox="chmod +x"
 alias ls="exa -lh"
 alias "?"="tia"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
+alias tc="tmux new -A -s class"
 alias tk="tmux kill-server"
 
 # npm aliases
+alias cy="npm run cy"
+alias li="npm run lint"
 alias t="npm run test"
 alias d="npm run dev"
 
@@ -41,6 +45,9 @@ alias icat="kitty +kitten icat --align left"
 alias clip="kitty +kitten clipboard"
 alias kssh="kitty +kitten ssh"
 alias themes="kitty +kitten themes"
+
+# git
+alias gac="git add --all && git commit"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward

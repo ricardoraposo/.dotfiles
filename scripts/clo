@@ -131,8 +131,8 @@ checkout_branch() {
       color_text "$PINK" "Fica sem então"
     fi
   fi
-  # gum confirm "Posso dar 'npm install ?'" && gum spin --title "Instalando dependências..." npm install
-  gum confirm "Posso dar 'npm install ?'" && npm install # for debugging
+  gum confirm "Posso dar 'npm install ?'" && gum spin --title "Instalando dependências..." npm install
+  # gum confirm "Posso dar 'npm install ?'" && npm install # for debugging
   exec $SHELL
 }
 

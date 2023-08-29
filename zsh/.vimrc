@@ -2,6 +2,7 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'tpope/vim-commentary'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'sheerun/vim-polyglot'
+  Plug 'ericbn/vim-solarized'
 call plug#end()
 
 set path+=**

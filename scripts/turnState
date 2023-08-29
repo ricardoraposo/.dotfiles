@@ -4,6 +4,7 @@ while IFS= read -r line
 do
     if [[ -n $line ]]; then
       line=$(echo "$line" | xargs)
-      printf "const $line = () => {\n};\n\n"
+      setLine=$(echo "$line" | gsed "s/./\U&/")
+      printf "const [%s, set%s] = useState()" "$line" "$setLine"
     fi
 done

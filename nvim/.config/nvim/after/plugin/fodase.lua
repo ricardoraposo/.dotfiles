@@ -5,14 +5,6 @@ wilder.setup({
   previous_key = "<C-p>",
 })
 
-wilder.set_option(
-  "renderer",
-  wilder.wildmenu_renderer({
-    highlighter = wilder.basic_highlighter(),
-    apply_incsearch_fix = true,
-  })
-)
-
 -- This isn't dumb but it was getting on the way of my stuff on telescope
 require("jaq-nvim").setup({
   cmds = {
@@ -70,3 +62,10 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
+
+-- vim.cmd("highlight EndofBuffer ctermfg=235 guifg=#1d2021")
+-- vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight NvimTreeNormalFloat ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight NvimTreeEndofBuffer ctermfg=235 guifg=#1d2021")
+-- vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
+-- vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")

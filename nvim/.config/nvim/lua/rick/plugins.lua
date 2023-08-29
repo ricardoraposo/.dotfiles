@@ -39,8 +39,7 @@ return packer.startup(function(use)
   use("gelguy/wilder.nvim")     -- For when I forget wtf I want to type
   use("is0n/jaq-nvim")          -- Execute code from within vim
   use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
-  use("RRethy/nvim-base16")     -- Shit ton of colorschemes
-  use("f-person/auto-dark-mode.nvim")
+  use("projekt0n/github-nvim-theme")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")

@@ -5,30 +5,25 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	debug = false,
 	sources = {
 		-- formatting.stylua,
-		formatting.jq,
-		formatting.eslint_d,
 		-- formatting.prettierd.with({
 		-- 	extra_args = {
 		-- 		"--single-quote",
 		-- 		"--jsx-single-quote",
 		-- 	},
 		-- }),
+    code_actions.eslint,
+		formatting.jq,
+		formatting.goimports,
+		formatting.stylelint,
 		diagnostics.stylelint.with({
 			only_local = "node_modules/.bin",
 		}),
-		diagnostics.eslint.with({
-			only_local = "node_modules/.bin",
-			diagnostic_config = {
-				virtual_text = false,
-			},
-		}),
 		diagnostics.shellcheck,
-		formatting.goimports,
-		formatting.jq,
 	},
 })

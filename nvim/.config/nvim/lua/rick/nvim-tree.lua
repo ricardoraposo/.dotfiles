@@ -92,17 +92,6 @@ require("nvim-tree").setup({
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    float = {
-      enable = true,
-      open_win_config = {
-        relative = "editor",
-        border = "rounded",
-        width = 35,
-        height = 23,
-        row = 0,
-        col = 0,
-      },
-    },
   },
   renderer = {
     add_trailing = false,

@@ -65,14 +65,14 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
-keymap("n", "<C-f>", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>dn", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
-keymap("n", "<leader>do", "<cmd>NvimTreeClose<CR><cmd>Telescope find_files cwd=~/Documents/zet/<CR>", opts)
+keymap("n", "<C-f>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
+keymap("n", "<leader>do", "<cmd>Telescope find_files cwd=~/Documents/zet/<CR>", opts)
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'telescope.builtin'.registers()<CR>", opts)
-keymap("n", "<leader>dg", "<cmd>NvimTreeClose<CR><cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
+keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
@@ -97,7 +97,9 @@ keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 -- Command line integrations
 keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)
 keymap("n", "<leader>rt", "<cmd>!npm run test<CR>", opts)
-keymap("n", "<leader>ta", "!!turnArrow<CR>f(a", opts)
+keymap("n", "<leader>ta", "!!turnArrow<CR>Vj=", opts)
+keymap("n", "<leader>tf", "!!turnFunction<CR>Vj=", opts)
+keymap("n", "<leader>ts", "!!turnState<CR>Vj=A;<esc>F(", opts)
 
 -- Better navigation
 keymap({ "n", "v", "x" }, "{", "}", opts)
@@ -116,8 +118,8 @@ keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/options.lua<cr>",
 keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)
 keymap("n", "<F2>", "<cmd>set rnu!<CR>", opts)
 keymap("n", "<F3>", "<cmd>set cursorcolumn!<CR>", opts)
-keymap("n", "<F4>", "<cmd>set wrap!<CR>", opts)
-keymap("n", "<F5>", "<cmd>set list!<CR>", opts)
+keymap("n", "<F4>", "<cmd>set cursorline!<CR>", opts)
+keymap("n", "<F5>", "<cmd>set wrap!<CR>", opts)
 keymap("n", "<F10>", "<cmd>TSCaptureUnderCursor<CR>", opts)
 
 vim.cmd("inoremap , ,<c-g>u")
