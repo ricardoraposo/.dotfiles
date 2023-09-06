@@ -21,6 +21,12 @@ local source_mapping = {
 }
 
 cmp.setup({
+  -- enabled = function()
+  --   return vim.g.cmptoggle
+  -- end,
+  -- completion = {
+  --   autocomplete = false,
+  -- },
   window = {
     completion = {
       border = "rounded",

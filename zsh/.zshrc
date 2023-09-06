@@ -39,9 +39,9 @@ function prompt_char {
 set_smart_prompt() {
 countme="$USER@$(hostname):$dir\$ $(git_prompt_info)"
 if [[ ${#countme} -lt 35 ]]; then
-PROMPT='%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)$(prompt_char) '
+PROMPT='%{$fg[red]%}%n%{$fg[yellow]%}@%{$fg[green]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)$(prompt_char) '
 elif [[ ${#countme} -ge 35 ]]; then
-PROMPT='%{$reset_color%}╔ %{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[yellow]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)
+PROMPT='%{$reset_color%}╔ %{$fg[red]%}%n%{$fg[yellow]%}@%{$fg[green]%}%m%{$fg[black]%}:%{$fg[blue]%}%1~ $(git_prompt_info)
 %{$reset_color%}╚ $(prompt_char) '
 fi
 RPROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%})'

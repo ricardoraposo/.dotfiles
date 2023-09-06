@@ -6,11 +6,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "so % | PackerInstall",
 })
 
--- This will open telescope whenever I open vim
--- vim.api.nvim_create_autocmd("VimEnter", {
--- 	command = "Telescope find_files"
--- })
-
 vim.cmd("autocmd FileType pandoc normal zR")
 
 local attach_to_buffer = function(file)
@@ -36,12 +31,20 @@ vim.api.nvim_create_user_command("ApiThing", function()
 	attach_to_buffer(file)
 end, {})
 
+vim.api.nvim_create_user_command('Command', function (args)
+  local vimCmd = 'split | terminal'
+  if (args['args']) then
+    vimCmd = vimCmd .. ' ' .. args['args']
+  end
+  vim.cmd(vimCmd)
+end, { desc = "Runs command in builtin terminal", nargs = '*' })
+
 -- Highlight on yank
--- vim.api.nvim_create_autocmd("TextYankPost", {
--- 	callback = function()
--- 		vim.highlight.on_yank()
--- 	end,
--- })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
 
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set wrap"})
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set conceallevel=1"})
@@ -60,7 +63,6 @@ vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>mp ciwPromise<><esc>hp ]])
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>mfa Iasync <esc> ]])
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>maa 0f(iasync <esc> ]])
-vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ir yiwggOimport { <esc>pa <esc>A from 'react';]])
 
 -- go
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])

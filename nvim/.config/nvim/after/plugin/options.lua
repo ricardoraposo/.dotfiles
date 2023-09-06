@@ -3,12 +3,13 @@ local g = vim.g
 
 o.compatible = false
 o.termguicolors = true
-o.guicursor = "i:block"
 o.backup = false
 o.backupcopy = "yes"
 o.autowrite = true
 o.cmdheight = 1
 o.conceallevel = 0
+o.nu = true
+o.rnu = true
 o.concealcursor = "nc"
 o.fileencoding = "utf-8"
 o.hlsearch = false
@@ -33,7 +34,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.tabstop = 2
 o.softtabstop = 2
-o.cursorline = false
+o.cursorline = true
 o.numberwidth = 2
 o.signcolumn = "no"
 o.colorcolumn = "90"
@@ -60,6 +61,3 @@ vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
-
-require('github-theme').setup({ options = { transparent = true } })
-vim.cmd.colorscheme("github_dark_high_contrast")

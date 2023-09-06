@@ -5,37 +5,6 @@ wilder.setup({
   previous_key = "<C-p>",
 })
 
--- This isn't dumb but it was getting on the way of my stuff on telescope
-require("jaq-nvim").setup({
-  cmds = {
-    internal = {
-      lua = "luafile %",
-      vim = "source %",
-    },
-    external = {
-      javascript = "node %",
-      markdown = "glow %",
-      python = "python3 %",
-      go = "go run %",
-      cs = "dotnet run",
-      sh = "sh %",
-      hurl = "hurl %",
-    },
-  },
-  behavior = {
-    default = "terminal",
-    startinsert = false,
-    autosave = false,
-  },
-  ui = {
-    terminal = {
-      position = "vsplit",
-      size = 3,
-      line_no = false,
-    },
-  },
-})
-
 require("rest-nvim").setup({
   result_split_horizontal = false,
   result_split_in_place = false,
@@ -62,10 +31,3 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
-
--- vim.cmd("highlight EndofBuffer ctermfg=235 guifg=#1d2021")
--- vim.cmd("highlight NvimTreeNormal ctermbg=NONE guibg=NONE")
--- vim.cmd("highlight NvimTreeNormalFloat ctermbg=NONE guibg=NONE")
--- vim.cmd("highlight NvimTreeEndofBuffer ctermfg=235 guifg=#1d2021")
--- vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
--- vim.cmd("highlight LineNr ctermbg=NONE guibg=NONE")

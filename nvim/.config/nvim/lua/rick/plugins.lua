@@ -37,9 +37,8 @@ return packer.startup(function(use)
   use("nvim-lua/popup.nvim")    -- An implementation of the Popup API from vim in Neovim
   use("nvim-lua/plenary.nvim")  -- Useful lua functions used ny lots of plugins
   use("gelguy/wilder.nvim")     -- For when I forget wtf I want to type
-  use("is0n/jaq-nvim")          -- Execute code from within vim
   use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
-  use("projekt0n/github-nvim-theme")
+  use("blazkowolf/gruber-darker.nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")

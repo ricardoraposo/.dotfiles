@@ -16,13 +16,12 @@ telescope.setup({
       theme = "dropdown",
     },
     find_files = {
+      layout_config = {
+        height = 10
+      },
+      theme = "ivy",
+      previewer=false,
       hidden = false,
-    },
-    buffers = {
-      theme = "dropdown",
-    },
-    diagnostics = {
-      theme = "dropdown",
     },
   },
   extensions = {

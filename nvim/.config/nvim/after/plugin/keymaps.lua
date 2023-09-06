@@ -79,7 +79,7 @@ keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 -- Harpoon
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
-keymap("n", "<leader>m", mark.add_file)
+keymap("n", "<leader>mm", mark.add_file)
 keymap("n", "<C-e>", ui.toggle_quick_menu)
 keymap("n", "<C-j>", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
 keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
@@ -89,14 +89,15 @@ keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 -- Fodase plugins
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
-keymap("n", "<leader>rc", "<cmd>Jaq<CR>", opts) -- Run Code
+keymap("n", "<leader>rc", "<cmd>make<CR>", opts) -- Run Code
 keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
 keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
+keymap("n", "<leader>tc", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", opts)
 
 -- Command line integrations
-keymap("n", "<leader>rl", "<cmd>!npm run lint<CR>", opts)
-keymap("n", "<leader>rt", "<cmd>!npm run test<CR>", opts)
+keymap("n", "<leader>rt", ":Command ", opts)
+keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("n", "<leader>ta", "!!turnArrow<CR>Vj=", opts)
 keymap("n", "<leader>tf", "!!turnFunction<CR>Vj=", opts)
 keymap("n", "<leader>ts", "!!turnState<CR>Vj=A;<esc>F(", opts)
@@ -112,7 +113,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
-keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/options.lua<cr>", opts)
+keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/colors.lua<cr>", opts)
 
 -- Use of function row
 keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)
