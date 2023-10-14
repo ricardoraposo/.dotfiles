@@ -51,8 +51,5 @@ precmd() {
     set_smart_prompt
 }
 
-# Necessário para auto-complete do comando trybe-publisher
-source /etc/bash_completion.d/trybe-publisher
-
 # bun completions
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
