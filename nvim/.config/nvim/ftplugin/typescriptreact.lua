@@ -1,0 +1,6 @@
+-- local yellow = "#ffdd33"
+-- local quartz = "#95a99f"
+-- vim.api.nvim_set_hl(0, '@keyword', { fg = quartz})
+-- vim.api.nvim_set_hl(0, '@keyword.function', { fg = yellow, bold = false })
+-- vim.api.nvim_set_hl(0, '@keyword.coroutine', { fg = yellow, bold = false })
+-- vim.api.nvim_set_hl(0, '@keyword.return', { fg = yellow, bold = false })

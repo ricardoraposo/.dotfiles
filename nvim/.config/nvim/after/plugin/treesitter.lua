@@ -3,7 +3,7 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
   ensure_installed = "all",
   sync_install = false,
-  ignore_install = { "phpdoc", "bash" },
+  ignore_install = { "phpdoc" },
   highlight = {
     enable = true,
     disable = {},

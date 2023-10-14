@@ -11,6 +11,7 @@ export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
+# export KEY="926ccd4171ac4b1d9c7102014230808"
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/go/bin"
@@ -23,7 +24,6 @@ complete -C z z
 complete -C kee kee
 complete -C tice tice
 
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -53,3 +53,6 @@ precmd() {
 
 # Necessário para auto-complete do comando trybe-publisher
 source /etc/bash_completion.d/trybe-publisher
+
+# bun completions
+[ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"

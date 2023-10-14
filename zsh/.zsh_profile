@@ -5,7 +5,7 @@ fd(){
 }
 
 c() {
-  DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos \
+  DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos ~/Projects/Work \
     ~/Projects/Repos/trybe ~/Projects/Study ~/Projects/Study/trybe \
     -mindepth 1 -maxdepth 2 -type d | fzf -f $1 | head -1)
   [[ ! -z $DIR ]] && cd $DIR
@@ -27,6 +27,7 @@ alias "?"="tia"
 alias tm="tmux new -A -s ricardo"
 alias tc="tmux new -A -s class"
 alias tk="tmux kill-server"
+alias kn="killall node"
 
 # npm aliases
 alias cy="npm run cy"
@@ -35,7 +36,6 @@ alias t="npm run test"
 alias d="npm run dev"
 
 # podman aliases
-alias docker="podman"
 alias pa="podman start -a"
 alias pr="podman run -it --hostname rickysthing --name rickyc"
 alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace"
@@ -48,6 +48,9 @@ alias themes="kitty +kitten themes"
 
 # git
 alias gac="git add --all && git commit"
+
+alias eu="timg -pk ~/Movies/devmedia.com.br_20230810_reel_3166528034790551076_1_3166528034790551076.mp4"
+alias raposo="icat ~/Pictures/raposonaopegue.png"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward

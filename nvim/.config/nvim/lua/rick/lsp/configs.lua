@@ -23,6 +23,7 @@ local servers = {
   "prismals",
   "clangd",
   "gopls",
+  "ocamllsp",
 }
 
 mason.setup({})

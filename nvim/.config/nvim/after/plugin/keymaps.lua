@@ -90,13 +90,13 @@ keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 keymap("n", "<leader>rc", "<cmd>make<CR>", opts) -- Run Code
-keymap("n", "<leader>arn", "<Plug>RestNvim", opts)
+keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
 keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 keymap("n", "<leader>tc", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", opts)
 
--- Command line integrations
-keymap("n", "<leader>rt", ":Command ", opts)
+-- Command line integration
+keymap("n", "<leader>rt", ":split | terminal ", opts)
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("n", "<leader>ta", "!!turnArrow<CR>Vj=", opts)
 keymap("n", "<leader>tf", "!!turnFunction<CR>Vj=", opts)

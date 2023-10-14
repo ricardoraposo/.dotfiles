@@ -39,6 +39,7 @@ return packer.startup(function(use)
   use("gelguy/wilder.nvim")     -- For when I forget wtf I want to type
   use("ojroques/vim-oscyank")   -- yank line to clipboard when I'm on ssh
   use("blazkowolf/gruber-darker.nvim")
+  use("catppuccin/nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp")
@@ -60,6 +61,7 @@ return packer.startup(function(use)
   })
   use("jose-elias-alvarez/null-ls.nvim") -- formatting and diagnostics lsp servers
   use({ "olexsmir/gopher.nvim", run = ":GoInstallDeps" })
+  use("dmmulroy/tsc.nvim")
   use("folke/trouble.nvim")              -- get diag and function references in an easier way
 
   -- Telescope & Harpoon
@@ -81,6 +83,7 @@ return packer.startup(function(use)
   use("nvim-treesitter/playground")
 
   -- Doc stuff
+  use("stevearc/dressing.nvim")
   use("terrortylor/nvim-comment")
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("vim-pandoc/vim-pandoc")

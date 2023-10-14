@@ -195,12 +195,12 @@ bindsym $mod+r mode "resize"
 # bindsym Print exec scrot -s $HOME/Pictures/prints/`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym Print exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
-gaps inner 5
-gaps outer -2
+# gaps inner 5
+# gaps outer -2
 
 client.focused #555555 #555555 #ffffff #2e9ef4     #CC0000
 
 for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id xset r rate 150 60 
-# exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
+exec_always --no-startup-id setxkbmap -option ctrl:swapcaps

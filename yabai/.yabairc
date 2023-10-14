@@ -44,6 +44,8 @@ yabai -m rule --add app=Discord space=^5
 yabai -m rule --add app=Spotify space=^5
 yabai -m rule --add app=Slack space=^4
 # apps to not manage (ignore)
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^Blueberry Raygo$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off

@@ -1,9 +1,4 @@
-local wilder = require("wilder")
-wilder.setup({
-  modes = { ":", "/", "?" },
-  next_key = "<C-n>",
-  previous_key = "<C-p>",
-})
+require("dressing").setup()
 
 require("rest-nvim").setup({
   result_split_horizontal = false,
@@ -31,3 +26,5 @@ require("rest-nvim").setup({
   custom_dynamic_variables = {},
   yank_dry_run = true,
 })
+
+require('tsc').setup({})
