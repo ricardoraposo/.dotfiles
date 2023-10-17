@@ -4,6 +4,6 @@ while IFS= read -r line
 do
   if [[ -n $line ]]; then
     line=$(echo "$line" | xargs)
-    printf "function %s() {\n};\n" "$line"
+    printf "function %s() {\n}\n" "$line"
   fi
 done

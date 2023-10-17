@@ -9,7 +9,7 @@ require("gruber-darker").setup({
 })
 
 -- vim.opt.guicursor = "i:block"
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("catppuccin-macchiato")
 
 -- Overrides
 -- local fg = "#e4e4e4"

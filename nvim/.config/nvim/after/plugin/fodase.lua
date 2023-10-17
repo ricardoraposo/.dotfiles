@@ -28,3 +28,9 @@ require("rest-nvim").setup({
 })
 
 require('tsc').setup({})
+
+require("ibl").setup({
+  scope = {
+    enabled = false
+  }
+})
