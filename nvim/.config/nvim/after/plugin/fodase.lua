@@ -1,5 +1,16 @@
 require("dressing").setup()
 
+require("overseer").setup({})
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    go = { "goimports" },
+    json = { "jq" },
+    css = { "styelint" },
+  }
+})
+
 require("rest-nvim").setup({
   result_split_horizontal = false,
   result_split_in_place = false,

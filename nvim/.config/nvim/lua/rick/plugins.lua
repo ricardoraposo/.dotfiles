@@ -60,7 +60,6 @@ return packer.startup(function(use)
     "williamboman/mason.nvim", -- Makes easier to get lsp servers
     "williamboman/mason-lspconfig.nvim",
   })
-  use("jose-elias-alvarez/null-ls.nvim") -- formatting and diagnostics lsp servers
   use({ "olexsmir/gopher.nvim", run = ":GoInstallDeps" })
   use("dmmulroy/tsc.nvim")
   use("folke/trouble.nvim")              -- get diag and function references in an easier way
@@ -84,10 +83,12 @@ return packer.startup(function(use)
   use("nvim-treesitter/playground")
 
   -- Doc stuff
-  use("stevearc/dressing.nvim")
   use("terrortylor/nvim-comment")
   use("JoosepAlviste/nvim-ts-context-commentstring")
   use("vim-pandoc/vim-pandoc")
+  use("stevearc/dressing.nvim")
+  use("stevearc/overseer.nvim")
+  use("stevearc/conform.nvim")
 
   -- API stuff
   use("rest-nvim/rest.nvim")

@@ -94,6 +94,17 @@ keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
 keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 keymap("n", "<leader>tc", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", opts)
+keymap("n", "<leader>ot", "<cmd>OverseerToggle<CR>", opts)
+keymap("n", "<leader>or", "<cmd>OverseerRun<CR>", opts)
+vim.keymap.set({ "n", "v" }, "<leader>f", function()
+  require("conform").format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
+  })
+end, opts
+)
+
 
 -- Command line integration
 keymap("n", "<leader>rt", ":split | terminal ", opts)
