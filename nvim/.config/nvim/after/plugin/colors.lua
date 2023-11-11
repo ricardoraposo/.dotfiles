@@ -1,15 +1,19 @@
-require("gruber-darker").setup({
-  bold = false,
-  italic = {
-    strings = false,
-    comments = false,
-    operators = false,
-    folds = false,
-  },
-})
+-- require("gruber-darker").setup({
+--   bold = false,
+--   italic = {
+--     strings = false,
+--     comments = false,
+--     operators = false,
+--     folds = false,
+--   },
+-- })
 
 -- vim.opt.guicursor = "i:block"
-vim.cmd.colorscheme("catppuccin-macchiato")
+-- Lua
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
 
 -- Overrides
 -- local fg = "#e4e4e4"
@@ -24,10 +28,12 @@ vim.cmd.colorscheme("catppuccin-macchiato")
 -- local wisteria = "#9e95c7"
 
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "IblIndent", { fg = "#383d47" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Conditional", { italic = true, fg = "#bb9af7" })
 -- vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#222324" })
 -- vim.api.nvim_set_hl(0, "typescriptBOMWindowMethod", { link = "typescriptIdentifierName" })
--- 
+--
 -- -- fuck treesitter highlighting
 -- vim.api.nvim_set_hl(0, "@method.call", { fg = fg })
 -- vim.api.nvim_set_hl(0, "@method", { fg = fg })
