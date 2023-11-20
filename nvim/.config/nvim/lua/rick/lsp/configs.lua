@@ -24,6 +24,8 @@ local servers = {
   "clangd",
   "gopls",
   "ocamllsp",
+  "dockerls",
+  "docker_compose_language_service",
 }
 
 mason.setup({})
@@ -65,3 +67,5 @@ lspconfig.clangd.setup({
   -- root_dir = utils.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
   init_option = { fallbackFlags = { "-std=c++2a" } },
 })
+
+vim.g.omni_sql_default_compl_type = 'syntax'

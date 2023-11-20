@@ -36,14 +36,14 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	use("gelguy/wilder.nvim") -- For when I forget wtf I want to type
+	-- use("gelguy/wilder.nvim") -- For when I forget wtf I want to type
 	use("ojroques/vim-oscyank") -- yank line to clipboard when I'm on ssh
 	-- use("lukas-reineke/indent-blankline.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use("folke/flash.nvim")
 	use("catppuccin/nvim")
-	use("AlexvZyl/nordic.nvim")
 	use("navarasu/onedark.nvim")
+	use("projekt0n/github-nvim-theme")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp")
@@ -91,7 +91,7 @@ return packer.startup(function(use)
 	use("stevearc/dressing.nvim")
 	use("stevearc/conform.nvim")
 
-	-- API stuff
+	-- Backend stuff
 	use("rest-nvim/rest.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
