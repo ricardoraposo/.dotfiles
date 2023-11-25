@@ -36,13 +36,14 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	-- use("gelguy/wilder.nvim") -- For when I forget wtf I want to type
+	use("gelguy/wilder.nvim") -- For when I forget wtf I want to type
 	use("ojroques/vim-oscyank") -- yank line to clipboard when I'm on ssh
 	-- use("lukas-reineke/indent-blankline.nvim")
+	use("mg979/vim-visual-multi")
+	use("alexghergh/nvim-tmux-navigation")
 	use("norcalli/nvim-colorizer.lua")
 	use("folke/flash.nvim")
 	use("catppuccin/nvim")
-	use("navarasu/onedark.nvim")
 	use("projekt0n/github-nvim-theme")
 
 	-- cmp plugins
@@ -65,11 +66,14 @@ return packer.startup(function(use)
 	})
 	use({ "olexsmir/gopher.nvim", run = ":GoInstallDeps" })
 	use("folke/trouble.nvim") -- get diag and function references in an easier way
+	use("nvimtools/none-ls.nvim")
+	-- use("stevearc/conform.nvim")
+	-- use("mfussenegger/nvim-lint")
 
 	-- Telescope & Harpoon
 	use("nvim-telescope/telescope.nvim")
 	use("debugloop/telescope-undo.nvim")
-	use("ThePrimeagen/harpoon")
+	-- use("ThePrimeagen/harpoon")
 
 	-- Nvim Tree
 	use({ "kyazdani42/nvim-tree.lua", branch = "master" })
@@ -89,10 +93,12 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("vim-pandoc/vim-pandoc")
 	use("stevearc/dressing.nvim")
-	use("stevearc/conform.nvim")
 
 	-- Backend stuff
 	use("rest-nvim/rest.nvim")
+	use("tpope/vim-dadbod")
+	use("kristijanhusak/vim-dadbod-ui")
+	use("kristijanhusak/vim-dadbod-completion")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

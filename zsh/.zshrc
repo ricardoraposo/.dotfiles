@@ -55,4 +55,4 @@ precmd() {
 [ -s "/Users/ricardo/.bun/_bun" ] && source "/Users/ricardo/.bun/_bun"
 
 # opam configuration
-[[ ! -r /Users/ricardo/.opam/opam-init/init.zsh ]] || source /Users/ricardo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /home/rick/.opam/opam-init/init.zsh ]] || source /home/rick/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

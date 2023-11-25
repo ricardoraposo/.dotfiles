@@ -66,3 +66,7 @@ vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap
 
 -- go
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])
+
+vim.cmd([[au FileType sql set shiftwidth=4 ]])
+vim.cmd([[au FileType sql set tabstop=4 ]])
+vim.cmd([[au FileType sql set softtabstop=4 ]])

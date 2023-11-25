@@ -16,7 +16,7 @@ local source_mapping = {
   nvim_lsp = "[LSP]",
   nvim_lua = "[LUA]",
   luasnip = "[SNIP]",
-  orgmode = "[ORG]",
+  ['vim_dadbod_completion'] = "[DB]",
   path = "[PATH]",
 }
 
@@ -74,6 +74,7 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
+    { name = "vim-dadbod-completion" },
     { name = "luasnip" },
     { name = "buffer",  keyword_length = 6 },
     { name = "path" },

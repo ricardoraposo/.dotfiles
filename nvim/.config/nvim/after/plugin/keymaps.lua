@@ -21,10 +21,6 @@ keymap("n", "<Up>", ":echoerr 'do better and use k, kid!'<CR>", opts)
 keymap("n", "<Down>", ":echoerr 'do better and use j, kid!'<CR>", opts)
 keymap("n", "<Right>", ":echoerr 'do better and use l, kid!'<CR>", opts)
 keymap("n", "<Left>", ":echoerr 'do better and use h, kid!'<CR>", opts)
--- keymap("i", "<Up>", "<nop>", opts)
--- keymap("i", "<Down>", "<nop>", opts)
--- keymap("i", "<Left>", "<nop>", opts)
--- keymap("i", "<Right>", "<nop>", opts)
 
 -- Normal
 keymap("n", "<leader>se", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
@@ -77,14 +73,15 @@ keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
 -- Harpoon
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-keymap("n", "<leader>mm", mark.add_file)
-keymap("n", "<C-e>", ui.toggle_quick_menu)
-keymap("n", "<C-j>", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
-keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
-keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
-keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
+-- local mark = require("harpoon.mark")
+-- local ui = require("harpoon.ui")
+-- keymap("n", "<leader>mm", mark.add_file)
+-- keymap("n", "<C-e>", ui.toggle_quick_menu)
+-- keymap("n", "<C-j>", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
+-- keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
+-- keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
+-- keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
+
 
 -- Fodase plugins
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
@@ -96,15 +93,6 @@ keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 keymap("n", "<leader>tc", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", opts)
 keymap("n", "<leader>ot", "<cmd>OverseerToggle<CR>", opts)
 keymap("n", "<leader>or", "<cmd>OverseerRun<CR>", opts)
-vim.keymap.set({ "n", "v" }, "<leader>f", function()
-  require("conform").format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  })
-end, opts
-)
-
 
 -- Command line integration
 keymap("n", "<leader>rt", ":split | terminal ", opts)

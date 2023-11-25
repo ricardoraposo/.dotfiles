@@ -43,7 +43,8 @@ o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 8
 o.hidden = true
-o.foldmethod = "manual"
+-- o.foldmethod = "manual"
+o.foldenable = false
 o.ru = true
 o.ruf = "%40(%= %#LineNr#%.50F %m[%{&ft}] %l:%c%)"
 o.lcs = "tab:• ,trail:-,nbsp:+"
@@ -61,3 +62,5 @@ vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
+g.omni_sql_default_compl_type = 'syntax'
+g.omni_sql_no_default_maps = 1
