@@ -1,9 +1,9 @@
 local wilder = require("wilder")
-local mocha = require("catppuccin.palettes").get_palette("mocha")
+local palette = require('github-theme.palette').load('github_dark_dimmed')
 
 -- Create a highlight group for the popup menu
-local text_highlight = wilder.make_hl("WilderText", { { a = 1 }, { a = 1 }, { foreground = mocha.text } })
-local mauve_highlight = wilder.make_hl("WilderMauve", { { a = 1 }, { a = 1 }, { foreground = mocha.red } })
+local text_highlight = wilder.make_hl("WilderText", { { a = 1 }, { a = 1 }, { foreground = palette.fg.default } })
+local mauve_highlight = wilder.make_hl("WilderMauve", { { a = 1 }, { a = 1 }, { foreground = palette.red.base } })
 
 -- Enable wilder when pressing :, / or ?
 wilder.setup({

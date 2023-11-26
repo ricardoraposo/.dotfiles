@@ -16,30 +16,42 @@ null_ls.setup({
 	},
 })
 
--- require("conform").setup({
--- 	formatters_by_ft = {
--- 		lua = { "stylua" },
--- 		go = { "goimports" },
--- 		json = { "jq" },
--- 		css = { "styelint" },
--- 		sql = { "sql-formatter" },
--- 	},
+-- local opts = { noremap = true, silent = true }
+-- local conform = require("conform")
+-- local lint = require("lint")
+-- 
+-- conform.setup({
+--   formatters_by_ft = {
+--     lua = { "stylua" },
+--     go = { "goimports" },
+--     json = { "jq" },
+--     css = { "styelint" },
+--     sql = { "sql-formatter" },
+--   },
 -- })
---
--- require("lint").linters_by_ft = {
--- 	sql = { "sqlfluff" },
+-- 
+-- local sqlfluff = require("lint").linters.sqlfluff
+-- sqlfluff.args = {
+--   "lint", "--format=json",
+--   "--dialect=mysql",
 -- }
---
+-- 
+-- lint.linters_by_ft = {
+--   sql = { "sqlfluff" },
+-- }
+-- 
 -- vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
--- 	callback = function()
--- 		require("lint").try_lint()
--- 	end,
+--   callback = function()
+--     require("lint").try_lint()
+--   end,
 -- })
+-- 
 -- vim.keymap.set({ "n", "v" }, "<leader>f", function()
---   require("conform").format({
---     lsp_fallback = true,
---     async = false,
---     timeout_ms = 500,
---   })
--- end, opts
+--     require("conform").format({
+--       lsp_fallback = true,
+--       async = false,
+--       timeout_ms = 500,
+--     })
+--   end,
+--   opts
 -- )
