@@ -37,7 +37,7 @@ o.softtabstop = 2
 o.cursorline = true
 o.numberwidth = 2
 o.signcolumn = "no"
-o.colorcolumn = "90"
+o.colorcolumn = "100"
 o.laststatus = 0
 o.wrap = false
 o.scrolloff = 8
@@ -64,3 +64,4 @@ vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
 g.omni_sql_default_compl_type = 'syntax'
 g.omni_sql_no_default_maps = 1
+g.db_ui_use_nerd_fonts = 1

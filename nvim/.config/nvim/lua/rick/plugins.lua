@@ -1,85 +1,97 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  "nvim-lua/popup.nvim",
-  "nvim-lua/plenary.nvim",
-  "gelguy/wilder.nvim",
-  "ojroques/vim-oscyank",
-  -- "lukas-reineke/indent-blankline.nvim",
-  "mg979/vim-visual-multi",
-  "alexghergh/nvim-tmux-navigation",
-  "norcalli/nvim-colorizer.lua",
-  "folke/flash.nvim",
-  "projekt0n/github-nvim-theme",
+	"nvim-lua/popup.nvim",
+	"nvim-lua/plenary.nvim",
+	"gelguy/wilder.nvim",
+	"ojroques/vim-oscyank",
+	"mg979/vim-visual-multi",
+	"alexghergh/nvim-tmux-navigation",
+	"norcalli/nvim-colorizer.lua",
+	"folke/flash.nvim",
+	"projekt0n/github-nvim-theme",
+  "sainnhe/sonokai",
+	"xiyaowong/transparent.nvim",
 
-  -- cmp plugins
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-nvim-lua",
+	-- cmp plugins
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lua",
+		},
+	},
 
-  -- snippets
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
+	-- snippets
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
 
-  -- LSP
-  "neovim/nvim-lspconfig",
-  {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  },
-  { "olexsmir/gopher.nvim", build = ":GoInstallDeps" },
-  "folke/trouble.nvim",
-  -- "stevearc/conform.nvim",
-  -- "mfussenegger/nvim-lint",
-  "nvimtools/none-ls.nvim",
+	-- LSP
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+		},
+	},
+	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps" },
+	"folke/trouble.nvim",
+	"nvimtools/none-ls.nvim",
+	"stevearc/conform.nvim",
 
-  -- Telescope
-  "nvim-telescope/telescope.nvim",
-  "debugloop/telescope-undo.nvim",
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"debugloop/telescope-undo.nvim",
+		},
+	},
 
-  -- Nvim Tree
-  {
-    "kyazdani42/nvim-tree.lua",
-    branch = "master",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
+	-- Nvim Tree
+	{
+		"kyazdani42/nvim-tree.lua",
+		branch = "master",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
-  "windwp/nvim-autopairs",
-  "windwp/nvim-ts-autotag",
-  "nvim-treesitter/playground",
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		dependencies = {
+			"windwp/nvim-autopairs",
+			"windwp/nvim-ts-autotag",
+			"nvim-treesitter/playground",
+		},
+	},
 
-  -- Doc stuff
-  "terrortylor/nvim-comment",
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  "vim-pandoc/vim-pandoc",
-  "stevearc/dressing.nvim",
+	-- Doc stuff
+	"terrortylor/nvim-comment",
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"vim-pandoc/vim-pandoc",
+	"stevearc/dressing.nvim",
 
-  -- Backend stuff
-  "rest-nvim/rest.nvim",
-  "tpope/vim-dadbod",
-  "kristijanhusak/vim-dadbod-ui",
-  "kristijanhusak/vim-dadbod-completion",
+	-- Backend stuff
+	"rest-nvim/rest.nvim",
+	"tpope/vim-dadbod",
+	"kristijanhusak/vim-dadbod-ui",
+	"kristijanhusak/vim-dadbod-completion",
 }
 
 local opts = {}

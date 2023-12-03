@@ -52,13 +52,9 @@ alias themes="kitty +kitten themes"
 # git
 alias gac="git add --all && git commit"
 
-alias eu="timg -pk ~/Movies/devmedia.com.br_20230810_reel_3166528034790551076_1_3166528034790551076.mp4"
 alias raposo="icat ~/Pictures/raposonaopegue.png"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
-# bindkey ^E forward-word
-# bindkey ^B backward-word
-# bindkey ^K kill-word
 bindkey -s ^V "vim .^M"
 bindkey -s ^F "fd^M"
