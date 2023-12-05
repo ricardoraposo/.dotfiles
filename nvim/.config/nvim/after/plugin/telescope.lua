@@ -7,7 +7,7 @@ telescope.setup({
 	defaults = {
 		file_ignore_patterns = { "node_modules", "dist" },
 		prompt_prefix = " ♥ ",
-		selection_caret = " ☞  ",
+		selection_caret = " ➜ ",
 		path_display = { "smart" },
 	},
 	pickers = {
@@ -16,9 +16,6 @@ telescope.setup({
 			theme = "dropdown",
 		},
 		find_files = {
-			-- layout_config = {
-			--   height = 10
-			-- },
 			theme = "dropdown",
 			previewer = true,
 			hidden = false,

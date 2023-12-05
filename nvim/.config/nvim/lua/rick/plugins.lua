@@ -21,7 +21,9 @@ local plugins = {
 	"norcalli/nvim-colorizer.lua",
 	"folke/flash.nvim",
 	"projekt0n/github-nvim-theme",
-  "sainnhe/sonokai",
+	"sainnhe/sonokai",
+  "gbprod/nord.nvim",
+  "ellisonleao/gruvbox.nvim",
 	"xiyaowong/transparent.nvim",
 
 	-- cmp plugins
