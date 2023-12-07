@@ -20,10 +20,8 @@ local plugins = {
 	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
 	"folke/flash.nvim",
-	"projekt0n/github-nvim-theme",
-	"sainnhe/sonokai",
-  "gbprod/nord.nvim",
-  "ellisonleao/gruvbox.nvim",
+	"ellisonleao/gruvbox.nvim",
+	"ricardoraposo/gruvbox-minor.nvim",
 	"xiyaowong/transparent.nvim",
 
 	-- cmp plugins
@@ -61,6 +59,12 @@ local plugins = {
 		dependencies = {
 			"debugloop/telescope-undo.nvim",
 		},
+	},
+
+	-- Harpoon yaaaaa
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
 	},
 
 	-- Nvim Tree

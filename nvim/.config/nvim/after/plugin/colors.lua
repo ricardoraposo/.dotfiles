@@ -1,4 +1,4 @@
-vim.cmd.colorscheme("nord")
+vim.cmd.colorscheme("gruvbox-minor")
 require("transparent").setup({
 	extra_groups = {
 		"NormalFloat",

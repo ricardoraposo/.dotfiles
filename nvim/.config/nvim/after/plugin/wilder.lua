@@ -1,9 +1,10 @@
 local wilder = require("wilder")
-local palette = require('github-theme.palette').load('github_dark_dimmed')
+local red = '#fb4934'
+local fg = '#d5c4a1'
 
 -- Create a highlight group for the popup menu
-local text_highlight = wilder.make_hl("WilderText", { { a = 1 }, { a = 1 }, { foreground = palette.fg.default } })
-local mauve_highlight = wilder.make_hl("WilderMauve", { { a = 1 }, { a = 1 }, { foreground = palette.red.base } })
+local text_highlight = wilder.make_hl("WilderText", { { a = 1 }, { a = 1 }, { foreground = fg } })
+local mauve_highlight = wilder.make_hl("WilderMauve", { { a = 1 }, { a = 1 }, { foreground = red } })
 
 -- Enable wilder when pressing :, / or ?
 wilder.setup({
