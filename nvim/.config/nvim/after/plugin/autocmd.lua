@@ -40,6 +40,8 @@ vim.cmd([[au FileType go set tabstop=4]])
 vim.cmd([[au FileType go set shiftwidth=4]])
 vim.cmd([[au FileType go set expandtab]])
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])
+vim.cmd([[au FileType go nmap <leader>ge <cmd>GoIfErr<CR>]])
+vim.cmd([[au FileType go nmap <leader>gt <cmd>GoTagAdd<CR>]])
 
 vim.cmd([[au FileType sql set shiftwidth=4 ]])
 vim.cmd([[au FileType sql set tabstop=4 ]])

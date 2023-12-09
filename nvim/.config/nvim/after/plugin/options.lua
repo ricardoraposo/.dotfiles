@@ -1,6 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
+o.guicursor = ""
 o.compatible = false
 o.termguicolors = true
 o.backup = false

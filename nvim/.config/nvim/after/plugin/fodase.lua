@@ -1,8 +1,8 @@
 vim.opt.termguicolors = true
 require("dressing").setup({
-  select = {
-    backend = { "fzf", "builtin", "nui" },
-  }
+	select = {
+		backend = { "fzf", "builtin", "nui" },
+	},
 })
 
 require("rest-nvim").setup({

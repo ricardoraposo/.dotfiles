@@ -10,7 +10,7 @@
   "flash.nvim": { "branch": "main", "commit": "48817af25f51c0590653bbc290866e4890fe1cbe" },
   "friendly-snippets": { "branch": "main", "commit": "53d3df271d031c405255e99410628c26a8f0d2b0" },
   "gopher.nvim": { "branch": "main", "commit": "ac27f4b6794c872140fb205313d79ab166892fe9" },
-  "gruvbox-minor.nvim": { "branch": "main", "commit": "ae9578725648294b3d0d7fc5eaed43377056859a" },
+  "gruvbox-minor.nvim": { "branch": "main", "commit": "9875a6b5e075289eaf3e379dc4b49369c4f1a364" },
   "gruvbox.nvim": { "branch": "main", "commit": "0940564208a490c173216c3b7d2188b0a5ad3491" },
   "harpoon": { "branch": "harpoon2", "commit": "07cca27cf14a458c469a759c897124f78d953db0" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
