@@ -1,1 +1,1 @@
--- vim.cmd.colorscheme("gruvbox-minor")
+vim.cmd.colorscheme("gruvbox-minor")

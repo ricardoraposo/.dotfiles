@@ -39,7 +39,7 @@ require("rest-nvim").setup({
 -- })
 
 require("colorizer").setup()
-require("flash").setup({})
+-- require("flash").setup({})
 
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 nvim_tmux_nav.setup({

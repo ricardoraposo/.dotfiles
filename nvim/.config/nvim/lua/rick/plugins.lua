@@ -19,15 +19,8 @@ local plugins = {
 	"mg979/vim-visual-multi",
 	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
-	"folke/flash.nvim",
 	"ellisonleao/gruvbox.nvim",
-	{
-		"ricardoraposo/gruvbox-minor.nvim",
-		config = function()
-			vim.cmd.colorscheme("gruvbox-minor")
-			vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
-		end,
-	},
+	"ricardoraposo/gruvbox-minor.nvim",
 
 	-- cmp plugins
 	{
