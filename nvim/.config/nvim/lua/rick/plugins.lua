@@ -21,6 +21,7 @@ local plugins = {
 	"norcalli/nvim-colorizer.lua",
 	"ellisonleao/gruvbox.nvim",
 	"ricardoraposo/gruvbox-minor.nvim",
+    "github/copilot.vim",
 
 	-- cmp plugins
 	{
@@ -57,12 +58,6 @@ local plugins = {
 		dependencies = {
 			"debugloop/telescope-undo.nvim",
 		},
-	},
-
-	-- Harpoon yaaaaa
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
 	},
 
 	-- Nvim Tree
