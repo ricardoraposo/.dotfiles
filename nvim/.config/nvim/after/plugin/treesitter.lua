@@ -65,23 +65,3 @@ if not cmp_status_ok then
 	return
 end
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-
-require("nvim_comment").setup({
-	marker_padding = true,
-	comment_empty = true,
-	comment_empty_trim_whitespace = false,
-	create_mappings = true,
-	line_mapping = "gcc",
-	operator_mapping = "gc",
-	comment_chunk_text_object = "ic",
-	hook = nil,
-})
-
-require("ts_context_commentstring").setup({})
-vim.g.skip_ts_context_commentstring_module = true
-
-require("nvim_comment").setup({
-	hook = function()
-		require("ts_context_commentstring.internal").update_commentstring()
-	end,
-})

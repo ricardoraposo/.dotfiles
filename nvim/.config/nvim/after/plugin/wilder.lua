@@ -1,6 +1,9 @@
 local wilder = require("wilder")
-local red = '#fb4934'
-local fg = '#d5c4a1'
+-- local red = '#fb4934'
+-- local fg = '#d5c4a1'
+
+local red = '#ff7b72'
+local fg= '#e6edf3'
 
 -- Create a highlight group for the popup menu
 local text_highlight = wilder.make_hl("WilderText", { { a = 1 }, { a = 1 }, { foreground = fg } })

@@ -25,6 +25,8 @@ keymap("n", "<Left>", ":echoerr 'do better and use h, kid!'<CR>", opts)
 -- Normal
 keymap("n", "<leader>se", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
+keymap("i", "<C-Right>", "<Plug>(copilot-accept-word)")
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
@@ -46,7 +48,7 @@ keymap("i", "<C-c>", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap('v', 'y', '<Plug>OSCYankVisual', opts)
+keymap("v", "y", "<Plug>OSCYankVisual", opts)
 
 -- Move text up and down
 keymap("v", "<S-j>", ":m .+1<CR>==", opts)
@@ -62,6 +64,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 keymap("n", "<C-f>", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<M-p>", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
 keymap("n", "<leader>do", "<cmd>Telescope find_files cwd=~/Documents/zet/<CR>", opts)
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)
@@ -72,17 +75,6 @@ keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>",
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
--- Harpoon
--- local mark = require("harpoon.mark")
--- local ui = require("harpoon.ui")
--- keymap("n", "<leader>mm", mark.add_file)
--- keymap("n", "<C-e>", ui.toggle_quick_menu)
--- keymap("n", "<C-j>", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
--- keymap("n", "<C-k>", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
--- keymap("n", "<C-l>", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
--- keymap("n", "<C-h>", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
-
-
 -- Fodase plugins
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
@@ -90,9 +82,12 @@ keymap("n", "<leader>rc", "<cmd>make<CR>", opts) -- Run Code
 keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
 keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
 keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
-keymap("n", "<leader>tc", "<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>", opts)
-keymap("n", "<leader>ot", "<cmd>OverseerToggle<CR>", opts)
-keymap("n", "<leader>or", "<cmd>OverseerRun<CR>", opts)
+
+-- Angular shit
+local ng = require("ng")
+vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
 
 -- Command line integration
 keymap("n", "<leader>rt", ":split | terminal ", opts)

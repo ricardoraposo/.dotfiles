@@ -22,11 +22,7 @@ vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set conce
 -- stuff
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 
--- html
-vim.cmd([[au FileType html nmap <leader>ac 0f<ea class=""<esc>i]])
-
 -- js 
-vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ac 0f<ea className=""<esc>i]])
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>al yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>]])
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ec yiwGo<CR>export default ;<esc>hp]])
 vim.cmd([[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>em yiwGo<CR>module.exports = ;<esc>hp]])

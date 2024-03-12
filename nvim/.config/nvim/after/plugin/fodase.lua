@@ -34,6 +34,25 @@ require("rest-nvim").setup({
 
 require("colorizer").setup()
 
+require("fidget").setup({
+	text = {
+		spinner = "circle",
+	},
+	align = {
+		bottom = true,
+	},
+	window = {
+		relative = "editor",
+	},
+})
+
+require("ibl").setup({
+	scope = { enabled = false },
+	whitespace = {
+		remove_blankline_trail = false,
+	},
+})
+
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 nvim_tmux_nav.setup({
 	disable_when_zoomed = true, -- defaults to false
@@ -45,3 +64,7 @@ vim.keymap.set("n", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
 vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 vim.keymap.set("n", "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+require("Comment").setup({
+	pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+})

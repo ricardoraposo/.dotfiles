@@ -21,11 +21,12 @@ alias so="source ~/.zshrc"
 alias cat="bat"
 alias chmox="chmod +x"
 alias ls="exa -lh"
-alias "?"="tia"
+alias lg="lazygit"
+alias pn="pnpm"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
-alias tc="tmux new -A -s class"
+alias tmvs="tmux new -A -s vscode"
 alias tk="tmux kill-server"
 alias kn="killall node"
 
@@ -42,6 +43,8 @@ alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardorap
 alias dc="docker-compose"
 alias dsp="docker system prune -af"
 alias dcr="docker container run"
+
+alias ku="kubectl"
 
 # kitty kitten aliases
 alias icat="kitty +kitten icat --align left"

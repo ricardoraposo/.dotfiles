@@ -19,9 +19,12 @@ local plugins = {
 	"mg979/vim-visual-multi",
 	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
-	"ellisonleao/gruvbox.nvim",
 	"ricardoraposo/gruvbox-minor.nvim",
-    "github/copilot.vim",
+	"datsfilipe/min-theme.nvim",
+	"savq/melange-nvim",
+	"folke/tokyonight.nvim",
+	"github/copilot.vim",
+	"lukas-reineke/indent-blankline.nvim",
 
 	-- cmp plugins
 	{
@@ -48,6 +51,8 @@ local plugins = {
 		},
 	},
 	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps" },
+	{ "joeveiga/ng.nvim", lazy = true },
+  {"j-hui/fidget.nvim", branch = "legacy"},
 	"folke/trouble.nvim",
 	"nvimtools/none-ls.nvim",
 	"stevearc/conform.nvim",
@@ -73,6 +78,7 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		lazy = true,
 		dependencies = {
 			"windwp/nvim-autopairs",
 			"windwp/nvim-ts-autotag",
@@ -81,13 +87,18 @@ local plugins = {
 	},
 
 	-- Doc stuff
-	"terrortylor/nvim-comment",
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"vim-pandoc/vim-pandoc",
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
+	},
+	{ "vim-pandoc/vim-pandoc", lazy = true },
 	"stevearc/dressing.nvim",
 
 	-- Backend stuff
-	"rest-nvim/rest.nvim",
+	{ "rest-nvim/rest.nvim", lazy = true },
 	"tpope/vim-dadbod",
 	"kristijanhusak/vim-dadbod-ui",
 	"kristijanhusak/vim-dadbod-completion",

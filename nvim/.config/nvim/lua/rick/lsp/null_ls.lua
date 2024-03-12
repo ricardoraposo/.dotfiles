@@ -1,12 +1,15 @@
 local null_ls = require("null-ls")
 
 local diagnostics = null_ls.builtins.diagnostics
+local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	sources = {
-		diagnostics.sqlfluff.with({
-			extra_args = { "--dialect", "mysql" },
-		}),
+		-- diagnostics.sqlfluff.with({
+		-- 	extra_args = { "--dialect", "mysql" },
+		-- }),
+		diagnostics.mypy,
+		formatting.black,
 	},
 })
 
@@ -24,6 +27,7 @@ conform.setup({
 		go = { "goimports" },
 		json = { "jq" },
 		css = { "stylelint" },
+		graphql = { "prettierd" },
 	},
 })
 

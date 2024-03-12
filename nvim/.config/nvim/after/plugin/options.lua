@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
-o.guicursor = ""
+-- o.guicursor = ""
 o.compatible = false
 o.termguicolors = true
 o.backup = false
@@ -9,12 +9,13 @@ o.backupcopy = "yes"
 o.autowrite = true
 o.cmdheight = 1
 o.conceallevel = 0
-o.nu = true
-o.rnu = true
+o.nu = false
+o.rnu = false
 o.concealcursor = "nc"
-o.fileencoding = "utf-8"
+-- o.fileencoding = "utf-8"
 o.hlsearch = false
 o.incsearch = true
+o.inccommand = 'split'
 o.ignorecase = true
 o.mouse = "a"
 o.pumheight = 10
@@ -52,6 +53,10 @@ o.lcs = "tab:• ,trail:-,nbsp:+"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
+
+o.pumblend = 17
+o.wildmode = "longest:full"
+o.wildoptions = "pum"
 
 vim.cmd("language en_US.UTF-8")
 vim.cmd("set t_ZH=^[[3m")
