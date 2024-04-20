@@ -1,7 +1,4 @@
 local wilder = require("wilder")
--- local red = '#fb4934'
--- local fg = '#d5c4a1'
-
 local red = '#ff7b72'
 local fg= '#e6edf3'
 

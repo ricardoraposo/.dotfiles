@@ -1,6 +1,7 @@
 # font shit
-font_family                JetBrainsMono Nerd Font
+font_family                Hack Nerd Font
 font_size                  12
+adjust_line_height         130%
 
 # Cursor shit and stuff I have no idea of what it does
 cursor_shape               block
@@ -47,5 +48,5 @@ map alt+backspace       restore_font_size
 map alt+o               set_background_opacity -0.01
 map alt+p               set_background_opacity +0.01
 
-include tomorrow.conf
+include gruvy.conf
 include ${KITTY_OS}.conf

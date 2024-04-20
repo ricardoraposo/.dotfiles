@@ -19,12 +19,11 @@ local plugins = {
 	"mg979/vim-visual-multi",
 	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
-	"ricardoraposo/gruvbox-minor.nvim",
-	"datsfilipe/min-theme.nvim",
-	"savq/melange-nvim",
-	"folke/tokyonight.nvim",
+	{
+		"ricardoraposo/gruvbox-minor.nvim",
+		lazy = true,
+	},
 	"github/copilot.vim",
-	"lukas-reineke/indent-blankline.nvim",
 
 	-- cmp plugins
 	{
@@ -50,9 +49,10 @@ local plugins = {
 			"williamboman/mason-lspconfig.nvim",
 		},
 	},
-	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps" },
+	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
 	{ "joeveiga/ng.nvim", lazy = true },
-  {"j-hui/fidget.nvim", branch = "legacy"},
+	{ "j-hui/fidget.nvim", branch = "legacy" },
+	{ "akinsho/git-conflict.nvim", version = "*", config = true },
 	"folke/trouble.nvim",
 	"nvimtools/none-ls.nvim",
 	"stevearc/conform.nvim",
@@ -69,9 +69,18 @@ local plugins = {
 	{
 		"kyazdani42/nvim-tree.lua",
 		branch = "master",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
+		lazy = true,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
+	-- Colorscheme stuff
+	{
+		"NvChad/base46",
+		lazy = true,
+		branch = "v2.5",
+		build = function()
+			require("base46").load_all_highlights()
+		end,
 	},
 
 	-- Treesitter
@@ -89,7 +98,7 @@ local plugins = {
 	-- Doc stuff
 	{
 		"numToStr/Comment.nvim",
-		lazy = false,
+		lazy = true,
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
@@ -98,10 +107,21 @@ local plugins = {
 	"stevearc/dressing.nvim",
 
 	-- Backend stuff
-	{ "rest-nvim/rest.nvim", lazy = true },
-	"tpope/vim-dadbod",
-	"kristijanhusak/vim-dadbod-ui",
-	"kristijanhusak/vim-dadbod-completion",
+	{
+		"vhyrro/luarocks.nvim",
+		lazy = true,
+		priority = 1000,
+		config = true,
+	},
+	{
+		"rest-nvim/rest.nvim",
+		ft = "http",
+		dependencies = { "luarocks.nvim" },
+		lazy = true,
+	},
+	{ "tpope/vim-dadbod", lazy = true },
+	{ "kristijanhusak/vim-dadbod-ui", lazy = true },
+	{ "kristijanhusak/vim-dadbod-completion", lazy = true },
 }
 
 local opts = {}

@@ -16,7 +16,7 @@ telescope.setup({
 			theme = "dropdown",
 		},
 		find_files = {
-			theme = "dropdown",
+			-- theme = "dropdown",
 			previewer = true,
 			hidden = false,
 		},

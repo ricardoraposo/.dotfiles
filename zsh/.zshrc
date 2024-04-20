@@ -12,6 +12,7 @@ export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
+export AWS_PROFILE="bankme"
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/go/bin"
@@ -65,3 +66,13 @@ esac
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(fzf --zsh)"

@@ -6,37 +6,42 @@ require("dressing").setup({
 })
 
 require("rest-nvim").setup({
-	result_split_horizontal = true,
-	result_split_in_place = false,
 	skip_ssl_verification = false,
 	encode_url = true,
 	highlight = {
-		enabled = true,
+		enable = true,
 		timeout = 150,
 	},
 	result = {
-		show_url = true,
-		show_curl_command = false,
-		show_http_info = true,
-		show_headers = true,
-		formatters = {
-			json = "jq",
-			html = function(body)
-				return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
-			end,
+		split = {
+			horizontal = true,
+			in_place = false,
+		},
+		behavior = {
+			decode_url = true,
+			show_info = {
+				url = true,
+				headers = true,
+				http_info = true,
+				curl_command = true,
+			},
+			formatters = {
+				json = "jq",
+				html = function(body)
+					return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
+				end,
+			},
 		},
 	},
-	jump_to_request = false,
 	env_file = ".env",
 	custom_dynamic_variables = {},
-	yank_dry_run = true,
 })
 
 require("colorizer").setup()
 
 require("fidget").setup({
 	text = {
-		spinner = "circle",
+		spinner = "dots_negative",
 	},
 	align = {
 		bottom = true,
@@ -46,12 +51,9 @@ require("fidget").setup({
 	},
 })
 
-require("ibl").setup({
-	scope = { enabled = false },
-	whitespace = {
-		remove_blankline_trail = false,
-	},
-})
+-- require("ibl").setup({
+-- 	scope = { enabled = false },
+-- })
 
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 nvim_tmux_nav.setup({

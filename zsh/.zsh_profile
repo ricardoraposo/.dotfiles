@@ -13,6 +13,7 @@ c() {
 
 alias v="nvim"
 alias vim="nvim"
+alias nvd="neovide"
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
 alias dot="cd $HOME/.dotfiles"

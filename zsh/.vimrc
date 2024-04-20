@@ -43,7 +43,7 @@ set ruf=%35(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
 set shortmess-=S
 
 syntax on
-colorscheme rwx
+colorscheme default
 
 if has("syntax")
   function! <SID>SynStack()

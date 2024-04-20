@@ -1,12 +1,11 @@
-vim.cmd.colorscheme("melange")
-local fg = "#c1c1c1"
-local bg = "#212121"
-vim.api.nvim_set_hl(0, "CursorLine", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE", fg = bg })
-vim.api.nvim_set_hl(0, "Property", { bg = "NONE", fg = fg })
-vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#303030", fg = "NONE" })
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 
--- vesper shit
--- vim.api.nvim_set_hl(0, "Type", { fg = "#ffcfa8" })
--- vim.api.nvim_set_hl(0, "Attribute", { fg = "#ffcfa8" })
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "devicons")
+dofile(vim.g.base46_cache .. "git")
+dofile(vim.g.base46_cache .. "lsp")
+dofile(vim.g.base46_cache .. "mason")
+dofile(vim.g.base46_cache .. "nvimtree")
+dofile(vim.g.base46_cache .. "syntax")
+dofile(vim.g.base46_cache .. "treesitter")
+dofile(vim.g.base46_cache .. "telescope")

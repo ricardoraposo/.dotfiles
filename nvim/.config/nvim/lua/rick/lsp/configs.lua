@@ -29,7 +29,6 @@ local servers = {
 	"prismals",
 	"clangd",
 	"gopls",
-	"ocamllsp",
 	"dockerls",
 	"docker_compose_language_service",
 	"graphql",
