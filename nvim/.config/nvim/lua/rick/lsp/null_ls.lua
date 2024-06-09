@@ -28,20 +28,21 @@ conform.setup({
 		json = { "jq" },
 		css = { "stylelint" },
 		graphql = { "prettierd" },
+		ocaml = { "ocamlformat" },
 	},
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		conform.format({
-			lsp_fallback = true,
-			async = false,
-			timeout_ms = 500,
-			bufnr = args.buf,
-		})
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		conform.format({
+-- 			lsp_fallback = true,
+-- 			async = false,
+-- 			timeout_ms = 500,
+-- 			bufnr = args.buf,
+-- 		})
+-- 	end,
+-- })
 
 vim.keymap.set({ "n", "v" }, "<leader>f", function()
 	conform.format({

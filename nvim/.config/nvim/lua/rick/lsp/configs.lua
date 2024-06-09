@@ -29,15 +29,18 @@ local servers = {
 	"prismals",
 	"clangd",
 	"gopls",
+	"rust_analyzer",
 	"dockerls",
 	"docker_compose_language_service",
 	"graphql",
-  "bufls",
-  "jdtls",
-  "pyright",
-  "ruff_lsp",
-  "angularls",
-  "volar",
+	"bufls",
+	"jdtls",
+	"pyright",
+	"ruff_lsp",
+	"angularls",
+	"volar",
+	"elixirls",
+	"ocamllsp",
 }
 
 mason.setup({})
@@ -78,6 +81,11 @@ lspconfig.clangd.setup({
 	filetypes = { "c", "cpp", "objc", "objcpp" },
 	-- root_dir = utils.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
 	init_option = { fallbackFlags = { "-std=c++2a" } },
+})
+
+lspconfig.gleam.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 vim.g.omni_sql_default_compl_type = "syntax"

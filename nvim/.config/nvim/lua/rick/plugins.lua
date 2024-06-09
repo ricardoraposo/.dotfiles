@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -19,10 +22,9 @@ local plugins = {
 	"mg979/vim-visual-multi",
 	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
-	{
-		"ricardoraposo/gruvbox-minor.nvim",
-		lazy = true,
-	},
+	"ricardoraposo/gruvbox-minor.nvim",
+	{ "blazkowolf/gruber-darker.nvim", name = "grub" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	"github/copilot.vim",
 
 	-- cmp plugins
@@ -53,7 +55,9 @@ local plugins = {
 	{ "joeveiga/ng.nvim", lazy = true },
 	{ "j-hui/fidget.nvim", branch = "legacy" },
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
-	"folke/trouble.nvim",
+	{ "folke/trouble.nvim" },
+	{ "dmmulroy/ts-error-translator.nvim" },
+	{ "reasonml-editor/vim-reason-plus" },
 	"nvimtools/none-ls.nvim",
 	"stevearc/conform.nvim",
 
@@ -75,12 +79,19 @@ local plugins = {
 
 	-- Colorscheme stuff
 	{
+		"tjdevries/colorbuddy.nvim",
+	},
+	{
 		"NvChad/base46",
 		lazy = true,
 		branch = "v2.5",
 		build = function()
 			require("base46").load_all_highlights()
 		end,
+	},
+	{
+		"vague2k/huez.nvim",
+		import = "huez-manager.import",
 	},
 
 	-- Treesitter
@@ -89,7 +100,7 @@ local plugins = {
 		build = ":TSUpdate",
 		lazy = true,
 		dependencies = {
-			"windwp/nvim-autopairs",
+			{ "windwp/nvim-autopairs", lazy = true },
 			"windwp/nvim-ts-autotag",
 			"nvim-treesitter/playground",
 		},
@@ -119,9 +130,9 @@ local plugins = {
 		dependencies = { "luarocks.nvim" },
 		lazy = true,
 	},
-	{ "tpope/vim-dadbod", lazy = true },
-	{ "kristijanhusak/vim-dadbod-ui", lazy = true },
-	{ "kristijanhusak/vim-dadbod-completion", lazy = true },
+	{ "tpope/vim-dadbod" },
+	{ "kristijanhusak/vim-dadbod-ui" },
+	{ "kristijanhusak/vim-dadbod-completion" },
 }
 
 local opts = {}

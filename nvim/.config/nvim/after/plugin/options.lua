@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
--- o.guicursor = ""
+o.guicursor = ""
 o.compatible = false
 o.termguicolors = true
 o.backup = false
@@ -9,13 +9,13 @@ o.backupcopy = "yes"
 o.autowrite = true
 o.cmdheight = 1
 o.conceallevel = 0
-o.nu = false
+o.nu = true
 o.rnu = false
 o.concealcursor = "nc"
 -- o.fileencoding = "utf-8"
 o.hlsearch = false
 o.incsearch = true
-o.inccommand = 'split'
+o.inccommand = "split"
 o.ignorecase = true
 o.mouse = "a"
 o.pumheight = 10
@@ -43,7 +43,7 @@ o.colorcolumn = "80,100"
 o.laststatus = 0
 o.wrap = false
 o.scrolloff = 8
-o.sidescrolloff = 8
+o.sidescrolloff = 16
 o.hidden = true
 -- o.foldmethod = "manual"
 o.foldenable = false
@@ -53,7 +53,6 @@ o.lcs = "tab:• ,trail:-,nbsp:+"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
 o.clipboard:append({ "unnamedplus" })
-
 o.pumblend = 17
 o.wildmode = "longest:full"
 o.wildoptions = "pum"
@@ -68,6 +67,12 @@ vim.cmd("let g:pandoc#spell#enabled=0")
 vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
 g.markdown_fenced_languages = { "javascript", "sh" }
-g.omni_sql_default_compl_type = 'syntax'
+g.omni_sql_default_compl_type = "syntax"
 g.omni_sql_no_default_maps = 1
 g.db_ui_use_nerd_fonts = 1
+
+o.list = true
+o.listchars = {
+	space = " ",
+	tab = "  ",
+}

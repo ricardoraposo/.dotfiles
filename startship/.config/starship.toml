@@ -1,0 +1,26 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$golang\
+$nodejs\
+$rust\
+$elixir\
+$ocaml\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+[gcloud]
+disabled = false
+
+[aws]
+disabled = true
+
+[directory]
+style = 'bold bright-cyan'

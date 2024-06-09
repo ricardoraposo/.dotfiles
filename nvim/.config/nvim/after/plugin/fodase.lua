@@ -55,6 +55,8 @@ require("fidget").setup({
 -- 	scope = { enabled = false },
 -- })
 
+require("ts-error-translator").setup()
+
 local nvim_tmux_nav = require("nvim-tmux-navigation")
 nvim_tmux_nav.setup({
 	disable_when_zoomed = true, -- defaults to false
