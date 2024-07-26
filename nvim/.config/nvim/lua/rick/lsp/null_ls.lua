@@ -13,7 +13,6 @@ null_ls.setup({
 	},
 })
 
-local opts = { noremap = true, silent = true }
 local conform = require("conform")
 
 conform.formatters.sqlfluff = {
@@ -22,6 +21,8 @@ conform.formatters.sqlfluff = {
 
 conform.setup({
 	formatters_by_ft = {
+    -- javascript = { "prettier" },
+    -- typescript = { "prettier" },
 		sql = { "sqlfluff" },
 		lua = { "stylua" },
 		go = { "goimports" },
@@ -44,10 +45,3 @@ conform.setup({
 -- 	end,
 -- })
 
-vim.keymap.set({ "n", "v" }, "<leader>f", function()
-	conform.format({
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 500,
-	})
-end, opts)

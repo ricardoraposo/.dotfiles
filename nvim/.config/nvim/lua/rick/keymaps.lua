@@ -5,6 +5,8 @@ local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes
 --	 normal mode = "n"
@@ -26,13 +28,21 @@ keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 keymap("i", "<C-Right>", "<Plug>(copilot-accept-word)")
 
+-- Navigator
+vim.keymap.set({ "n", "t" }, "<A-h>", "<CMD>NavigatorLeft<CR>")
+vim.keymap.set({ "n", "t" }, "<A-l>", "<CMD>NavigatorRight<CR>")
+vim.keymap.set({ "n", "t" }, "<A-k>", "<CMD>NavigatorUp<CR>")
+vim.keymap.set({ "n", "t" }, "<A-j>", "<CMD>NavigatorDown<CR>")
+vim.keymap.set({ "n", "t" }, "<A-p>", "<CMD>NavigatorPrevious<CR>")
+
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)
 keymap("n", "<M-Left>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<M-Right>", "<cmd>vertical resize -2<CR>", opts)
 keymap("n", "<leader>vv", "<cmd>vsplit<CR>", opts)
-keymap("n", "<leader>vh", "<cmd>split<CR>", opts)
+keymap("n", "<leader>v-", "<cmd>split<CR>", opts)
+keymap("n", "<leader>vt", "<cmd>vsplit | terminal<CR>", opts)
 
 -- Buffer commands
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -68,11 +78,9 @@ keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd
 keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'telescope.builtin'.registers()<CR>", opts)
 keymap("n", "<leader>dg", "<cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
+keymap("n", "<leader>dc", "<cmd>lua require'telescope.builtin'.colorscheme()<CR>", opts)
 keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
-
--- Huez
-keymap("n", "<leader>dc", "<cmd>Huez<CR>", opts)
 
 -- Fodase plugins
 keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
@@ -89,7 +97,7 @@ vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
 vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
 
 -- Command line integration
-keymap("n", "<leader>rt", ":split | terminal ", opts)
+keymap("n", "<leader>rt", ":15split | terminal ", opts)
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("n", "<leader>ta", "!!turnArrow<CR>Vj=", opts)
 keymap("n", "<leader>tf", "!!turnFunction<CR>Vj=", opts)
@@ -98,6 +106,20 @@ keymap("n", "<leader>ts", "!!turnState<CR>Vj=A;<esc>F(", opts)
 -- Better navigation
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
+keymap("n", "<leader>bh", "<cmd>lua require('barbecue.ui').navigate(1)<cr>")
+keymap("n", "<leader>bj", "<cmd>lua require('barbecue.ui').navigate(2)<cr>")
+keymap("n", "<leader>bk", "<cmd>lua require('barbecue.ui').navigate(3)<cr>")
+keymap("n", "<leader>bl", "<cmd>lua require('barbecue.ui').navigate(4)<cr>")
+
+-- Format shit
+keymap({ "n", "v" }, "<leader>f", function()
+	require("conform").format({
+		lsp_fallback = true,
+		async = false,
+		timeout_ms = 500,
+	})
+end, opts)
+
 
 -- Greatest remaps
 keymap("n", "G", "Gzz", opts)
@@ -106,7 +128,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
-keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/colors.lua<cr>", opts)
+keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/lua/rick/colors.lua<cr>", opts)
 
 -- Use of function row
 keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)

@@ -6,7 +6,7 @@ M.ui = {
 	hl_add = {},
 	hl_override = {},
 	changed_themes = {},
-	theme = "bearded-arc",
+  theme = "bearded-arc",
 	transparency = false,
 
 	cmp = {
@@ -60,8 +60,6 @@ M.ui = {
 		},
 	},
 
-	cheatsheet = { theme = "grid" }, -- simple/grid
-
 	lsp = { signature = true },
 
 	term = {
@@ -91,5 +89,8 @@ M.base46 = {
 		"telescope",
 	},
 }
+
+M.cheatsheet = { theme = "grid" } -- simple/grid
+
 
 return M

@@ -1,7 +1,7 @@
 fd(){
-  DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos ~/Projects/Study  -mindepth 1 -maxdepth 1 -type d |\
+  DIR=$(find -L ~/.config ~/Projects ~/Projects/Repos ~/Projects/Study ~/Projects/Work  -mindepth 1 -maxdepth 2 -type d |\
     fzf --margin 15% --border=rounded \
-    --preview 'exa -1 {}' --color bg+:-1) && cd $DIR
+    --preview 'ls -1 {}' --color bg+:-1) && cd $DIR
 }
 
 c() {
@@ -9,6 +9,14 @@ c() {
     ~/Projects/Study  \
     -mindepth 1 -maxdepth 2 -type d | fzf -f $1 | head -1)
   [[ ! -z $DIR ]] && cd $DIR
+}
+
+freaking_files () {
+  echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+  echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+  sudo sysctl -w kern.maxfiles=65536
+  sudo sysctl -w kern.maxfilesperproc=65536
+  ulimit -f unlimited
 }
 
 alias v="nvim"
@@ -21,7 +29,7 @@ alias zf="cd $NOTES"
 alias so="source ~/.zshrc"
 alias cat="bat"
 alias chmox="chmod +x"
-alias ls="exa -lh"
+alias ls="eza -lh"
 alias lg="lazygit"
 alias pn="pnpm"
 
@@ -54,7 +62,10 @@ alias kssh="kitty +kitten ssh"
 alias themes="kitty +kitten themes"
 
 # git
-alias gac="git add --all && git commit"
+alias gw="git worktree"
+alias gwa="git worktree add"
+alias gwr="git worktree remove"
+alias gwl="git worktree list"
 
 alias raposo="icat ~/Pictures/raposonaopegue.png"
 

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+case "$1" in
+  prd) 
+    echo generating access token for prd
+    token=$(https POST https://api-bankme-prd-01.bankme.tech/auth/login email=$PRD_USER password=$PRD_PWD rememberme:=true | jq -r '.accessToken')
+  ;;
+  hmg) 
+    echo generating access token for hmg
+    token=$(https POST https://api-bankme-hmg-01.bankme.tech/auth/login email=$HMG_USER password=$HMG_PWD rememberme:=true | jq -r '.accessToken')
+  ;;
+  demo)
+    echo generating access token for demo
+    token=$(https POST https://api-bankme-demo.bankme.tech/auth/login email=$DEMO_USER password=$DEMO_PWD rememberme:=true | jq -r '.accessToken')
+  ;;
+  *) echo Invalid argument
+     exit 1
+  ;;
+esac
+
+if command -v pbcopy > /dev/null; then
+  echo "$token" | pbcopy
+  echo "Token copied to clipboard."
+elif command -v xclip > /dev/null; then
+  echo "$token" | xclip -selection clipboard
+  echo "Token copied to clipboard."
+else
+  echo "No clipboard utility found. Token: $token"
+fi

@@ -50,5 +50,6 @@ if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r
 # opam configuration
 [[ ! -r /Users/ricardo/.opam/opam-init/init.zsh ]] || source /Users/ricardo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
+
 eval "$(starship init zsh)"

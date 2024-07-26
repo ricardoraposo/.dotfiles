@@ -1,8 +1,9 @@
 call plug#begin('~/.local/share/vim/plugins')
   Plug 'tpope/vim-commentary'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'ericbn/vim-solarized'
 call plug#end()
 
 set path+=**
@@ -21,6 +22,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set scrolloff=8
+set re=0
 set sidescrolloff=8
 set nohlsearch
 set incsearch
@@ -41,9 +43,10 @@ set nospell
 set spc=
 set ruf=%35(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
 set shortmess-=S
+set colorcolumn=80,100
 
 syntax on
-colorscheme default
+colorscheme torte
 
 if has("syntax")
   function! <SID>SynStack()
@@ -60,7 +63,7 @@ nnoremap G Gzz
 nnoremap <C-c> <esc>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>sc <cmd>so %<CR>
-nnoremap <C-f> :find 
+nnoremap <C-f> :Files<CR> 
 nnoremap <F2> :call <SID>SynStack()<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
@@ -84,9 +87,3 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
 let g:go_auto_sameids = 0
-
-" markdown stuff
-let g:markdown_fenced_languages = ['bash', 'js=javascript']
-let g:pandoc#formatting#mode = 'h'
-let g:pandoc#formatting#textwidth = 72
-let g:pandoc#modules#disabled = ["spell"]

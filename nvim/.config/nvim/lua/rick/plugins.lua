@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -20,11 +17,8 @@ local plugins = {
 	"gelguy/wilder.nvim",
 	"ojroques/vim-oscyank",
 	"mg979/vim-visual-multi",
-	"alexghergh/nvim-tmux-navigation",
 	"norcalli/nvim-colorizer.lua",
-	"ricardoraposo/gruvbox-minor.nvim",
-	{ "blazkowolf/gruber-darker.nvim", name = "grub" },
-	{ "catppuccin/nvim", name = "catppuccin" },
+	"numToStr/Navigator.nvim",
 	"github/copilot.vim",
 
 	-- cmp plugins
@@ -51,15 +45,32 @@ local plugins = {
 			"williamboman/mason-lspconfig.nvim",
 		},
 	},
-	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
-	{ "joeveiga/ng.nvim", lazy = true },
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({
+				ui = {
+					code_action = "",
+				},
+			})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter", -- optional
+			"nvim-tree/nvim-web-devicons", -- optional
+		},
+	},
 	{ "j-hui/fidget.nvim", branch = "legacy" },
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
 	{ "folke/trouble.nvim" },
+	{ "nvimtools/none-ls.nvim" },
+	{ "stevearc/conform.nvim" },
+	{ "FabijanZulj/blame.nvim" },
+
+	-- Language specific stuff
+	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
+	{ "joeveiga/ng.nvim", lazy = true },
 	{ "dmmulroy/ts-error-translator.nvim" },
 	{ "reasonml-editor/vim-reason-plus" },
-	"nvimtools/none-ls.nvim",
-	"stevearc/conform.nvim",
 
 	-- Telescope
 	{
@@ -68,6 +79,13 @@ local plugins = {
 			"debugloop/telescope-undo.nvim",
 		},
 	},
+	{
+		"junegunn/fzf",
+		run = function()
+			vim.fn["fzf#install"]()
+		end,
+	},
+	{ "junegunn/fzf.vim" },
 
 	-- Nvim Tree
 	{
@@ -79,9 +97,6 @@ local plugins = {
 
 	-- Colorscheme stuff
 	{
-		"tjdevries/colorbuddy.nvim",
-	},
-	{
 		"NvChad/base46",
 		lazy = true,
 		branch = "v2.5",
@@ -90,9 +105,11 @@ local plugins = {
 		end,
 	},
 	{
-		"vague2k/huez.nvim",
-		import = "huez-manager.import",
+		"2nthony/vitesse.nvim",
+		dependencies = { "tjdevries/colorbuddy.nvim" },
 	},
+	{ "ellisonleao/gruvbox.nvim" },
+	{ "folke/tokyonight.nvim" },
 
 	-- Treesitter
 	{
@@ -103,7 +120,19 @@ local plugins = {
 			{ "windwp/nvim-autopairs", lazy = true },
 			"windwp/nvim-ts-autotag",
 			"nvim-treesitter/playground",
+			-- "nvim-treesitter/nvim-treesitter-context",
 		},
+	},
+	{ "lukas-reineke/virt-column.nvim" },
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons", -- optional dependency
+		},
+		opts = {},
 	},
 
 	-- Doc stuff
@@ -114,8 +143,9 @@ local plugins = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
 	},
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{ "vim-pandoc/vim-pandoc", lazy = true },
-	"stevearc/dressing.nvim",
+	{ "stevearc/dressing.nvim" },
 
 	-- Backend stuff
 	{

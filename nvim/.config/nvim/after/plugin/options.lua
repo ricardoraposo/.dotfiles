@@ -1,7 +1,7 @@
 local o = vim.opt
 local g = vim.g
 
-o.guicursor = ""
+o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
 o.compatible = false
 o.termguicolors = true
 o.backup = false
@@ -10,7 +10,7 @@ o.autowrite = true
 o.cmdheight = 1
 o.conceallevel = 0
 o.nu = true
-o.rnu = false
+o.rnu = true
 o.concealcursor = "nc"
 -- o.fileencoding = "utf-8"
 o.hlsearch = false
@@ -36,7 +36,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.tabstop = 2
 o.softtabstop = 2
-o.cursorline = true
+o.cursorline = false
 o.numberwidth = 2
 o.signcolumn = "no"
 o.colorcolumn = "80,100"
