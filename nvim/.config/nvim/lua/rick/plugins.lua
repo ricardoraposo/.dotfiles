@@ -19,7 +19,6 @@ local plugins = {
 	"mg979/vim-visual-multi",
 	"norcalli/nvim-colorizer.lua",
 	"numToStr/Navigator.nvim",
-	"github/copilot.vim",
 
 	-- cmp plugins
 	{
@@ -80,12 +79,12 @@ local plugins = {
 		},
 	},
 	{
-		"junegunn/fzf",
-		run = function()
-			vim.fn["fzf#install"]()
+		"ibhagwan/fzf-lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("fzf-lua").setup({})
 		end,
 	},
-	{ "junegunn/fzf.vim" },
 
 	-- Nvim Tree
 	{
@@ -96,20 +95,8 @@ local plugins = {
 	},
 
 	-- Colorscheme stuff
-	{
-		"NvChad/base46",
-		lazy = true,
-		branch = "v2.5",
-		build = function()
-			require("base46").load_all_highlights()
-		end,
-	},
-	{
-		"2nthony/vitesse.nvim",
-		dependencies = { "tjdevries/colorbuddy.nvim" },
-	},
-	{ "ellisonleao/gruvbox.nvim" },
-	{ "folke/tokyonight.nvim" },
+	{ "mhartington/oceanic-next" },
+	{ "olimorris/onedarkpro.nvim" },
 
 	-- Treesitter
 	{
@@ -120,7 +107,6 @@ local plugins = {
 			{ "windwp/nvim-autopairs", lazy = true },
 			"windwp/nvim-ts-autotag",
 			"nvim-treesitter/playground",
-			-- "nvim-treesitter/nvim-treesitter-context",
 		},
 	},
 	{ "lukas-reineke/virt-column.nvim" },
@@ -163,6 +149,11 @@ local plugins = {
 	{ "tpope/vim-dadbod" },
 	{ "kristijanhusak/vim-dadbod-ui" },
 	{ "kristijanhusak/vim-dadbod-completion" },
+
+	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
+	},
 }
 
 local opts = {}

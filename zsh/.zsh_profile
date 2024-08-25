@@ -44,6 +44,7 @@ alias cy="npm run cy"
 alias li="npm run lint"
 alias t="npm run test"
 alias d="npm run dev"
+alias yb="yarn prisma:generate && yarn start:dev"
 
 # podman aliases
 alias pa="podman start -a"

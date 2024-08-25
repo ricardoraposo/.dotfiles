@@ -48,8 +48,8 @@ c.window_padding = {
 	bottom = 0,
 }
 
-c.font = wezterm.font("Dank Mono")
-c.font_size = 16.0
+c.font = wezterm.font("Hack")
+c.font_size = 15.0
 c.line_height = 1.4
 c.freetype_load_flags = "NO_HINTING"
 

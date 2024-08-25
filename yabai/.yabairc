@@ -38,6 +38,7 @@ yabai -m rule --add app=Discord space=^5
 yabai -m rule --add app=Spotify space=^5
 yabai -m rule --add app=Slack space=^4
 yabai -m rule --add app="Visual Studio Code" space=^2
+yabai -m rule --add app="Zed Preview" space=^2
 yabai -m rule --add app=kitty space=^2
 yabai -m rule --add app=WezTerm space=^2
 yabai -m rule --add app=Alacritty space=^2
