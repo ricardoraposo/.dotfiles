@@ -19,6 +19,10 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$SCRIPTS:$PATH"
 
+if test -d "$HOME/.datagrip"; then
+  export PATH="$PATH:$HOME/.datagrip/bin"
+fi
+
 # completions
 complete -C z z
 complete -C kee kee

@@ -28,13 +28,6 @@ keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
 keymap("i", "<C-Right>", "<Plug>(copilot-accept-word)")
 
--- Navigator
-vim.keymap.set({ "n", "t" }, "<A-h>", "<CMD>NavigatorLeft<CR>")
-vim.keymap.set({ "n", "t" }, "<A-l>", "<CMD>NavigatorRight<CR>")
-vim.keymap.set({ "n", "t" }, "<A-k>", "<CMD>NavigatorUp<CR>")
-vim.keymap.set({ "n", "t" }, "<A-j>", "<CMD>NavigatorDown<CR>")
-vim.keymap.set({ "n", "t" }, "<A-p>", "<CMD>NavigatorPrevious<CR>")
-
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<M-Down>", "<cmd>resize -2<CR>", opts)

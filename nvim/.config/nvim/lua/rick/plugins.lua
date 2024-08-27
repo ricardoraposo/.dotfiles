@@ -18,7 +18,24 @@ local plugins = {
 	"ojroques/vim-oscyank",
 	"mg979/vim-visual-multi",
 	"norcalli/nvim-colorizer.lua",
-	"numToStr/Navigator.nvim",
+	-- "numToStr/Navigator.nvim",
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+	},
 
 	-- cmp plugins
 	{
@@ -96,7 +113,9 @@ local plugins = {
 
 	-- Colorscheme stuff
 	{ "mhartington/oceanic-next" },
-	{ "olimorris/onedarkpro.nvim" },
+	{ "HoNamDuong/hybrid.nvim" },
+	{ "blazkowolf/gruber-darker.nvim" },
+	{ "ricardoraposo/gruvbox-minor.nvim" },
 
 	-- Treesitter
 	{
@@ -140,12 +159,12 @@ local plugins = {
 		priority = 1000,
 		config = true,
 	},
-	{
-		"rest-nvim/rest.nvim",
-		ft = "http",
-		dependencies = { "luarocks.nvim" },
-		lazy = true,
-	},
+	-- {
+	-- 	"rest-nvim/rest.nvim",
+	-- 	ft = "http",
+	-- 	dependencies = { "luarocks.nvim" },
+	-- 	lazy = true,
+	-- },
 	{ "tpope/vim-dadbod" },
 	{ "kristijanhusak/vim-dadbod-ui" },
 	{ "kristijanhusak/vim-dadbod-completion" },

@@ -1,11 +1,11 @@
 [window]
-decorations = "Buttonless"
+decorations = "None"
 
 [font]
-size = 16
+# size = 12
 offset = { x = 0, y = 8 }
 glyph_offset = { x = 0, y = 4 }
-normal = { family = "GeistMono Nerd Font", style = "Light" }
+normal = { family = "Comic Code Ligatures" }
 
 [env]
 TERM = "xterm-256color"
