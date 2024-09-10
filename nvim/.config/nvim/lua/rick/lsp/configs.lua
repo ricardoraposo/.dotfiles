@@ -33,11 +33,11 @@ local servers = {
 	"dockerls",
 	"docker_compose_language_service",
 	"graphql",
-	"ruff_lsp",
+	-- "ruff_lsp",
 	"angularls",
 	"volar",
 	"elixirls",
-	"ocamllsp",
+	-- "ocamllsp",
 }
 
 mason.setup({})
@@ -57,7 +57,14 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
 	end
 
+  if server == 'tsserver' then
+    lspconfig.ts_ls.setup(opts)
+    goto continue
+  end
+
 	lspconfig[server].setup(opts)
+
+  ::continue::
 end
 
 lspconfig.clangd.setup({

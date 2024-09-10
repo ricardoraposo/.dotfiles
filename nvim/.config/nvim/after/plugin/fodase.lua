@@ -67,6 +67,6 @@ require("trouble").setup({})
 
 require("barbecue").setup({
   symbols = {
-    separator = "↠",
+    separator = ">",
   },
 })

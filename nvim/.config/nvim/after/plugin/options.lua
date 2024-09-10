@@ -38,7 +38,7 @@ o.tabstop = 2
 o.softtabstop = 2
 o.cursorline = false
 o.numberwidth = 2
-o.signcolumn = "no"
+-- o.signcolumn = "yes"
 o.colorcolumn = "80,100"
 o.laststatus = 0
 o.wrap = false
@@ -70,9 +70,3 @@ g.markdown_fenced_languages = { "javascript", "sh" }
 g.omni_sql_default_compl_type = "syntax"
 g.omni_sql_no_default_maps = 1
 g.db_ui_use_nerd_fonts = 1
-
-o.list = true
-o.listchars = {
-	space = " ",
-	tab = "  ",
-}
