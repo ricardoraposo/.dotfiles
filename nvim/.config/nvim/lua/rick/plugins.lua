@@ -102,6 +102,7 @@ local plugins = {
     dependencies = "rktjmp/lush.nvim",
   },
   { "ramojus/mellifluous.nvim" },
+	{ "blazkowolf/gruber-darker.nvim" },
 
   -- Treesitter
   {
