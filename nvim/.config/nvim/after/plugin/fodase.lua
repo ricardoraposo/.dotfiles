@@ -1,8 +1,8 @@
 vim.opt.termguicolors = true
 require("dressing").setup({
-	select = {
-		backend = { "fzf", "builtin", "nui" },
-	},
+  select = {
+    backend = { "fzf", "builtin", "nui" },
+  },
 })
 
 -- require("rest-nvim").setup({
@@ -40,15 +40,15 @@ require("dressing").setup({
 require("colorizer").setup()
 
 require("fidget").setup({
-	text = {
-		spinner = "dots_negative",
-	},
-	align = {
-		bottom = true,
-	},
-	window = {
-		relative = "editor",
-	},
+  text = {
+    spinner = "dots_negative",
+  },
+  align = {
+    bottom = true,
+  },
+  window = {
+    relative = "editor",
+  },
 })
 
 require("ts-error-translator").setup()
@@ -56,7 +56,7 @@ require("ts-error-translator").setup()
 -- require("Navigator").setup()
 
 require("Comment").setup({
-	pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 })
 
 require("blame").setup()
@@ -65,8 +65,23 @@ require("virt-column").setup()
 
 require("trouble").setup({})
 
-require("barbecue").setup({
-  symbols = {
-    separator = ">",
-  },
+local spotify = require('nvim-spotify')
+
+spotify.setup({
+  status = {
+    update_interval = 10000,
+    format = '%s %t by %a'
+  }
 })
+
+local status = require 'nvim-spotify'.status
+
+status:start()
+
+require('lualine').setup {
+  sections = {
+    lualine_x = {
+      status.listen
+    }
+  }
+}

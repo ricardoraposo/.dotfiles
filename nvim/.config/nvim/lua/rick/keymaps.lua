@@ -140,3 +140,12 @@ vim.cmd("inoremap ? ?<c-g>u")
 vim.cmd("command! Wq wq")
 vim.cmd("command! W w")
 vim.cmd("command! Q q")
+
+-- Spotify
+keymap("n", "<leader>sn", "<Plug>(SpotifySkip)", { silent = true }) -- Skip the current track
+keymap("n", "<leader>sp", "<Plug>(SpotifyPause)", { silent = true }) -- Pause/Resume the current track
+keymap("n", "<leader>sb", "<Plug>(SpotifyPrev)", { silent = true }) -- Go back to the previous track
+-- keymap("n", "<leader>ss", "<Plug>(SpotifySave)", { silent = true }) -- Add the current track to your library
+keymap("n", "<leader>ss", ":Spotify<CR>", { silent = true }) -- Open Spotify Search window
+keymap("n", "<leader>sd", ":SpotifyDevices<CR>", { silent = true }) -- Open Spotify Devices window
+keymap("n", "<leader>sh", "<Plug>(SpotifyShuffle)", { silent = true }) -- Toggles shuffle mode

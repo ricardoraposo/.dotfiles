@@ -1,6 +1,9 @@
 require('onedark').setup({
-  style = 'cool'
+  style = 'darker'
 })
 
-vim.cmd.colorscheme("neobones")
+require("mellifluous").setup({
+  colorset = "kanagawa_dragon"
+})
 
+vim.cmd.colorscheme("mellifluous")

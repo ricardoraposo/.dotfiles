@@ -18,24 +18,7 @@ local plugins = {
   "ojroques/vim-oscyank",
   "mg979/vim-visual-multi",
   "norcalli/nvim-colorizer.lua",
-  -- "numToStr/Navigator.nvim",
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-  },
+  "knubie/vim-kitty-navigator",
 
   -- cmp plugins
   {
@@ -118,6 +101,7 @@ local plugins = {
     "zenbones-theme/zenbones.nvim",
     dependencies = "rktjmp/lush.nvim",
   },
+  { "ramojus/mellifluous.nvim" },
 
   -- Treesitter
   {
@@ -132,14 +116,8 @@ local plugins = {
   },
   { "lukas-reineke/virt-column.nvim" },
   {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    opts = {},
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
   -- Doc stuff
@@ -182,7 +160,28 @@ local plugins = {
     "Exafunction/codeium.vim",
     event = "BufEnter",
   },
+
+  {
+    'KadoBOT/nvim-spotify',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    build = 'make'
+  },
+
+  -- Git integrations
+  {
+    'pwntester/octo.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require "octo".setup()
+    end
+  },
 }
+
+
 
 local opts = {}
 
