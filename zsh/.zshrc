@@ -12,6 +12,7 @@ export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
+export DOCKER_HOST=unix:///var/run/docker.sock
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/go/bin"
