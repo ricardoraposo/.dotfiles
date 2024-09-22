@@ -39,31 +39,11 @@ require("dressing").setup({
 
 require("colorizer").setup()
 
-require("fidget").setup({
-	text = {
-		spinner = "dots_negative",
-	},
-	align = {
-		bottom = true,
-	},
-	window = {
-		relative = "editor",
-	},
-})
-
-require("ts-error-translator").setup()
-
 -- require("Navigator").setup()
-
-require("Comment").setup({
-	pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-})
 
 require("blame").setup()
 
 require("virt-column").setup()
-
-require("trouble").setup({})
 
 local spotify = require("nvim-spotify")
 

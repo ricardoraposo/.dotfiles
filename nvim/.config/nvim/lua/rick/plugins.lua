@@ -36,62 +36,11 @@ local plugins = {
 		},
 	},
 
-	-- cmp plugins
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lua",
-		},
-	},
-
-	-- snippets
-	-- "L3MON4D3/LuaSnip",
-	-- "saadparwaiz1/cmp_luasnip",
-	-- "rafamadriz/friendly-snippets",
-
-	-- LSP
-	-- {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	dependencies = {
-	-- 		"williamboman/mason.nvim",
-	-- 		"williamboman/mason-lspconfig.nvim",
-	-- 	},
-	-- },
-	-- {
-	-- 	"nvimdev/lspsaga.nvim",
-	-- 	config = function()
-	-- 		require("lspsaga").setup({
-	-- 			ui = {
-	-- 				code_action = "",
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter", -- optional
-	-- 		"nvim-tree/nvim-web-devicons", -- optional
-	-- 	},
-	-- },
-
 	{ "neoclide/coc.nvim", branch = "release" },
-	{ "j-hui/fidget.nvim", branch = "legacy" },
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
-	{ "folke/trouble.nvim" },
-	{ "nvimtools/none-ls.nvim" },
-	{ "stevearc/conform.nvim" },
 
 	-- Language specific stuff
 	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
-	{ "dmmulroy/ts-error-translator.nvim" },
-	-- {
-	-- 	"pmizio/typescript-tools.nvim",
-	-- 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-	-- 	opts = {},
-	-- },
-	-- { "joeveiga/ng.nvim", lazy = true },
-	-- { "reasonml-editor/vim-reason-plus" },
 
 	-- Telescope
 	{
@@ -134,14 +83,6 @@ local plugins = {
 	{ "lukas-reineke/virt-column.nvim" },
 
 	-- Doc stuff
-	{
-		"numToStr/Comment.nvim",
-		lazy = true,
-		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
-		},
-	},
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = {
