@@ -101,13 +101,13 @@ keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
 
 -- Format shit
-keymap({ "n", "v" }, "<leader>f", function()
-	require("conform").format({
-		lsp_fallback = true,
-		async = false,
-		timeout_ms = 500,
-	})
-end, opts)
+-- keymap({ "n", "v" }, "<leader>f", function()
+-- 	require("conform").format({
+-- 		lsp_fallback = true,
+-- 		async = false,
+-- 		timeout_ms = 500,
+-- 	})
+-- end, opts)
 
 
 -- Greatest remaps

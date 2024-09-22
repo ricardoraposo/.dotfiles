@@ -53,27 +53,29 @@ local plugins = {
 	-- "rafamadriz/friendly-snippets",
 
 	-- LSP
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-		},
-	},
-	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({
-				ui = {
-					code_action = "",
-				},
-			})
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
-		},
-	},
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	dependencies = {
+	-- 		"williamboman/mason.nvim",
+	-- 		"williamboman/mason-lspconfig.nvim",
+	-- 	},
+	-- },
+	-- {
+	-- 	"nvimdev/lspsaga.nvim",
+	-- 	config = function()
+	-- 		require("lspsaga").setup({
+	-- 			ui = {
+	-- 				code_action = "",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter", -- optional
+	-- 		"nvim-tree/nvim-web-devicons", -- optional
+	-- 	},
+	-- },
+
+	{ "neoclide/coc.nvim", branch = "release" },
 	{ "j-hui/fidget.nvim", branch = "legacy" },
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
 	{ "folke/trouble.nvim" },
@@ -83,11 +85,11 @@ local plugins = {
 	-- Language specific stuff
 	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
 	{ "dmmulroy/ts-error-translator.nvim" },
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-	},
+	-- {
+	-- 	"pmizio/typescript-tools.nvim",
+	-- 	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	-- 	opts = {},
+	-- },
 	-- { "joeveiga/ng.nvim", lazy = true },
 	-- { "reasonml-editor/vim-reason-plus" },
 
