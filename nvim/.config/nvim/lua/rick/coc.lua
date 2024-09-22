@@ -67,9 +67,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
--- Formatting selected code
-keyset({"x", "v", "n"}, "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-
 -- Setup formatexpr specified filetype(s)
 vim.api.nvim_create_autocmd("FileType", {
     group = "CocGroup",
@@ -152,6 +149,11 @@ vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'edito
 -- NOTE: Please see `:h coc-status` for integrations with external plugins that
 -- provide custom statusline: lightline.vim, vim-airline
 vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+
+-- Format stuff
+keyset("v", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
+keyset("n", "<leader>f", "<CMD>Format<CR>", {silent = true})
+
 
 -- Mappings for CoCList
 -- code actions and coc stuff
