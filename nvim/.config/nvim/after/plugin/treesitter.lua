@@ -65,3 +65,16 @@ if not cmp_status_ok then
 	return
 end
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+
+require("nvim-ts-autotag").setup({
+	opts = {
+		enable_close = true,
+		enable_rename = true,
+		enable_close_on_slash = false,
+	},
+	per_filetype = {
+		["html"] = {
+			enable_close = false,
+		},
+	},
+})

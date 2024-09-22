@@ -49,7 +49,7 @@ keymap("i", "<C-c>", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap("v", "<leader>y", "<Plug>OSCYankVisual", opts)
+-- keymap("v", "<leader>y", "<Plug>OSCYankVisual", opts)
 
 -- Move text up and down
 keymap("v", "<S-j>", ":m .+1<CR>==", opts)
@@ -76,18 +76,18 @@ keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
 -- Fodase plugins
-keymap("n", "<leader>tt", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>tr", "<cmd>TroubleToggle lsp_references<cr>", opts)
+keymap("n", "<leader>tt", "<cmd>Trouble diagnostics<cr>", opts)
+keymap("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>", opts)
 keymap("n", "<leader>rc", "<cmd>make<CR>", opts) -- Run Code
-keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
-keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
-keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
+-- keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
+-- keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
+-- keymap("n", "<leader>arl", "<Plug>RestNvimLast", opts)
 
 -- Angular shit
-local ng = require("ng")
-vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
-vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
-vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
+-- local ng = require("ng")
+-- vim.keymap.set("n", "<leader>at", ng.goto_template_for_component, opts)
+-- vim.keymap.set("n", "<leader>ac", ng.goto_component_with_template_file, opts)
+-- vim.keymap.set("n", "<leader>aT", ng.get_template_tcb, opts)
 
 -- Command line integration
 keymap("n", "<leader>rt", ":15split | terminal ", opts)
@@ -99,10 +99,6 @@ keymap("n", "<leader>ts", "!!turnState<CR>Vj=A;<esc>F(", opts)
 -- Better navigation
 keymap({ "n", "v", "x" }, "{", "}", opts)
 keymap({ "n", "v", "x" }, "}", "{", opts)
-keymap("n", "<leader>bh", "<cmd>lua require('barbecue.ui').navigate(1)<cr>")
-keymap("n", "<leader>bj", "<cmd>lua require('barbecue.ui').navigate(2)<cr>")
-keymap("n", "<leader>bk", "<cmd>lua require('barbecue.ui').navigate(3)<cr>")
-keymap("n", "<leader>bl", "<cmd>lua require('barbecue.ui').navigate(4)<cr>")
 
 -- Format shit
 keymap({ "n", "v" }, "<leader>f", function()

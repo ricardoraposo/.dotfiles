@@ -1,9 +1,3 @@
-require('onedark').setup({
-  style = 'darker'
-})
+vim.g.sonokai_style = "atlantis"
 
-require("mellifluous").setup({
-  colorset = "kanagawa_dragon"
-})
-
-vim.cmd.colorscheme("mellifluous")
+vim.cmd.colorscheme("gruvbox-minor")

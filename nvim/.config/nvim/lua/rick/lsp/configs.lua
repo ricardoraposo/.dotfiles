@@ -19,7 +19,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local servers = {
 	"lua_ls",
-	"tsserver",
+	-- "ts_ls",
 	"eslint",
 	"html",
 	"cssls",
@@ -57,39 +57,10 @@ for _, server in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
 	end
 
-  if server == 'tsserver' then
-    lspconfig.ts_ls.setup(opts)
-    goto continue
-  end
-
 	lspconfig[server].setup(opts)
-
-  ::continue::
 end
-
-lspconfig.clangd.setup({
-	on_attach = on_attach,
-	cmd = {
-		"clangd",
-		"--background-index",
-		"--pch-storage=memory",
-		"--clang-tidy",
-		"--suggest-missing-includes",
-		"--all-scopes-completion",
-		"--pretty",
-		"--header-insertion=never",
-		"-j=4",
-		"--inlay-hints",
-		"--header-insertion-decorators",
-	},
-	filetypes = { "c", "cpp", "objc", "objcpp" },
-	-- root_dir = utils.root_pattern("compile_commands.json", "compile_flags.txt", ".git")
-	init_option = { fallbackFlags = { "-std=c++2a" } },
-})
 
 lspconfig.gleam.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
-
-vim.g.omni_sql_default_compl_type = "syntax"

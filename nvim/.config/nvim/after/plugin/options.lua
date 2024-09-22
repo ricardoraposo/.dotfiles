@@ -2,12 +2,13 @@ local o = vim.opt
 local g = vim.g
 
 o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20"
+o.bg = "dark"
 o.compatible = false
 o.termguicolors = true
 o.backup = false
 o.backupcopy = "yes"
 o.autowrite = true
-o.cmdheight = 0
+o.cmdheight = 1
 o.conceallevel = 0
 o.nu = true
 o.rnu = true

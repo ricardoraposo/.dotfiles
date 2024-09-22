@@ -3,45 +3,42 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
+-- local snip_status_ok, luasnip = pcall(require, "luasnip")
+-- if not snip_status_ok then
+--   return
+-- end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 -- local lspkind = require("lspkind")
 local source_mapping = {
   buffer = "[BUF]",
   nvim_lsp = "[LSP]",
   nvim_lua = "[LUA]",
-  luasnip = "[SNIP]",
+  -- luasnip = "[SNIP]",
   ['vim_dadbod_completion'] = "[DB]",
   path = "[PATH]",
 }
 
 cmp.setup({
-  -- enabled = function()
-  --   return vim.g.cmptoggle
-  -- end,
-  -- completion = {
-  --   autocomplete = false,
+  completion = {
+    autocomplete = false,
+  },
+  -- window = {
+  --   completion = {
+  --     border = "rounded",
+  --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+  --   },
+  --   documentation = {
+  --     border = "rounded",
+  --     winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
+  --   },
   -- },
-  window = {
-    completion = {
-      border = "rounded",
-      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
-    },
-    documentation = {
-      border = "rounded",
-      winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None",
-    },
-  },
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
+  -- snippet = {
+  --   expand = function(args)
+  --     luasnip.lsp_expand(args.body)
+  --   end,
+  -- },
   mapping = {
     ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -74,10 +71,10 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "vim-dadbod-completion" },
-    { name = "luasnip" },
     { name = "buffer",  keyword_length = 6 },
     { name = "path" },
+    -- { name = "vim-dadbod-completion" },
+    -- { name = "luasnip" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -88,39 +85,39 @@ cmp.setup({
   },
 })
 
-luasnip.config.set_config({
-  -- This tells LuaSnip to remember to keep around the last snippet.
-  -- You can jump back into it even if you move outside of the selection
-  history = true,
-  -- This one is cool cause if you have dynamic snippets, it updates as you type!
-  updateevents = "TextChanged,TextChangedI",
-  -- Autosnippets:
-  enable_autosnippets = true,
-})
+-- luasnip.config.set_config({
+--   -- This tells LuaSnip to remember to keep around the last snippet.
+--   -- You can jump back into it even if you move outside of the selection
+--   history = true,
+--   -- This one is cool cause if you have dynamic snippets, it updates as you type!
+--   updateevents = "TextChanged,TextChangedI",
+--   -- Autosnippets:
+--   enable_autosnippets = true,
+-- })
 
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  if luasnip.expand_or_jumpable() then
-    luasnip.expand_or_jump()
-  end
-end, { silent = true })
+-- vim.keymap.set({ "i", "s" }, "<C-k>", function()
+--   if luasnip.expand_or_jumpable() then
+--     luasnip.expand_or_jump()
+--   end
+-- end, { silent = true })
+--
+-- -- <c-j> is my jump backwards key.
+-- -- this always moves to the previous item within the snippet
+-- vim.keymap.set({ "i", "s" }, "<C-j>", function()
+--   if luasnip.jumpable(-1) then
+--     luasnip.jump(-1)
+--   end
+-- end, { silent = true })
+--
+-- -- <c-l> is selecting within a list of options
+-- -- useful for choice nodes
+-- vim.keymap.set({ "i" }, "<C-l>", function()
+--   if luasnip.choice_active() then
+--     luasnip.change_choice(1)
+--   end
+-- end, { silent = true })
 
--- <c-j> is my jump backwards key.
--- this always moves to the previous item within the snippet
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  if luasnip.jumpable(-1) then
-    luasnip.jump(-1)
-  end
-end, { silent = true })
-
--- <c-l> is selecting within a list of options
--- useful for choice nodes
-vim.keymap.set({ "i" }, "<C-l>", function()
-  if luasnip.choice_active() then
-    luasnip.change_choice(1)
-  end
-end, { silent = true })
-
-vim.keymap.set("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/snippets/init.lua<CR>")
+-- vim.keymap.set("n", "<leader>ss", "<cmd>source ~/.config/nvim/lua/rick/snippets/init.lua<CR>")
 
 -- local tabnine = require("cmp_tabnine.config")
 -- tabnine:setup({
