@@ -68,5 +68,3 @@ require("trouble").setup({})
 local spotify = require("nvim-spotify")
 
 spotify.setup({})
-
--- require("gitsigns").setup()
