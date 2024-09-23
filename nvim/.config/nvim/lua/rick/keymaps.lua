@@ -64,7 +64,7 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
-keymap("n", "<C-f>", "<cmd>FzfLua files<CR>", opts)
+keymap("n", "<C-f>", "<cmd>Telescope find_files<CR>", opts)
 keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<CR>", opts)
 keymap("n", "<leader>do", "<cmd>Telescope find_files cwd=~/Documents/zet/<CR>", opts)
 keymap("n", "<leader>df", "<cmd>lua require'telescope.builtin'.find_files( { cwd = vim.fn.expand('%:p:h') })<CR>", opts)

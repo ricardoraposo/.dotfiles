@@ -41,7 +41,7 @@ o.cursorline = false
 o.numberwidth = 2
 -- o.signcolumn = "no"
 o.colorcolumn = "80,100"
-o.laststatus = 0
+o.laststatus = 1
 o.wrap = false
 o.scrolloff = 8
 o.sidescrolloff = 16
@@ -49,7 +49,7 @@ o.hidden = true
 -- o.foldmethod = "manual"
 o.foldenable = false
 o.ru = true
-o.ruf = "%80(%= %#LineNr#%.50F %m[%{&ft}] %l:%c%)"
+o.ruf = "%80(%=  %#LineNr#%.50F %m[%{&ft}] %{coc#status()}%)"
 o.lcs = "tab:• ,trail:-,nbsp:+"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")
