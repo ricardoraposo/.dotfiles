@@ -49,7 +49,7 @@ o.hidden = true
 -- o.foldmethod = "manual"
 o.foldenable = false
 o.ru = true
-o.ruf = "%40(%= %#LineNr#%.50F %m[%{&ft}] %l:%c%)"
+o.ruf = "%80(%= %#LineNr#%.50F %m[%{&ft}] %l:%c%)"
 o.lcs = "tab:• ,trail:-,nbsp:+"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.shortmess:append("c")

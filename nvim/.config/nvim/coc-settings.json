@@ -2,5 +2,6 @@
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": false,
   "sumneko-lua.enableNvimLuaDev": true,
-  "Lua.hint.enable": false
+  "Lua.hint.enable": false,
+  "eslint.autoFixOnSave": true
 }
