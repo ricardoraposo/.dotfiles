@@ -21,9 +21,9 @@ local source_mapping = {
 }
 
 cmp.setup({
-  completion = {
-    autocomplete = false,
-  },
+  -- completion = {
+  --   autocomplete = false,
+  -- },
   -- window = {
   --   completion = {
   --     border = "rounded",
