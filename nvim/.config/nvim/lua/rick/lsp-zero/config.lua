@@ -34,7 +34,15 @@ mason_lsp.setup({
 		function(server_name)
 			lspconfig[server_name].setup({})
 		end,
+
+		eslint = function()
+			lspconfig.eslint.setup({
+				root_dir = lspconfig.util.root_pattern(".eslintrc", "package.json", "tsconfig.json", ".git"),
+				settings = {
+					workingDirectory = { mode = "auto" },
+					nodePath = vim.fn.system("which node"):gsub("\n", ""), -- Make sure Node is used
+				},
+			})
+		end,
 	},
 })
-
-lspconfig.eslint.setup({})
