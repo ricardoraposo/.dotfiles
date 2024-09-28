@@ -1,6 +1,6 @@
 local lsp_zero = require('lsp-zero')
 
-local lsp_attach = function(_, bufnr)
+local lsp_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 
@@ -15,6 +15,9 @@ local lsp_attach = function(_, bufnr)
 	keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	keymap(bufnr, "n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 	keymap(bufnr, "n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+
+  client.server_capabilities.document_formatting = false
+	client.server_capabilities.semanticTokensProvider = nil
 end
 
 lsp_zero.extend_lspconfig({
