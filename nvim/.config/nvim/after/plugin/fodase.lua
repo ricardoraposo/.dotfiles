@@ -61,10 +61,3 @@ require("Comment").setup({
 
 require("blame").setup()
 
-require("virt-column").setup()
-
-require("trouble").setup({})
-
-local spotify = require("nvim-spotify")
-
-spotify.setup({})

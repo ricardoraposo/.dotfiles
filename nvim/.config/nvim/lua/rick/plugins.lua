@@ -36,60 +36,43 @@ local plugins = {
 		},
 	},
 
-	-- cmp plugins
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-nvim-lua",
-		},
-	},
-
 	-- snippets
 	-- "L3MON4D3/LuaSnip",
 	-- "saadparwaiz1/cmp_luasnip",
 	-- "rafamadriz/friendly-snippets",
 
 	-- LSP
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-		},
-	},
-	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup({
-				ui = {
-					code_action = "",
-				},
-			})
-		end,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
-		},
-	},
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
+
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
+    },
+  },
+
+  -- cmp
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lua",
+    },
+  },
+
+  -- Accessory stuff
 	{ "j-hui/fidget.nvim", branch = "legacy" },
 	{ "akinsho/git-conflict.nvim", version = "*", config = true },
-	{ "folke/trouble.nvim" },
 	{ "nvimtools/none-ls.nvim" },
 	{ "stevearc/conform.nvim" },
 
 	-- Language specific stuff
 	{ "olexsmir/gopher.nvim", build = ":GoInstallDeps", lazy = true },
 	{ "dmmulroy/ts-error-translator.nvim" },
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
-	},
-	-- { "joeveiga/ng.nvim", lazy = true },
-	-- { "reasonml-editor/vim-reason-plus" },
 
 	-- Telescope
 	{
@@ -97,13 +80,6 @@ local plugins = {
 		dependencies = {
 			"debugloop/telescope-undo.nvim",
 		},
-	},
-	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("fzf-lua").setup({})
-		end,
 	},
 
 	-- Nvim Tree
@@ -129,7 +105,6 @@ local plugins = {
 			"nvim-treesitter/playground",
 		},
 	},
-	{ "lukas-reineke/virt-column.nvim" },
 
 	-- Doc stuff
 	{
@@ -171,12 +146,6 @@ local plugins = {
 	-- 	"Exafunction/codeium.vim",
 	-- 	event = "BufEnter",
 	-- },
-
-	{
-		"KadoBOT/nvim-spotify",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		build = "make",
-	},
 
 	-- Git integrations
 	{ "FabijanZulj/blame.nvim" },
