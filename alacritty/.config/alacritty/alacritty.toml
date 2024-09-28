@@ -2,10 +2,8 @@
 decorations = "None"
 
 [font]
-size = 18
-# offset = { x = 0.5, y = 0 }
-# glyph_offset = { x = 0, y = 4 }
-normal = { family = "MesloLGM Nerd Font" }
+size = 20
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
 
 [env]
 TERM = "xterm-256color"
