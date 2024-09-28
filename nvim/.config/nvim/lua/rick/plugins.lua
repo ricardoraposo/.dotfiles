@@ -16,10 +16,7 @@ local plugins = {
   "nvim-lua/plenary.nvim",
   "gelguy/wilder.nvim",
   -- "ojroques/vim-oscyank",
-  {
-    "mg979/vim-visual-multi",
-    lazy = true,
-  },
+  { "mg979/vim-visual-multi" },
   "norcalli/nvim-colorizer.lua",
   {
     "christoomey/vim-tmux-navigator",
@@ -35,7 +32,6 @@ local plugins = {
       { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
       { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
       { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
 
@@ -44,6 +40,7 @@ local plugins = {
 
   -- Language specific stuff
   { "olexsmir/gopher.nvim",      build = ":GoInstallDeps", lazy = true },
+  { "https://github.com/reasonml-editor/vim-reason-plus"},
 
   -- Telescope
   {
@@ -64,12 +61,7 @@ local plugins = {
   -- Colorscheme stuff
   { "ricardoraposo/gruvbox-minor.nvim" },
   { "sainnhe/sonokai" },
-  { "felipeagc/fleet-theme-nvim" },
-  { 'datsfilipe/vesper.nvim' },
-  {
-    'ferdinandrau/lavish.nvim',
-    priority = 1000,
-  },
+  { 'ferdinandrau/lavish.nvim', priority = 1000 },
 
   -- Treesitter
   {
@@ -78,9 +70,14 @@ local plugins = {
     lazy = true,
     dependencies = {
       { "windwp/nvim-autopairs", lazy = true },
-      "windwp/nvim-ts-autotag",
       "nvim-treesitter/playground",
     },
+  },
+  {
+    "folke/ts-comments.nvim",
+    opts = {},
+    event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
 
   -- Doc stuff
@@ -100,19 +97,6 @@ local plugins = {
     lazy = true,
     priority = 1000,
     config = true,
-  },
-
-  -- AI completion stuff
-  -- {
-  -- 	"Exafunction/codeium.vim",
-  -- 	event = "BufEnter",
-  -- },
-
-  {
-    "KadoBOT/nvim-spotify",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    build = "make",
-    lazy = true,
   },
 
   -- Git integrations

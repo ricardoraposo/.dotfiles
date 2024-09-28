@@ -10,6 +10,10 @@
       "command": "opam",
       "args": ["config", "exec", "--", "ocamllsp"],
       "filetypes": ["ocaml", "reason"]
+    },
+    "reason": {
+      "command": "reason-language-server",
+      "filetypes": ["reason"]
     }
   }
 }
