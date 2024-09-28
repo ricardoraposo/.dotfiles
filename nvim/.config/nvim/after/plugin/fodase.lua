@@ -43,7 +43,7 @@ require("colorizer").setup()
 
 require("blame").setup()
 
-require("virt-column").setup()
+-- require("virt-column").setup()
 
 local spotify = require("nvim-spotify")
 

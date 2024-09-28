@@ -1,3 +1,3 @@
 vim.g.sonokai_style = "atlantis"
 
-vim.cmd.colorscheme("sonokai")
+vim.cmd.colorscheme("lavish")

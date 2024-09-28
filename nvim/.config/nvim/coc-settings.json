@@ -3,5 +3,13 @@
   "diagnostic.checkCurrentLine": false,
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.hint.enable": false,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "eslint.format.enable": false,
+  "languageserver": {
+    "ocaml-lsp": {
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
+    }
+  }
 }
