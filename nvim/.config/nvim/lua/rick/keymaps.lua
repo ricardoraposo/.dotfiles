@@ -23,10 +23,8 @@ keymap("n", "<Right>", ":echoerr 'do better and use l, kid!'<CR>", opts)
 keymap("n", "<Left>", ":echoerr 'do better and use h, kid!'<CR>", opts)
 
 -- Normal
-keymap("n", "<leader>se", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", opts)
-keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<M-b>", ":NvimTreeToggle<CR>", opts)
-keymap("i", "<C-Right>", "<Plug>(copilot-accept-word)")
+-- keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>n", "<cmd>Oil<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", "<cmd>resize +2<CR>", opts)

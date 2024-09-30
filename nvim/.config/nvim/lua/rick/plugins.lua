@@ -59,7 +59,6 @@ local plugins = {
   -- Colorscheme stuff
   { 'ferdinandrau/lavish.nvim',  priority = 1000 },
 
-
   {
     "norcalli/nvim-colorizer.lua",
     event = "VeryLazy",
@@ -76,13 +75,13 @@ local plugins = {
     dependencies = {
       { "windwp/nvim-autopairs", lazy = true },
       "nvim-treesitter/playground",
+      {
+        "folke/ts-comments.nvim",
+        opts = {},
+        event = "VeryLazy",
+        enabled = vim.fn.has("nvim-0.10.0") == 1,
+      },
     },
-  },
-  {
-    "folke/ts-comments.nvim",
-    opts = {},
-    event = "VeryLazy",
-    enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
 
   -- Doc stuff
@@ -103,14 +102,6 @@ local plugins = {
         },
       })
     end
-  },
-
-  -- Backend stuff
-  {
-    "vhyrro/luarocks.nvim",
-    lazy = true,
-    priority = 1000,
-    config = true,
   },
 
   -- Git integrations
