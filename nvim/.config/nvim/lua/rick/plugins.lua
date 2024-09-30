@@ -17,7 +17,7 @@ local plugins = {
   "gelguy/wilder.nvim",
   -- "ojroques/vim-oscyank",
   { "mg979/vim-visual-multi" },
-  "norcalli/nvim-colorizer.lua",
+  { "norcalli/nvim-colorizer.lua", event = "VeryLazy" },
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -28,19 +28,18 @@ local plugins = {
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
     },
   },
 
-  { "neoclide/coc.nvim",         branch = "release" },
-  { "akinsho/git-conflict.nvim", version = "*",            config = true },
+  { "neoclide/coc.nvim",               branch = "release" },
 
   -- Language specific stuff
-  { "olexsmir/gopher.nvim",      build = ":GoInstallDeps", lazy = true },
-  { "https://github.com/reasonml-editor/vim-reason-plus"},
+  { "olexsmir/gopher.nvim",            build = ":GoInstallDeps", lazy = true },
+  { "reasonml-editor/vim-reason-plus", event = "VeryLazy" },
 
   -- Telescope
   {
@@ -59,8 +58,6 @@ local plugins = {
   },
 
   -- Colorscheme stuff
-  { "ricardoraposo/gruvbox-minor.nvim" },
-  { "sainnhe/sonokai" },
   { 'ferdinandrau/lavish.nvim', priority = 1000 },
 
   -- Treesitter
@@ -100,7 +97,8 @@ local plugins = {
   },
 
   -- Git integrations
-  { "FabijanZulj/blame.nvim", lazy = true },
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
+  { "FabijanZulj/blame.nvim",    lazy = true },
 }
 
 local opts = {}

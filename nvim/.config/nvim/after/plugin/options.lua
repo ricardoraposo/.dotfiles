@@ -71,3 +71,5 @@ g.markdown_fenced_languages = { "javascript", "sh" }
 g.omni_sql_default_compl_type = "syntax"
 g.omni_sql_no_default_maps = 1
 g.db_ui_use_nerd_fonts = 1
+
+vim.cmd.colorscheme("lavish")

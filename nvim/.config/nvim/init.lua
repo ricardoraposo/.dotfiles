@@ -1,7 +1,4 @@
 require("rick.plugins")
--- require("rick.lsp")
--- require("rick.cmp")
 require("rick.nvim-tree")
 require("rick.keymaps")
-require("rick.colors")
 require("rick.coc")

@@ -76,8 +76,6 @@ keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>du", "<cmd>Telescope undo<CR>", opts)
 
 -- Fodase plugins
-keymap("n", "<leader>tt", "<cmd>Trouble diagnostics<cr>", opts)
-keymap("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>", opts)
 keymap("n", "<leader>rc", "<cmd>make<CR>", opts) -- Run Code
 -- keymap({ "n", "v" }, "<leader>arn", "<Plug>RestNvim", opts)
 -- keymap("n", "<leader>arp", "<Plug>RestNvimPreview", opts)
@@ -109,7 +107,6 @@ keymap({ "n", "v", "x" }, "}", "{", opts)
 -- 	})
 -- end, opts)
 
-
 -- Greatest remaps
 keymap("n", "G", "Gzz", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -117,7 +114,7 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("n", "<leader><", "0f>ldt<", opts)
 keymap("n", "<leader>sc", "<cmd>so %<cr>", opts)
-keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/lua/rick/colors.lua<cr>", opts)
+keymap("n", "<leader>so", "<cmd>so ~/.config/nvim/after/plugin/options.lua<cr>", opts)
 
 -- Use of function row
 keymap("n", "<F1>", "<cmd>set nu!<CR>", opts)
@@ -136,12 +133,3 @@ vim.cmd("inoremap ? ?<c-g>u")
 vim.cmd("command! Wq wq")
 vim.cmd("command! W w")
 vim.cmd("command! Q q")
-
--- Spotify
-keymap("n", "<leader>sn", "<Plug>(SpotifySkip)", { silent = true }) -- Skip the current track
-keymap("n", "<leader>sp", "<Plug>(SpotifyPause)", { silent = true }) -- Pause/Resume the current track
-keymap("n", "<leader>sb", "<Plug>(SpotifyPrev)", { silent = true }) -- Go back to the previous track
--- keymap("n", "<leader>ss", "<Plug>(SpotifySave)", { silent = true }) -- Add the current track to your library
-keymap("n", "<leader>ss", ":Spotify<CR>", { silent = true }) -- Open Spotify Search window
-keymap("n", "<leader>sd", ":SpotifyDevices<CR>", { silent = true }) -- Open Spotify Devices window
-keymap("n", "<leader>sh", "<Plug>(SpotifyShuffle)", { silent = true }) -- Toggles shuffle mode
