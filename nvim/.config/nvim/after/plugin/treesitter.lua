@@ -3,15 +3,11 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
 	ensure_installed = {},
 	sync_install = false,
-	ignore_install = { "phpdoc" },
 	highlight = {
 		enable = true,
 		disable = {},
 		additional_vim_regex_highlighting = false,
 	},
-	-- autotag = {
-	-- 	enable = true,
-	-- },
 	indent = { enable = true, disable = { "yaml", "html" } },
 	playground = {
 		enable = true,
@@ -58,16 +54,3 @@ npairs.setup({
 		highlight_grey = "LineNr",
 	},
 })
-
--- require("nvim-ts-autotag").setup({
--- 	opts = {
--- 		enable_close = true,
--- 		enable_rename = true,
--- 		enable_close_on_slash = false,
--- 	},
--- 	per_filetype = {
--- 		["html"] = {
--- 			enable_close = false,
--- 		},
--- 	},
--- })

@@ -1,23 +1,9 @@
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd("autocmd FileType pandoc normal zR")
-
-vim.api.nvim_create_user_command('Command', function (args)
-  local vimCmd = 'split | terminal'
-  if (args['args']) then
-    vimCmd = vimCmd .. ' ' .. args['args']
-  end
-  vim.cmd(vimCmd)
-end, { desc = "Runs command in builtin terminal", nargs = '*' })
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.highlight.on_yank()
 	end,
 })
-
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set wrap"})
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*.md", command = "set conceallevel=1"})
 
 -- stuff
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
@@ -38,7 +24,3 @@ vim.cmd([[au FileType go set expandtab]])
 vim.cmd([[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]])
 vim.cmd([[au FileType go nmap <leader>ge <cmd>GoIfErr<CR>]])
 vim.cmd([[au FileType go nmap <leader>gt <cmd>GoTagAdd<CR>]])
-
-vim.cmd([[au FileType sql set shiftwidth=4 ]])
-vim.cmd([[au FileType sql set tabstop=4 ]])
-vim.cmd([[au FileType sql set softtabstop=4 ]])

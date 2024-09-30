@@ -17,7 +17,6 @@ local plugins = {
   "gelguy/wilder.nvim",
   -- "ojroques/vim-oscyank",
   { "mg979/vim-visual-multi" },
-  { "norcalli/nvim-colorizer.lua", event = "VeryLazy" },
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -58,7 +57,16 @@ local plugins = {
   },
 
   -- Colorscheme stuff
-  { 'ferdinandrau/lavish.nvim', priority = 1000 },
+  { 'ferdinandrau/lavish.nvim',  priority = 1000 },
+
+
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
+    config = function()
+      require("colorizer").setup()
+    end
+  },
 
   -- Treesitter
   {
@@ -86,7 +94,16 @@ local plugins = {
     },
     lazy = true,
   },
-  { "stevearc/dressing.nvim" },
+  {
+    "stevearc/dressing.nvim",
+    config = function()
+      require("dressing").setup({
+        select = {
+          backend = { "fzf", "builtin", "nui" },
+        },
+      })
+    end
+  },
 
   -- Backend stuff
   {
@@ -97,8 +114,14 @@ local plugins = {
   },
 
   -- Git integrations
-  { "akinsho/git-conflict.nvim", version = "*", config = true },
-  { "FabijanZulj/blame.nvim",    lazy = true },
+  { "akinsho/git-conflict.nvim", version = "*",  config = true },
+  {
+    "FabijanZulj/blame.nvim",
+    lazy = true,
+    config = function()
+      require("blame").setup()
+    end
+  },
 }
 
 local opts = {}

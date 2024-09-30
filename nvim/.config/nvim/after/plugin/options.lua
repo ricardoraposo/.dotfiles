@@ -13,7 +13,6 @@ o.conceallevel = 0
 o.nu = true
 o.rnu = true
 o.concealcursor = "nc"
--- o.fileencoding = "utf-8"
 o.hlsearch = false
 o.incsearch = true
 o.inccommand = "split"
@@ -58,18 +57,10 @@ o.pumblend = 17
 o.wildmode = "longest:full"
 o.wildoptions = "pum"
 
-vim.cmd("language en_US.UTF-8")
 vim.cmd("set t_ZH=^[[3m")
 vim.cmd("set t_ZR=^[[23m")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
-vim.cmd("let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']")
-vim.cmd("let g:pandoc#spell#enabled=0")
-vim.cmd("let g:pandoc#folding#fdc = 0")
 vim.cmd("syntax on")
-g.markdown_fenced_languages = { "javascript", "sh" }
-g.omni_sql_default_compl_type = "syntax"
-g.omni_sql_no_default_maps = 1
-g.db_ui_use_nerd_fonts = 1
 
 vim.cmd.colorscheme("lavish")

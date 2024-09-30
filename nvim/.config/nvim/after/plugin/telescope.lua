@@ -43,4 +43,4 @@ telescope.setup({
   },
 })
 
-require("telescope").load_extension("undo")
+telescope.load_extension("undo")
