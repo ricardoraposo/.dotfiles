@@ -58,6 +58,7 @@ local plugins = {
 
   -- Colorscheme stuff
   { 'ferdinandrau/lavish.nvim',  priority = 1000 },
+  { 'savq/melange-nvim' },
 
   {
     "norcalli/nvim-colorizer.lua",

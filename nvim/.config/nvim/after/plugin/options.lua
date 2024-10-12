@@ -63,4 +63,4 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd("set iskeyword-=_")
 vim.cmd("syntax on")
 
-vim.cmd.colorscheme("lavish")
+vim.cmd.colorscheme("melange")
