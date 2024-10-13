@@ -3,9 +3,11 @@ return { -- You can easily change to a different colorscheme.
   { 'savq/melange-nvim' },
   { 'ricardoraposo/gruvbox-minor.nvim' },
   {
-    'dgox16/oldworld.nvim',
-    init = function()
-      vim.cmd.colorscheme 'oldworld'
+    'https://github.com/p00f/alabaster.nvim',
+    config = function()
+      vim.opt.termguicolors = true
+      vim.cmd.colorscheme 'alabaster'
     end,
   },
+  { 'dgox16/oldworld.nvim' },
 }
