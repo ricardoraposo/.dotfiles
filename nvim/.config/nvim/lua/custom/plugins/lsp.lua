@@ -128,12 +128,37 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        gopls = {},
+
+        gopls = {
+          settings = {
+            gopls = {
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+            },
+          },
+        },
+
         rust_analyzer = {},
-        ts_ls = {},
+
+        ts_ls = {
+          server_capabilities = {
+            documentFormattingProvider = false,
+          },
+        },
+
         eslint = {},
+
         html = {},
+
         jsonls = {},
+
         emmet_ls = {
           filetypes = {
             'html',
@@ -155,6 +180,7 @@ return {
             'handlebars',
           },
         },
+
         cssls = {
           settings = {
             css = {
@@ -165,33 +191,64 @@ return {
             },
           },
         },
+
         tailwindcss = {},
+
         prismals = {},
+
         dockerls = {},
+
         docker_compose_language_service = {},
+
         elixirls = {},
+
+        ocamllsp = {
+          manual_install = true,
+          cmd = { 'dune', 'exec', 'ocamllsp' },
+          server_capabilities = {
+            semanticTokensProvider = false,
+          },
+          settings = {
+            codelens = { enable = true },
+            inlayHints = { enable = true },
+            syntaxDocumentation = { enable = true },
+          },
+
+          get_language_id = function(_, lang)
+            local map = {
+              ['ocaml.mlx'] = 'ocaml',
+            }
+            return map[lang] or lang
+          end,
+
+          filetypes = {
+            'ocaml',
+            'ocaml.interface',
+            'ocaml.menhir',
+            'ocaml.cram',
+            'ocaml.mlx',
+            'ocaml.ocamllex',
+            'reason',
+          },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
           -- capabilities = {},
+          server_capabilities = {
+            semanticTokensProvider = vim.NIL,
+          },
           settings = {
             Lua = {
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
       }
 
-      -- Ensure the servers and tools above are installed
-      --  To check the current status of installed tools and/or manually install
-      --  other tools, you can run
-      --    :Mason
-      --
-      --  You can press `g?` for help in this menu.
       require('mason').setup()
 
       -- You can add other tools here that you want Mason to install

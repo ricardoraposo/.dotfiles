@@ -7,4 +7,5 @@ return { -- You can easily change to a different colorscheme.
     end,
   },
   { 'savq/melange-nvim' },
+  { 'ricardoraposo/gruvbox-minor.nvim' },
 }

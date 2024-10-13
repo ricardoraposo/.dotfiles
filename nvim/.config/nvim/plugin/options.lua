@@ -18,6 +18,8 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.colorcolumn = '90,100'
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
