@@ -12,11 +12,7 @@ return { -- Autocompletion
         return 'make install_jsregexp'
       end)(),
     },
-    'saadparwaiz1/cmp_luasnip',
-
-    -- Adds other completion capabilities.
-    --  nvim-cmp does not ship with all sources by default. They are split
-    --  into multiple repos for maintenance purposes.
+    'saadarwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
   },
@@ -68,11 +64,7 @@ return { -- Autocompletion
         end, { 'i', 's' }),
       },
       sources = {
-        {
-          name = 'lazydev',
-          -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-          group_index = 0,
-        },
+        { name = 'lazydev', group_index = 0 },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
