@@ -17,10 +17,12 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
-vim.opt.colorcolumn = '90,100'
+vim.opt.colorcolumn = '80,100'
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.hlsearch = false
+vim.opt.wrap = false
 
 vim.g.have_nerd_font = true
 vim.g.loaded_netrwPlugin = 1

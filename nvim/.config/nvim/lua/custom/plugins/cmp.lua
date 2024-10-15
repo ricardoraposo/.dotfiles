@@ -12,7 +12,7 @@ return { -- Autocompletion
         return 'make install_jsregexp'
       end)(),
     },
-    'saadarwaiz1/cmp_luasnip',
+    -- 'saadarwaiz1/cmp_luasnip',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
   },

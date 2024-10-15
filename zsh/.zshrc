@@ -24,6 +24,8 @@ if test -d "$HOME/.datagrip"; then
   export PATH="$PATH:$HOME/.datagrip/bin"
 fi
 
+export NODE_OPTIONS=--max_old_space_size=4096
+
 # completions
 complete -C z z
 complete -C kee kee
