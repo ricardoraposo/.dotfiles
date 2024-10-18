@@ -6,6 +6,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = vim.api.nvim_create_augroup('expand-tab', { clear = true }),
+  callback = function ()
+    vim.opt.expandtab = true
+  end
+})
+
 -- stuff
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 
