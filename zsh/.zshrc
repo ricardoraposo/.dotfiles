@@ -19,6 +19,7 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$SCRIPTS:$PATH"
+export PATH=/home/rick/.nimble/bin:$PATH
 
 if test -d "$HOME/.datagrip"; then
   export PATH="$PATH:$HOME/.datagrip/bin"
@@ -57,3 +58,4 @@ if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc' ]; then 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc'; fi
+

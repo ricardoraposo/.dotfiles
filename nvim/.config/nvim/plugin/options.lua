@@ -24,6 +24,7 @@ vim.opt.expandtab = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.hlsearch = false
 vim.opt.wrap = false
+vim.opt.eol = false
 
 vim.g.have_nerd_font = true
 vim.g.loaded_netrwPlugin = 1

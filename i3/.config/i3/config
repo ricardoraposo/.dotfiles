@@ -207,4 +207,6 @@ exec_always --no-startup-id xset r rate 150 60
 
 exec --no-startup-id xrandr --output DisplayPort-2 --auto --right-of HDMI-A-0
 
-exec --no-startup-id /usr/lib/gsd-xsettings
+exec --no-startup-id /usr/libexec/gsd-xsettings
+
+exec --no-startup-id nitrogen --restore

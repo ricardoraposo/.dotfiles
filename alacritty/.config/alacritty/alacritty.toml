@@ -3,7 +3,8 @@ decorations = "None"
 
 [font]
 size = 13
-normal = { family = "JetBrainsMono Nerd Font"}
+offset = { x = 0, y = 2 }
+normal = { family = "GeistMono Nerd Font"}
 
 [env]
 TERM = "xterm-256color"

@@ -143,6 +143,8 @@ return {
           },
         },
 
+        -- biome = {},
+
         eslint = {},
 
         html = {},
