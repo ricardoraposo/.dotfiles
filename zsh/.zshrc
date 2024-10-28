@@ -12,14 +12,12 @@ export BUN_INSTALL="$HOME/.bun"
 export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
-export DOCKER_HOST=unix:///var/run/docker.sock
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$SCRIPTS:$PATH"
-export PATH=/home/rick/.nimble/bin:$PATH
 
 if test -d "$HOME/.datagrip"; then
   export PATH="$PATH:$HOME/.datagrip/bin"
@@ -53,9 +51,14 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc'; fi
+if [[ "$(uname)" == "Linux" ]]; then
+  if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc'; fi
+
+  if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc'; fi
+
+  export PATH=/home/rick/.nimble/bin:$PATH
+
+  export DOCKER_HOST=unix:///var/run/docker.sock
+fi
 

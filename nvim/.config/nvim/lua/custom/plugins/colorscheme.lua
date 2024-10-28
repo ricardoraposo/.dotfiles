@@ -7,12 +7,17 @@ return { -- You can easily change to a different colorscheme.
   },
   { 'ricardoraposo/gruvbox-minor.nvim' },
   { 'dgox16/oldworld.nvim' },
-  { 'ilof2/posterpole.nvim' },
+  {
+    'ilof2/posterpole.nvim',
+    init = function()
+      vim.cmd.colorscheme 'posterpole'
+    end,
+  },
   {
     'AlexvZyl/nordic.nvim',
-    init = function()
-      vim.cmd.colorscheme 'nordic'
-      vim.api.nvim_set_hl(0, 'Delimiter', { fg= "#60728a" })
-    end,
+  },
+
+  {
+    'vague2k/vague.nvim',
   },
 }
