@@ -13,13 +13,14 @@ return {
     },
   },
   { 'folke/tokyonight.nvim' },
+  { 'savq/melange' },
   { 'killitar/obscure.nvim' },
   { 'ellisonleao/gruvbox.nvim' },
   { 'ricardoraposo/gruvbox-minor.nvim' },
   {
     'ferdinandrau/lavish.nvim',
     init = function()
-      vim.cmd.colorscheme 'lavish'
+      vim.cmd.colorscheme 'lavish-dark'
     end,
   },
   { 'HoNamDuong/hybrid.nvim' },
