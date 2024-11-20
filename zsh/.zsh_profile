@@ -50,6 +50,7 @@ alias yb="yarn prisma:generate && yarn start:dev"
 alias pa="podman start -a"
 alias pr="podman run -it --hostname rickysthing --name rickyc"
 alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace"
+
 alias dc="docker-compose"
 alias dsp="docker system prune -af"
 alias dcr="docker container run"
@@ -67,6 +68,10 @@ alias gw="git worktree"
 alias gwa="git worktree add"
 alias gwr="git worktree remove"
 alias gwl="git worktree list"
+
+alias unfuck='git reset HEAD~1 --soft'
+alias fr='export PORT=3000 && pnpm dev'
+alias or='export PORT=3001 && yarn start:dev'
 
 alias raposo="icat ~/Pictures/raposonaopegue.png"
 

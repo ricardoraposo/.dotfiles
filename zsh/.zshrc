@@ -18,6 +18,7 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$SCRIPTS:$PATH"
+export PATH="$HOME/.zen/zen/:$PATH"
 
 if test -d "$HOME/.datagrip"; then
   export PATH="$PATH:$HOME/.datagrip/bin"

@@ -35,6 +35,9 @@ map('n', '<F3>', '<cmd>set cursorcolumn!<CR>')
 map('n', '<F4>', '<cmd>set cursorline!<CR>')
 map('n', '<F5>', '<cmd>set wrap!<CR>')
 
+-- terminal integration
+map('n', '<leader>tf', '!!turnFunction<CR>')
+
 -- Resize with arrows
 map('n', '<M-Up>', '<cmd>resize +2<CR>')
 map('n', '<M-Down>', '<cmd>resize -2<CR>')

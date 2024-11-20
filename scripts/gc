@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Get the name of the current directory
+current_dir=${PWD##*/}
+
+# Check if the directory name is "front-bankme"
+if [ "$current_dir" = "front-bankme" ]; then
+  pnpm lint --fix && git commit
+else
+  git commit
+fi
+
