@@ -2,9 +2,9 @@
 decorations = "None"
 
 [font]
-size = 11.5
+size = 16
 offset = { x = 0, y = 0 }
-normal = { family = "JetBrainsMono Nerd Font"}
+normal = { family = "MonacoLigaturized Nerd Font Mono"}
 
 [env]
 TERM = "xterm-256color"
