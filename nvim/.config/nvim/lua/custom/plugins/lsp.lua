@@ -21,15 +21,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-      local disable_semantic_tokens = {
-        lua = true,
-        typescript = true,
-        javascript = true,
-        typescriptreact = true,
-        javascriptreact = true,
-        rust = true,
-      }
-
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -82,6 +73,15 @@ return {
             end, '[T]oggle Inlay [H]ints')
           end
 
+          local disable_semantic_tokens = {
+            lua = true,
+            typescript = true,
+            javascript = true,
+            typescriptreact = true,
+            javascriptreact = true,
+            rust = true,
+          }
+
           local filetype = vim.bo[event.buf].filetype
           if disable_semantic_tokens[filetype] then
             client.server_capabilities.semanticTokensProvider = nil
@@ -129,13 +129,15 @@ return {
         --   },
         -- },
 
+        -- vtsls = {},
+
         biome = {},
 
         eslint = {
           on_init = function(client)
-            -- Check if there's a .eslintrc file in the project root
             local util = require 'lspconfig.util'
             local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.json')(vim.fn.getcwd())
+            print('this is the eslint config thingy: ' .. eslintrc)
             if not eslintrc then
               client.stop()
               return
