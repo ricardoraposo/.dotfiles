@@ -129,7 +129,12 @@ return {
         --   },
         -- },
 
-        -- vtsls = {},
+        vtsls = {
+          server_capabilities = {
+            documentFormattingProvider = false,
+            semanticTokensProvider = vim.NIL,
+          },
+        },
 
         biome = {},
 
@@ -137,7 +142,6 @@ return {
           on_init = function(client)
             local util = require 'lspconfig.util'
             local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.json')(vim.fn.getcwd())
-            print('this is the eslint config thingy: ' .. eslintrc)
             if not eslintrc then
               client.stop()
               return

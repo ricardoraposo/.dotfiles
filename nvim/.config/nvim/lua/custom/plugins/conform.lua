@@ -13,27 +13,27 @@ return { -- Autoformat
     },
   },
   config = function()
-    require("conform").setup {
-    notify_on_error = false,
-    format_on_save = nil,
-    formatters = {
-      prettier = {
-        require_cwd = true,
+    require('conform').setup {
+      notify_on_error = false,
+      format_on_save = nil,
+      formatters = {
+        prettier = {
+          require_cwd = true,
+        },
+        biome = {
+          require_cwd = true,
+        },
+        biome_check = {
+          require_cwd = true,
+        },
       },
-      biome = {
-        require_cwd = true,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        javascript = { 'prettier', 'biome-check', stop_after_first = true },
+        typescript = { 'prettier', 'biome-check', stop_after_first = true },
+        typescriptreact = { 'prettier', 'biome-check', stop_after_first = true },
+        javascriptreact = { 'prettier', 'biome-check', stop_after_first = true },
       },
-      biome_check = {
-        require_cwd = true,
-      },
-    },
-    formatters_by_ft = {
-      lua = { 'stylua' },
-      javascript = { 'biome', 'prettier', stop_after_first = true },
-      typescript = { 'biome-check', 'prettier', stop_after_first = true },
-      typescriptreact = { 'prettier', stop_after_first = true },
-      javascriptreact = { 'prettier', stop_after_first = true },
-    },
-  }
-  end
+    }
+  end,
 }

@@ -95,7 +95,7 @@ return {
         adaptive_size = false,
         centralize_selection = false,
         width = 50,
-        side = 'left',
+        side = 'right',
         preserve_window_proportions = false,
         number = false,
         relativenumber = false,

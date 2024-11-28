@@ -1,12 +1,7 @@
 return {
   {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    opts = {},
+    'yioneko/nvim-vtsls',
   },
-  -- {
-  --   'yioneko/nvim-vtsls',
-  -- },
   {
     'folke/ts-comments.nvim',
     opts = {},
