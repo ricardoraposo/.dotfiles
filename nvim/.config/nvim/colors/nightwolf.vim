@@ -165,16 +165,6 @@ call s:highlight('@constant.builtin.typescript', '', s:LightRed, '')
 " markup
 call s:highlight('@markup.heading.1.tsx', '', s:Muted, '')
 
-" Plugin specific
-" NvimTree
-call s:highlight('NvimTreeFolderName', '', s:Blue, '')
-call s:highlight('NvimTreeOpenedFolderName', '', s:Cyan, '')
-
-" Telescope
-call s:highlight('TelescopeMatching', '', s:Blue, '')
-
-
-
 " RUST
 
 " variable
@@ -208,3 +198,17 @@ call s:highlight('@boolean.rust', '', s:LightRed, '')
 
 " string
 call s:highlight('@string.escape.rust', '', s:Green, '')
+
+
+" Plugin specific
+" NvimTree
+call s:highlight('NvimTreeFolderName', '', s:Blue, '')
+call s:highlight('NvimTreeOpenedFolderName', '', s:Cyan, '')
+
+" Telescope
+call s:highlight('TelescopeMatching', '', s:Blue, '')
+
+" MiniStatusLine
+call s:highlight('MiniStatuslineModeNormal', s:Blue, s:Black, 'bold')
+call s:highlight('MiniStatuslineModeInsert', s:LightPurple, s:Black, 'bold')
+call s:highlight('MiniStatuslineModeVisual', s:LightRed, s:Black, 'bold')
