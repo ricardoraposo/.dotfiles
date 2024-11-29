@@ -71,7 +71,8 @@ call s:highlight('TSPunctDelimiter', '', s:Muted, '')
 " Treesitter groups
 " keyword
 call s:highlight('@keyword.import.tsx', '', s:DarkPurple, '')
-call s:highlight('@keyword.tsx', '', s:Blue, 'italic')
+call s:highlight('@keyword.tsx', '', s:DarkPurple, '')
+call s:highlight('@keyword.function.tsx', '', s:Blue, 'italic')
 call s:highlight('@keyword.typescript', '', s:Blue, '')
 call s:highlight('@keyword.operator.tsx', '', s:LightRed, '')
 call s:highlight('@keyword.type.typescript', '', s:Blue, '')
