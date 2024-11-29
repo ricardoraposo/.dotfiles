@@ -68,71 +68,6 @@ call s:highlight('TabLineSel', s:Muted, s:Color14, '')
 call s:highlight('TabLineFill', s:Black, s:Color19, '')
 call s:highlight('TSPunctDelimiter', '', s:Muted, '')
 
-" Treesitter groups
-" keyword
-call s:highlight('@keyword.import.tsx', '', s:DarkPurple, '')
-call s:highlight('@keyword.tsx', '', s:DarkPurple, '')
-call s:highlight('@keyword.function.tsx', '', s:Blue, 'italic')
-call s:highlight('@keyword.typescript', '', s:Blue, '')
-call s:highlight('@keyword.operator.tsx', '', s:LightRed, '')
-call s:highlight('@keyword.type.typescript', '', s:Blue, '')
-call s:highlight('@keyword.coroutine.typescript', '', s:DarkPurple, 'italic')
-
-" variable
-call s:highlight('@variable', '', s:Muted, '')
-call s:highlight('@variable.tsx', '', s:LightYellow, '')
-call s:highlight('@variable.typescript', '', s:LightYellow, '')
-call s:highlight('@variable.parameter.tsx', '', s:LightYellow, '')
-call s:highlight('@variable.parameter.typescript', '', s:LightYellow, '')
-call s:highlight('@variable.builtin.typescript', '', s:LightRed, '')
-
-" type
-call s:highlight('@type.tsx', '', s:LightPurple, '')
-call s:highlight('@type.builtin.tsx', '', s:DarkPurple, '')
-call s:highlight('@type.builtin.typescript', '', s:DarkPurple, '')
-call s:highlight('@type.typescript', '', s:Cyan, '')
-
-" boolean
-call s:highlight('@boolean.tsx', '', s:LightRed, '')
-
-" operator
-call s:highlight('@operator.tsx', '', s:Muted, '')
-
-" punctuation
-call s:highlight('@punctuation.bracket.tsx', '', s:LightYellow, '')
-call s:highlight('@punctuation.special.tsx', '', s:LightRed, '')
-
-" constructor
-call s:highlight('@constructor.tsx', '', s:DarkPurple, '')
-call s:highlight('@constructor.typescript', '', s:Blue, '')
-
-
-" function
-call s:highlight('@function.call.tsx', '', s:Cyan, 'italic')
-call s:highlight('@function.method.call.tsx', '', s:Cyan, 'italic')
-call s:highlight('@function.method.call.typescript', '', s:Cyan, 'italic')
-
-" tag
-call s:highlight('@tag.tsx', '', s:LightRed, '')
-call s:highlight('@tag.builtin.tsx', '', s:LightRed, '')
-call s:highlight('@tag.attribute.tsx', '', s:DarkPurple, '')
-call s:highlight('@tag.delimiter.tsx', '', s:Muted, '')
-
-" constants
-call s:highlight('@constant.builtin.tsx', '', s:LightRed, '')
-call s:highlight('@constant.builtin.typescript', '', s:LightRed, '')
-
-" markup
-call s:highlight('@markup.heading.1.tsx', '', s:Muted, '')
-
-" Plugin specific
-" NvimTree
-call s:highlight('NvimTreeFolderName', '', s:Blue, '')
-call s:highlight('NvimTreeOpenedFolderName', '', s:Cyan, '')
-
-" Telescope
-call s:highlight('TelescopeMatching', '', s:Blue, '')
-
 highlight! link TelescopeNormal Normal
 highlight! link TSNamespace TSType
 highlight! link TSPunctSpecial TSPunctDelimiter
@@ -165,3 +100,111 @@ highlight! link Operator Keyword
 highlight! link Macro Function
 highlight! link TSString String
 highlight! link TSTagDelimiter Type
+
+" Treesitter groups
+
+" TYPESCRIPT/TSX
+" keyword
+call s:highlight('@keyword.import.tsx', '', s:DarkPurple, '')
+call s:highlight('@keyword.tsx', '', s:DarkPurple, '')
+call s:highlight('@keyword.function.tsx', '', s:Blue, 'italic')
+call s:highlight('@keyword.typescript', '', s:Blue, '')
+call s:highlight('@keyword.operator.tsx', '', s:LightRed, '')
+call s:highlight('@keyword.type.typescript', '', s:Blue, '')
+call s:highlight('@keyword.coroutine.typescript', '', s:DarkPurple, 'italic')
+call s:highlight('@keyword.repeat.tsx', '', s:LightRed, '')
+call s:highlight('@keyword.repeat.typescript', '', s:LightRed, '')
+
+" variable
+call s:highlight('@variable', '', s:Muted, '')
+call s:highlight('@variable.tsx', '', s:LightYellow, '')
+call s:highlight('@variable.typescript', '', s:LightYellow, '')
+call s:highlight('@variable.parameter.tsx', '', s:LightYellow, '')
+call s:highlight('@variable.parameter.typescript', '', s:LightYellow, '')
+call s:highlight('@variable.builtin.typescript', '', s:LightRed, '')
+
+" type
+call s:highlight('@type.tsx', '', s:LightPurple, '')
+call s:highlight('@type.builtin.tsx', '', s:DarkPurple, '')
+call s:highlight('@type.builtin.typescript', '', s:DarkPurple, '')
+call s:highlight('@type.typescript', '', s:Cyan, '')
+
+" boolean
+call s:highlight('@boolean.tsx', '', s:LightRed, '')
+
+" operator
+call s:highlight('@operator.tsx', '', s:Muted, '')
+
+" punctuation
+call s:highlight('@punctuation.bracket.tsx', '', s:LightYellow, '')
+call s:highlight('@punctuation.special.tsx', '', s:LightRed, '')
+
+" constructor
+call s:highlight('@constructor.tsx', '', s:DarkPurple, '')
+call s:highlight('@constructor.typescript', '', s:Blue, '')
+
+" string
+call s:highlight('@string.escape.tsx', '', s:Green, '')
+call s:highlight('@string.escape.typescript', '', s:Green, '')
+
+" function
+call s:highlight('@function.call.tsx', '', s:Cyan, 'italic')
+call s:highlight('@function.method.call.tsx', '', s:Cyan, 'italic')
+call s:highlight('@function.method.call.typescript', '', s:Cyan, 'italic')
+
+" tag
+call s:highlight('@tag.tsx', '', s:LightRed, '')
+call s:highlight('@tag.builtin.tsx', '', s:LightRed, '')
+call s:highlight('@tag.attribute.tsx', '', s:DarkPurple, '')
+call s:highlight('@tag.delimiter.tsx', '', s:Muted, '')
+
+" constants
+call s:highlight('@constant.builtin.tsx', '', s:LightRed, '')
+call s:highlight('@constant.builtin.typescript', '', s:LightRed, '')
+
+" markup
+call s:highlight('@markup.heading.1.tsx', '', s:Muted, '')
+
+" Plugin specific
+" NvimTree
+call s:highlight('NvimTreeFolderName', '', s:Blue, '')
+call s:highlight('NvimTreeOpenedFolderName', '', s:Cyan, '')
+
+" Telescope
+call s:highlight('TelescopeMatching', '', s:Blue, '')
+
+
+
+" RUST
+
+" variable
+call s:highlight('@variable.rust', '', s:LightYellow, '')
+call s:highlight('@variable.parameter.rust', '', s:LightYellow, '')
+
+" keyword
+call s:highlight('@keyword.rust', '', s:LightRed, '')
+call s:highlight('@keyword.function.rust', '', s:LightRed, '')
+call s:highlight('@keyword.conditional.rust', '', s:LightRed, '')
+call s:highlight('@keyword.modifier.rust', '', s:LightRed, '')
+call s:highlight('@keyword.repeat.rust', '', s:LightRed, '')
+call s:highlight('@keyword.import.rust', '', s:LightRed, '')
+
+" types
+call s:highlight('@type.rust', '', s:DarkPurple, '')
+call s:highlight('@type.builtin.rust', '', s:LightPurple, '')
+
+
+" module
+call s:highlight('@module.rust', '', s:LightPurple, '')
+
+" operator
+call s:highlight('@operator.rust', '', s:LightRed, '')
+
+" constant
+call s:highlight('@constant.builtin.rust', '', s:LightYellow, '')
+
+" boolean
+call s:highlight('@boolean.rust', '', s:LightRed, '')
+
+" string
+call s:highlight('@string.escape.rust', '', s:Green, '')
