@@ -121,6 +121,7 @@ call s:highlight('@variable.tsx', '', s:LightYellow, '')
 call s:highlight('@variable.typescript', '', s:LightYellow, '')
 call s:highlight('@variable.parameter.tsx', '', s:LightYellow, '')
 call s:highlight('@variable.parameter.typescript', '', s:LightYellow, '')
+call s:highlight('@variable.builtin.tsx', '', s:LightRed, '')
 call s:highlight('@variable.builtin.typescript', '', s:LightRed, '')
 
 " type
@@ -138,6 +139,7 @@ call s:highlight('@operator.tsx', '', s:Muted, '')
 " punctuation
 call s:highlight('@punctuation.bracket.tsx', '', s:LightYellow, '')
 call s:highlight('@punctuation.special.tsx', '', s:LightRed, '')
+call s:highlight('@punctuation.special.typescript', '', s:LightRed, '')
 
 " constructor
 call s:highlight('@constructor.tsx', '', s:DarkPurple, '')
