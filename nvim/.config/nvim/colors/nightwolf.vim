@@ -67,6 +67,8 @@ call s:highlight('TabLine', s:Black, s:Color19, '')
 call s:highlight('TabLineSel', s:Muted, s:Color14, '')
 call s:highlight('TabLineFill', s:Black, s:Color19, '')
 call s:highlight('TSPunctDelimiter', '', s:Muted, '')
+call s:highlight('DiagnosticDeprecated', '', '', 'underline')
+
 
 highlight! link TelescopeNormal Normal
 highlight! link TSNamespace TSType
@@ -100,6 +102,7 @@ highlight! link Operator Keyword
 highlight! link Macro Function
 highlight! link TSString String
 highlight! link TSTagDelimiter Type
+
 
 " Treesitter groups
 
