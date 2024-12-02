@@ -204,6 +204,14 @@ call s:highlight('@boolean.rust', '', s:LightRed, '')
 " string
 call s:highlight('@string.escape.rust', '', s:Green, '')
 
+" Lua
+
+" function
+call s:highlight('@function.call.lua', '', s:DarkPurple, '')
+
+" 
+call s:highlight('@constructor.lua', '', s:DarkPurple, '')
+call s:highlight('@punctuation.bracket.lua', '', s:LightYellow, '')
 
 " Plugin specific
 " NvimTree
