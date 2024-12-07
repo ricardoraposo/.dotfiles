@@ -134,6 +134,13 @@ return {
             documentFormattingProvider = false,
             semanticTokensProvider = vim.NIL,
           },
+          settings = {
+            typescript = {
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+              },
+            },
+          },
         },
 
         biome = {
