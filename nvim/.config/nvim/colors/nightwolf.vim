@@ -68,6 +68,7 @@ call s:highlight('TabLineSel', s:Muted, s:Color14, '')
 call s:highlight('TabLineFill', s:Black, s:Color19, '')
 call s:highlight('TSPunctDelimiter', '', s:Muted, '')
 call s:highlight('DiagnosticDeprecated', '', '', 'underline')
+call s:highlight('Special', '', s:Cyan, '')
 
 
 highlight! link TelescopeNormal Normal
