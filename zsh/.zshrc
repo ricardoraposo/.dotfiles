@@ -63,3 +63,8 @@ if [[ "$(uname)" == "Linux" ]]; then
   export DOCKER_HOST=unix:///var/run/docker.sock
 fi
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/completion.zsh.inc'; fi

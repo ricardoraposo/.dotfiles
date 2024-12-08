@@ -2,6 +2,7 @@ return {
   {
     'yioneko/nvim-vtsls',
   },
+  { 'rescript-lang/vim-rescript', ft = 'rescript' },
   {
     'folke/ts-comments.nvim',
     opts = {},
