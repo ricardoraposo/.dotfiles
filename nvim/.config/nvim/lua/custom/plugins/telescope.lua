@@ -64,6 +64,10 @@ return {
       })
     end, { desc = '[S]earch [F]iles' })
 
+    vim.keymap.set('n', '<leader>sm', function()
+      require('rick.telescope.multigrep').setup()
+    end, { desc = '[S]earch by [M]ultigrep' })
+
     vim.keymap.set('n', '<leader>/', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
