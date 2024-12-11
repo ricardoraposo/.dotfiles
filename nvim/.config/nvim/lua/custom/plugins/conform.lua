@@ -20,6 +20,9 @@ return { -- Autoformat
         prettier = {
           require_cwd = true,
         },
+        prettierd = {
+          require_cwd = true,
+        },
         biome = {
           require_cwd = true,
         },
@@ -29,10 +32,10 @@ return { -- Autoformat
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettier', 'biome-check', stop_after_first = true },
-        typescript = { 'prettier', 'biome-check', stop_after_first = true },
-        typescriptreact = { 'prettier', 'biome-check', stop_after_first = true },
-        javascriptreact = { 'prettier', 'biome-check', stop_after_first = true },
+        javascript = { 'prettierd', 'biome-check', stop_after_first = true },
+        typescript = { 'prettierd', 'biome-check', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'biome-check', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'biome-check', stop_after_first = true },
       },
     }
   end,

@@ -22,6 +22,7 @@ export PATH="$HOME/.zen/zen/:$PATH"
 
 if test -d "$HOME/.datagrip"; then
   export PATH="$PATH:$HOME/.datagrip/bin"
+  # export PATH="$PATH:$HOME/.zig"
 fi
 
 export NODE_OPTIONS=--max_old_space_size=4096

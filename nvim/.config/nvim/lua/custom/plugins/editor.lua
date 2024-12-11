@@ -1,7 +1,5 @@
 return {
-  {
-    'yioneko/nvim-vtsls',
-  },
+  { 'yioneko/nvim-vtsls' },
   { 'rescript-lang/vim-rescript', ft = 'rescript' },
   {
     'folke/ts-comments.nvim',
@@ -15,6 +13,7 @@ return {
       require('supermaven-nvim').setup {}
     end,
   },
+  { 'tpope/vim-sleuth' },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -27,6 +26,10 @@ return {
     end,
   },
   {
-    'tpope/vim-sleuth',
+    'folke/snacks.nvim',
+    opts = {
+      lazygit = {},
+      git = {},
+    },
   },
 }

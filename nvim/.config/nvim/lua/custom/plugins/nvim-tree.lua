@@ -3,9 +3,9 @@ return {
   branch = 'master',
   lazy = true,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  keys = {
-    { '<leader>n', ':NvimTreeToggle<CR>', desc = 'NvimTree toggle', silent = true },
-  },
+  -- keys = {
+  --   { '<leader>n', ':NvimTreeToggle<CR>', desc = 'NvimTree toggle', silent = true },
+  -- },
   config = function()
     local api = require 'nvim-tree.api'
 
