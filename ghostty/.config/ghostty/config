@@ -10,7 +10,11 @@ adjust-cell-height = 6
 window-decoration = false
 gtk-titlebar = false
 
+confirm-close-surface = false
+
+macos-option-as-alt = false
+
 keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
+keybind = option+c=text:ç
 
-confirm-close-surface = false
