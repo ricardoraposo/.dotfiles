@@ -10,6 +10,7 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'sheerun/vim-polyglot'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set path+=**
@@ -43,25 +44,17 @@ set splitright
 set signcolumn=no
 set foldcolumn=0
 set wildmenu
-set undodir=$HOME/.vim/undovim
+set undodir=$HOME/.vim/undodir
 set undofile
 set nospell
 set spc=
 set ruf=%35(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
 set shortmess-=S
 set colorcolumn=80,100
+set clipboard=unnamedplus
 
 syntax on
-colorscheme torte
-
-if has("syntax")
-  function! <SID>SynStack()
-    if !exists("*synstack")
-      return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-  endfunc
-endif
+colorscheme nord
 
 " keymaps
 let mapleader=" "
@@ -70,7 +63,6 @@ nnoremap <C-c> <esc>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>sc <cmd>so %<CR>
 nnoremap <C-f> :Files<CR> 
-nnoremap <F2> :call <SID>SynStack()<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
