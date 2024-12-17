@@ -1,11 +1,20 @@
 local M = {}
 
-local p = require('nightwolf.palette').colors
+local palette = require 'nightwolf.palette'
 local utils = require 'nightwolf.utils'
 local hi = utils.highlight
 local link = utils.link
 
-M.load = function()
+M.load = function(opts)
+  local opts = opts or { theme = 'dark' }
+
+  local p
+  if opts.theme == 'light' then
+    p = palette.light_colors
+  else
+    p = palette.dark_colors
+  end
+
   -- general groups
   hi('Statement', '', p.darkPurple)
   hi('Error', p.red, p.white)

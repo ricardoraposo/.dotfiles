@@ -20,7 +20,6 @@ freaking_files () {
 }
 
 alias v="nvim"
-alias vim="nvim"
 alias nvd="neovide"
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
@@ -77,5 +76,5 @@ alias raposo="icat ~/Pictures/raposonaopegue.png"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
-bindkey -s ^V "vim .^M"
+bindkey -s ^V "v .^M"
 bindkey -s ^F "fd^M"

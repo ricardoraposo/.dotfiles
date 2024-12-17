@@ -11,8 +11,11 @@ window-decoration = false
 gtk-titlebar = false
 
 confirm-close-surface = false
+clipboard-paste-protection = false
 
 macos-option-as-alt = false
+
+mouse-hide-while-typing = true
 
 keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard

@@ -10,7 +10,8 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'arcticicestudio/nord-vim'
+  Plug 'Everblush/everblush.vim'
+  Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set path+=**
@@ -35,7 +36,6 @@ set nohlsearch
 set incsearch
 set ignorecase
 set noswapfile
-set clipboard=unnamed
 set foldmethod=manual
 set nofoldenable
 set hidden
@@ -50,21 +50,44 @@ set nospell
 set spc=
 set ruf=%35(%=%#Ruler#%.50F\ [%{&ft}]\ %l:%c\ %p%%%)
 set shortmess-=S
-set colorcolumn=80,100
-set clipboard=unnamedplus
+set colorcolumn=80
+set clipboard^=unnamed,unnamedplus
 
 syntax on
-colorscheme nord
+
+ " This is only necessary if you use "set termguicolors".
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+ " fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+
+set termguicolors
+colorscheme everblush
 
 " keymaps
 let mapleader=" "
+
+let g:tmux_navigator_no_mappings = 1
+
 nnoremap G Gzz
 nnoremap <C-c> <esc>
 nnoremap <leader><leader> <C-^>
 nnoremap <leader>sc <cmd>so %<CR>
-nnoremap <C-f> :Files<CR> 
+nnoremap <C-f> :GitFiles<CR> 
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
+
+nnoremap <silent> <C-l> :<C-U>TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :<C-U>TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :<C-U>TmuxNavigateUp<cr>
+nnoremap <silent> <C-h> :<C-U>TmuxNavigateRight<cr>
+
+" Human error
+command! Wq wq
+command! W w
+command! Q q
 
 " autocmds
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
