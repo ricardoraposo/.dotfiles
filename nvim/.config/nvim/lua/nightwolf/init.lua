@@ -122,6 +122,7 @@ M.load = function(opts)
   hi('@operator.rust', '', p.lightRed)
 
   -- punctuation
+  hi('@punctuation.delimiter', '', p.muted)
   hi('@punctuation.bracket', '', p.lightYellow)
   hi('@punctuation.bracket.tsx', '', p.lightYellow)
   hi('@punctuation.bracket.lua', '', p.lightYellow)
@@ -162,6 +163,7 @@ M.load = function(opts)
   hi('@tag.delimiter.tsx', '', p.muted)
 
   -- constants
+  hi('@constant', '', p.lightRed)
   hi('@constant.builtin', '', p.lightRed)
   hi('@constant.builtin.tsx', '', p.lightRed)
   hi('@constant.builtin.typescript', '', p.lightRed)
@@ -176,6 +178,7 @@ M.load = function(opts)
 
   -- Plugin specific
   hi('NvimTreeFolderName', '', p.blue)
+  hi('NvimTreeSpecialFile', '', p.cyan)
   hi('NvimTreeOpenedFolderName', '', p.cyan)
 
   -- Telescope

@@ -1,1 +1,1 @@
-require("nightwolf").load({ theme = 'light' })
+require("nightwolf").load({ theme = 'dark' })
