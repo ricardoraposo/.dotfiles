@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.termguicolors = true
+vim.opt.background = 'light'
 
 vim.cmd.colorscheme 'nightwolf'
 
