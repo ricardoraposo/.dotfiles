@@ -24,7 +24,7 @@ M.dark_colors = {
 }
 
 M.light_colors = {
-  black = '#fffaf1',
+  black = '#eceff8',
   red = '#d70000',
   white = '#000000',
   blue = '#005f87',

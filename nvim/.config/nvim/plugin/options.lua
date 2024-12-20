@@ -1,3 +1,7 @@
+vim.g.have_nerd_font = true
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -25,7 +29,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.eol = false
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
 
-vim.g.have_nerd_font = true
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
+vim.cmd.colorscheme 'nightwolf'
+
