@@ -224,4 +224,11 @@ M.load = function(opts)
   link('TSTagDelimiter', 'Type')
 end
 
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = 'background',
+  callback = function()
+    M.load { theme = vim.o.background == 'light' and 'light' or nil }
+  end,
+})
+
 return M
