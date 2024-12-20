@@ -173,6 +173,8 @@ return {
 
         volar = {},
 
+        svelte = {},
+
         emmet_ls = {
           filetypes = {
             'html',

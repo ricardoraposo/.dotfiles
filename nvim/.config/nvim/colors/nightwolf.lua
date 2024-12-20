@@ -1,1 +1,1 @@
-require('nightwolf').load { theme = vim.o.background == 'light' and 'light' or nil }
+/home/rick/Projects/Repos/nightwolf.nvim/colors/nightwolf.lua
