@@ -171,6 +171,8 @@ return {
 
         jsonls = {},
 
+        volar = {},
+
         emmet_ls = {
           filetypes = {
             'html',
