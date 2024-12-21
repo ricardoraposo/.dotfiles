@@ -30,7 +30,3 @@ vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.eol = false
 vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-
-vim.cmd.colorscheme 'nightwolf'
-

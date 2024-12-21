@@ -32,4 +32,10 @@ return {
       git = {},
     },
   },
+  {
+    dir = '~/Projects/Repos/nightwolf.nvim',
+    init = function()
+      vim.cmd.colorscheme 'nightwolf'
+    end,
+  },
 }
