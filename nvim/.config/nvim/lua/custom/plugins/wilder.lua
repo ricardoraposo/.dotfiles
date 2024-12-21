@@ -1,5 +1,5 @@
 return {
-  'https://github.com/gelguy/wilder.nvim',
+  'gelguy/wilder.nvim',
   config = function()
     local wilder = require 'wilder'
     local red = '#ff7b72'
