@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/rick/.zsh/completions:"* ]]; then export FPATH="/home/rick/.zsh/completions:$FPATH"; fi
 plugins=(git vi-mode)
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
@@ -69,3 +71,7 @@ if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/completion.zsh.inc'; fi
+. "/home/rick/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit

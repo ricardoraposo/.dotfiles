@@ -16,9 +16,8 @@ return {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      'nvimtools/none-ls.nvim',
+      -- 'nvimtools/none-ls.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      -- 'hrsh7th/cmp-nvim-lsp',
       'saghen/blink.cmp',
     },
     config = function()
@@ -30,7 +29,7 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
@@ -40,8 +39,8 @@ return {
           map('<leader>k', vim.diagnostic.open_float, 'Check error')
           map('ga', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gj', '<CMD>lua vim.diagnostic.goto_next()<CR>', 'Diag go to next', { 'n' })
-          map('gk', '<CMD>lua vim.diagnostic.goto_prev()<CR>', 'Diag go to prev', { 'n' })
+          map('gj', '<CMD>lua vim.diagnostic.jump({ count = 1, float = true })<CR>', 'Diag go to next', { 'n' })
+          map('gk', '<CMD>lua vim.diagnostic.jump({ count = -1, float = true })<CR>', 'Diag go to prev', { 'n' })
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -124,14 +123,17 @@ return {
 
         rust_analyzer = {},
 
-        -- ts_ls = {
-        --   server_capabilities = {
-        --     documentFormattingProvider = false,
-        --     semanticTokensProvider = vim.NIL,
-        --   },
-        -- },
-
         vtsls = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = require('mason-registry').get_package('vue-language-server'):get_install_path(),
+                languages = { 'vue' },
+              },
+            },
+          },
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'},
           server_capabilities = {
             documentFormattingProvider = false,
             semanticTokensProvider = vim.NIL,
@@ -144,6 +146,17 @@ return {
             },
           },
         },
+
+        volar = {
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
+        },
+
+        svelte = {},
 
         biome = {
           on_init = function(client)
@@ -170,10 +183,6 @@ return {
         html = {},
 
         jsonls = {},
-
-        volar = {},
-
-        svelte = {},
 
         emmet_ls = {
           filetypes = {
