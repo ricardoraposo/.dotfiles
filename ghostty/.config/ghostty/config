@@ -1,6 +1,7 @@
 shell-integration = zsh
 
 font-size = 11.5
+font-thicken = true
 
 adjust-cell-height = 6
 
@@ -18,4 +19,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme=/home/rick/.config/ghostty/nightwolf
+theme = light:nightwolf-light, dark: nightwolf-dark-blue

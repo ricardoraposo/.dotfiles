@@ -30,10 +30,23 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
+  { 'rcarriga/nvim-notify' },
+  {
+    'f-person/auto-dark-mode.nvim',
+    opts = {
+      update_interval = 1000,
+      set_dark_mode = function()
+        vim.api.nvim_set_option_value('background', 'dark', {})
+        vim.cmd 'colorscheme nightwolf-dark-blue'
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option_value('background', 'light', {})
+        vim.cmd 'colorscheme nightwolf-light'
+      end,
+    },
+  },
   {
     dir = '~/Projects/Repos/nightwolf.nvim',
-    init = function()
-      vim.cmd.colorscheme 'nightwolf'
-    end,
+    opts = {},
   },
 }

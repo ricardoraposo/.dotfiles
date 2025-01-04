@@ -39,8 +39,8 @@ return {
           map('<leader>k', vim.diagnostic.open_float, 'Check error')
           map('ga', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gj', '<CMD>lua vim.diagnostic.jump({ count = 1, float = true })<CR>', 'Diag go to next', { 'n' })
-          map('gk', '<CMD>lua vim.diagnostic.jump({ count = -1, float = true })<CR>', 'Diag go to prev', { 'n' })
+          map('gj', '<CMD>lua vim.diagnostic.goto_next()<CR>', 'Diag go to next', { 'n' })
+          map('gk', '<CMD>lua vim.diagnostic.goto_prev()<CR>', 'Diag go to prev', { 'n' })
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -79,7 +79,9 @@ return {
             javascript = true,
             typescriptreact = true,
             javascriptreact = true,
+            nix = true,
             rust = true,
+            vue = true,
           }
 
           local filetype = vim.bo[event.buf].filetype
@@ -133,7 +135,7 @@ return {
               },
             },
           },
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'},
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           server_capabilities = {
             documentFormattingProvider = false,
             semanticTokensProvider = vim.NIL,
@@ -147,8 +149,13 @@ return {
           },
         },
 
+        nil_ls = {},
+
         volar = {
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          server_capabilities = {
+            semanticTokensProvider = false,
+          },
+          filetypes = { 'vue' },
           init_options = {
             vue = {
               hybridMode = false,

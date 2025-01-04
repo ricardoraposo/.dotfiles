@@ -20,7 +20,8 @@ freaking_files () {
 }
 
 alias v="nvim"
-alias nvd="neovide"
+alias vim="nvim"
+
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
 alias dot="cd $HOME/.dotfiles"
@@ -34,7 +35,6 @@ alias pn="pnpm"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
-alias tmvs="tmux new -A -s vscode"
 alias tk="tmux kill-server"
 alias kn="killall node"
 
@@ -56,12 +56,6 @@ alias dcr="docker container run"
 
 alias ku="kubectl"
 
-# kitty kitten aliases
-alias icat="kitty +kitten icat --align left"
-alias clip="kitty +kitten clipboard"
-alias kssh="kitty +kitten ssh"
-alias themes="kitty +kitten themes"
-
 # git
 alias gw="git worktree"
 alias gwa="git worktree add"
@@ -71,8 +65,6 @@ alias gwl="git worktree list"
 alias unfuck='git reset HEAD~1 --soft'
 alias fr='export PORT=3000 && pnpm dev'
 alias or='export PORT=3001 && yarn start:dev'
-
-alias raposo="icat ~/Pictures/raposonaopegue.png"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
