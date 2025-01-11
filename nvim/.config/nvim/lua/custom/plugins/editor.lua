@@ -32,21 +32,27 @@ return {
   },
   { 'rcarriga/nvim-notify' },
   {
-    'f-person/auto-dark-mode.nvim',
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        vim.api.nvim_set_option_value('background', 'dark', {})
-        vim.cmd 'colorscheme nightwolf-dark-blue'
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option_value('background', 'light', {})
-        vim.cmd 'colorscheme nightwolf-light'
-      end,
-    },
-  },
-  {
     dir = '~/Projects/Repos/nightwolf.nvim',
-    opts = {},
+    opts = {
+      transparency = true,
+      palette_overrides = {
+        background = '#141b1e',
+        red = '#e57474',
+        lightRed = '#ef7e7e',
+        white = '#dadada',
+        blue = '#67b0e8',
+        lightPurple = '#c47fd5',
+        darkPurple = '#9696ff',
+        cyan = '#6cbfbf',
+        lightYellow = '#e5c76b',
+        darkYellow = '#f4d67a',
+        green = '#8ccf7e',
+        black = '#141b1e',
+        muted = '#dadada',
+      },
+    },
+    init = function()
+      vim.cmd.colorscheme 'nightwolf'
+    end,
   },
 }

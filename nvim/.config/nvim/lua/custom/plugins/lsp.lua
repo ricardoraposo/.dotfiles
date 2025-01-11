@@ -82,6 +82,7 @@ return {
             nix = true,
             rust = true,
             vue = true,
+            zig = true,
           }
 
           local filetype = vim.bo[event.buf].filetype
@@ -92,7 +93,7 @@ return {
       })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
       -- Enable the following language servers
@@ -124,6 +125,12 @@ return {
         },
 
         rust_analyzer = {},
+
+        zls = {
+          server_capabilities = {
+            semanticTokensProvider = vim.NIL,
+          }
+        },
 
         vtsls = {
           init_options = {
@@ -298,6 +305,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'biome',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -311,6 +319,37 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+      }
+
+      require('lspconfig').ocamllsp.setup {
+        capabilities = capabilities,
+        manual_install = true,
+        cmd = { 'dune', 'exec', 'ocamllsp' },
+        server_capabilities = {
+          semanticTokensProvider = false,
+        },
+        settings = {
+          codelens = { enable = true },
+          inlayHints = { enable = true },
+          syntaxDocumentation = { enable = true },
+        },
+
+        get_language_id = function(_, lang)
+          local map = {
+            ['ocaml.mlx'] = 'ocaml',
+          }
+          return map[lang] or lang
+        end,
+
+        filetypes = {
+          'ocaml',
+          'ocaml.interface',
+          'ocaml.menhir',
+          'ocaml.cram',
+          'ocaml.mlx',
+          'ocaml.ocamllex',
+          'reason',
         },
       }
     end,

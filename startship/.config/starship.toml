@@ -6,7 +6,7 @@ $git_branch\
 $git_state\
 $git_status\
 $git_metrics\
-$fill\
+$nix_shell\
 $golang\
 $nodejs\
 $rust\
@@ -24,3 +24,7 @@ disabled = true
 
 [directory]
 style = 'bold bright-cyan'
+
+[nix_shell]
+symbol = '❄️'
+impure_msg = ''

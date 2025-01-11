@@ -6,7 +6,6 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
 source $HOME/.zsh_tokens
 
-export OS="mac"
 export EDITOR="nvim"
 export NOTES="$HOME/Documents/zet"
 export SCRIPTS="$HOME/.dotfiles/scripts"
@@ -38,24 +37,24 @@ complete -C tice tice
 
 
 if [[ "$(uname)" == "Linux" ]]; then
+  export PATH=/home/rick/.nimble/bin:$PATH
+  export PATH=/home/rick/.cargo/bin:$PATH
+  export PATH="$HOME/.npm-global/bin:$PATH"
+  export DOCKER_HOST=unix:///var/run/docker.sock
+
   # Add deno completions to search path
   if [[ ":$FPATH:" != *":/home/rick/.zsh/completions:"* ]]; then export FPATH="/home/rick/.zsh/completions:$FPATH"; fi
 
-  if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/path.zsh.inc'; fi
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-  if [ -f '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cli/google-cloud-sdk/completion.zsh.inc'; fi
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
   if test -d "$HOME/.datagrip"; then
     export PATH="$PATH:$HOME/.datagrip/bin"
     # export PATH="$PATH:$HOME/.zig"
   fi
-
-  export PATH=/home/rick/.nimble/bin:$PATH
-
-  export DOCKER_HOST=unix:///var/run/docker.sock
-
-  autoload -Uz compinit
-  . "/home/rick/.deno/env"
 
 elif [[ "$(uname)" == "Darwin" ]]; then
   # Add deno completions to search path
@@ -85,3 +84,4 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   autoload -Uz compinit
   . "/Users/ricardo/.deno/env"
 fi
+
