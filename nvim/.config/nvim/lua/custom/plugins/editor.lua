@@ -31,6 +31,7 @@ return {
     opts = {},
   },
   { 'rcarriga/nvim-notify' },
+  { 'tanvirtin/monokai.nvim' },
   {
     dir = '~/Projects/Repos/nightwolf.nvim',
     opts = {

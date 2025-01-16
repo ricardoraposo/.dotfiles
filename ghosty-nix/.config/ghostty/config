@@ -6,7 +6,7 @@ font-thicken = true
 
 adjust-cell-height = 0
 
-background-opacity = 0.95
+background-opacity = 1
 
 window-decoration = false
 window-padding-x = 3
