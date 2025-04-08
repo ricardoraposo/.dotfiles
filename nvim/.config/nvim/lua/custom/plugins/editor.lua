@@ -31,29 +31,24 @@ return {
     opts = {},
   },
   { 'rcarriga/nvim-notify' },
-  { 'tanvirtin/monokai.nvim' },
+  { 'folke/tokyonight.nvim' },
+  { 'rebelot/kanagawa.nvim' },
+  {
+    '2nthony/vitesse.nvim',
+    dependencies = {
+      'tjdevries/colorbuddy.nvim',
+    },
+  },
+  {
+    'rose-pine/nvim',
+    as = 'rose-pine',
+    config = function()
+      vim.cmd.colorscheme 'kanagawa'
+    end,
+  },
+  { 'sainnhe/gruvbox-material' },
+  { 'felipeagc/fleet-theme-nvim' },
   {
     dir = '~/Projects/Repos/nightwolf.nvim',
-    opts = {
-      transparency = true,
-      palette_overrides = {
-        background = '#141b1e',
-        red = '#e57474',
-        lightRed = '#ef7e7e',
-        white = '#dadada',
-        blue = '#67b0e8',
-        lightPurple = '#c47fd5',
-        darkPurple = '#9696ff',
-        cyan = '#6cbfbf',
-        lightYellow = '#e5c76b',
-        darkYellow = '#f4d67a',
-        green = '#8ccf7e',
-        black = '#141b1e',
-        muted = '#dadada',
-      },
-    },
-    init = function()
-      vim.cmd.colorscheme 'nightwolf'
-    end,
   },
 }
