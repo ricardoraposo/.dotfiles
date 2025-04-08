@@ -16,11 +16,16 @@ return {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      -- 'nvimtools/none-ls.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
       'saghen/blink.cmp',
     },
     config = function()
+      vim.diagnostic.config {
+        virtual_text = {
+          virt_text_pos = 'eol',
+        },
+      }
+
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -129,7 +134,7 @@ return {
         zls = {
           server_capabilities = {
             semanticTokensProvider = vim.NIL,
-          }
+          },
         },
 
         vtsls = {
@@ -249,6 +254,10 @@ return {
 
         elixirls = {},
 
+        pyright = {},
+        mypy = {},
+        ruff = {},
+
         ocamllsp = {
           manual_install = true,
           cmd = { 'dune', 'exec', 'ocamllsp' },
@@ -306,6 +315,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'biome',
+        'gofumpt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

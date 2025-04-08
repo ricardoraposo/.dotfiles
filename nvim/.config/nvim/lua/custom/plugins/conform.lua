@@ -33,7 +33,7 @@ return { -- Autoformat
       formatters_by_ft = {
         lua = { 'stylua' },
         javascript = { 'prettierd', 'biome-check', stop_after_first = true },
-        typescript = { 'prettierd', 'biome-check', stop_after_first = true },
+        typescript = { 'biome-check', 'prettierd', stop_after_first = true },
         typescriptreact = { 'prettier', 'biome-check', stop_after_first = true },
         javascriptreact = { 'prettier', 'biome-check', stop_after_first = true },
         nix = { 'nixfmt' },
