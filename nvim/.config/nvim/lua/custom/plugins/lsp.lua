@@ -290,6 +290,8 @@ return {
 
         rescriptls = {},
 
+        ['sonarlint-language-server'] = {},
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
