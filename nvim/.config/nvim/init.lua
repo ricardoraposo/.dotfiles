@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.base46_cache = vim.fn.stdpath 'data' .. '/base46_cache/'
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -13,9 +14,19 @@ vim.opt.rtp:prepend(lazypath)
 
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  { import = 'custom.plugins' },
+  {
+    import = 'custom.plugins',
+  },
+  {
+    import = 'rick.plugins.gitsigns',
+  },
 }, {
   change_detection = {
     notify = false,
   },
 })
+
+dofile(vim.g.base46_cache .. 'defaults')
+dofile(vim.g.base46_cache .. 'treesitter')
+dofile(vim.g.base46_cache .. 'colors')
+dofile(vim.g.base46_cache .. 'syntax')

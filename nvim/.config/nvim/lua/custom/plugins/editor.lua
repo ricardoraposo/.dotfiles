@@ -31,23 +31,6 @@ return {
     opts = {},
   },
   { 'rcarriga/nvim-notify' },
-  { 'folke/tokyonight.nvim' },
-  { 'rebelot/kanagawa.nvim' },
-  {
-    '2nthony/vitesse.nvim',
-    dependencies = {
-      'tjdevries/colorbuddy.nvim',
-    },
-  },
-  {
-    'rose-pine/nvim',
-    as = 'rose-pine',
-    config = function()
-      vim.cmd.colorscheme 'kanagawa'
-    end,
-  },
-  { 'sainnhe/gruvbox-material' },
-  { 'felipeagc/fleet-theme-nvim' },
   {
     dir = '~/Projects/Repos/nightwolf.nvim',
   },

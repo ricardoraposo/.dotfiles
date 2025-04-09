@@ -18,7 +18,7 @@ return {
     local actions = require 'telescope.actions'
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = { 'node_modules', '.git', '.cache', '.DS_Store' },
+        file_ignore_patterns = { 'venv', 'node_modules', '.cache', '.DS_Store' },
         mappings = {
           i = {
             ['<C-y>'] = actions.select_default + actions.center,
@@ -50,7 +50,7 @@ return {
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("" for repeat)' })
     vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[ ] Find existing buffers' })
-    vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = 'Get colors' })
+    vim.keymap.set('n', '<leader>sc', require("nvchad.themes").open, { desc = 'Get colors' })
 
     vim.keymap.set('n', '<leader>sb', function()
       builtin.buffers(require('telescope.themes').get_ivy {
