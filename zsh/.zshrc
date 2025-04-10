@@ -45,12 +45,6 @@ if [[ "$(uname)" == "Linux" ]]; then
   # Add deno completions to search path
   if [[ ":$FPATH:" != *":/home/rick/.zsh/completions:"* ]]; then export FPATH="/home/rick/.zsh/completions:$FPATH"; fi
 
-  # The next line updates PATH for the Google Cloud SDK.
-  if [ -f '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-  # The next line enables shell command completion for gcloud.
-  if [ -f '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
   if test -d "$HOME/.datagrip"; then
     export PATH="$PATH:$HOME/.datagrip/bin"
     # export PATH="$PATH:$HOME/.zig"

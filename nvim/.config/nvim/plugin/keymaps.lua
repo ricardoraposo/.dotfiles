@@ -25,8 +25,8 @@ map('x', 'J', ":move '>+1<CR>gv-gv")
 map('x', 'K', ":move '<-2<CR>gv-gv")
 
 -- Better navigation
-map({ 'n', 'v', 'x' }, '{', '}')
-map({ 'n', 'v', 'x' }, '}', '{')
+-- map({ 'n', 'v', 'x' }, '{', '}')
+-- map({ 'n', 'v', 'x' }, '}', '{')
 
 -- Use of function row
 map('n', '<F1>', '<cmd>set nu!<CR>')

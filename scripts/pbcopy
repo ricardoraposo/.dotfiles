@@ -2,9 +2,11 @@
 
 set -eo pipefail
 if test -n "$SSH_TTY"; then
-	nc -q1 localhost 2224
+  nc -q1 localhost 2224
 elif test "$(uname)" = Darwin; then
-	/usr/bin/pbcopy
+  /usr/bin/pbcopy
+elif test "$(echo $XDG_SESSION_TYPE)" = wayland; then
+  wl-copy
 else
-	xsel --clipboard --input
+  xsel --clipboard --input
 fi

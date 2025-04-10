@@ -29,14 +29,14 @@
 }
 
 #workspaces {
-  color: @base02;
+  color: @base07;
   margin: 0 4px;
 }
 
 #workspaces button {
   margin: 4px 0;
   padding: 0 4px;
-  color: @base02;
+  color: @base05;
   background: transparent;
 }
 
@@ -109,7 +109,7 @@
 
 #window {
   font-family: 'JetBrains Mono', sans-serif;
-  color: @base02;
+  color: @base07;
   font-size: 14px;
   font-weight: 600;
 }
