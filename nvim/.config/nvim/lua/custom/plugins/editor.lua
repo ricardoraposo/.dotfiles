@@ -1,5 +1,9 @@
 return {
   { 'yioneko/nvim-vtsls' },
+  {
+    'dmmulroy/tsc.nvim',
+    opts = {},
+  },
   { 'rescript-lang/vim-rescript', ft = 'rescript' },
   {
     'folke/ts-comments.nvim',
@@ -31,7 +35,4 @@ return {
     opts = {},
   },
   { 'rcarriga/nvim-notify' },
-  {
-    dir = '~/Projects/Repos/nightwolf.nvim',
-  },
 }

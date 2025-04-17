@@ -161,8 +161,6 @@ return {
           },
         },
 
-        nil_ls = {},
-
         volar = {
           server_capabilities = {
             semanticTokensProvider = false,

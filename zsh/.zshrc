@@ -50,6 +50,11 @@ if [[ "$(uname)" == "Linux" ]]; then
     # export PATH="$PATH:$HOME/.zig"
   fi
 
+
+  if [ -f '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+  if [ -f '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
 elif [[ "$(uname)" == "Darwin" ]]; then
   # Add deno completions to search path
   if [[ ":$FPATH:" != *":/Users/ricardo/.zsh/completions:"* ]]; then export FPATH="/Users/ricardo/.zsh/completions:$FPATH"; fi
@@ -78,4 +83,3 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   autoload -Uz compinit
   . "/Users/ricardo/.deno/env"
 fi
-

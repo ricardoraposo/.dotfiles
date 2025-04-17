@@ -1,10 +1,10 @@
 shell-integration = zsh
 
-font-family = Input
-font-size = 13
+font-family = Hack
+font-size = 12
 
 adjust-cell-height = 5
-adjust-cell-width = -20%
+adjust-cell-width = -10%
 
 window-decoration = false
 window-padding-x = 3
@@ -13,6 +13,7 @@ window-save-state = always
 
 gtk-titlebar = false
 
+copy-on-select = clipboard
 confirm-close-surface = false
 clipboard-paste-protection = false
 

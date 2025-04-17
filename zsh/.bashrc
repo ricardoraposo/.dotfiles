@@ -6,3 +6,4 @@ alias or='export PORT=3001 && yarn start:dev'
 
 alias tm="tmux new -A -s ricardo"
 alias tk="tmux kill-server"
+. "$HOME/.cargo/env"

@@ -2,4 +2,6 @@
 
 nm-applet --indicator &
 waybar &
+wl-paste --watch clipman store &
+clipman &
 dunst
