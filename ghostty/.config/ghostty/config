@@ -1,10 +1,10 @@
 shell-integration = zsh
 
-font-family = Input
+font-family = SF Mono
 font-size = 16
 
 adjust-cell-height = 6
-adjust-cell-width = -20%
+adjust-cell-width = -10%
 
 window-decoration = false
 gtk-titlebar = false
