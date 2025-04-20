@@ -32,7 +32,7 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-        format_up = "Leaked IP: 192.420.6.969 (%speed)"
+        format_up = "E (%ip) %speed"
         format_down = ""
 }
 
