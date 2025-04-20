@@ -31,9 +31,6 @@ return {
     },
   },
   {
-    'gmr458/cold.nvim',
-  },
-  {
     'stevearc/dressing.nvim',
     opts = {},
   },
