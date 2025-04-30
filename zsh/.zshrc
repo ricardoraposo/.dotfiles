@@ -83,3 +83,6 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   autoload -Uz compinit
   . "/Users/ricardo/.deno/env"
 fi
+
+# Added by Windsurf
+export PATH="/Users/ricardo/.codeium/windsurf/bin:$PATH"
