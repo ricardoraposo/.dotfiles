@@ -35,4 +35,5 @@ return {
     opts = {},
   },
   { 'rcarriga/nvim-notify' },
+  { 'https://github.com/datsfilipe/min-theme.nvim' },
 }

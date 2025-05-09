@@ -56,6 +56,8 @@ alias dcr="docker container run"
 
 alias ku="kubectl"
 
+alias ws="windsurf"
+
 # git
 alias gw="git worktree"
 alias gwa="git worktree add"

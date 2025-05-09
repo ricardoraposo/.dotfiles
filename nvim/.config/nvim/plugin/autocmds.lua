@@ -13,6 +13,14 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = { '*.md' },
+  group = vim.api.nvim_create_augroup('wrap-markdown', { clear = true }),
+  callback = function()
+    vim.opt.wrap = true
+  end,
+})
+
 vim.api.nvim_create_autocmd('TermOpen', {
   group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
   callback = function()

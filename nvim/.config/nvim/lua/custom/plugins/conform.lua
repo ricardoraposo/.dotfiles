@@ -32,6 +32,8 @@ return { -- Autoformat
       },
       formatters_by_ft = {
         lua = { 'stylua' },
+        go = { 'goimports' },
+        sql = { 'sqlfmt' },
         javascript = { 'prettier', 'biome-check', stop_after_first = true },
         typescript = { 'biome-check', 'prettierd', stop_after_first = true },
         typescriptreact = { 'prettier', 'biome-check', stop_after_first = true },

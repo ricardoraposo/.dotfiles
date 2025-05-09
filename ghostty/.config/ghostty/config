@@ -1,6 +1,5 @@
 shell-integration = zsh
 
-font-family = SF Mono
 font-size = 16
 
 adjust-cell-height = 6
@@ -9,6 +8,7 @@ adjust-cell-width = -10%
 window-decoration = false
 gtk-titlebar = false
 
+copy-on-select = clipboard
 confirm-close-surface = false
 clipboard-paste-protection = false
 
@@ -20,4 +20,6 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = MaterialDarker
+theme = Kanagawa Wave
+
+custom-shader = ./shaders/better-crt.glsl
