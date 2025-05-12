@@ -34,6 +34,4 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
-  { 'rcarriga/nvim-notify' },
-  { 'https://github.com/datsfilipe/min-theme.nvim' },
 }

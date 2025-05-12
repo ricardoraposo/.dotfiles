@@ -20,6 +20,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = Kanagawa Wave
-
-custom-shader = ./shaders/better-crt.glsl
+theme = dark:GitHub-Dark-Dimmed,light:GitHub-Light-Default
