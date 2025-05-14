@@ -29,10 +29,15 @@ return { -- Autoformat
         biome_check = {
           require_cwd = true,
         },
+        gofumpt = {
+          command = 'gofumpt',
+          args = { '$FILENAME' },
+          stdin = false,
+        },
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'goimports' },
+        go = { 'goimports-reviser', 'gofumpt' },
         sql = { 'sqlfmt' },
         javascript = { 'prettier', 'biome-check', stop_after_first = true },
         typescript = { 'biome-check', 'prettierd', stop_after_first = true },

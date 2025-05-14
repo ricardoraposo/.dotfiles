@@ -1,0 +1,58 @@
+{
+  "editor.accessibilitySupport": "off",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80],
+  "editor.fontFamily": "'BCSMD', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+
+  "terminal.integrated.fontSize": 15,
+
+  "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "top",
+  "workbench.editor.showTabs": "none",
+
+  "editor.minimap.enabled": false,
+
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [" ", " "],
+      "after": ["<C-^>"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "t"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": "<C-c>",
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-c>"],
+      "after": ["<Esc>"]
+    }
+  ]
+}

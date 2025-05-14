@@ -34,4 +34,8 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
+  {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+  },
 }
