@@ -50,7 +50,7 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec ghostty
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -194,7 +194,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym --release Mod1+Shift+4 exec "scrot -s -f -e 'mv $f ~/Imagens && xclip -selection clipboard -t image/png -i $f'"
+bindsym --release Mod1+Shift+4 exec "scrot -s -f -e 'xclip -selection clipboard -t image/png -i $f'"
 
 bindsym $mod+z exec boomer
 
