@@ -1,7 +1,10 @@
 [font]
 size = 16
-offset = { x = 0, y = 2 }
-normal = { family = "Hack"}
+offset = { x = 0, y = 6 }
+normal = { family = "JetBrains Mono"}
 
 [window]
 decorations = "None"
+
+[colors.primary]
+background = '#111111'

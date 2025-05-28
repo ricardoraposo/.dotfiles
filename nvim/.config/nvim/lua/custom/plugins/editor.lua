@@ -35,9 +35,7 @@ return {
     opts = {},
   },
   {
-    'tjdevries/colorbuddy.nvim',
-    config = function()
-      vim.cmd.colorscheme 'gruvbuddy'
-    end,
+    'catppuccin/nvim',
+    as = 'catppuccin',
   },
 }
