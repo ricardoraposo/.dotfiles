@@ -50,7 +50,7 @@ alias pa="podman start -a"
 alias pr="podman run -it --hostname rickysthing --name rickyc"
 alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace"
 
-alias dc="docker-compose"
+alias dc="docker compose"
 alias dsp="docker system prune -af"
 alias dcr="docker container run"
 

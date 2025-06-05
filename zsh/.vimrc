@@ -10,7 +10,6 @@ call plug#begin('~/.local/share/vim/plugins')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'Everblush/everblush.vim'
   Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
@@ -64,7 +63,6 @@ set background=dark
 set t_Co=256
 
 set termguicolors
-colorscheme everblush
 
 " keymaps
 let mapleader=" "

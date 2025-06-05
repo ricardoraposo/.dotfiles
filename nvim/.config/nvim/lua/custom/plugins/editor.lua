@@ -1,6 +1,11 @@
 return {
   { 'yioneko/nvim-vtsls' },
   {
+    'davidmh/mdx.nvim',
+    config = true,
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  },
+  {
     'dmmulroy/tsc.nvim',
     opts = {},
   },

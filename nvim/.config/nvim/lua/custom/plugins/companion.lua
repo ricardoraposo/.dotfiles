@@ -52,7 +52,7 @@ M.opts = {
   gemini = {
     -- @see https://ai.google.dev/gemini-api/docs/models/gemini
     -- model = 'gemini-2.0-flash-thinking-exp-01-21',
-    model = 'gemini-2.5-pro-exp-03-25',
+    model = 'gemini-2.5-pro-preview-05-06',
     temperature = 0,
     max_tokens = 4096,
   },
