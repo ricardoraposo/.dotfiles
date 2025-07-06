@@ -49,12 +49,14 @@ M.opts = {
     auto_apply_diff_after_generation = false,
     support_paste_from_clipboard = false,
   },
-  gemini = {
-    -- @see https://ai.google.dev/gemini-api/docs/models/gemini
-    -- model = 'gemini-2.0-flash-thinking-exp-01-21',
-    model = 'gemini-2.5-pro-preview-05-06',
-    temperature = 0,
-    max_tokens = 4096,
+  providers = {
+    gemini = {
+      -- @see https://ai.google.dev/gemini-api/docs/models/gemini
+      -- model = 'gemini-2.0-flash-thinking-exp-01-21',
+      model = 'gemini-2.5-pro-preview-05-06',
+      temperature = 0,
+      max_tokens = 4096,
+    },
   },
 }
 

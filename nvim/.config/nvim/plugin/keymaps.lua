@@ -12,11 +12,12 @@ map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 map('t', '<esc>', '<C-\\><C-n>')
 map('n', '<leader>rt', ':15split | terminal ')
 
--- I'm stupid
+-- Quality of life
 map('i', '<C-c>', '<Esc>')
 map('n', '<leader><leader>', '<C-^>', { desc = 'Alternate files' })
 map('v', '<', '<gv')
 map('v', '>', '>gv')
+map('n', '<leader>o', 'ddO', { desc = 'Insert in current line, with correct identation' })
 
 -- Move text around
 map('v', '<S-j>', ':m .+1<CR>==')
@@ -43,6 +44,12 @@ map('n', '<M-Up>', '<cmd>resize +2<CR>')
 map('n', '<M-Down>', '<cmd>resize -2<CR>')
 map('n', '<M-Left>', '<cmd>vertical resize +2<CR>')
 map('n', '<M-Right>', '<cmd>vertical resize -2<CR>')
+
+-- Resize with arrows
+map('n', '<S-Up>', '<cmd>resize +2<CR>')
+map('n', '<S-Down>', '<cmd>resize -2<CR>')
+map('n', '<S-Left>', '<cmd>vertical resize +2<CR>')
+map('n', '<S-Right>', '<cmd>vertical resize -2<CR>')
 
 -- I like splits
 map('n', '<leader>vv', '<cmd>vsplit<CR>')

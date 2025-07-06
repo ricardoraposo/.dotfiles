@@ -1,21 +1,4 @@
 return {
-  { 'yioneko/nvim-vtsls' },
-  {
-    'davidmh/mdx.nvim',
-    config = true,
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  },
-  {
-    'dmmulroy/tsc.nvim',
-    opts = {},
-  },
-  { 'rescript-lang/vim-rescript', ft = 'rescript' },
-  {
-    'folke/ts-comments.nvim',
-    opts = {},
-    event = 'VeryLazy',
-    enabled = vim.fn.has 'nvim-0.10.0' == 1,
-  },
   {
     'supermaven-inc/supermaven-nvim',
     config = function()
@@ -40,7 +23,36 @@ return {
     opts = {},
   },
   {
-    'catppuccin/nvim',
-    as = 'catppuccin',
+    'tjdevries/colorbuddy.nvim',
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000,
+    config = function()
+      require('gruvbox').setup {
+        terminal_colors = true,
+        undercurl = true,
+        underline = true,
+        bold = false,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        inverse = true, -- invert background for search, diffs, statuslines and errors
+        contrast = 'hard', -- can be "hard", "soft" or empty string
+        palette_overrides = {},
+        overrides = {},
+        dim_inactive = false,
+        transparent_mode = false,
+      }
+      vim.cmd 'colorscheme gruvbox'
+    end,
   },
 }

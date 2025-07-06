@@ -25,7 +25,3 @@ disabled = true
 
 [directory]
 style = 'bold bright-cyan'
-
-[nix_shell]
-symbol = '❄️'
-impure_msg = ''

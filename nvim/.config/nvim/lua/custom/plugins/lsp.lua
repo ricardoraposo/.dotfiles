@@ -140,16 +140,6 @@ return {
         },
 
         vtsls = {
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = require('mason-registry').get_package('vue-language-server'):get_install_path(),
-                languages = { 'vue' },
-              },
-            },
-          },
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           server_capabilities = {
             documentFormattingProvider = false,
             semanticTokensProvider = vim.NIL,
@@ -159,18 +149,6 @@ return {
               preferences = {
                 importModuleSpecifier = 'non-relative',
               },
-            },
-          },
-        },
-
-        volar = {
-          server_capabilities = {
-            semanticTokensProvider = false,
-          },
-          filetypes = { 'vue' },
-          init_options = {
-            vue = {
-              hybridMode = false,
             },
           },
         },
@@ -252,7 +230,11 @@ return {
 
         docker_compose_language_service = {},
 
-        elixirls = {},
+        -- elixirls = {},
+        lexical = {
+          cmd = { '/Users/ricardo/.local/share/nvim/mason/bin/lexical', 'server' },
+          root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
+        },
 
         pyright = {},
         mypy = {},
@@ -330,37 +312,6 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
-        },
-      }
-
-      require('lspconfig').ocamllsp.setup {
-        capabilities = capabilities,
-        manual_install = true,
-        cmd = { 'dune', 'exec', 'ocamllsp' },
-        server_capabilities = {
-          semanticTokensProvider = false,
-        },
-        settings = {
-          codelens = { enable = true },
-          inlayHints = { enable = true },
-          syntaxDocumentation = { enable = true },
-        },
-
-        get_language_id = function(_, lang)
-          local map = {
-            ['ocaml.mlx'] = 'ocaml',
-          }
-          return map[lang] or lang
-        end,
-
-        filetypes = {
-          'ocaml',
-          'ocaml.interface',
-          'ocaml.menhir',
-          'ocaml.cram',
-          'ocaml.mlx',
-          'ocaml.ocamllex',
-          'reason',
         },
       }
     end,
