@@ -19,6 +19,24 @@ freaking_files () {
   ulimit -f unlimited
 }
 
+get_aws_secret() {
+  local secret_id="$1"
+
+  sed -i '' '/^AWS_ACCESS_KEY_ID/d; /^AWS_SECRET_ACCESS_KEY/d' .env
+
+  rm -f .envrc.custom
+
+  direnv reload
+
+  aws secretsmanager get-secret-value --secret-id "$secret_id" --query SecretString --output text |
+  jq -r 'to_entries | map("\(.key)=\(.value|tostring)") | .[]' >> .envrc.custom
+
+  echo 'AWS_ACCESS_KEY_ID="<secret>"' >> .env
+  echo 'AWS_SECRET_ACCESS_KEY="<secret>"' >> .env
+
+  direnv reload
+}
+
 alias v="nvim"
 alias vim="nvim"
 

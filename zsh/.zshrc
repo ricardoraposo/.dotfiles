@@ -1,6 +1,6 @@
 eval "$(starship init zsh)"
 
-plugins=(git vi-mode)
+plugins=(git vi-mode direnv)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 source $HOME/.zsh_profile
@@ -15,7 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
 
-export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$PATH"
+export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$HOME/Projects/Work/machado/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
