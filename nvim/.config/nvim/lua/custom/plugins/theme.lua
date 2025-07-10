@@ -30,7 +30,8 @@ return {
         bold = false,
         contrast = 'hard',
       }
-      vim.cmd 'colorscheme gruvbox'
+      vim.cmd 'colorscheme hybrid'
     end,
   },
+  { 'HoNamDuong/hybrid.nvim' },
 }

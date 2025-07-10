@@ -1,6 +1,11 @@
 #!/bin/bash
+OS=$(uname)
 
-BATT=$(pmset -g batt | grep -o "[0-9]\+%" | grep -o "[0-9]\+")
+if [[ $OS == "Darwin" ]]; then
+  BATT=$(pmset -g batt | grep -o "[0-9]\+%" | grep -o "[0-9]\+")
+elif [[ $OS == "Linux" ]]; then
+  BATT=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage' | grep -o '[0-9]\+')
+fi
 
 if [[ ! -z $BATT ]]; then
   [ $BATT -gt 20 ] && echo "🔋$BATT%" || echo "🪫$BATT%"
