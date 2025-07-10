@@ -1,6 +1,6 @@
 shell-integration = zsh
 
-font-family = BCSMD
+font-family = Comic Code Ligatures
 font-size = 14
 font-thicken = true
 font-thicken-strength = 110

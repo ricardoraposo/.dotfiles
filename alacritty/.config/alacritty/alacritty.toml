@@ -1,7 +1,7 @@
 [font]
-size = 16
+size = 14
 offset = { x = 0, y = 6 }
-normal = { family = "Hack"}
+normal = { family = "Monaco"}
 
 [window]
 decorations = "None"
