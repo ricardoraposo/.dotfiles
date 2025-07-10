@@ -208,7 +208,7 @@ exec_always --no-startup-id xset r rate 150 60
 
 exec_always --no-startup-id picom
 
-exec --no-startup-id xrandr --output DisplayPort-2 --auto --right-of HDMI-A-0
+exec --no-startup-id xrandr --output DP-1 --auto --right-of eDP-2
 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 

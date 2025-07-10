@@ -11,12 +11,30 @@ c() {
   [[ ! -z $DIR ]] && cd $DIR
 }
 
-freaking_files () {
+freaking_files() {
   echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
   echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
   sudo sysctl -w kern.maxfiles=65536
   sudo sysctl -w kern.maxfilesperproc=65536
   ulimit -f unlimited
+}
+
+get_aws_secret() {
+  local secret_id="$1"
+
+  sed -i '/^AWS_ACCESS_KEY_ID/d;/^AWS_SECRET_ACCESS_KEY/d' .env
+
+  rm -f .envrc.custom
+
+  direnv reload
+
+  aws secretsmanager get-secret-value --secret-id "$secret_id" --query SecretString --output text |
+  jq -r 'to_entries | map("\(.key)=\"\(.value|tostring)\"") | .[]' >> .envrc.custom
+
+  echo 'AWS_ACCESS_KEY_ID="<secret>"' >> .env
+  echo 'AWS_SECRET_ACCESS_KEY="<secret>"' >> .env
+
+  direnv reload
 }
 
 alias v="nvim"
@@ -38,35 +56,19 @@ alias tm="tmux new -A -s ricardo"
 alias tk="tmux kill-server"
 alias kn="killall node"
 
-# npm aliases
-alias cy="npm run cy"
-alias li="npm run lint"
-alias t="npm run test"
-alias d="npm run dev"
-alias yb="yarn prisma:generate && yarn start:dev"
-
 # podman aliases
 alias pa="podman start -a"
 alias pr="podman run -it --hostname rickysthing --name rickyc"
 alias prws="podman run -it --hostname rickysubu --name rickyc ghcr.io/ricardoraposo/ricky-workspace"
 
+alias d="docker"
 alias dc="docker compose"
 alias dsp="docker system prune -af"
 alias dcr="docker container run"
 
-alias ku="kubectl"
-
-alias ws="windsurf"
-
-# git
-alias gw="git worktree"
-alias gwa="git worktree add"
-alias gwr="git worktree remove"
-alias gwl="git worktree list"
+alias k="kubectl"
 
 alias unfuck='git reset HEAD~1 --soft'
-alias fr='export PORT=3000 && pnpm dev'
-alias or='export PORT=3001 && yarn start:dev'
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
