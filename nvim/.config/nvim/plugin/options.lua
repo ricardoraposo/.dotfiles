@@ -3,6 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 vim.g.omni_sql_no_default_maps = 1
 
+vim.opt.syntax = 'on'
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,7 +24,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.wrap = false
-vim.opt.colorcolumn = '80,120'
+-- vim.opt.colorcolumn = '80,120'
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
@@ -36,3 +37,5 @@ vim.opt.laststatus = 0
 vim.opt.showmode = true
 vim.opt.ru = true
 vim.opt.ruf = "%80(%=  %#@variable#%.50F %m[%{&ft}]%)"
+
+vim.cmd.colorscheme 'gruvbox'

@@ -22,8 +22,4 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
-  {
-    'mluders/comfy-line-numbers.nvim',
-    opts = {},
-  },
 }
