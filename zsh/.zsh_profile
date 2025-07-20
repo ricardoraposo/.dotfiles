@@ -19,7 +19,26 @@ freaking_files() {
   ulimit -f unlimited
 }
 
+alias env_sandbox="export AWS_PROFILE=arvore-stg && 
+    aws eks update-kubeconfig \
+    --name arvore-stg-eks \
+    --region=us-east-1 && \
+    kubectl config set-context arn:aws:eks:us-east-1:809970906859:cluster/arvore-stg-eks \
+    --namespace=prod"
+
+alias env_prod="export AWS_PROFILE=arvore-prd && \
+    aws eks update-kubeconfig \
+    --name arvore-prd-eks \
+    --region=us-east-1 && \
+    kubectl config \
+    set-context arn:aws:eks:us-east-1:974631838055:cluster/arvore-prd-eks"
+
+alias load_stg="export PROFILE=staging && direnv reload"
+alias load_prd="export PROFILE=production && direnv reload"
+alias load_none="export PROFILE='' && direnv reload"
+
 alias v="nvim"
+alias vim="nvim"
 
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
@@ -55,3 +74,5 @@ bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v^M"
 bindkey -s ^F "fd^M"
+
+

@@ -153,18 +153,22 @@ return {
           },
         },
 
+        graphql = {},
+
+        terraform = {},
+
         svelte = {},
 
-        biome = {
-          on_init = function(client)
-            local util = require 'lspconfig.util'
-            local biome = util.root_pattern 'biome.json'(vim.fn.getcwd())
-            if not biome then
-              client.stop()
-              return
-            end
-          end,
-        },
+        -- biome = {
+        --   on_init = function(client)
+        --     local util = require 'lspconfig.util'
+        --     local biome = util.root_pattern 'biome.json'(vim.fn.getcwd())
+        --     if not biome then
+        --       client.stop()
+        --       return
+        --     end
+        --   end,
+        -- },
 
         eslint = {
           on_init = function(client)
