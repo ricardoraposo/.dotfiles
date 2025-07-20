@@ -36,4 +36,5 @@ return {
   },
   { 'HoNamDuong/hybrid.nvim' },
   { 'rebelot/kanagawa.nvim' },
+  { 'cocopon/iceberg.vim' },
 }

@@ -38,6 +38,7 @@ map('n', '<F5>', '<cmd>set wrap!<CR>')
 
 -- terminal integration
 map('n', '<leader>tf', '!!turnFunction<CR>')
+map('n', '<leader>p', 'i|>')
 
 -- Resize with arrows
 map('n', '<M-Up>', '<cmd>resize +2<CR>')
