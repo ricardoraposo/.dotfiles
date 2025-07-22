@@ -37,10 +37,10 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end,
 })
 
-vim.api.nvim_create_autocmd('VimEnter', {
-  group = vim.api.nvim_create_augroup('no-neck-pain', { clear = true }),
-  callback = function() vim.cmd("NoNeckPain") end,
-})
+-- vim.api.nvim_create_autocmd('VimEnter', {
+--   group = vim.api.nvim_create_augroup('no-neck-pain', { clear = true }),
+--   callback = function() vim.cmd("NoNeckPain") end,
+-- })
 
 -- stuff
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]

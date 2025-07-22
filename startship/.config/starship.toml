@@ -20,8 +20,8 @@ $character"""
 [gcloud]
 disabled = false
 
-[aws]
-disabled = true
+# [aws]
+# disabled = true
 
 [directory]
 style = 'bold bright-cyan'
