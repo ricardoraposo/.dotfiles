@@ -19,6 +19,16 @@ freaking_files() {
   ulimit -f unlimited
 }
 
+f() {
+  if [[ -z $1 ]]; then return 1; fi
+  ssh -O forward -L $1\:localhost:$1 arvore
+}
+
+fq() {
+  if [[ -z $1 ]]; then return 1; fi
+  ssh -O cancel -L $1\:localhost:$1 arvore
+}
+
 alias env_sandbox="export AWS_PROFILE=arvore-stg && 
     aws eks update-kubeconfig \
     --name arvore-stg-eks \
@@ -74,5 +84,3 @@ bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v^M"
 bindkey -s ^F "fd^M"
-
-
