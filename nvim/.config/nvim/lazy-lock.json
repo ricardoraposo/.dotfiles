@@ -22,6 +22,7 @@
   "mason.nvim": { "branch": "main", "commit": "8024d64e1330b86044fed4c8494ef3dcd483a67c" },
   "mini.icons": { "branch": "main", "commit": "94848dad1589a199f876539bd79befb0c5e3abf0" },
   "mini.nvim": { "branch": "main", "commit": "48f48e4b3f317e9da34ee7a01958b4c5018e2d34" },
+  "nightwolf.nvim": { "branch": "main", "commit": "727ff3d862c3ab2cb5b71ccd16bcbbaf870284e5" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "0b6e82a6f1db9ff0b694df2a8e3bd3f7828a3958" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-autopairs": { "branch": "master", "commit": "23320e75953ac82e559c610bec5a90d9c6dfa743" },

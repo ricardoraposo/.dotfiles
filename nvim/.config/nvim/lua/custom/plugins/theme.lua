@@ -24,13 +24,6 @@ return {
     'ellisonleao/gruvbox.nvim',
     opts = {
       bold = false,
-      italic = {
-        strings = false,
-        emphasis = false,
-        comments = false,
-        operators = false,
-        folds = false,
-      },
       contrast = 'hard',
     },
   },
@@ -38,4 +31,10 @@ return {
   { 'rebelot/kanagawa.nvim' },
   { 'cocopon/iceberg.vim' },
   { 'ricardoraposo/gruvbox-minor.nvim' },
+  {
+    'ricardoraposo/nightwolf.nvim',
+    opts = {
+      italic = false,
+    }
+  },
 }
