@@ -1,12 +1,11 @@
 shell-integration = zsh
 
-font-family = Ubuntu Mono
-font-size = 16
+font-size = 14
 font-thicken = true
-font-thicken-strength = 110
+font-thicken-strength = 200
 
-adjust-cell-height = 6
-adjust-cell-width = -0%
+adjust-cell-height = 3
+adjust-cell-width = -10%
 
 window-decoration = false
 gtk-titlebar = false
@@ -23,4 +22,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = iceberg-dark
+theme = nightwolf-dark-gray
