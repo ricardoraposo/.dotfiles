@@ -22,4 +22,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = nightwolf-dark-gray
+theme = catppuccin-macchiato

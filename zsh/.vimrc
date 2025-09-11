@@ -1,17 +1,17 @@
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
 
-call plug#begin('~/.local/share/vim/plugins')
-  Plug 'tpope/vim-commentary'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'christoomey/vim-tmux-navigator'
-call plug#end()
+" call plug#begin('~/.local/share/vim/plugins')
+" Plug 'tpope/vim-commentary'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'christoomey/vim-tmux-navigator'
+" call plug#end()
 
 set path+=**
 set autowrite
@@ -52,11 +52,11 @@ set shortmess-=S
 set colorcolumn=80
 set clipboard^=unnamed,unnamedplus
 
-syntax on
+" syntax on
 
  " This is only necessary if you use "set termguicolors".
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
  " fixes glitch? in colors when using vim with tmux
 set background=dark
@@ -65,9 +65,9 @@ set t_Co=256
 set termguicolors
 
 " keymaps
-let mapleader=" "
+" let mapleader=" "
 
-let g:tmux_navigator_no_mappings = 1
+" let g:tmux_navigator_no_mappings = 1
 
 nnoremap G Gzz
 nnoremap <C-c> <esc>
@@ -77,10 +77,10 @@ nnoremap <C-f> :GitFiles<CR>
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-nnoremap <silent> <C-l> :<C-U>TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :<C-U>TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :<C-U>TmuxNavigateUp<cr>
-nnoremap <silent> <C-h> :<C-U>TmuxNavigateRight<cr>
+"nnoremap <silent> <C-l> :<C-U>TmuxNavigateLeft<cr>
+"nnoremap <silent> <C-j> :<C-U>TmuxNavigateDown<cr>
+"nnoremap <silent> <C-k> :<C-U>TmuxNavigateUp<cr>
+"nnoremap <silent> <C-h> :<C-U>TmuxNavigateRight<cr>
 
 " Human error
 command! Wq wq
@@ -89,20 +89,3 @@ command! Q q
 
 " autocmds
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" golang stuff
-let g:go_fmt_command = 'goimports'
-let g:go_fmt_autosave = 1
-let g:go_fmt_fail_silently = 0
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_diagnostic_errors = 1
-let g:go_highlight_diagnostic_warnings = 1
-let g:go_auto_sameids = 0

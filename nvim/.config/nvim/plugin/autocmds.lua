@@ -46,7 +46,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 vim.cmd [[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]]
 
 -- js
-vim.cmd [[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>al yiwoconsole.log('<esc>pa: ', <esc>pa);<esc>]]
+vim.cmd [[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>al yiwoconsole.log('<esc>pa: ', <esc>pa)<esc>]]
 vim.cmd [[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>ec yiwGo<CR>export default ;<esc>hp]]
 vim.cmd [[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>em yiwGo<CR>module.exports = ;<esc>hp]]
 vim.cmd [[au FileType typescript,typescriptreact,javascript,javascriptreact nmap <leader>crc !!basename %:r<CR><leader>tfw<leader>ecggo]]
@@ -61,3 +61,6 @@ vim.cmd [[au FileType go set expandtab]]
 vim.cmd [[au FileType go nmap <leader>al yiwofmt.Println(<esc>pa)<esc>]]
 vim.cmd [[au FileType go nmap <leader>ge <cmd>GoIfErr<CR>]]
 vim.cmd [[au FileType go nmap <leader>gt <cmd>GoTagAdd<CR>]]
+
+-- elixit
+vim.cmd [[au FileType elixir nmap <leader>al yiwoIO.inspect(<esc>pa)<esc>]]

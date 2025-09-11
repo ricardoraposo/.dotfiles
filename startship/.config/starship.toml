@@ -11,6 +11,7 @@ $golang\
 $nodejs\
 $rust\
 $elixir\
+$kubernetes\
 $python\
 $ocaml\
 $cmd_duration $jobs $time\
