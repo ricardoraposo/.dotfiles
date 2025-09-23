@@ -1,6 +1,6 @@
 shell-integration = zsh
 
-font-size = 14
+font-size = 10
 font-thicken = true
 font-thicken-strength = 200
 
@@ -22,4 +22,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = catppuccin-macchiato
+theme = GitHub-Dark-Dimmed

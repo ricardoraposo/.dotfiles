@@ -38,4 +38,4 @@ vim.opt.showmode = true
 vim.opt.ru = true
 vim.opt.ruf = "%80(%=  %#@variable#%.50F %m[%{&ft}]%)"
 
-vim.cmd.colorscheme 'catppuccin-macchiato'
+vim.cmd.colorscheme 'github_dark_dimmed'

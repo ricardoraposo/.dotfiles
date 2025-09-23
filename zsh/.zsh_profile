@@ -49,6 +49,7 @@ alias load_none="export PROFILE='' && direnv reload"
 
 alias v="nvim"
 alias vim="nvim"
+alias ca="cursor-agent"
 
 # terminal commands aliases
 alias sc="cd $SCRIPTS"

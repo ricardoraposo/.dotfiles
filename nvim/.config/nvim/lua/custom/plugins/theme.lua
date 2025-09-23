@@ -37,6 +37,7 @@ return {
   },
   { 'Mofiqul/vscode.nvim' },
   { 'joshdick/onedark.vim' },
+  { 'projekt0n/github-nvim-theme' },
 }
 
 -- 'nvim-lua/plenary.nvim',
