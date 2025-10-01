@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "Linear": {
+      "url": "https://mcp.linear.app/sse",
+      "headers": {}
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", ""],
+      "env": {},
+      "disabled": false,
+      "autoApprove": ["resolve-library-id", "get-library-docs"]
+    },
+    "Notion": {
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_TOKEN}",
+        "ghcr.io/github/github-mcp-server",
+        "stdio"
+      ],
+      "env": {}
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "slack-mcp-server@latest", "--transport", "stdio"],
+      "env": {
+        "SLACK_MCP_XOXP_TOKEN": "${SLACK_MCP_TOKEN}",
+        "SLACK_MCP_ADD_MESSAGE_TOOL": "true",
+        "SLACK_MCP_USERS_CACHE": "~/slack-mcp/.users_cache.json",
+        "SLACK_MCP_CHANNELS_CACHE": "~/slack-mcp/.channels_cache_v2.json"
+      }
+    }
+  }
+}

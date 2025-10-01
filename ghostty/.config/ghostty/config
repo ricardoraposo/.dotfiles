@@ -1,6 +1,5 @@
 shell-integration = zsh
 
-font-family = Iosevka Medium
 font-size = 11
 font-thicken = true
 font-thicken-strength = 200
@@ -23,4 +22,4 @@ keybind = alt+v=paste_from_clipboard
 keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
-theme = GitHub-Dark-Dimmed
+theme = GitHub Dark Dimmed
