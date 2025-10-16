@@ -2,7 +2,7 @@ return {
   'lukas-reineke/indent-blankline.nvim',
   enabled = false,
   main = 'ibl',
-  ft = { 'python' },
+  ft = { 'python', 'json', 'yaml', 'markdown', 'toml' },
   config = function()
     local hooks = require 'ibl.hooks'
 

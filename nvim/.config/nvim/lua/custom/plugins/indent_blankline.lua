@@ -4,5 +4,5 @@ return {
   opts = {
     scope = { enabled = false },
   },
-  ft = { 'python' },
+  ft = { 'python', 'json', 'yaml', 'markdown', 'toml' },
 }

@@ -1,0 +1,27 @@
+{
+  "amp.mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.linear.app/sse"
+      ]
+    },
+    "slack": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "slack-mcp-server@latest",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "SLACK_MCP_XOXP_TOKEN": "token",
+        "SLACK_MCP_ADD_MESSAGE_TOOL": "true",
+        "SLACK_MCP_USERS_CACHE": "~/slack-mcp/.users_cache.json",
+        "SLACK_MCP_CHANNELS_CACHE": "~/slack-mcp/.channels_cache_v2.json"
+      }
+    }
+  },
+  "amp.dangerouslyAllowAll": true
+}

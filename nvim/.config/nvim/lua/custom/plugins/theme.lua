@@ -27,7 +27,6 @@ return {
       no_bold = true,
     },
   },
-  { 'nickkadutskyi/jb.nvim' },
   {
     'ricardoraposo/nightwolf.nvim',
     opts = {
@@ -35,9 +34,16 @@ return {
       italic = false,
     },
   },
-  { 'Mofiqul/vscode.nvim' },
   { 'joshdick/onedark.vim' },
   { 'projekt0n/github-nvim-theme' },
+  {
+    {
+      '2nthony/vitesse.nvim',
+      dependencies = {
+        'tjdevries/colorbuddy.nvim',
+      },
+    },
+  },
 }
 
 -- 'nvim-lua/plenary.nvim',
