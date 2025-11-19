@@ -67,6 +67,9 @@ alias tm="tmux new -A -s ricardo"
 alias tk="tmux kill-server"
 alias kn="killall node"
 
+# vpn
+alias p="pritunl-client"
+
 # podman aliases
 alias pa="podman start -a"
 alias pr="podman run -it --hostname rickysthing --name rickyc"

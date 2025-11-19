@@ -20,6 +20,9 @@ require('lazy').setup({
   {
     import = 'rick.plugins.gitsigns',
   },
+  rocks = {
+    enable = false,
+  }
 }, {
   change_detection = {
     notify = false,

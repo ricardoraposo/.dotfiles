@@ -14,7 +14,9 @@ export DOTNET_ROOT=/usr/local/share/dotnet
 export GOPATH="$HOME/.local/bin/go"
 export TREE_PATH="$HOME/Projects/Work"
 
+# export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$HOME/.local/bin/lua-5.4.8/src:$PATH"
 export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$PATH"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -61,3 +63,6 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   # initialise completions with ZSH's compinit
   autoload -Uz compinit && compinit
 fi
+
+# opencode
+export PATH=/home/rick-arvore/.opencode/bin:$PATH
