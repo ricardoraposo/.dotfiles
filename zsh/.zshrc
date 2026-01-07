@@ -40,9 +40,9 @@ if [[ "$(uname)" == "Linux" ]]; then
 
 elif [[ "$(uname)" == "Darwin" ]]; then
   # The next line updates PATH for the Google Cloud SDK.
-  if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi
+  # if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi
   # The next line enables shell command completion for gcloud.
-  if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/completion.zsh.inc'; fi
+  # if [ -f '/Users/ricardo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/completion.zsh.inc'; fi
 
   # opam configuration
   [[ ! -r /Users/ricardo/.opam/opam-init/init.zsh ]] || source /Users/ricardo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
@@ -66,3 +66,9 @@ fi
 
 # opencode
 export PATH=/home/rick-arvore/.opencode/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/ricardo/.opencode/bin:$PATH

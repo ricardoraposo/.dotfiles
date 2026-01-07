@@ -1,6 +1,6 @@
 shell-integration = zsh
 
-font-family = Comic Code Ligatures
+font-family = Menlo
 font-size = 12
 font-thicken = true
 font-thicken-strength = 200
@@ -23,4 +23,3 @@ keybind = alt+c=copy_to_clipboard
 keybind = option+c=text:ç
 
 theme = vscode-dark
-keybind = shift+enter=text:\x1b\r

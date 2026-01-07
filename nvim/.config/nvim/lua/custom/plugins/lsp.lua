@@ -131,13 +131,13 @@ return {
 
         yamlls = {},
 
-        rust_analyzer = {},
+        -- rust_analyzer = {},
 
-        zls = {
-          server_capabilities = {
-            semanticTokensProvider = vim.NIL,
-          },
-        },
+        -- zls = {
+        --   server_capabilities = {
+        --     semanticTokensProvider = vim.NIL,
+        --   },
+        -- },
 
         vtsls = {
           server_capabilities = {
@@ -155,9 +155,9 @@ return {
 
         graphql = {},
 
-        terraform = {},
+        -- terraform = {},
 
-        svelte = {},
+        -- svelte = {},
 
         -- biome = {
         --   on_init = function(client)
@@ -170,16 +170,16 @@ return {
         --   end,
         -- },
 
-        eslint = {
-          on_init = function(client)
-            local util = require 'lspconfig.util'
-            local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json')(vim.fn.getcwd())
-            if not eslintrc then
-              client.stop()
-              return
-            end
-          end,
-        },
+        -- eslint = {
+        --   on_init = function(client)
+        --     local util = require 'lspconfig.util'
+        --     local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json')(vim.fn.getcwd())
+        --     if not eslintrc then
+        --       client.stop()
+        --       return
+        --     end
+        --   end,
+        -- },
 
         html = {},
 
@@ -234,15 +234,14 @@ return {
 
         docker_compose_language_service = {},
 
-        -- elixirls = {},
         lexical = {
           cmd = { '/Users/ricardo/.local/share/nvim/mason/bin/lexical', 'server' },
           root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
         },
 
-        pyright = {},
-        mypy = {},
-        ruff = {},
+        -- pyright = {},
+        -- mypy = {},
+        -- ruff = {},
 
         -- ocamllsp = {
         --   manual_install = true,
@@ -274,7 +273,7 @@ return {
         --   },
         -- },
 
-        rescriptls = {},
+        -- rescriptls = {},
 
         lua_ls = {
           -- cmd = {...},

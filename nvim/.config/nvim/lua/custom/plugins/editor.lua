@@ -22,6 +22,11 @@ return {
     'stevearc/dressing.nvim',
     opts = {},
   },
+  {
+    'esmuellert/vscode-diff.nvim',
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    cmd = 'CodeDiff',
+  },
   -- {
   --   'sahaj-b/brainrot.nvim',
   --   event = 'VeryLazy',

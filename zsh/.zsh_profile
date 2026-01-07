@@ -50,6 +50,7 @@ alias load_none="export PROFILE='' && direnv reload"
 alias v="nvim"
 alias vim="nvim"
 alias ca="cursor-agent"
+alias cu="cursor"
 
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
@@ -61,6 +62,7 @@ alias chmox="chmod +x"
 alias ls="eza -lh"
 alias lg="lazygit"
 alias pn="pnpm"
+alias pcmd="cat package.json| jq -r '.scripts'"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
@@ -83,6 +85,8 @@ alias dcr="docker container run"
 alias k="kubectl"
 
 alias unfuck='git reset HEAD~1 --soft'
+
+alias s="kitten ssh"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
