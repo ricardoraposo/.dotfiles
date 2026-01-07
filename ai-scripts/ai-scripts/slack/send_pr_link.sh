@@ -3,14 +3,14 @@
 set -e
 
 if [ "$#" -lt 3 ]; then
-  echo "Usage: $0 <PR_LINK> <LINEAR_LINK> <LINEAR_TASK_NAME> [CHANNEL_ID]"
+  echo "Usage: $0 <PR_LINK> <TASK_LINK> <TASK_NAME> [CHANNEL_ID]"
   echo "Example: $0 https://github.com/org/repo/pull/123 https://linear.app/task/EXP-123 'EXP-123: Task Title'"
   exit 1
 fi
 
 PR_LINK="$1"
-LINEAR_LINK="$2"
-LINEAR_TASK="$3"
+TASK_LINK="$2"
+TASK_NAME="$3"
 CHANNEL_ID="${4:-C07US58UC1Z}"
 
 SLACK_TOKEN=${SLACK_MCP_TOKEN}
@@ -20,7 +20,7 @@ if [ -z "$SLACK_TOKEN" ]; then
   exit 1
 fi
 
-MESSAGE="👉 <${PR_LINK}|PR> para <${LINEAR_LINK}|${LINEAR_TASK}>"
+MESSAGE="👉 <${PR_LINK}|PR> para <${TASK_LINK}|${TASK_NAME}>"
 
 RESPONSE=$(curl -s -X POST https://slack.com/api/chat.postMessage \
   -H "Authorization: Bearer ${SLACK_TOKEN}" \
