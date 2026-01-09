@@ -34,5 +34,8 @@ for TS in "${TIMESTAMPS[@]}"; do
   RESULTS+=("$RESULT")
 done
 
-echo "${RESULTS[@]}" | jq -s '.'
-
+if [ "${#RESULTS[@]}" -eq "${#TIMESTAMPS[@]}" ]; then
+  exit 0
+else
+  exit 1
+fi
