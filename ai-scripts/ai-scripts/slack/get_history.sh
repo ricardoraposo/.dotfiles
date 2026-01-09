@@ -22,7 +22,7 @@ RESPONSE=$(curl -s -X GET "https://slack.com/api/conversations.history?channel=$
   -H "Authorization: Bearer ${SLACK_TOKEN}" \
   -H "Content-Type: application/x-www-form-urlencoded")
 
-echo "$RESPONSE" | jq
+echo "$RESPONSE" | jq '{ok, messages: [.messages[] | {user, ts, text}]}'
 
 if echo "$RESPONSE" | jq -e '.ok == true' > /dev/null; then
   MESSAGE_COUNT=$(echo "$RESPONSE" | jq '.messages | length')
