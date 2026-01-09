@@ -20,12 +20,13 @@ QUERY=$(cat <<EOF
 EOF
 )
 
-curl -X POST \
+RESPONSE=$(curl -s -X POST \
   -H "Content-Type: application/json" \
   -H "Authorization: $LINEAR_API_KEY" \
   --data "$QUERY" \
-  https://api.linear.app/graphql
+  https://api.linear.app/graphql)
 
+echo "$RESPONSE" | jq '.data.issue'
 
 
 
