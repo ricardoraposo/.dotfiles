@@ -72,3 +72,6 @@ export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
 
 # opencode
 export PATH=/Users/ricardo/.opencode/bin:$PATH
+
+# Added by Antigravity
+export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
