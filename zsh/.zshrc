@@ -23,20 +23,27 @@ export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/loca
 if [[ "$(uname)" == "Linux" ]]; then
   export DOCKER_HOST=unix:///var/run/docker.sock
 
-  # Add deno completions to search path
-  if [[ ":$FPATH:" != *":/home/rick/.zsh/completions:"* ]]; then export FPATH="/home/rick/.zsh/completions:$FPATH"; fi
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+  autoload -Uz compinit && compinit
+
 
   if test -d "$HOME/.datagrip"; then
     export PATH="$PATH:$HOME/.datagrip/bin"
   fi
 
+  if [[ "$USER" == "rick" ]]; then
+    if [ -f '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+    if [ -f '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-  if [ -f '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-  if [ -f '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rick/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+    # Add deno completions to search path
+    if [[ ":$FPATH:" != *":/home/rick/.zsh/completions:"* ]]; then export FPATH="/home/rick/.zsh/completions:$FPATH"; fi
+  fi
 
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-  autoload -Uz compinit && compinit
+  if [[ "$USER" == "rick-arvore" ]]; then
+    # opencode
+    export PATH="/home/rick-arvore/.opencode/bin:$PATH"
+  fi
 
 elif [[ "$(uname)" == "Darwin" ]]; then
   # The next line updates PATH for the Google Cloud SDK.
@@ -62,16 +69,7 @@ elif [[ "$(uname)" == "Darwin" ]]; then
 
   # initialise completions with ZSH's compinit
   autoload -Uz compinit && compinit
+
+  # Added by Antigravity
+  export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
 fi
-
-# opencode
-export PATH=/home/rick-arvore/.opencode/bin:$PATH
-
-# Added by Antigravity
-export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
-
-# opencode
-export PATH=/Users/ricardo/.opencode/bin:$PATH
-
-# Added by Antigravity
-export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
