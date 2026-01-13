@@ -26,13 +26,11 @@ RESPONSE=$(curl -s -X POST https://slack.com/api/chat.delete \
         \"ts\": \"${MESSAGE_TS}\"
       }")
 
-echo "$RESPONSE" | jq
+echo "$RESPONSE" | jq '{ok, channel, ts}'
 
 if echo "$RESPONSE" | jq -e '.ok == true' > /dev/null; then
-  echo "✅ Message deleted from Slack!"
   exit 0
 else
-  echo "❌ Failed to delete message"
   exit 1
 fi
 
