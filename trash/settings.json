@@ -1,29 +1,17 @@
 {
+  "editor.fontSize": 12,
+  "editor.fontLigatures": false,
   "editor.accessibilitySupport": "off",
-  "editor.fontLigatures": true,
   "editor.rulers": [80],
-  "editor.fontFamily": "Monaco, 'Courier New', monospace",
-  "editor.fontSize": 14,
-
-  "terminal.integrated.fontSize": 15,
-
-  "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "top",
-  "workbench.editor.showTabs": "none",
-
   "editor.minimap.enabled": false,
-
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
-
-  "vim.smartRelativeLine": true,
+  "editor.lineNumbers": "on",
+  "terminal.integrated.fontSize": 15,
+  "workbench.startupEditor": "none",
+  "workbench.editor.showTabs": "none",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
+  "window.autoDetectColorScheme": true,
+  "vim.smartRelativeLine": false,
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -41,6 +29,26 @@
     {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["g", "j"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["g", "k"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["shift+k"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["s"],
+      "commands": ["leap.search"]
+    },
+    {
+      "before": ["S"],
+      "commands": ["leap.findBackward"]
     }
   ],
   "vim.insertModeKeyBindings": [
@@ -54,5 +62,42 @@
       "before": ["<C-c>"],
       "after": ["<Esc>"]
     }
-  ]
+  ],
+  "remote.autoForwardPortsSource": "hybrid",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true
+  },
+  "remote.SSH.remotePlatform": {
+    "arvore": "linux"
+  },
+  "git.confirmSync": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "lexical-lsp.lexical",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Default Light Modern",
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "typescript.experimental.useTsgo": false,
+  "editor.fontFamily": "Monaco"
+  // "elixirLS.dialyzerEnabled": true,
+  // "elixirLS.fetchDeps": true,
 }
