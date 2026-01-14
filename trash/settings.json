@@ -2,7 +2,7 @@
   "editor.accessibilitySupport": "off",
   "editor.fontLigatures": true,
   "editor.rulers": [80],
-  "editor.fontFamily": "'BCSMD', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Monaco, 'Courier New', monospace",
   "editor.fontSize": 14,
 
   "terminal.integrated.fontSize": 15,
