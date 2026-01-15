@@ -196,7 +196,7 @@ bindsym $mod+r mode "resize"
 
 bindsym --release Mod1+Shift+4 exec "scrot -s -f -e 'xclip -selection clipboard -t image/png -i $f'"
 
-# bindsym $mod+z exec boomer
+bindsym $mod+z exec boomer
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

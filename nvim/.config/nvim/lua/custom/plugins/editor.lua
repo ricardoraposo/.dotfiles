@@ -12,13 +12,6 @@ return {
     opts = {},
   },
   {
-    'folke/snacks.nvim',
-    opts = {
-      lazygit = {},
-      git = {},
-    },
-  },
-  {
     'stevearc/dressing.nvim',
     opts = {},
   },

@@ -1,3 +1,4 @@
 return {
-  'https://github.com/Mofiqul/vscode.nvim',
+  'Mofiqul/vscode.nvim',
+  'ricardoraposo/nightwolf.nvim',
 }

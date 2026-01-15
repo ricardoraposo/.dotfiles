@@ -1,3 +1,6 @@
 tags
 .DS_Store
-hardware-configuration.nix
+lazy-lock.json
+
+# OpenCode
+opencode/.config/opencode/node_modules/

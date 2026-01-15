@@ -37,6 +37,13 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end,
 })
 
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "mysql",
+--   callback = function()
+--     vim.bo.filetype = "sql"
+--   end,
+-- })
+
 -- vim.api.nvim_create_autocmd('VimEnter', {
 --   group = vim.api.nvim_create_augroup('no-neck-pain', { clear = true }),
 --   callback = function() vim.cmd("NoNeckPain") end,

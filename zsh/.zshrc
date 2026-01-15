@@ -73,3 +73,13 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   # Added by Antigravity
   export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
 fi
+
+# opencode
+export PATH=/home/rick/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/rick/.bun/_bun" ] && source "/home/rick/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

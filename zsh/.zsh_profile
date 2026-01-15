@@ -51,6 +51,7 @@ alias v="nvim"
 alias vim="nvim"
 alias ca="cursor-agent"
 alias cu="cursor"
+alias oc="opencode"
 
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
