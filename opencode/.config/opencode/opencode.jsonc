@@ -8,8 +8,11 @@
   "mcp": {
     "context7": {
       "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
-      "enabled": true
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
     },
     "figma": {
       "type": "remote",
@@ -20,10 +23,6 @@
       "type": "remote",
       "url": "http://192.168.0.51:3845/mcp",
       "enabled": false
-    },
-    "notion": {
-      "type": "remote",
-      "url": "https://mcp.notion.com/mcp"
     },
     "sonarqube": {
       "type": "local",
