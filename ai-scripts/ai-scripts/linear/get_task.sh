@@ -15,7 +15,7 @@ fi
 
 QUERY=$(cat <<EOF
 {
-  "query": "query Issue { issue(id: \"$TASK_ID\") { id title description branchName state { id name } } }"
+  "query": "query Issue { issue(id: \"$TASK_ID\") { id title description branchName url state { id name } } }"
 }
 EOF
 )
@@ -27,7 +27,3 @@ RESPONSE=$(curl -s -X POST \
   https://api.linear.app/graphql)
 
 echo "$RESPONSE" | jq '.data.issue'
-
-
-
-
