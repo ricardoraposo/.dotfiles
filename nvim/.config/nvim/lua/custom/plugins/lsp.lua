@@ -159,27 +159,27 @@ return {
 
         -- svelte = {},
 
-        -- biome = {
-        --   on_init = function(client)
-        --     local util = require 'lspconfig.util'
-        --     local biome = util.root_pattern 'biome.json'(vim.fn.getcwd())
-        --     if not biome then
-        --       client.stop()
-        --       return
-        --     end
-        --   end,
-        -- },
+        biome = {
+          on_init = function(client)
+            local util = require 'lspconfig.util'
+            local biome = util.root_pattern 'biome.json'(vim.fn.getcwd())
+            if not biome then
+              client.stop()
+              return
+            end
+          end,
+        },
 
-        -- eslint = {
-        --   on_init = function(client)
-        --     local util = require 'lspconfig.util'
-        --     local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json')(vim.fn.getcwd())
-        --     if not eslintrc then
-        --       client.stop()
-        --       return
-        --     end
-        --   end,
-        -- },
+        eslint = {
+          on_init = function(client)
+            local util = require 'lspconfig.util'
+            local eslintrc = util.root_pattern('.eslintrc', '.eslintrc.js', '.eslintrc.cjs', '.eslintrc.json')(vim.fn.getcwd())
+            if not eslintrc then
+              client.stop()
+              return
+            end
+          end,
+        },
 
         html = {},
 
@@ -300,7 +300,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'sqlfmt',
-        -- 'biome',
+        'biome',
         'goimports',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
