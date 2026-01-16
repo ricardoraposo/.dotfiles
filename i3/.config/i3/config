@@ -206,7 +206,7 @@ bar {
 
 exec_always --no-startup-id xset r rate 150 60
 
-# exec_always --no-startup-id picom
+exec_always --no-startup-id picom
 
 exec --no-startup-id xrandr --output DP-1 --auto --primary --output eDP-1 --auto --right-of DP-1
 
