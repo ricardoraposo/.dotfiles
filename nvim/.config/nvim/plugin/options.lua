@@ -32,10 +32,10 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.hlsearch = false
 vim.opt.eol = false
 vim.opt.termguicolors = true
-vim.opt.laststatus = 0
+vim.opt.laststatus = 2
 
-vim.opt.showmode = true
-vim.opt.ru = true
-vim.opt.ruf = "%80(%=  %#@variable#%.50F %m[%{&ft}]%)"
+vim.opt.showmode = false
+-- vim.opt.ru = true
+-- vim.opt.ruf = "%80(%=  %#@variable#%.50F %m[%{&ft}]%)"
 
 vim.cmd.colorscheme 'vscode'
