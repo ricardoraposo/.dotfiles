@@ -6,8 +6,10 @@
     "opencode"
   ],
   "keybinds": {
-    "messages_page_up": "alt+k",
-    "messages_page_down": "alt+j"
+    "messages_half_page_up": "ctrl+u",
+    "messages_half_page_down": "ctrl+d",
+    "input_delete_to_line_start": "none",
+    "input_delete": "delete,shift+delete"
   },
   "mcp": {
     "context7": {
