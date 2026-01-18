@@ -5,6 +5,10 @@
     "anthropic",
     "opencode"
   ],
+  "keybinds": {
+    "messages_page_up": "alt+k",
+    "messages_page_down": "alt+j"
+  },
   "mcp": {
     "context7": {
       "type": "remote",
