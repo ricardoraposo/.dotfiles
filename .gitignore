@@ -1,6 +1,6 @@
 tags
 .DS_Store
-lazy-lock.json
+*/**/lazy-lock.json
 
 # OpenCode
 opencode/.config/opencode/node_modules/
