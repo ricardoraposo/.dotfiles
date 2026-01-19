@@ -1,10 +1,7 @@
 return {
-  'Mofiqul/vscode.nvim',
-  'ricardoraposo/nightwolf.nvim',
-  {
-    'ellisonleao/gruvbox.nvim',
-    opts = {
-      contrast = 'hard',
-    },
-  },
+  'rose-pine/neovim',
+  name = 'rose-pine',
+  config = function()
+    vim.cmd 'colorscheme rose-pine-moon'
+  end,
 }

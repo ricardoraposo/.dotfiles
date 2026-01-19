@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
+  "theme": "rosepine",
   "enabled_providers": [
     "anthropic",
     "opencode"
