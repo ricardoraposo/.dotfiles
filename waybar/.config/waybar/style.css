@@ -21,8 +21,8 @@
 }
 
 #waybar {
-  font-family: 'JetBrains Mono', sans-serif;
-  font-size: 12px;
+  font-family: monospace;
+  font-size: 10px;
   font-weight: 400;
   color: @base07;
   background: transparent;
@@ -108,14 +108,14 @@
 }
 
 #window {
-  font-family: 'JetBrains Mono', sans-serif;
+  font-family: monospace;
   color: @base07;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 #language {
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 500;
   letter-spacing: -1px;
 }

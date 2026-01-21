@@ -83,3 +83,6 @@ elif [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 
+
+# opencode
+export PATH=/home/rick/.opencode/bin:$PATH
