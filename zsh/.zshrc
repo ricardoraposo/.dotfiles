@@ -45,6 +45,8 @@ if [[ "$(uname)" == "Linux" ]]; then
     export PATH="/home/rick-arvore/.opencode/bin:$PATH"
   fi
 
+  eval "$(~/.local/bin/mise activate zsh)"
+
 elif [[ "$(uname)" == "Darwin" ]]; then
   # The next line updates PATH for the Google Cloud SDK.
   # if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi
@@ -72,14 +74,14 @@ elif [[ "$(uname)" == "Darwin" ]]; then
 
   # Added by Antigravity
   export PATH="/Users/ricardo/.antigravity/antigravity/bin:$PATH"
+  
+  # opencode
+  export PATH=/home/rick/.opencode/bin:$PATH
+  # bun completions
+  [ -s "/home/rick/.bun/_bun" ] && source "/home/rick/.bun/_bun"
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
 fi
 
-# opencode
-export PATH=/home/rick/.opencode/bin:$PATH
 
-# bun completions
-[ -s "/home/rick/.bun/_bun" ] && source "/home/rick/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
