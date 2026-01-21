@@ -1,11 +1,11 @@
-fd(){
-  DIR=$(fdfind -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Study ~/Projects/Work -d 2 -t d |\
+finder(){
+  DIR=$(fd -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Study ~/Projects/Work -d 2 -t d |\
     fzf --margin 15% --border=rounded \
     --preview 'ls -1 {}' --color bg+:-1) && cd $DIR
 }
 
 c() {
-  DIR=$(fdfind -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Work \
+  DIR=$(fd -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Work \
     ~/Projects/Study  \
     -d 2 -t d| fzf -f $1 | head -1)
   [[ ! -z $DIR ]] && cd $DIR
@@ -92,4 +92,4 @@ alias s="kitten ssh"
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v^M"
-bindkey -s ^F "fd^M"
+bindkey -s ^F "finder^M"
