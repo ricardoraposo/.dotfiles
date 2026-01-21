@@ -203,8 +203,7 @@ bindsym --release Mod1+Shift+4 exec grim -g "$(slurp)" - | wl-copy
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3status
-    font pango:monospace 8
+    swaybar_command waybar
 }
 
 input type:keyboard {
@@ -214,10 +213,10 @@ input type:keyboard {
     xkb_variant mac
 }
 
-output HDMI-A-1 {
-    background ~/Pictures/field.jpg fill
-    resolution 2560x1440
-}
+#output HDMI-A-1 {
+#    background ~/Pictures/field.jpg fill
+#    resolution 2560x1440
+#}
 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 # exec_always --no-startup-id setxkbmap -option ctrl:swapcaps
