@@ -8,11 +8,7 @@ sudo dnf copr enable dejan/lazygit
 sudo dnf -y install \
        ninja-build cmake gcc gcc-c++ make autoconf \
        gettext curl glibc-gconv-extra git zsh stow fzf wget difftastic fd-find \
-       openssl-devel ncurses-devel wxGTK-devel lazygit
-
-sudo yum install pass
-
-sudo dnf install -y pass-otp
+       openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-opt
 
 # install go manually
 wget https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
@@ -37,7 +33,7 @@ stow zsh
 stow nvim
 stow kitty
 stow opencode
-stow startship
+stow starship
 stow ai-scripts
 
 cd ..
