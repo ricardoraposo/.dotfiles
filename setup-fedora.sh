@@ -55,20 +55,7 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
 asdf install
 
-mkdir Projects
-mkdir Projects/Repos
-mkdir Projects/Work
-mkdir Projects/Study
-
-# clone stuff from work
-git clone git@github.com:arvoreeducacao/api-arvore.git ~/Projects/Work/api-arvore
-git clone git@github.com:arvoreeducacao/arvore.git ~/Projects/Work/arvore
-git clone git@github.com:arvoreeducacao/arvore-agents.git ~/Projects/Work/arvore-agents
-git clone git@github.com:arvoreeducacao/arvore-reader-web.git ~/Projects/Work/arvore-reader-web
-git clone git@github.com:arvoreeducacao/frontend-arvore-nextjs.git ~/Projects/Work/frontend-arvore-nextjs
-git clone git@github.com:arvoreeducacao/mobiarvorev2.git ~/Projects/Work/mobiarvorev2
-git clone git@github.com:arvoreeducacao/migrations.git ~/Projects/Work/migrations
-git clone git@github.com:arvoreeducacao/machado.git ~/Projects/Work/machado
+mkdir -p Projects/Repos Projects/Work Projects/Study
 
 # build neovim
 git clone https://github.com/neovim/neovim
