@@ -18,7 +18,7 @@ export TREE_PATH="$HOME/Projects/Work"
 export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$PATH"
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 if [[ "$(uname)" == "Linux" ]]; then
   export DOCKER_HOST=unix:///var/run/docker.sock
