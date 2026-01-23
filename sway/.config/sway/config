@@ -204,6 +204,9 @@ bar {
     swaybar_command waybar
 }
 
+default_border none
+default_floating_border none
+
 input type:keyboard {
     repeat_delay 150
     repeat_rate 60
