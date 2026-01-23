@@ -8,7 +8,7 @@ sudo dnf copr enable dejan/lazygit
 sudo dnf -y install \
        ninja-build cmake gcc gcc-c++ make autoconf \
        gettext curl glibc-gconv-extra git zsh stow fzf wget difftastic fd-find \
-       openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-opt
+       openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp
 
 # install go manually
 wget https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
@@ -24,6 +24,8 @@ curl -sS https://starship.rs/install.sh | sh
 
 # install cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+. "$HOME/.cargo/env"
 
 rm -rf ~/.zshrc ~/.bashrc
 
@@ -70,8 +72,8 @@ wget https://vencord.dev/download/vesktop/amd64/rpm
 
 mv rpm vesktop.rpm
 
-sudo dnf install -y iriunwebcam-2.9.1.rpm
-sudo dnf install -y vesktop.rpm
+sudo dnf install -y ./iriunwebcam-2.9.1.rpm
+sudo dnf install -y ./vesktop.rpm
 
 rm iriunwebcam-2.9.1.rpm vesktop.rpm
 
@@ -91,3 +93,22 @@ curl -fsSL https://opencode.ai/install | bash
 sudo dnf install dnf5-plugins
 sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install gh --repo gh-cli
+
+# install aws
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# install docker
+sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
