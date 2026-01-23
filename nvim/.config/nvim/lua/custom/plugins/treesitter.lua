@@ -21,7 +21,7 @@ return {
     },
   },
   opts = {
-    ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'query', 'vim', 'vimdoc' },
+    ensure_installed = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'html', 'css', 'scss', 'json', 'graphql', 'elixir' },
     auto_install = true,
     highlight = {
       enable = true,
