@@ -2,6 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   branch = 'master',
+  main = 'nvim-treesitter.configs',
   lazy = false,
   dependencies = {
     {
@@ -21,7 +22,7 @@ return {
     },
   },
   opts = {
-    ensure_installed = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'html', 'css', 'scss', 'json', 'graphql', 'elixir' },
+    ensure_installed = { 'typescript', 'javascript', 'html', 'css', 'scss', 'json', 'graphql', 'elixir' },
     auto_install = true,
     highlight = {
       enable = true,
