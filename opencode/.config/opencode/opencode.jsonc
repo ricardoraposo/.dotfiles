@@ -50,6 +50,7 @@
       "enabled": false
     },
     "mysql": {
+      "enabled": false,
       "type": "local",
       "command": [
         "npx",
@@ -63,6 +64,18 @@
         "MYSQL_DATABASE": "{env:MYSQL_DATABASE}",
         "MYSQL_PORT": "{env:MYSQL_PORT}"
       }
+    },
+    "serena": {
+      "type": "local",
+      "command": [
+        "uvx",
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide"
+      ]
     }
   }
 }
