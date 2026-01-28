@@ -23,6 +23,8 @@ source <(fzf --zsh)
 if [[ "$(uname)" == "Linux" ]]; then
   export DOCKER_HOST=unix:///var/run/docker.sock
 
+  eval "$(~/.local/bin/mise activate zsh)"
+
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
   fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
   autoload -Uz compinit && compinit

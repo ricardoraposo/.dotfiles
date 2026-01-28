@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        ""
+      ],
+      "env": {},
+      "disabled": false,
+      "autoApprove": [
+        "resolve-library-id",
+        "get-library-docs"
+      ]
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "figma-desktop": {
+      "url": "http://192.168.0.51:3845/mcp"
+    },
+    "mysql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@arvoretech/mysql-mcp"
+      ],
+      "env": {
+        "MYSQL_HOST": "{env:MYSQL_HOST}",
+        "MYSQL_USER": "{env:MYSQL_USER}",
+        "MYSQL_PASSWORD": "{env:MYSQL_PASSWORD}",
+        "MYSQL_DATABASE": "{env:MYSQL_DATABASE}",
+        "MYSQL_PORT": "{env:MYSQL_PORT}"
+      }
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide"
+      ]
+    }
+  }
+}
