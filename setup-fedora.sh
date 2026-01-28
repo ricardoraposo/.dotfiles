@@ -11,21 +11,40 @@ sudo dnf -y install \
        gettext curl glibc-gconv-extra git zsh stow fzf wget difftastic fd-find \
        openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp yazi
 
-chsh -s $(which zsh)
+# change shell to zsh if not already zsh
+if [ "$SHELL" != "$(which zsh)" ]; then
+    chsh -s $(which zsh)
+fi
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install oh my zsh if not already installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+    echo "Oh My Zsh is already installed"
+fi
 
-# install mise
-curl https://mise.run | sh
+# install mise if not already installed
+if ! command -v mise &> /dev/null; then
+    curl https://mise.run | sh
+else
+    echo "mise is already installed"
+fi
 
-# install starship
-curl -sS https://starship.rs/install.sh | sh
+# install starship if not already installed
+if ! command -v starship &> /dev/null; then
+    curl -sS https://starship.rs/install.sh | sh
+else
+    echo "starship is already installed"
+fi
 
-# install cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-. "$HOME/.cargo/env"
+# install cargo/rustup if not already installed
+if ! command -v cargo &> /dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    . "$HOME/.cargo/env"
+else
+    echo "cargo is already installed"
+    . "$HOME/.cargo/env"
+fi
 
 rm -rf ~/.zshrc ~/.bashrc
 
@@ -42,64 +61,111 @@ cd ..
 
 source ~/.zshrc
 
-cargo install eza
+# install eza if not already installed
+if ! command -v eza &> /dev/null; then
+    cargo install eza
+else
+    echo "eza is already installed"
+fi
 
 mkdir -p Projects/Repos Projects/Work Projects/Study
 
-# build neovim
-git clone https://github.com/neovim/neovim
-cd neovim
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
-cd ..
-rm -rf neovim
+# build neovim if not already installed
+if ! command -v nvim &> /dev/null || [ ! -f "/usr/local/bin/nvim" ]; then
+    git clone https://github.com/neovim/neovim
+    cd neovim
+    make CMAKE_BUILD_TYPE=RelWithDebInfo
+    sudo make install
+    cd ..
+    rm -rf neovim
+else
+    echo "neovim is already installed"
+fi
 
-git clone git@github.com:ricardoraposo/.password-store.git
+# clone password store if not already present
+if [ ! -d "$HOME/.password-store" ]; then
+    git clone git@github.com:ricardoraposo/.password-store.git
+else
+    echo "password store already exists"
+fi
 
 
 # wayland discord and webcam app
-wget https://iriun.gitlab.io/iriunwebcam-2.9.1.rpm
-wget https://vencord.dev/download/vesktop/amd64/rpm
+if ! rpm -q iriunwebcam &> /dev/null; then
+    wget https://iriun.gitlab.io/iriunwebcam-2.9.1.rpm
+    sudo dnf install -y ./iriunwebcam-2.9.1.rpm
+    rm iriunwebcam-2.9.1.rpm
+else
+    echo "iriunwebcam is already installed"
+fi
 
-mv rpm vesktop.rpm
+if ! rpm -q vesktop &> /dev/null; then
+    wget https://vencord.dev/download/vesktop/amd64/rpm
+    mv rpm vesktop.rpm
+    sudo dnf install -y ./vesktop.rpm
+    rm vesktop.rpm
+else
+    echo "vesktop is already installed"
+fi
 
-sudo dnf install -y ./iriunwebcam-2.9.1.rpm
-sudo dnf install -y ./vesktop.rpm
+# installing kitty if not already installed
+if ! command -v kitty &> /dev/null; then
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+    cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+    cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+    sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+    sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+    echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+else
+    echo "kitty is already installed"
+fi
 
-rm iriunwebcam-2.9.1.rpm vesktop.rpm
+# opencode if not already installed
+if ! command -v opencode &> /dev/null; then
+    curl -fsSL https://opencode.ai/install | bash
+else
+    echo "opencode is already installed"
+fi
 
-# installing kitty
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+# gh cli if not already installed
+if ! command -v gh &> /dev/null; then
+    sudo dnf install dnf5-plugins
+    sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+    sudo dnf install gh --repo gh-cli
+else
+    echo "gh cli is already installed"
+fi
 
-# opencode
-curl -fsSL https://opencode.ai/install | bash
+# install aws if not already installed
+if ! command -v aws &> /dev/null; then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    rm -rf awscliv2.zip aws
+else
+    echo "aws cli is already installed"
+fi
 
-# gh cli
-sudo dnf install dnf5-plugins
-sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh --repo gh-cli
+# install kubectl if not already installed
+if ! command -v kubectl &> /dev/null; then
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    rm kubectl
+else
+    echo "kubectl is already installed"
+fi
 
-# install aws
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-
-# install kubectl
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
-# install docker
-sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl enable --now docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
+# install docker if not already installed
+if ! command -v docker &> /dev/null; then
+    sudo dnf config-manager addrepo --from-repofile https://download.docker.com/linux/fedora/docker-ce.repo
+    sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo systemctl enable --now docker
+    sudo groupadd docker 2>/dev/null || echo "docker group already exists"
+    sudo usermod -aG docker $USER
+    echo "You may need to log out and back in to use docker without sudo"
+    sudo systemctl enable docker.service
+    sudo systemctl enable containerd.service
+else
+    echo "docker is already installed"
+fi
