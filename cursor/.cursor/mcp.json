@@ -7,12 +7,6 @@
         "@upstash/context7-mcp",
         "--api-key",
         ""
-      ],
-      "env": {},
-      "disabled": false,
-      "autoApprove": [
-        "resolve-library-id",
-        "get-library-docs"
       ]
     },
     "notion": {
@@ -31,11 +25,11 @@
         "@arvoretech/mysql-mcp"
       ],
       "env": {
-        "MYSQL_HOST": "{env:MYSQL_HOST}",
-        "MYSQL_USER": "{env:MYSQL_USER}",
-        "MYSQL_PASSWORD": "{env:MYSQL_PASSWORD}",
-        "MYSQL_DATABASE": "{env:MYSQL_DATABASE}",
-        "MYSQL_PORT": "{env:MYSQL_PORT}"
+        "MYSQL_HOST": "${env:MYSQL_HOST}",
+        "MYSQL_USER": "${env:MYSQL_USER}",
+        "MYSQL_PASSWORD": "${env:MYSQL_PASSWORD}",
+        "MYSQL_DATABASE": "${env:MYSQL_DATABASE}",
+        "MYSQL_PORT": "${env:MYSQL_PORT}"
       }
     },
     "serena": {
