@@ -1,0 +1,8 @@
+[tools]
+node = "22.18.0"
+erlang = "27.3.3"
+elixir = "1.18.3-otp-27"
+go = "1.25.6"
+direnv = "2.33.0"
+pnpm = "9.5.0"
+yarn = "1.22.19"
