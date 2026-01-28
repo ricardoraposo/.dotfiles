@@ -11,11 +11,11 @@ export NOTES="$HOME/Documents/zet"
 export SCRIPTS="$HOME/.dotfiles/scripts"
 export ZSH_COMPDUMP="$HOME/.cache/zsh/zcompdump"
 export DOTNET_ROOT=/usr/local/share/dotnet
-export GOPATH="$HOME/.local/bin/go"
+
 export TREE_PATH="$HOME/Projects/Work"
 
-# export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$HOME/.local/bin/lua-5.4.8/src:$PATH"
-export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:/usr/local/go/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$PATH"
+# export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:$GOPATH/bin:$TREE_PATH/machado/bin:$HOME/.local/bin/lua-5.4.8/src:$PATH"
+export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:$TREE_PATH/machado/bin:$PATH"
 
 
 source <(fzf --zsh)
