@@ -11,14 +11,13 @@ sudo dnf -y install \
        gettext curl glibc-gconv-extra git zsh stow fzf wget difftastic fd-find \
        openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp yazi
 
-# install go manually
-wget https://go.dev/dl/go1.25.6.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.25.6.linux-amd64.tar.gz
-
 chsh -s $(which zsh)
 
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install mise
+curl https://mise.run | sh
 
 # install starship
 curl -sS https://starship.rs/install.sh | sh
@@ -44,15 +43,6 @@ cd ..
 source ~/.zshrc
 
 cargo install eza
-
-# install asdf
-go install github.com/asdf-vm/asdf/cmd/asdf@v0.18.0
-
-asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
-asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-
-asdf install
 
 mkdir -p Projects/Repos Projects/Work Projects/Study
 
