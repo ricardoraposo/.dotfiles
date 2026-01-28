@@ -85,6 +85,7 @@ alias dsp="docker system prune -af"
 alias dcr="docker container run"
 
 alias k="kubectl"
+alias a="agent"
 
 alias unfuck='git reset HEAD~1 --soft'
 
