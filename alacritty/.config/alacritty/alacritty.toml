@@ -1,7 +1,13 @@
 [font]
-size = 14
-offset = { x = 0, y = 6 }
-normal = { family = "Monaco"}
+size = 10
+offset = { x = 0, y = 2 }
+normal = { family = "Hack Nerd Font"}
 
 [window]
 decorations = "None"
+
+[keyboard]
+bindings = [
+  { key = "V", mods = "Alt", action = "Paste" },
+  { key = "C", mods = "Alt", action = "Copy" },
+]
