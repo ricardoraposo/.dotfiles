@@ -1,4 +1,4 @@
 return {
   'Mofiqul/vscode.nvim',
-  'everviolet/nvim',
+  'HoNamDuong/hybrid.nvim',
 }
