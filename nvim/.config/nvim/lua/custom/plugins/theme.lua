@@ -1,4 +1,3 @@
 return {
-  'Mofiqul/vscode.nvim',
-  'HoNamDuong/hybrid.nvim',
+  'ydkulks/cursor-dark.nvim',
 }
