@@ -8,7 +8,7 @@ sudo dnf copr enable lihaohong/yazi
 
 sudo dnf -y install \
        ninja-build cmake gcc gcc-c++ make autoconf \
-       gettext curl glibc-gconv-extra git zsh stow fzf wget difftastic fd-find \
+       gettext curl glibc-gconv-extra git zsh stow wget difftastic fd-find \
        openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp yazi
 
 # change shell to zsh if not already zsh
@@ -30,22 +30,6 @@ else
     echo "mise is already installed"
 fi
 
-# install starship if not already installed
-if ! command -v starship &> /dev/null; then
-    curl -sS https://starship.rs/install.sh | sh
-else
-    echo "starship is already installed"
-fi
-
-# install cargo/rustup if not already installed
-if ! command -v cargo &> /dev/null; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    . "$HOME/.cargo/env"
-else
-    echo "cargo is already installed"
-    . "$HOME/.cargo/env"
-fi
-
 rm -rf ~/.zshrc ~/.bashrc
 
 cd ~/.dotfiles
@@ -61,12 +45,7 @@ cd ..
 
 source ~/.zshrc
 
-# install eza if not already installed
-if ! command -v eza &> /dev/null; then
-    cargo install eza
-else
-    echo "eza is already installed"
-fi
+mise install
 
 mkdir -p Projects/Repos Projects/Work Projects/Study
 
@@ -119,41 +98,6 @@ if ! command -v kitty &> /dev/null; then
     echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 else
     echo "kitty is already installed"
-fi
-
-# opencode if not already installed
-if ! command -v opencode &> /dev/null; then
-    curl -fsSL https://opencode.ai/install | bash
-else
-    echo "opencode is already installed"
-fi
-
-# gh cli if not already installed
-if ! command -v gh &> /dev/null; then
-    sudo dnf install dnf5-plugins
-    sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
-    sudo dnf install gh --repo gh-cli
-else
-    echo "gh cli is already installed"
-fi
-
-# install aws if not already installed
-if ! command -v aws &> /dev/null; then
-    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-    rm -rf awscliv2.zip aws
-else
-    echo "aws cli is already installed"
-fi
-
-# install kubectl if not already installed
-if ! command -v kubectl &> /dev/null; then
-    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-    rm kubectl
-else
-    echo "kubectl is already installed"
 fi
 
 # install docker if not already installed
