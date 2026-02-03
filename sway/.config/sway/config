@@ -220,7 +220,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec_always /usr/libexec/lxqt-policykit-agent
 
 
-exec swaybg -i ~/.dotfiles/coolwp.png -m fill
+exec swaybg -i ~/.dotfiles/The_Backwater.png -m fill
 
 default_border pixel 3
 default_floating_border pixel 3
