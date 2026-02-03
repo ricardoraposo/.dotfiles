@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Reads a list of strings or numbers from stdin and outputs duplicate entries
+# Usage: cat file.txt | ./find_duplicates.sh
+#        echo -e "a\nb\na\nc\nb" | ./find_duplicates.sh
+
+sort | uniq -d
