@@ -18,15 +18,13 @@ export TREE_PATH="$HOME/Projects/Work"
 export PATH="$BUN_INSTALL/bin:$SCRIPTS:$HOME/.zen/zen:$HOME/.local/bin:$TREE_PATH/machado/bin:$PATH"
 
 
+eval "$(~/.local/bin/mise activate zsh)"
 source <(fzf --zsh)
 
 if [[ "$(uname)" == "Linux" ]]; then
   export DOCKER_HOST=unix:///var/run/docker.sock
 
-  eval "$(~/.local/bin/mise activate zsh)"
 
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
   autoload -Uz compinit && compinit
 
 
@@ -64,11 +62,6 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   esac
   # pnpm end
 
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-
-  # append completions to fpath
-  fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-
   # initialise completions with ZSH's compinit
   autoload -Uz compinit && compinit
 
@@ -77,11 +70,6 @@ elif [[ "$(uname)" == "Darwin" ]]; then
   
   # opencode
   export PATH=/home/rick/.opencode/bin:$PATH
-  # bun completions
-  [ -s "/home/rick/.bun/_bun" ] && source "/home/rick/.bun/_bun"
-  # bun
-  export BUN_INSTALL="$HOME/.bun"
-  export PATH="$BUN_INSTALL/bin:$PATH"
 fi
 
 
