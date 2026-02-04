@@ -1,0 +1,2 @@
+#!/bin/bash
+swaybg -i ~/.dotfiles/The_Backwater.png -m fill & 
