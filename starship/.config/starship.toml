@@ -12,6 +12,8 @@ $nodejs\
 $rust\
 $elixir\
 $kubernetes\
+$direnv\
+$mise\
 $python\
 $ocaml\
 $cmd_duration $jobs $time\
