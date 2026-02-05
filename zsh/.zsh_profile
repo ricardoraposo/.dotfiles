@@ -67,6 +67,7 @@ alias pcmd="cat package.json| jq -r '.scripts'"
 
 #tmux aliases
 alias tm="tmux new -A -s ricardo"
+alias tw='tmux new-session -A -s "$(basename "$PWD")"'
 alias tk="tmux kill-server"
 alias kn="killall node"
 
@@ -87,6 +88,7 @@ alias dcr="docker container run"
 
 alias k="kubectl"
 alias a="agent"
+alias z="zathura"
 
 alias unfuck='git reset HEAD~1 --soft'
 

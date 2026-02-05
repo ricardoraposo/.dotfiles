@@ -9,7 +9,7 @@ sudo dnf copr enable lihaohong/yazi
 sudo dnf -y install \
        ninja-build cmake gcc gcc-c++ make autoconf \
        gettext curl glibc-gconv-extra git zsh stow wget difftastic fd-find \
-       openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp yazi
+       openssl-devel ncurses-devel wxGTK-devel lazygit pass pass-otp yazi zathura zathura-pdf-poppler
 
 # change shell to zsh if not already zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
