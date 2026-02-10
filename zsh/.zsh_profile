@@ -89,6 +89,7 @@ alias dcr="docker container run"
 alias k="kubectl"
 alias a="agent"
 alias z="zathura"
+alias n="cd ~/Documents/notes"
 
 alias unfuck='git reset HEAD~1 --soft'
 

@@ -27,7 +27,7 @@
     },
     "figma-desktop": {
       "type": "remote",
-      "url": "http://192.168.0.51:3845/mcp",
+      "url": "http://192.168.0.201:3845/mcp",
       "enabled": false
     },
     "sonarqube": {
