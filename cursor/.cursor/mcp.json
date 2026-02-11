@@ -16,21 +16,7 @@
       "url": "https://mcp.figma.com/mcp"
     },
     "figma-desktop": {
-      "url": "http://192.168.0.51:3845/mcp"
-    },
-    "mysql": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@arvoretech/mysql-mcp"
-      ],
-      "env": {
-        "MYSQL_HOST": "${env:MYSQL_HOST}",
-        "MYSQL_USER": "${env:MYSQL_USER}",
-        "MYSQL_PASSWORD": "${env:MYSQL_PASSWORD}",
-        "MYSQL_DATABASE": "${env:MYSQL_DATABASE}",
-        "MYSQL_PORT": "${env:MYSQL_PORT}"
-      }
+      "url": "http://192.168.0.201:3846/mcp"
     },
     "serena": {
       "command": "uvx",
