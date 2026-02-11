@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Check if TREE_TOKEN is set
+if [ -z "$TREE_TOKEN" ]; then
+    echo "Error: TREE_TOKEN environment variable is not set"
+    exit 1
+fi
+
+# Make the GraphQL request
+response=$(curl --location --request POST 'https://livros.arvore.com.br/graphql' \
+    --header 'Content-Type: application/json' \
+    --data-raw "{\"query\":\"mutation LoginWithToken {\\n    loginWithToken(token: \\\"$TREE_TOKEN\\\") {\\n        token\\n    }\\n}\\n\",\"variables\":{}}")
+
+# Extract the token from the response
+token=$(echo "$response" | jq -r '.data.loginWithToken.token')
+
+# Check if extraction was successful
+if [ "$token" = "null" ] || [ -z "$token" ]; then
+    echo "Error: Failed to extract token from response"
+    echo "Response: $response"
+    exit 1
+fi
+
+# Copy to clipboard (works on Linux with xclip or wl-copy, or macOS with pbcopy)
+if command -v wl-copy &> /dev/null; then
+    echo "$token" | wl-copy
+elif command -v xclip &> /dev/null; then
+    echo "$token" | xclip -selection clipboard
+elif command -v pbcopy &> /dev/null; then
+    echo "$token" | pbcopy
+else
+    echo "Token: $token"
+    echo "Warning: No clipboard tool found (xclip, wl-copy, or pbcopy)"
+    exit 1
+fi
+
+echo "Token copied to clipboard successfully!"
