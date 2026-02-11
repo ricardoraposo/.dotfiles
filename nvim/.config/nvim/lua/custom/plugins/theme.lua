@@ -1,5 +1,4 @@
 return {
-  'Ferouk/bearded-nvim',
-  'https://github.com/datsfilipe/vesper.nvim',
-  'https://github.com/ydkulks/cursor-dark.nvim'
+  'ydkulks/cursor-dark.nvim',
+  'olivercederborg/poimandres.nvim',
 }
