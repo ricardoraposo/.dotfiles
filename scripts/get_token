@@ -7,7 +7,7 @@ if [ -z "$TREE_TOKEN" ]; then
 fi
 
 # Make the GraphQL request
-response=$(curl --location --request POST 'https://livros.arvore.com.br/graphql' \
+response=$(curl --silent --location --request POST 'https://livros.arvore.com.br/graphql' \
     --header 'Content-Type: application/json' \
     --data-raw "{\"query\":\"mutation LoginWithToken {\\n    loginWithToken(token: \\\"$TREE_TOKEN\\\") {\\n        token\\n    }\\n}\\n\",\"variables\":{}}")
 
