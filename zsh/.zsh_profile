@@ -49,7 +49,6 @@ alias load_none="export PROFILE='' && direnv reload"
 
 alias v="nvim"
 alias vim="nvim"
-alias ca="cursor-agent"
 alias cu="cursor"
 alias oc="opencode"
 
@@ -87,7 +86,7 @@ alias dsp="docker system prune -af"
 alias dcr="docker container run"
 
 alias k="kubectl"
-alias a="agent"
+alias a="agent --yolo"
 alias z="zathura"
 alias n="cd ~/Documents/notes"
 
