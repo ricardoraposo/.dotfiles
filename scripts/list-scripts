@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FILE="${1:-package.json}"
+
+if [ "$FILE" = "-" ] || [ ! -f "$FILE" ]; then
+  if [ "$FILE" != "-" ] && [ ! -f "$FILE" ]; then
+    echo "Arquivo não encontrado: $FILE"
+    exit 1
+  fi
+fi
+
+if [ "$FILE" = "-" ]; then
+  INPUT="/dev/stdin"
+else
+  INPUT="$FILE"
+fi
+
+jq -r '.scripts | to_entries[] | "\(.key)\n  \(.value)"' "$INPUT" | while read -r name; do
+  read -r cmd
+  echo -e "$name"
+  echo -e "  \033[31m$cmd\033[0m"
+done

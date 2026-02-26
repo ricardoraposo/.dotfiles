@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""
+Convert MySQL table output to CSV format.
+"""
+
+import re
+import sys
+
+
+def mysql_to_csv(mysql_output: str) -> str:
+    """Convert MySQL table format to CSV."""
+    lines = mysql_output.strip().split("\n")
+
+    csv_lines = []
+
+    for line in lines:
+        # Skip border lines (lines with +---+)
+        if line.strip().startswith("+"):
+            continue
+
+        # Process data/header rows (lines with |)
+        if line.strip().startswith("|"):
+            # Split by | and strip whitespace
+            fields = [f.strip() for f in line.split("|")[1:-1]]
+            csv_lines.append(",".join(fields))
+
+    return "\n".join(csv_lines)
+
+
+def main():
+    """Read MySQL output from stdin and output CSV."""
+    if len(sys.argv) > 1:
+        # Read from file if provided
+        with open(sys.argv[1], "r") as f:
+            mysql_output = f.read()
+    else:
+        # Read from stdin
+        mysql_output = sys.stdin.read()
+
+    csv_output = mysql_to_csv(mysql_output)
+    print(csv_output)
+
+
+if __name__ == "__main__":
+    main()
