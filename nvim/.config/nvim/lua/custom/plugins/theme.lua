@@ -1,4 +1,4 @@
 return {
   'ydkulks/cursor-dark.nvim',
-  'olivercederborg/poimandres.nvim',
+  'folke/tokyonight.nvim',
 }
