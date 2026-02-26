@@ -2,42 +2,33 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
       "g i": "editor::GoToImplementation",
       "g k": "editor::GoToDiagnostic",
-      "g j": "editor::GoToPrevDiagnostic",
+      "g j": "editor::GoToPreviousDiagnostic",
       "g shift-r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "g a": "editor::ToggleCodeActions",
       "space r n": "editor::Rename",
-      "j": [
-        "vim::Down",
-        {
-          "displayLines": true
-        }
-      ],
-      "k": [
-        "vim::Up",
-        {
-          "displayLines": true
-        }
-      ]
-    }
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }],
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "ctrl-b": "workspace::ToggleLeftDock",
       "g c c": "editor::ToggleComments",
-      "space space": "pane::AlternateFile"
-    }
+      "space space": "pane::AlternateFile",
+    },
   },
   {
     "context": "Editor && vim_mode == visual",
     "bindings": {
-      "g c": "editor::ToggleComments"
-    }
-  }
+      "g c": "editor::ToggleComments",
+    },
+  },
 ]
