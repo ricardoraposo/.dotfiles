@@ -9,6 +9,7 @@ $git_metrics\
 $nix_shell\
 $golang\
 $nodejs\
+$bun\
 $rust\
 $elixir\
 $kubernetes\
