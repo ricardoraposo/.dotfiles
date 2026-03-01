@@ -76,3 +76,6 @@ fi
 
 # opencode
 export PATH=/home/rick/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/rick/.bun/_bun" ] && source "/home/rick/.bun/_bun"

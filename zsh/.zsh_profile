@@ -98,3 +98,6 @@ bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v^M"
 bindkey -s ^F "finder^M"
+
+# hopefully temp
+alias foxcode="/home/rick/Projects/Repos/foxcode/packages/opencode/dist/opencode-linux-x64/bin/opencode"
