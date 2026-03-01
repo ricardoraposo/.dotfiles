@@ -1,5 +1,8 @@
 return {
   'saghen/blink.cmp',
+  dependencies = {
+    'Kaiser-Yang/blink-cmp-avante',
+  },
   version = 'v0.*',
 
   opts = {
@@ -7,6 +10,7 @@ return {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
       per_filetype = {
         sql = { 'snippets', 'dadbod', 'buffer' },
+        codecompanion = { 'codecompanion' },
       },
       -- add vim-dadbod-completion to your completion providers
       providers = {
