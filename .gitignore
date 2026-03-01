@@ -1,7 +1,7 @@
 tags
 .DS_Store
 */**/lazy-lock.json
-*/**/.serena/
+.serena
 
 # OpenCode
 opencode/.config/opencode/node_modules/
