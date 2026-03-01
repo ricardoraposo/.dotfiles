@@ -11,7 +11,7 @@ yarn = "4.7.0"
 rust = "latest"
 zig = "latest"
 eza = "latest"
-opencode = "latest"
+# opencode = "latest"
 aws = { version = "latest", symlink_bins = "true" }
 kubectl = "latest"
 gh = "latest"
