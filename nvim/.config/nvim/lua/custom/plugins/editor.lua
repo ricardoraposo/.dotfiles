@@ -16,9 +16,9 @@ return {
     opts = {},
   },
   {
-    'esmuellert/codediff.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    cmd = 'CodeDiff',
+    'sindrets/diffview.nvim',
+    event = 'VeryLazy',
+    cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewToggleFiles', 'DiffviewFocusFiles' },
   },
   -- {
   --   'sahaj-b/brainrot.nvim',
