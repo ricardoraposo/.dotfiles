@@ -71,7 +71,6 @@
     }
   },
   "plugin": [
-    "@nick-vi/opencode-type-inject",
     "@tarquinen/opencode-dcp@latest"
   ]
 }
