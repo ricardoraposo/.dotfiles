@@ -96,5 +96,7 @@ alias s="kitten ssh"
 
 bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
-bindkey -s ^V "v^M"
+bindkey -s ^V "v .^M"
 bindkey -s ^F "finder^M"
+
+alias fa="foxcode attach http://127.0.0.1:4096"
