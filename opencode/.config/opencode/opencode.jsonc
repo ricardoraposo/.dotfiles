@@ -69,5 +69,11 @@
         "ide"
       ]
     }
-  }
+  },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest",
+    "@nick-vi/opencode-type-inject"
+    // "@tarquinen/opencode-dcp@latest",
+    // "opencode-supermemory@latest",
+  ]
 }
