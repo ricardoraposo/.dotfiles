@@ -16,3 +16,4 @@ aws = { version = "latest", symlink_bins = "true" }
 kubectl = "latest"
 gh = "latest"
 starship = "latest"
+delta = "latest"
