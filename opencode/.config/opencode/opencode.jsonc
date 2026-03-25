@@ -42,21 +42,6 @@
       },
       "enabled": false
     },
-    "mysql": {
-      "type": "local",
-      "command": [
-        "npx",
-        "-y",
-        "@arvoretech/mysql-mcp"
-      ],
-      "environment": {
-        "MYSQL_HOST": "{env:MYSQL_HOST}",
-        "MYSQL_USER": "{env:MYSQL_USER}",
-        "MYSQL_PASSWORD": "{env:MYSQL_PASSWORD}",
-        "MYSQL_DATABASE": "{env:MYSQL_DATABASE}",
-        "MYSQL_PORT": "{env:MYSQL_PORT}"
-      }
-    },
     "serena": {
       "type": "local",
       "command": [
@@ -71,9 +56,6 @@
     }
   },
   "plugin": [
-    "@mohak34/opencode-notifier@latest",
-    "@nick-vi/opencode-type-inject"
-    // "@tarquinen/opencode-dcp@latest",
-    // "opencode-supermemory@latest",
+    "@mohak34/opencode-notifier@latest"
   ]
 }

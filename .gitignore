@@ -5,3 +5,4 @@ tags
 
 # OpenCode
 opencode/.config/opencode/node_modules/
+opencode/.config/opencode/opencode-notifier-state.json
