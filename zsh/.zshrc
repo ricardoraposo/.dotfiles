@@ -45,6 +45,9 @@ if [[ "$(uname)" == "Linux" ]]; then
     export PATH="/home/rick-arvore/.opencode/bin:$PATH"
   fi
 
+
+  export PATH="/home/rick/.bun/bin:$PATH"
+
 elif [[ "$(uname)" == "Darwin" ]]; then
   # The next line updates PATH for the Google Cloud SDK.
   # if [ -f '/Users/ricardo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ricardo/google-cloud-sdk/path.zsh.inc'; fi

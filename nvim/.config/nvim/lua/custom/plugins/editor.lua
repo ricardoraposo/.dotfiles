@@ -7,19 +7,9 @@ return {
   },
   { 'tpope/vim-sleuth' },
   {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {},
-  },
-  {
     'stevearc/dressing.nvim',
     opts = {},
-  },
-  {
-    'sindrets/diffview.nvim',
-    event = 'VeryLazy',
-    cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewToggleFiles', 'DiffviewFocusFiles' },
-  },
+  }
   -- {
   --   'sahaj-b/brainrot.nvim',
   --   event = 'VeryLazy',

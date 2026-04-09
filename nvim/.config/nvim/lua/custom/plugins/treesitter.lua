@@ -20,9 +20,6 @@ return {
         },
       },
     },
-    {
-      'nvim-treesitter/nvim-treesitter-context',
-    },
   },
   opts = {
     ensure_installed = { 'typescript', 'javascript', 'html', 'css', 'scss', 'json', 'graphql', 'elixir' },

@@ -1,9 +1,4 @@
 return {
-  { 'yioneko/nvim-vtsls' },
-  {
-    'dmmulroy/tsc.nvim',
-    opts = {},
-  },
   {
     'folke/ts-comments.nvim',
     opts = {},

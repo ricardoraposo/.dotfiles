@@ -224,7 +224,7 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec_always /usr/libexec/lxqt-policykit-agent
 
 
-exec_always swaybg -i ~/.dotfiles/axolote.png -m fill
+exec_always swaybg -i ~/.dotfiles/firefox.png -m fill
 
 default_border pixel 3
 default_floating_border pixel 3
