@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: token2uid <access_token>"
+    exit 1
+fi
+
+for var in MYSQL_HOST MYSQL_USER MYSQL_PASSWORD MYSQL_DATABASE; do
+    if [ -z "${!var}" ]; then
+        echo "Error: $var environment variable is not set"
+        exit 1
+    fi
+done
+
+mysql -h "$MYSQL_HOST" -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "$MYSQL_DATABASE" \
+    -sN -e "SELECT id FROM users WHERE access_token = '$1' LIMIT 1"
