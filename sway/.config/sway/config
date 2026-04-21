@@ -203,6 +203,7 @@ bindsym $mod+r mode "resize"
 
 # sway specific for print screen
 bindsym --release Mod1+Shift+4 exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+z exec woomer
 
 bar {
     swaybar_command waybar
