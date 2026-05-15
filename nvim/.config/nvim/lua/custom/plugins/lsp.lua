@@ -218,15 +218,15 @@ return {
           },
         },
 
-        tailwindcss = {
-          filetypes = {
-            'html',
-            'vue',
-            'svelte',
-            'javascriptreact',
-            'typescriptreact',
-          },
-        },
+        -- tailwindcss = {
+        --   filetypes = {
+        --     'html',
+        --     'vue',
+        --     'svelte',
+        --     'javascriptreact',
+        --     'typescriptreact',
+        --   },
+        -- },
 
         prismals = {},
 
