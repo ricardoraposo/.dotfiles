@@ -19,14 +19,12 @@ freaking_files() {
   ulimit -f unlimited
 }
 
-f() {
-  if [[ -z $1 ]]; then return 1; fi
-  ssh -O forward -L $1\:localhost:$1 arvore
-}
-
-fq() {
-  if [[ -z $1 ]]; then return 1; fi
-  ssh -O cancel -L $1\:localhost:$1 arvore
+warp-toggle() {
+  if warp-cli status | grep -q "Connected"; then
+    warp-cli disconnect
+  else
+    warp-cli connect
+  fi
 }
 
 alias env_sandbox="export AWS_PROFILE=arvore-stg && 
@@ -73,7 +71,7 @@ alias kn="killall node"
 # vpn
 alias p="pass"
 alias po="pass otp"
-alias wa="warp-cli"
+alias wcc="warp-cli connect"
 
 # podman aliases
 alias pa="podman start -a"
@@ -86,11 +84,11 @@ alias dsp="docker system prune -af"
 alias dcr="docker container run"
 
 alias k="kubectl"
-alias a="agent --yolo"
 alias z="zathura"
 alias n="cd ~/Documents/notes"
 
 alias unfuck='git reset HEAD~1 --soft'
+alias update='git pull origin main'
 
 alias s="kitten ssh"
 
