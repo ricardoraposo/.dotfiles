@@ -9,7 +9,8 @@ return {
   {
     'stevearc/dressing.nvim',
     opts = {},
-  }
+  },
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
   -- {
   --   'sahaj-b/brainrot.nvim',
   --   event = 'VeryLazy',

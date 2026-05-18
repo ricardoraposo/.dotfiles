@@ -1,7 +1,7 @@
 [tools]
 elixir = "1.18.3-otp-27"
 erlang = "27.3.3"
-node = "22.18.0"
+node = "26.1.0"
 bun = "latest"
 go = "latest"
 direnv = "latest"

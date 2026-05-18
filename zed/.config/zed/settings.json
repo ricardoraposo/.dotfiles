@@ -7,22 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "existing_window",
   "project_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "outline_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "agent": {
-    "dock": "right",
+    "dock": "left",
     "favorite_models": [],
     "model_parameters": []
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "telemetry": {
     "diagnostics": false,
@@ -46,6 +47,12 @@
     "show": false,
   },
   "agent_servers": {
+    "pi-acp": {
+      "type": "custom",
+      "command": "node",
+      "args": ["/home/rick/Projects/Repos/pi-acp/dist/index.js"],
+      "env": {}
+    },
     "Kiro Agent": {
       "type": "custom",
       "command": "~/.local/bin/kiro-cli",
