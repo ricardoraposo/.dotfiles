@@ -1,17 +1,17 @@
-vim.api.nvim_create_autocmd('VimEnter', {
-  group = vim.api.nvim_create_augroup('open-todo', { clear = true }),
-  callback = function()
-    local args = vim.fn.argv()
-    if #args == 0 then
-      local todo_path = vim.fn.expand('~/Documents/notes/todo.md')
-      if vim.fn.filereadable(todo_path) == 0 then
-        vim.fn.mkdir(vim.fn.fnamemodify(todo_path, ':h'), 'p')
-        vim.fn.writefile({'# Todo', '', '## Today', '', '- [ ] ', '', '## This Week', '', '- [ ] ', '', '## Later', '', '- [ ] '}, todo_path)
-      end
-      vim.cmd('edit ' .. todo_path)
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('VimEnter', {
+--   group = vim.api.nvim_create_augroup('open-todo', { clear = true }),
+--   callback = function()
+--     local args = vim.fn.argv()
+--     if #args == 0 then
+--       local todo_path = vim.fn.expand('~/Documents/notes/todo.md')
+--       if vim.fn.filereadable(todo_path) == 0 then
+--         vim.fn.mkdir(vim.fn.fnamemodify(todo_path, ':h'), 'p')
+--         vim.fn.writefile({'# Todo', '', '## Today', '', '- [ ] ', '', '## This Week', '', '- [ ] ', '', '## Later', '', '- [ ] '}, todo_path)
+--       end
+--       vim.cmd('edit ' .. todo_path)
+--     end
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',

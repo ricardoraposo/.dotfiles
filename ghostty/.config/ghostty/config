@@ -1,5 +1,6 @@
 shell-integration = zsh
 
+
 font-size = 9
 font-thicken = true
 font-thicken-strength = 200

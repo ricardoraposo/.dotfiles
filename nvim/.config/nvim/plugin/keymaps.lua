@@ -19,6 +19,8 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 map('n', '<leader>o', 'ddO', { desc = 'Insert in current line, with correct identation' })
 
+map('n', '<leader>do', ':DBUIToggle<CR>', { desc = 'Toggle DBUI' })
+
 -- Move text around
 map('v', '<S-j>', ':m .+1<CR>==')
 map('v', '<S-k>', ':m .-2<CR>==')

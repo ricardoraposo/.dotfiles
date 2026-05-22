@@ -11,6 +11,13 @@ c() {
   [[ ! -z $DIR ]] && cd $DIR
 }
 
+gpath() {
+  DIR=$(fd -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Work \
+    ~/Projects/Study  \
+    -d 2 -t d| fzf -f $1 | head -1)
+  [[ ! -z $DIR ]] && echo $DIR
+}
+
 freaking_files() {
   echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
   echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
@@ -47,6 +54,7 @@ alias load_none="export PROFILE='' && direnv reload"
 
 alias v="nvim"
 alias vim="nvim"
+alias db="nvim -c DBUI"
 alias cu="cursor"
 alias oc="opencode"
 
