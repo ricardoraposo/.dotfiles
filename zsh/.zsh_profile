@@ -58,6 +58,8 @@ alias db="nvim -c DBUI"
 alias cu="cursor"
 alias oc="opencode"
 
+alias hub="cd $HOME/Projects/Work/arvore-hub"
+
 # terminal commands aliases
 alias sc="cd $SCRIPTS"
 alias dot="cd $HOME/.dotfiles"
