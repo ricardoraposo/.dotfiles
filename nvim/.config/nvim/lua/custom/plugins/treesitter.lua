@@ -1,8 +1,8 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  branch = 'master',
-  main = 'nvim-treesitter.configs',
+  branch = 'main',
+  main = 'nvim-treesitter',
   lazy = false,
   dependencies = {
     {
@@ -21,12 +21,14 @@ return {
       },
     },
   },
-  opts = {
-    ensure_installed = { 'typescript', 'javascript', 'html', 'css', 'scss', 'json', 'graphql', 'elixir' },
-    auto_install = true,
-    highlight = {
-      enable = true,
-    },
-    indent = { enable = true },
-  },
+  opts = {},
+  config = function()
+    require('nvim-treesitter').setup({})
+
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function(ev)
+        pcall(vim.treesitter.start, ev.buf)
+      end,
+    })
+  end,
 }
