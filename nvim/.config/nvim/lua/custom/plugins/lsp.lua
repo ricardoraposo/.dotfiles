@@ -44,18 +44,19 @@ return {
           map('<leader>k', vim.diagnostic.open_float, 'Check error')
           map('ga', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gj', '<CMD>lua vim.diagnostic.goto_next()<CR>', 'Diag go to next', { 'n' })
-          map('gk', '<CMD>lua vim.diagnostic.goto_prev()<CR>', 'Diag go to prev', { 'n' })
+          map('gj', function() vim.diagnostic.jump({ count = 1 }) end, 'Diag go to next', { 'n' })
+          map('gk', function() vim.diagnostic.jump({ count = -1 }) end, 'Diag go to prev', { 'n' })
 
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = assert(vim.lsp.get_client_by_id(event.data.client_id), 'must have valid client')
 
           if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+
+            vim.api.nvim_create_autocmd('CursorHold', {
+              buffer = event.buf,
+              group = highlight_augroup,
+              callback = vim.lsp.buf.document_highlight,
+            })
 
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
@@ -235,7 +236,7 @@ return {
         docker_compose_language_service = {},
 
         lexical = {
-          cmd = { '/Users/ricardo/.local/share/nvim/mason/bin/lexical', 'server' },
+          cmd = { vim.fn.stdpath('data') .. '/mason/bin/lexical', 'server' },
           root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
         },
 
@@ -309,10 +310,22 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+
+            local server_capabilities = server.server_capabilities
+            if server_capabilities then
+              server.server_capabilities = nil
+              local original_on_init = server.on_init
+              server.on_init = function(client, ...)
+                for k, v in pairs(server_capabilities) do
+                  client.server_capabilities[k] = v
+                end
+                if original_on_init then
+                  return original_on_init(client, ...)
+                end
+              end
+            end
+
             require('lspconfig')[server_name].setup(server)
           end,
         },
