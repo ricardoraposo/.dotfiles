@@ -98,7 +98,7 @@ alias z="zathura"
 alias n="cd ~/Documents/notes"
 
 alias unfuck='git reset HEAD~1 --soft'
-alias update='git pull origin main'
+alias up='git pull origin main'
 
 alias s="kitten ssh"
 
