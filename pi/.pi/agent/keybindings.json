@@ -1,0 +1,17 @@
+{
+  "tui.input.newLine": [
+    "shift+enter",
+    "ctrl+j"
+  ],
+  "tui.select.up": [
+    "up",
+    "ctrl+p"
+  ],
+  "tui.select.down": [
+    "down",
+    "ctrl+n"
+  ],
+  "app.model.cycleForward": [],
+  "app.session.toggleNamedFilter": [],
+  "app.session.togglePath": []
+}
