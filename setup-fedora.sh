@@ -39,6 +39,8 @@ stow kitty
 stow opencode
 stow starship
 stow ai-scripts
+stow sway
+stow waybar
 
 cd ..
 
