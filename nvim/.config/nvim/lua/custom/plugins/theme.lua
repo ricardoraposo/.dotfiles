@@ -1,4 +1,4 @@
 return {
   { 'mofiqul/vscode.nvim' },
-  { dir = '~/Projects/Repos/bonsai.nvim/' },
+  'https://github.com/alexmozaidze/palenight.nvim'
 }
