@@ -6,11 +6,12 @@ return {
     end,
   },
   { 'tpope/vim-sleuth' },
-  {
-    'stevearc/dressing.nvim',
-    opts = {},
-  },
-  { 'akinsho/git-conflict.nvim', version = '*', config = true },
+  { 'tpope/vim-fugitive' },
+  -- {
+  --   'stevearc/dressing.nvim',
+  --   opts = {},
+  -- },
+  -- { 'akinsho/git-conflict.nvim', version = '*', config = true },
   -- {
   --   'sahaj-b/brainrot.nvim',
   --   event = 'VeryLazy',
