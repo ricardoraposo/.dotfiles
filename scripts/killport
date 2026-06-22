@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Kills the process(es) listening on a given TCP port
+# Usage: killport <port>
+#        killport 3000
+
+set -euo pipefail
+
+if [ $# -lt 1 ]; then
+  echo "Usage: killport <port>" >&2
+  exit 1
+fi
+
+PORT="$1"
+
+if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
+  echo "Invalid port: $PORT" >&2
+  exit 1
+fi
+
+PIDS=$(lsof -t -i:"$PORT" || true)
+
+if [ -z "$PIDS" ]; then
+  echo "No process listening on port $PORT"
+  exit 0
+fi
+
+kill -9 $PIDS
+echo "Killed process(es) on port $PORT: $PIDS"
