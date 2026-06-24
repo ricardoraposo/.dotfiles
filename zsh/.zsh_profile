@@ -4,6 +4,18 @@ finder(){
     --preview 'ls -1 {}' --color bg+:-1) && cd $DIR
 }
 
+extension_finder() {
+  DIR=$(
+    fd -L . ~/Projects/Work/arvore-hub/arvore-pi-extensions/packages/ -d 1 -t d |
+    while read -r path; do
+      printf '%s\t%s\n' "${path:t}" "$path"
+    done |
+    fzf --with-nth=1 --delimiter=$'\t' \
+        --margin 15% --border=rounded --color bg+:-1 |
+    cut -f2
+  ) && cd "$DIR"
+}
+
 c() {
   DIR=$(fd -L . ~/.config ~/Projects ~/Projects/Repos ~/Projects/Work \
     ~/Projects/Study  \
@@ -107,5 +119,6 @@ bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v .^M"
 bindkey -s ^F "finder^M"
+bindkey -s ^E "extension_finder^M"
 
 alias fa="foxcode attach http://127.0.0.1:4096"
