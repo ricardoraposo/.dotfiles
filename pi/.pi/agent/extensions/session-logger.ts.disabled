@@ -1,0 +1,118 @@
+import { appendFileSync, mkdirSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
+import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+
+const LOG_DIR = join(homedir(), ".pi", "logs");
+
+let logFile: string | null = null;
+let currentSessionFile: string | null = null;
+
+function ensureLogFile(sessionFile: string | null | undefined): string {
+  const key = sessionFile ?? "ephemeral";
+  if (logFile && key === currentSessionFile) return logFile;
+  mkdirSync(LOG_DIR, { recursive: true });
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const sessionId = sessionFile
+    ? sessionFile.split("/").pop()?.replace(/\.[^.]+$/, "")
+    : "ephemeral";
+  currentSessionFile = key;
+  logFile = join(LOG_DIR, `session-${stamp}-${sessionId}.log`);
+  return logFile;
+}
+
+function write(section: string, body: string): void {
+  if (!logFile) return;
+  const ts = new Date().toISOString();
+  appendFileSync(logFile, `\n===== ${section} @ ${ts} =====\n${body}\n`, "utf8");
+}
+
+function dump(value: unknown): string {
+  try {
+    return JSON.stringify(value, null, 2);
+  } catch {
+    return String(value);
+  }
+}
+
+function extractText(content: unknown): string {
+  if (typeof content === "string") return content;
+  if (Array.isArray(content)) {
+    return content
+      .map((block) => {
+        if (typeof block === "string") return block;
+        if (block && typeof block === "object") {
+          const b = block as Record<string, unknown>;
+          if (typeof b.text === "string") return b.text;
+          return JSON.stringify(b);
+        }
+        return String(block);
+      })
+      .join("\n");
+  }
+  return dump(content);
+}
+
+export default function (pi: ExtensionAPI): void {
+  const session = (ctx: any): string | undefined =>
+    ctx?.sessionManager?.getSessionFile?.();
+
+  pi.on("session_start", async (event, ctx) => {
+    const sessionFile = session(ctx);
+    const file = ensureLogFile(sessionFile);
+    const systemPrompt = ctx.getSystemPrompt?.() ?? "";
+    write(
+      "SESSION START",
+      `reason=${event.reason}\nsession=${sessionFile ?? "ephemeral"}\nlog=${file}`,
+    );
+    write("SYSTEM PROMPT (at session start)", systemPrompt);
+  });
+
+  pi.on("input", async (event, ctx) => {
+    ensureLogFile(session(ctx));
+    const imgCount = event.images?.length ?? 0;
+    const meta = `source=${event.source}${imgCount ? ` images=${imgCount}` : ""}`;
+    write("USER MESSAGE", `${meta}\n\n${event.text}`);
+    return { action: "continue" };
+  });
+
+  pi.on("context", async (event, ctx) => {
+    ensureLogFile(session(ctx));
+    write("CONTEXT (injected messages)", dump(event.messages));
+  });
+
+  pi.on("before_provider_request", (event, ctx) => {
+    ensureLogFile(session(ctx));
+    write("LLM REQUEST PAYLOAD (sent)", dump(event.payload));
+  });
+
+  pi.on("after_provider_response", (event, ctx) => {
+    ensureLogFile(session(ctx));
+    write(
+      "LLM RESPONSE META (received)",
+      `status=${event.status}\nheaders=${dump(event.headers)}`,
+    );
+  });
+
+  pi.on("tool_execution_start", (event, ctx) => {
+    ensureLogFile(session(ctx));
+    write(
+      `TOOL CALL: ${event.toolName} [${event.toolCallId}]`,
+      dump(event.args),
+    );
+  });
+
+  pi.on("tool_execution_end", (event, ctx) => {
+    ensureLogFile(session(ctx));
+    write(
+      `TOOL RESULT: ${event.toolName} [${event.toolCallId}] error=${event.isError}`,
+      dump(event.result),
+    );
+  });
+
+  pi.on("message_end", async (event, ctx) => {
+    if (event.message?.role !== "assistant") return;
+    ensureLogFile(session(ctx));
+    write("ASSISTANT REPLY", extractText(event.message.content));
+  });
+}
