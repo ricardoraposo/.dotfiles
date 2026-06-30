@@ -85,7 +85,8 @@ alias pn="pnpm"
 alias pcmd="cat package.json| jq -r '.scripts'"
 
 #tmux aliases
-alias tm="tmux new -A -s ricardo"
+# alias tm="tmux new -A -s ricardo"
+alias tm="herdr"
 alias tw='tmux new-session -A -s "$(basename "$PWD")"'
 alias tk="tmux kill-server"
 alias kn="killall node"
@@ -119,6 +120,6 @@ bindkey ^N history-beginning-search-forward
 bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v .^M"
 bindkey -s ^F "finder^M"
-bindkey -s ^E "extension_finder^M"
+# bindkey -s ^E "extension_finder^M"
 
 alias fa="foxcode attach http://127.0.0.1:4096"
