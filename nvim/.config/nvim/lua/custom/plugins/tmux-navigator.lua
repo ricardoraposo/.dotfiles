@@ -27,7 +27,7 @@ return {
       vim.g.tmux_navigator_no_mappings = 1
     end,
     config = function()
-      dofile(vim.fn.expand '~/Projects/Repos/vim-herdr-navigation/editor/nvim.lua')
+      dofile(vim.fn.expand '~/.config/herdr/plugins/config/vim-herdr-navigation/vim-herdr-navigation/editor/nvim.lua')
     end,
   },
 }
