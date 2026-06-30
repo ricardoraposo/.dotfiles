@@ -1,0 +1,61 @@
+2026-05-28T19:08:19.548854Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=156167
+2026-05-28T19:08:19.548910Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-05-28T19:08:19.757545Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-05-28T19:47:44.224575Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=174331
+2026-05-28T19:47:44.224622Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-05-28T19:47:44.377285Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-05-28T19:48:20.907017Z  INFO herdr::client: clipboard image paste trigger received, but local clipboard has no image
+2026-05-28T19:50:23.633228Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=174331
+2026-06-09T11:41:14.794276Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4502
+2026-06-09T11:41:14.794315Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-09T11:41:15.001398Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-09T11:45:46.148160Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=4502
+2026-06-15T19:35:45.624826Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=166868
+2026-06-15T19:35:45.624863Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-15T19:35:45.872631Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-15T19:46:15.254003Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=166868
+2026-06-24T18:25:52.693031Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=22670
+2026-06-24T18:25:52.693089Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-24T18:25:52.898399Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-24T18:30:20.867989Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=22670
+2026-06-24T18:30:24.992597Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=24786
+2026-06-24T18:30:24.992622Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-24T18:30:25.016050Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-24T18:30:47.813530Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=24786
+2026-06-24T18:31:44.117617Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=25572
+2026-06-24T18:31:44.117653Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-24T18:31:44.249752Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-24T18:56:12.003292Z  INFO herdr::client: clipboard image paste trigger received, but local clipboard has no image
+2026-06-24T18:56:43.546440Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=25572
+2026-06-25T20:22:30.612509Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=184602
+2026-06-25T20:22:30.612562Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-25T20:22:30.660320Z  INFO herdr::client: handshake succeeded version=11 encoding=SemanticFrame
+2026-06-25T20:24:16.503587Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=184602
+2026-06-25T20:24:25.353413Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=185966
+2026-06-25T20:24:25.353448Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-25T20:24:25.587241Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-25T20:38:13.981295Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=185966
+2026-06-25T20:38:15.661241Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=193043
+2026-06-25T20:38:15.661268Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-25T20:38:15.742265Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-25T20:38:17.344363Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=193043
+2026-06-25T20:38:39.483722Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=193383
+2026-06-25T20:38:39.483745Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-25T20:38:39.685754Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-26T01:01:44.783180Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=275534
+2026-06-26T01:01:44.785694Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-26T01:01:44.982738Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-26T11:34:18.413239Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=3179
+2026-06-26T11:34:18.413471Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-26T11:34:18.639011Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-26T11:54:15.437052Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=3179
+2026-06-26T11:54:18.292066Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=11195
+2026-06-26T11:54:18.292100Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-26T11:54:18.449587Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-26T12:00:34.454329Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="client" outcome="completed" pid=11195
+2026-06-26T12:00:38.980516Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=13040
+2026-06-26T12:00:38.980539Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-26T12:00:39.217879Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame
+2026-06-30T11:42:29.017221Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="client" outcome="started" pid=4782
+2026-06-30T11:42:29.017443Z  INFO herdr::client: connecting to server path=/home/rick/.config/herdr/herdr-client.sock
+2026-06-30T11:42:29.227663Z  INFO herdr::client: handshake succeeded version=14 encoding=SemanticFrame

@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "workspaces": [
+    {
+      "id": "w3",
+      "custom_name": null,
+      "identity_cwd": "/home/rick/.dotfiles",
+      "public_pane_numbers": {
+        "6": 22,
+        "1": 7
+      },
+      "next_public_pane_number": 23,
+      "public_tab_numbers": [
+        1
+      ],
+      "next_public_tab_number": 9,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Split": {
+              "direction": "Horizontal",
+              "ratio": 0.5,
+              "first": {
+                "Pane": 1
+              },
+              "second": {
+                "Pane": 6
+              }
+            }
+          },
+          "panes": {
+            "1": {
+              "cwd": "/home/rick/.dotfiles"
+            },
+            "6": {
+              "cwd": "/home/rick/.config"
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 1
+        }
+      ],
+      "active_tab": 0
+    }
+  ],
+  "active": 0,
+  "selected": 0,
+  "sidebar_width": 26,
+  "sidebar_section_split": 0.1,
+  "collapsed_space_keys": []
+}
