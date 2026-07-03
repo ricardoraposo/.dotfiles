@@ -46,6 +46,8 @@ warp-toggle() {
   fi
 }
 
+pi() { TERM=xterm-kitty command pi "$@"; }
+
 alias env_sandbox="export AWS_PROFILE=arvore-stg && 
     aws eks update-kubeconfig \
     --name arvore-stg-eks \

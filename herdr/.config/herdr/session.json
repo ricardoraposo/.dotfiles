@@ -2,18 +2,18 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w3",
+      "id": "w5",
       "custom_name": null,
-      "identity_cwd": "/home/rick/.dotfiles",
+      "identity_cwd": "/home/rick/Projects/Work/arvore-hub",
       "public_pane_numbers": {
-        "6": 22,
-        "1": 7
+        "3": 3,
+        "1": 1
       },
-      "next_public_pane_number": 23,
+      "next_public_pane_number": 4,
       "public_tab_numbers": [
         1
       ],
-      "next_public_tab_number": 9,
+      "next_public_tab_number": 2,
       "tabs": [
         {
           "custom_name": null,
@@ -25,20 +25,20 @@
                 "Pane": 1
               },
               "second": {
-                "Pane": 6
+                "Pane": 3
               }
             }
           },
           "panes": {
-            "1": {
+            "3": {
               "cwd": "/home/rick/.dotfiles"
             },
-            "6": {
-              "cwd": "/home/rick/.config"
+            "1": {
+              "cwd": "/home/rick/Projects/Work/arvore-hub"
             }
           },
           "zoomed": false,
-          "focused": 6,
+          "focused": 3,
           "root_pane": 1
         }
       ],

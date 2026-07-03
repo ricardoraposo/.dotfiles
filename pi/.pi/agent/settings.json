@@ -1,17 +1,20 @@
 {
-  "lastChangelogVersion": "0.80.2",
+  "lastChangelogVersion": "0.80.3",
   "packages": [
+    "npm:@arvoretech/pi-kiro-provider",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@juicesharp/rpiv-btw",
     "npm:pi-mcp-adapter",
     "npm:pi-subagents",
     "npm:pi-web-access",
-    "npm:pi-vim"
+    "npm:pi-vim",
+    "npm:pi-intercom",
+    "npm:pi-prompt-template-model"
   ],
   "theme": "palenight",
   "defaultProvider": "kiro",
-  "defaultModel": "claude-opus-4-8",
+  "defaultModel": "claude-sonnet-5",
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false
 }
