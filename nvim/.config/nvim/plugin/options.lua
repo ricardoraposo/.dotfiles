@@ -38,5 +38,5 @@ vim.opt.showmode = false
 -- vim.opt.ru = true
 -- vim.opt.ruf = "%80(%=  %#@variable#%.50F %m[%{&ft}]%)"
 
-vim.cmd.colorscheme 'palenight'
-vim.api.nvim_set_hl(0, 'Normal', { bg = '#15181d' })
+vim.cmd.colorscheme 'ember'
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = '#15181d' })

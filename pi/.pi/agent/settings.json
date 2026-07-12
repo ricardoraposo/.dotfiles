@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.80.3",
+  "lastChangelogVersion": "0.80.6",
   "packages": [
     "npm:@arvoretech/pi-kiro-provider",
-    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@arvoretech/pi-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@juicesharp/rpiv-btw",
     "npm:pi-mcp-adapter",
@@ -10,11 +10,12 @@
     "npm:pi-web-access",
     "npm:pi-vim",
     "npm:pi-intercom",
-    "npm:pi-prompt-template-model"
+    "npm:pi-prompt-template-model",
+    "npm:@narumitw/pi-codex-usage"
   ],
-  "theme": "palenight",
+  "theme": "ember",
   "defaultProvider": "kiro",
-  "defaultModel": "claude-sonnet-5",
+  "defaultModel": "claude-opus-4-8",
   "defaultThinkingLevel": "medium",
   "hideThinkingBlock": false
 }

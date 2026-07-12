@@ -198,6 +198,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym Ctrl+space exec handy --toggle-transcription
+
 # i3 specific for print screen
 # bindsym --release Mod1+Shift+4 exec "scrot -s -f -e 'xclip -selection clipboard -t image/png -i $f'"
 
