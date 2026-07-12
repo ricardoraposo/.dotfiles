@@ -9,3 +9,8 @@ opencode/.config/opencode/opencode-notifier-state.json
 
 # pi
 pi/.pi/agent/extensions/herdr-agent-state.ts
+
+herdr/.config/herdr/herdr-client.log
+herdr/.config/herdr/herdr-server.log
+herdr/.config/herdr/release-notes.json
+herdr/.config/herdr/session.json
