@@ -44,8 +44,12 @@ return {
           map('<leader>k', vim.diagnostic.open_float, 'Check error')
           map('ga', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gj', function() vim.diagnostic.jump({ count = 1 }) end, 'Diag go to next', { 'n' })
-          map('gk', function() vim.diagnostic.jump({ count = -1 }) end, 'Diag go to prev', { 'n' })
+          map('gj', function()
+            vim.diagnostic.jump { count = 1 }
+          end, 'Diag go to next', { 'n' })
+          map('gk', function()
+            vim.diagnostic.jump { count = -1 }
+          end, 'Diag go to prev', { 'n' })
 
           local client = assert(vim.lsp.get_client_by_id(event.data.client_id), 'must have valid client')
 
@@ -236,9 +240,15 @@ return {
         docker_compose_language_service = {},
 
         lexical = {
-          cmd = { vim.fn.stdpath('data') .. '/mason/bin/lexical', 'server' },
+          cmd = { vim.fn.stdpath 'data' .. '/mason/bin/lexical', 'server' },
           root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
         },
+
+        -- solargraph = {
+        --   cmd = { 'mise', 'exec', 'ruby@2.7.2', '--', 'solargraph', 'stdio' },
+        -- },
+        --
+        -- vim.lsp.config('solargraph', servers.solargraph)
 
         -- pyright = {},
         -- mypy = {},

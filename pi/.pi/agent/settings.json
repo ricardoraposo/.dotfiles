@@ -14,8 +14,8 @@
     "npm:@narumitw/pi-codex-usage"
   ],
   "theme": "ember",
-  "defaultProvider": "kiro",
-  "defaultModel": "claude-opus-4-8",
-  "defaultThinkingLevel": "medium",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+  "defaultThinkingLevel": "high",
   "hideThinkingBlock": false
 }
