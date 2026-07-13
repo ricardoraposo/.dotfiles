@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "nvim": {
+      "rev": "7365b8dede43a82ed1df741275b75333422e5402",
+      "src": "https://github.com/ember-theme/nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "d5b6e3db4c17b0146f63a2fc47e2027a754b2cb1",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "oil.nvim": {
+      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "vim-tmux-navigator": {
+      "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    }
+  }
+}
