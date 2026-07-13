@@ -2,6 +2,8 @@
 paranoid = false
 
 [tools]
+ruby = "2.7.2"
+"gem:bundler" = "latest"
 elixir = "1.18.3-otp-27"
 erlang = "27.3.3"
 node = "26.1.0"
