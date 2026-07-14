@@ -244,11 +244,9 @@ return {
           root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
         },
 
-        -- solargraph = {
-        --   cmd = { 'mise', 'exec', 'ruby@2.7.2', '--', 'solargraph', 'stdio' },
-        -- },
-        --
-        -- vim.lsp.config('solargraph', servers.solargraph)
+        solargraph = {
+          cmd = { 'mise', 'exec', 'ruby@2.7.2', '--', 'solargraph', 'stdio' },
+        },
 
         -- pyright = {},
         -- mypy = {},
@@ -302,6 +300,8 @@ return {
           },
         },
       }
+
+      vim.lsp.config('solargraph', servers.solargraph)
 
       require('mason').setup()
 
