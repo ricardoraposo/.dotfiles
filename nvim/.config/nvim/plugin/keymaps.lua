@@ -9,7 +9,7 @@ map('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-map('t', '<esc>', '<C-\\><C-n>')
+map('t', '<esc><esc>', '<C-\\><C-n>')
 map('n', '<leader>rt', ':15split | terminal ')
 
 -- Quality of life
