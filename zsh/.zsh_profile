@@ -123,3 +123,5 @@ bindkey ^P history-beginning-search-backward
 bindkey -s ^V "v .^M"
 bindkey -s ^F "finder^M"
 # bindkey -s ^E "extension_finder^M"
+
+alias m="markdown-thing"
