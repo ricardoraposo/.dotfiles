@@ -1,7 +1,7 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.81.1",
   "packages": [
-    "/home/rick/Projects/Work/arvore-hub/arvore-pi-extensions/.worktrees/romanceiro/packages/kiro-provider",
+    "npm:@arvoretech/pi-kiro-provider",
     "npm:@arvoretech/pi-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@juicesharp/rpiv-btw",
@@ -11,11 +11,11 @@
     "npm:pi-vim",
     "npm:pi-intercom",
     "npm:pi-prompt-template-model",
-    "npm:@narumitw/pi-codex-usage"
+    "npm:@narumitw/pi-usage"
   ],
   "theme": "ember",
-  "defaultProvider": "kiro",
-  "defaultModel": "gpt-5-6-sol",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "max",
   "hideThinkingBlock": false
 }
